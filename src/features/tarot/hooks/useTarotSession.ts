@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useReducedMotion } from 'motion/react';
+import { useVisualTheme } from '../../../app/components/astro/VisualTheme';
 import { createDeck, dailyCard, type DrawnCard } from '../engine/draw';
 import { getSpread, type SpreadId } from '../data/spreads';
 import type { Reading } from '../engine/reading';
@@ -13,7 +14,9 @@ export function useTarotSession() {
   const [deck, setDeck] = useState<DrawnCard[]>([]);
   const [reading, setReading] = useState<Reading | null>(null);
   const [revealed, setRevealed] = useState(0);
-  const reduced = useReducedMotion();
+  const systemReduced = useReducedMotion();
+  const { motion } = useVisualTheme();
+  const reduced = systemReduced || motion === 'calm';
   useEffect(() => {
     if (phase !== 'shuffling') return;
     const timer = setTimeout(() => setPhase('picking'), reduced ? 80 : 1000);

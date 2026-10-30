@@ -1,9 +1,12 @@
 import { useMemo, useState, type FormEvent } from 'react';
 import { ChevronLeft, ChevronRight, Plus, Trash2 } from 'lucide-react';
 import { analyzeDay, EVENT_TYPES, findGoodDaysForEvent, isGoodDayForAge } from '../../lib/goodDays';
-import { solarToLunar, formatLunarDate } from '../../lib/lunar';
+import { solarToLunar, formatLunarDate, CAN_TO_NGU_HANH } from '../../lib/lunar';
 import { vietnamToday, vietnamDateKey } from '../../lib/date';
 import { useStoredState } from '../../lib/storage';
+import { AstroSymbol } from '../components/astro/AstroSymbol';
+import { BaguaWheel } from '../components/astro/AstroWheels';
+import { Modal } from '../components/Modal';
 type EventType = keyof typeof EVENT_TYPES;
 interface CalendarEvent {
   id: string;
@@ -50,6 +53,7 @@ export default function CalendarPage() {
   );
   const [eventTitle, setEventTitle] = useState('');
   const [notice, setNotice] = useState('');
+  const [detailOpen, setDetailOpen] = useState(false);
   const year = current.getFullYear(),
     month = current.getMonth() + 1;
   const days = useMemo(
@@ -77,6 +81,11 @@ export default function CalendarPage() {
   const key = `${year}-${String(month).padStart(2, '0')}-${String(selectedDay).padStart(2, '0')}`;
   const selectedEvents = events.filter((e) => e.date === key);
   const selectedHoliday = holiday(selectedDay, month, selected.lunar);
+  const selectedElement = CAN_TO_NGU_HANH[selected.dayCanChi.split(' ')[0]];
+  const topDays = days
+    .filter((d) => goodDays.includes(d.date.getDate()))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
   function changeMonth(delta: number) {
     setCurrent(new Date(year, month - 1 + delta, 1));
     setSelectedDay(1);
@@ -91,10 +100,10 @@ export default function CalendarPage() {
     setNotice('Đã lưu sự kiện trên thiết bị.');
   }
   return (
-    <div className="page-enter">
+    <div className="calendar-page page-enter">
       <div className="page-heading">
         <div>
-          <span className="eyebrow">THUẬN NHỊP THỜI GIAN</span>
+          <span className="eyebrow">ĐÔNG PHƯƠNG / THUẬN NHỊP THỜI GIAN</span>
           <h1>
             Lịch Việt Nam<span className="gold">.</span>
           </h1>
@@ -145,6 +154,25 @@ export default function CalendarPage() {
           {ageValid && <span>{goodDays.length} ngày phù hợp bộ lọc</span>}
         </label>
       </section>
+      <div className="calendar-visual-legend panel" aria-label="Chú giải lịch">
+        <span>
+          <i className="jade-dot" />
+          Hoàng đạo
+        </span>
+        <span>
+          <i className="cinnabar-dot" />
+          Hắc đạo · cần cân nhắc
+        </span>
+        <span>
+          <i className="amber-dot" />
+          Hắc đạo · thường nhật
+        </span>
+        <span>
+          <AstroSymbol name="star" size={15} />
+          Viền vàng: phù hợp bộ lọc
+        </span>
+        <span>◦ Chấm góc: sự kiện riêng</span>
+      </div>
       <div className="calendar-layout">
         <section className="calendar-panel panel">
           <div className="month-heading">
@@ -178,13 +206,15 @@ export default function CalendarPage() {
               return (
                 <button
                   key={day}
-                  aria-label={`Ngày ${day}/${month}/${year}, âm lịch ${analysis.lunar.day}/${analysis.lunar.month}${goodDays.includes(day) ? ', phù hợp bộ lọc' : ''}`}
+                  aria-label={`Ngày ${day}/${month}/${year}, âm lịch ${analysis.lunar.day}/${analysis.lunar.month}, ${analysis.isHoangDao ? 'hoàng đạo' : 'hắc đạo'}, trực ${analysis.truc}${goodDays.includes(day) ? ', phù hợp bộ lọc' : ''}`}
                   aria-pressed={day === selectedDay}
                   aria-current={isToday ? 'date' : undefined}
-                  className={`calendar-day ${goodDays.includes(day) ? 'good' : ''} ${isToday ? 'today' : ''} ${day === selectedDay ? 'selected' : ''} ${events.some((e) => e.date === dateKey) ? 'has-event' : ''}`}
+                  title={`${analysis.isHoangDao ? 'Hoàng đạo' : 'Hắc đạo'} · Trực ${analysis.truc} · Tú ${analysis.tu.name}`}
+                  className={`calendar-day tone-${analysis.isHoangDao ? 'jade' : analysis.badFor.length > 2 ? 'cinnabar' : 'amber'} ${goodDays.includes(day) ? 'good' : ''} ${isToday ? 'today' : ''} ${day === selectedDay ? 'selected' : ''} ${events.some((e) => e.date === dateKey) ? 'has-event' : ''}`}
                   onClick={() => {
                     setSelectedDay(day);
                     setNotice('');
+                    setDetailOpen(true);
                   }}
                 >
                   <span>{day}</span>
@@ -193,14 +223,45 @@ export default function CalendarPage() {
                       ? `${analysis.lunar.day}/${analysis.lunar.month}`
                       : analysis.lunar.day}
                   </small>
+                  <i className="day-tone" aria-hidden="true" />
                 </button>
               );
             })}
           </div>
           <div className="calendar-legend">
-            <span>Phù hợp bộ lọc</span>
-            <span>Viền tím: hôm nay</span>
-            <span>Chấm góc: sự kiện riêng</span>
+            <span>Viền bạc: hôm nay</span>
+            <span>Dấu ấn: ngày đang chọn</span>
+          </div>
+          <div className="auspicious-days">
+            <div>
+              <span className="eyebrow">GỢI Ý TRONG THÁNG</span>
+              <h3>{eventType ? EVENT_TYPES[eventType].name : 'Những ngày hoàng đạo'}</h3>
+            </div>
+            <div className="auspicious-list">
+              {topDays.length ? (
+                topDays.map((d) => (
+                  <button
+                    key={d.date.getDate()}
+                    onClick={() => {
+                      setSelectedDay(d.date.getDate());
+                      setDetailOpen(true);
+                    }}
+                  >
+                    <span className="auspicious-seal">CÁT</span>
+                    <strong>
+                      {String(d.date.getDate()).padStart(2, '0')}
+                      <small>/{month}</small>
+                    </strong>
+                    <span>
+                      {d.dayCanChi}
+                      <small>Trực {d.truc}</small>
+                    </span>
+                  </button>
+                ))
+              ) : (
+                <p className="small muted">Chưa có ngày phù hợp bộ lọc này trong tháng.</p>
+              )}
+            </div>
           </div>
           <details className="method-note">
             <summary>Quy tắc lịch và giới hạn</summary>
@@ -214,6 +275,11 @@ export default function CalendarPage() {
           </details>
         </section>
         <aside className="day-detail content-panel panel">
+          <div className="day-medallion" data-element={selectedElement}>
+            <AstroSymbol name={selectedElement} size={34} />
+            <strong>{String(selectedDay).padStart(2, '0')}</strong>
+            <span>Hành {selectedElement}</span>
+          </div>
           <span className="eyebrow">
             {selected.date.toLocaleDateString('vi-VN', { weekday: 'long' })} · {year}
           </span>
@@ -284,6 +350,68 @@ export default function CalendarPage() {
           )}
         </aside>
       </div>
+      {detailOpen && (
+        <Modal title={`Ngày ${selectedDay}/${month}/${year}`} onClose={() => setDetailOpen(false)}>
+          <div className="day-reading-sheet">
+            <div className="day-sheet-art">
+              <BaguaWheel element={selectedElement} />
+              <div className="sheet-date">
+                <strong>{selectedDay}</strong>
+                <span>
+                  THÁNG {month} · {year}
+                </span>
+              </div>
+              <span className="edition-tag">{selected.isHoangDao ? 'HOÀNG ĐẠO' : 'HẮC ĐẠO'}</span>
+            </div>
+            <div className="day-sheet-copy">
+              <span className="eyebrow">ÂM LỊCH {formatLunarDate(selected.lunar)}</span>
+              <h3>{selected.dayCanChi}</h3>
+              <p>{selected.description}</p>
+              <div className="day-sheet-facts">
+                <span>
+                  <AstroSymbol name={selectedElement} size={22} />
+                  Thiên can hành {selectedElement}
+                </span>
+                <span>Trực {selected.truc}</span>
+                <span>Tú {selected.tu.name}</span>
+              </div>
+              {selectedHoliday && <p className="gold">{selectedHoliday}</p>}
+              <h4>Việc có thể tham khảo</h4>
+              <p>{selected.goodFor.join(' · ') || 'Ưu tiên việc thường nhật và nghỉ ngơi.'}</p>
+              <h4>Việc cần cân nhắc</h4>
+              <p>{selected.badFor.join(' · ') || 'Không có lưu ý riêng theo quy tắc này.'}</p>
+              {ageValid && (
+                <p className="small">
+                  {isGoodDayForAge(selectedDay, month, year, Number(birthYear)).reason}
+                </p>
+              )}
+              <h4>Giờ hoàng đạo · UTC+7</h4>
+              <div className="hour-chips">
+                {selected.luckyHours.map((h) => (
+                  <span key={h}>{h}</span>
+                ))}
+              </div>
+              <p className="small muted">
+                Trực theo tháng âm; 28 Tú và điểm ngày còn giản lược. Kết hợp lịch tham khảo với
+                điều kiện thực tế.
+              </p>
+              <button
+                className="button primary"
+                onClick={() => {
+                  setDetailOpen(false);
+                  setTimeout(
+                    () => document.querySelector<HTMLInputElement>('.event-form input')?.focus(),
+                    0,
+                  );
+                }}
+              >
+                Ghi sự kiện cho ngày này
+                <Plus size={15} />
+              </button>
+            </div>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 }

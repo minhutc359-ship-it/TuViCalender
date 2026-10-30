@@ -19,3 +19,7 @@ The canonical Tarot association is limited to the 22 Major Arcana in Stardust Cr
 ## Interpretation references
 
 The historical comparison source is Arthur Edward Waite, _The Pictorial Key to the Tarot_ (1910), including [Major meanings](https://sacred-texts.com/tarot/pkt/pkt0303.htm), [Minor meanings](https://sacred-texts.com/tarot/pkt/pkt0302.htm) and the [Celtic method](https://sacred-texts.com/tarot/pkt/pkt0307.htm). The Vietnamese text and combinations are original modern editorial adaptations of Rider–Waite–Smith themes, not verbatim translations or a claim that Waite prescribed every application rule. Reversed meanings and conditional advice can differ from Waite's historical divination lists. The app does not establish predictive accuracy.
+
+## Mystic Fusion vectors
+
+The symbols, constellation ornaments, cloud lines and diagram wheels in `src/app/components/astro/` are original SVG constructions. The eight trigram line patterns are checked against the [Unicode Miscellaneous Symbols chart, U2630–U2637](https://www.unicode.org/charts/PDF/U2600.pdf). Wheels are symbolic graphics, not computed planetary charts or compass readings. Existing Tarot illustration sources remain as described above.

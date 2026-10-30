@@ -9,8 +9,10 @@ import {
   Orbit,
   Settings,
 } from 'lucide-react';
-import { MotionConfig } from 'motion/react';
 import { TarotAppearanceProvider } from '../features/tarot/context/TarotAppearance';
+import { VisualThemeProvider, useVisualTheme, THEME_NAMES } from './components/astro/VisualTheme';
+import { MysticBackdrop } from './components/astro/MysticBackdrop';
+import { AstroSymbol } from './components/astro/AstroSymbol';
 const HomePage = lazy(() => import('./pages/HomePage'));
 const CalendarPage = lazy(() => import('./pages/CalendarPage'));
 const ChatPage = lazy(() => import('./pages/ChatPage'));
@@ -28,23 +30,25 @@ const links = [
 ];
 function Shell() {
   const { pathname } = useLocation();
+  const { resolved } = useVisualTheme();
   useEffect(() => {
     window.scrollTo({ top: 0 });
     document.title = `${links.find((l) => l.to === pathname)?.name ?? 'Trang không tồn tại'} · AstroAI`;
   }, [pathname]);
   return (
     <div className="app-shell">
+      <MysticBackdrop />
       <a className="skip-link" href="#main">
         Đến nội dung chính
       </a>
       <header className="site-header">
         <Link to="/" className="brand" aria-label="AstroAI — Trang chủ">
           <span className="brand-mark">
-            <Orbit size={29} />
+            <AstroSymbol name="fusion" size={31} />
           </span>
           <span>
             Astro<span className="gold">AI</span>
-            <small>YOUR CELESTIAL COMPANION</small>
+            <small>CELESTIAL FENG SHUI</small>
           </span>
         </Link>
         <nav className="desktop-nav" aria-label="Điều hướng chính">
@@ -59,6 +63,16 @@ function Shell() {
           <span>Không gian của bạn</span>
         </Link>
       </header>
+      <div className="tradition-ribbon">
+        <span>ASTROAI / KHÔNG GIAN CHIÊM NGHIỆM</span>
+        <Link to="/settings" aria-label="Đổi chủ đề giao diện">
+          <AstroSymbol
+            name={resolved === 'eastern' ? 'Càn' : resolved === 'western' ? 'star' : 'fusion'}
+            size={14}
+          />
+          {THEME_NAMES[resolved]}
+        </Link>
+      </div>
       <main id="main" className="main-content">
         <Suspense
           fallback={
@@ -107,12 +121,12 @@ function Shell() {
 }
 export default function App() {
   return (
-    <MotionConfig reducedMotion="user">
-      <TarotAppearanceProvider>
-        <BrowserRouter>
+    <TarotAppearanceProvider>
+      <BrowserRouter>
+        <VisualThemeProvider>
           <Shell />
-        </BrowserRouter>
-      </TarotAppearanceProvider>
-    </MotionConfig>
+        </VisualThemeProvider>
+      </BrowserRouter>
+    </TarotAppearanceProvider>
   );
 }

@@ -2,10 +2,13 @@ export interface ChatBody {
   message: string;
   chatHistory: { role: 'user' | 'assistant'; content: string }[];
   context: Record<string, unknown>;
+  persona?: 'eastern' | 'western';
 }
 export function validateChatBody(value: unknown): ChatBody | null {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
   const body = value as Record<string, unknown>;
+  if (body.persona !== undefined && body.persona !== 'eastern' && body.persona !== 'western')
+    return null;
   if (typeof body.message !== 'string' || !body.message.trim() || body.message.length > 4000)
     return null;
   const history = body.chatHistory ?? [];
@@ -34,5 +37,6 @@ export function validateChatBody(value: unknown): ChatBody | null {
     message: body.message.trim(),
     chatHistory: history.map((m) => ({ role: m.role, content: m.content })),
     context: (context ?? {}) as Record<string, unknown>,
+    ...(body.persona ? { persona: body.persona as 'eastern' | 'western' } : {}),
   };
 }

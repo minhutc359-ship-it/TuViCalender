@@ -10,6 +10,7 @@ import { useTarotAppearance } from '../../features/tarot/context/TarotAppearance
 import { TarotArtwork } from '../../features/tarot/components/TarotArtwork';
 import { ReadingMethod } from '../../features/tarot/components/ReadingMethod';
 import { OfflineSettings } from '../components/OfflineSettings';
+import { VisualSettings } from '../components/astro/VisualSettings';
 
 export default function SettingsPage() {
   const { appearance, setAppearance, storageError } = useTarotAppearance();
@@ -36,10 +37,11 @@ export default function SettingsPage() {
           <h1>
             Cài đặt<span className="gold">.</span>
           </h1>
-          <p>Chọn bộ minh họa Tarot bạn muốn đồng hành.</p>
+          <p>Chọn sắc thái, chuyển động và bộ minh họa bạn muốn đồng hành.</p>
         </div>
         <Palette className="gold" size={28} />
       </div>
+      <VisualSettings />
       <fieldset className="appearance-fieldset">
         <legend>Minh họa thẻ bài Tarot</legend>
         <div className="appearance-options">

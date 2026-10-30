@@ -3,14 +3,12 @@ import { Link } from 'react-router';
 import { Plus, Save, Trash2 } from 'lucide-react';
 import { useStoredState } from '../../lib/storage';
 import { PROFILE_KEY, ACTIVE_PROFILE_KEY, isProfiles, type Profile } from '../../lib/profiles';
-import {
-  calculateEasternChart,
-  calculateWesternChart,
-  getZodiacTraits,
-  ZODIAC_SIGNS,
-} from '../../lib/astrology';
+import { calculateEasternChart, calculateWesternChart, getZodiacTraits } from '../../lib/astrology';
 import { solarToLunar, formatLunarDate } from '../../lib/lunar';
 import { vietnamDateKey } from '../../lib/date';
+import { AstroSymbol } from '../components/astro/AstroSymbol';
+import { ZodiacWheel, BaguaWheel } from '../components/astro/AstroWheels';
+import { ElementBalance } from '../components/astro/ElementBalance';
 
 const blank = (): Profile => ({
   id: crypto.randomUUID(),
@@ -45,7 +43,6 @@ export default function ProfilePage() {
       )
     : null;
   const traits = western ? getZodiacTraits(western.sunSign) : null;
-  const symbols = ['♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓'];
   function save(e: FormEvent) {
     e.preventDefault();
     if (
@@ -77,7 +74,7 @@ export default function ProfilePage() {
     setMessage('Đã xóa hồ sơ.');
   }
   return (
-    <div className="page-enter">
+    <div className="profile-page page-enter">
       <div className="page-heading">
         <div>
           <span className="eyebrow">MỖI NGƯỜI LÀ MỘT VŨ TRỤ</span>
@@ -191,14 +188,65 @@ export default function ProfilePage() {
           {active && western && eastern && traits ? (
             <>
               <div className="chart-intro">
+                <span className="profile-seal">ASTRO / ID</span>
                 <div className="sign-symbol" aria-hidden="true">
-                  {symbols[ZODIAC_SIGNS.indexOf(western.sunSign)]}
+                  <AstroSymbol name={western.sunSign} size={46} />
                 </div>
                 <div>
                   <span className="eyebrow">{active.name}</span>
                   <h2>{western.sunSignVN}</h2>
                   <p>{western.sunSign} · Cung Mặt Trời theo khoảng ngày</p>
                 </div>
+              </div>
+              <div className="profile-traditions">
+                <section className="profile-western">
+                  <div className="tradition-section-title">
+                    <AstroSymbol name="star" size={23} />
+                    <span className="eyebrow">PHƯƠNG TÂY / VÒNG HOÀNG ĐẠO</span>
+                  </div>
+                  <ZodiacWheel sign={western.sunSign} />
+                  <div className="western-attributes">
+                    <span>
+                      <AstroSymbol name={western.ruler} size={22} />
+                      <small>Chủ tinh theo quy ước</small>
+                      <strong>{western.ruler}</strong>
+                    </span>
+                    <span>
+                      <AstroSymbol
+                        name={western.element}
+                        size={22}
+                      />
+                      <small>Nguyên tố cung Mặt Trời</small>
+                      <strong>
+                        {{ Fire: 'Lửa', Earth: 'Đất', Air: 'Khí', Water: 'Nước' }[western.element]}
+                      </strong>
+                    </span>
+                  </div>
+                  <p className="small muted">
+                    Vòng 12 cung đánh dấu cung Mặt Trời theo khoảng ngày. Chưa phải natal chart có
+                    vị trí hành tinh, cung Mọc hay Mặt Trăng.
+                  </p>
+                </section>
+                <section className="profile-eastern">
+                  <div className="tradition-section-title">
+                    <AstroSymbol name="Càn" size={23} />
+                    <span className="eyebrow">PHƯƠNG ĐÔNG / DẤU ẤN NĂM SINH</span>
+                  </div>
+                  <div className="eastern-profile-emblem">
+                    <BaguaWheel element={eastern.nguHanh} />
+                    <div>
+                      <AstroSymbol name={eastern.conGiap} size={64} />
+                      <strong>{eastern.conGiap}</strong>
+                      <span>{eastern.canChi.year}</span>
+                    </div>
+                  </div>
+                  <div className="element-identity" data-element={eastern.nguHanh}>
+                    <AstroSymbol name={eastern.nguHanh} size={30} />
+                    <span>
+                      Ngũ hành thiên can năm<strong>{eastern.nguHanh}</strong>
+                    </span>
+                  </div>
+                </section>
               </div>
               <p>{traits.personality}.</p>
               <div className="chart-attributes">
@@ -213,6 +261,7 @@ export default function ProfilePage() {
                 {(['year', 'month', 'day', 'hour'] as const).map((key, i) => (
                   <div className="pillar" key={key}>
                     <span>{['Năm', 'Tháng âm', 'Ngày', 'Giờ'][i]}</span>
+                    <AstroSymbol name={eastern.canChi[key]?.split(' ')[1] ?? 'compass'} size={25} />
                     {eastern.canChi[key]
                       ?.split(' ')
                       .map((text, j) => <strong key={j}>{text}</strong>) ?? <p>Chưa có giờ sinh</p>}
@@ -233,6 +282,7 @@ export default function ProfilePage() {
                   <dd>{eastern.conGiap}</dd>
                 </div>
               </dl>
+              <ElementBalance pillars={eastern.canChi} />
               <details className="method-note">
                 <summary>Phương pháp và giới hạn</summary>
                 <p>
@@ -245,7 +295,9 @@ export default function ProfilePage() {
             </>
           ) : (
             <div className="empty-state">
-              <div className="sign-symbol">☾</div>
+              <div className="empty-profile-wheel">
+                <ZodiacWheel />
+              </div>
               <h2>Một bản đồ đang chờ bạn</h2>
               <p>Lưu ngày sinh để xem cung Mặt Trời, Can Chi và các thuộc tính của hồ sơ.</p>
             </div>

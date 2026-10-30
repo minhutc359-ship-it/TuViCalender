@@ -2,9 +2,11 @@ import { supabase, isSupabaseConfigured } from './supabase';
 import { getCurrentLunarDate, formatLunarDate, getCanChi } from './lunar';
 import { analyzeDay } from './goodDays';
 import { vietnamToday } from './date';
+import type { ChatPersona } from './chat-personas';
 export interface AIMessage {
   role: 'user' | 'assistant';
   content: string;
+  persona?: ChatPersona;
 }
 export function getCurrentContext() {
   const now = vietnamToday(),
@@ -22,7 +24,11 @@ export function getCurrentContext() {
 export function isOpenAIConfigured() {
   return isSupabaseConfigured();
 }
-export async function chatWithAI(message: string, chatHistory: AIMessage[] = []): Promise<string> {
+export async function chatWithAI(
+  message: string,
+  chatHistory: AIMessage[] = [],
+  persona: ChatPersona = 'eastern',
+): Promise<string> {
   if (!isSupabaseConfigured())
     throw new Error('Trợ lý AI chưa được kích hoạt. Bạn vẫn có thể khám phá Tarot và lịch.');
   const {
@@ -30,7 +36,7 @@ export async function chatWithAI(message: string, chatHistory: AIMessage[] = [])
   } = await supabase.auth.getSession();
   if (!session) throw new Error('Đăng nhập bằng email để trò chuyện với trợ lý AI.');
   const { data, error } = await supabase.functions.invoke('chat-ai', {
-    body: { message, chatHistory: chatHistory.slice(-10), context: getCurrentContext() },
+    body: { message, chatHistory: chatHistory.slice(-10), context: getCurrentContext(), persona },
   });
   if (error) {
     const response = error.context instanceof Response ? error.context : null;

@@ -22,3 +22,8 @@ npm audit
 - Triển khai: theo [DEPLOYMENT.md](./DEPLOYMENT.md); revoke khóa cũ, deploy migration/function, cấu hình email và allowlist origin.
 
 Đợt cập nhật chỉ thay đổi source cục bộ; chưa xác nhận triển khai backend/frontend hoặc đồng bộ dữ liệu giữa thiết bị.
+
+- Mystic Fusion: theme cố định/tự động qua reload và route, giảm chuyển động OS/không gian tĩnh, cả ba theme ở 360px.
+- Lịch: bảng ngày mở/đóng bằng bàn phím, chọn ngày để ghi sự kiện, dữ liệu phục hồi sau reload.
+- Hồ sơ: vòng biểu tượng không giả lập lá số, tổng đếm thiên can bằng số trụ có dữ liệu.
+- Chat: lời chào/câu gợi ý theo persona; enum server từ chối chuỗi chỉ dẫn lạ; auth/quota vẫn được kiểm thử.

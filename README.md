@@ -32,6 +32,9 @@ Nếu máy đã có Chrome, đặt `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` thành 
 
 ## Chức năng hiện có
 
+- Mystic Fusion: theme Fusion/Đông/Tây hoặc tự đổi theo màn hình; nền sao, mây, vòng đồ họa và bộ SVG riêng. Có tùy chọn không gian tĩnh và hỗ trợ giảm chuyển động của thiết bị.
+- Trang chủ có hai góc nhìn Đông/Tây; lịch có huy hiệu ngày, bảng chi tiết lớn và ngày gợi ý theo bộ lọc; hồ sơ chia hai truyền thống, đếm thiên can theo ngũ hành từ dữ liệu thật của hồ sơ.
+- Chat có persona Đông/Tây, câu hỏi gợi ý và nhãn từng phản hồi; gửi lựa chọn được kiểm tra tới backend. Cần triển khai lại `chat-ai` để dùng chỉ dẫn persona mới.
 - Tarot 78 lá: 22 Major + 56 Minor, nghĩa tiếng Việt xuôi/ngược, Fisher–Yates dùng Web Crypto, không rút trùng trong phiên.
 - Năm kiểu trải: lá hằng ngày, ba lá thời gian, ba lá tình yêu, năm lá sự nghiệp và Celtic Cross mười lá.
 - Luận giải tại máy cho đủ 78 lá: xuôi/ngược, chủ đề, vị trí trải, liên hệ giữa lá, hành động và câu hỏi suy ngẫm. Không cần API AI.
@@ -46,6 +49,8 @@ Nếu máy đã có Chrome, đặt `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` thành 
 Nhật ký, hồ sơ và sự kiện **lưu trên trình duyệt hiện tại**; chưa đồng bộ giữa thiết bị. Xóa dữ liệu trình duyệt sẽ xóa dữ liệu này. Chỉ thông tin bạn gửi trong hội thoại được chuyển tới backend AI; biểu mẫu hồ sơ không tự động được gửi.
 
 ## Artwork
+
+Bộ biểu tượng/vector của hệ thị giác được mô tả trong [docs/MYSTIC_FUSION.md](./docs/MYSTIC_FUSION.md). Vòng hoàng đạo chỉ đánh dấu cung Mặt Trời theo khoảng ngày; không phải biểu đồ vị trí hành tinh. Phân bố ngũ hành chỉ đếm thiên can đã có, không đánh giá vượng suy Bát tự.
 
 Ba lá đầu và mặt lưng giữ nguyên SVG trong `AstroAI_Celestial_Tarot_Concept`. Mười chín Major còn lại là artwork biểu tượng; Minor dùng hệ hình pip theo chất và cấp bậc, không phải 75 tranh nhân vật hoàn chỉnh. Không dùng hình thương mại từ các đường dẫn tham khảo trong spec. Xem [ATTRIBUTIONS.md](./ATTRIBUTIONS.md).
 

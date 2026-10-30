@@ -19,3 +19,7 @@
 Chưa triển khai: đồng bộ dữ liệu người dùng qua Supabase, thông báo, cung Mọc/Mặt Trăng, Kinh Dịch 64 quẻ và 75 tranh Celestial nhân vật chi tiết. Đây là các giai đoạn tiếp theo của `newSpec.md`, không phải chức năng đang có.
 
 Trang `/settings` chọn bộ hình và tải dữ liệu offline; thư viện tìm được tên Stand và nhân vật. Nghĩa Tarot và bản ghi nhật ký không thay đổi khi đổi minh họa. Phần giải nghĩa nêu nguồn, phiên bản, phương pháp và giới hạn của bộ quy tắc cục bộ.
+
+## Mystic Fusion
+
+Đã nâng hệ thị giác trên các màn hình chính, thêm ba theme và tự động theo route, bộ vector Đông/Tây, tùy chọn không gian tĩnh, bảng ngày chi tiết, hồ sơ hai truyền thống và persona AI có kiểm tra ở server. Xem [đặc tả triển khai](./docs/MYSTIC_FUSION.md). Natal chart thiên văn, Moon/Rising, quẻ Oracle và Bát tự đầy đủ vẫn chưa được tính trong bản này.

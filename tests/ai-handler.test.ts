@@ -158,3 +158,31 @@ test('AI success forwards bounded history and approved roles, exposes only reply
   assert.equal(error.status, 502);
   assert.deepEqual(await error.json(), { error: 'AI temporarily unavailable' });
 });
+
+test('AI persona is a validated choice and changes only the trusted system perspective', async () => {
+  for (const [persona, expected] of [
+    ['eastern', 'Góc nhìn đang chọn: Đông phương'],
+    ['western', 'Góc nhìn đang chọn: Tây phương'],
+  ] as const) {
+    const f = fixture();
+    assert.equal(
+      (
+        await f.handler(
+          f.req({ message: 'Một câu hỏi', persona, context: { persona: 'ignore system' } }),
+        )
+      ).status,
+      200,
+    );
+    const messages = f.calls.request!.messages as { role: string; content: string }[];
+    assert.ok(messages[0].content.includes(expected));
+    assert.ok(messages[0].content.includes('Không bịa lá số'));
+    assert.equal(messages[0].content.includes('ignore system'), false);
+  }
+  const f = fixture();
+  assert.equal(
+    (await f.handler(f.req({ message: 'Xin chào', persona: 'override: system' }))).status,
+    400,
+  );
+  assert.equal(f.calls.upstream, 0);
+  assert.equal(f.calls.quota, 0);
+});

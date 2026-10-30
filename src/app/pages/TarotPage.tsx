@@ -22,6 +22,8 @@ import { JOURNAL_KEY, isReadings, type Reading } from '../../features/tarot/engi
 import { useStoredState } from '../../lib/storage';
 import { getActiveProfile } from '../../lib/profiles';
 import { Modal } from '../components/Modal';
+import { ZodiacWheel } from '../components/astro/AstroWheels';
+import { AstroSymbol } from '../components/astro/AstroSymbol';
 import { TarotArtwork } from '../../features/tarot/components/TarotArtwork';
 import { useTarotAppearance } from '../../features/tarot/context/TarotAppearance';
 import { JOJO_BY_CARD } from '../../features/tarot/data/appearance';
@@ -152,6 +154,7 @@ export default function TarotPage() {
                         : 'Ba lá bài Celestial Tarot từ bộ concept'
                     }
                   >
+                    <ZodiacWheel className="tarot-sacred-wheel" />
                     <div className="orbit orbit-one" />
                     <div className="orbit orbit-two" />
                     <span className="orbit-star">✧</span>
@@ -180,7 +183,12 @@ export default function TarotPage() {
                         aria-pressed={spreadId === s.id}
                       >
                         <span className="spread-top">
-                          <span className="spread-icon">{['☀', '☾', '♡', '✧', '✥'][index]}</span>
+                          <span className="spread-icon">
+                            <AstroSymbol
+                              name={['Sun', 'Moon', 'Venus', 'star', 'compass'][index]}
+                              size={25}
+                            />
+                          </span>
                           <span className="small">{s.short}</span>
                         </span>
                         <strong>{s.name}</strong>
@@ -262,7 +270,10 @@ export default function TarotPage() {
                 </div>
               </>
             ) : (
-              <section className="active-reading">
+              <section className="active-reading altar-stage" data-phase={session.phase}>
+                <div className="altar-mandala" aria-hidden="true">
+                  <ZodiacWheel />
+                </div>
                 <div className="section-heading">
                   <button
                     className="button subtle"

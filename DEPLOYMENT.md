@@ -65,3 +65,7 @@ Bộ kiểm thử cục bộ mock dịch vụ AI/auth/quota để xác minh các
 
 - [OpenAI — xác thực và giữ secret ở server](https://developers.openai.com/api/reference/overview#authentication)
 - [Supabase — xác thực Edge Functions](https://supabase.com/docs/guides/functions/auth)
+
+## Cập nhật persona AI
+
+Bản Mystic Fusion thêm `persona` vào request chatbot. Deploy lại `chat-ai` để dùng hai chỉ dẫn Đông/Tây; schema chỉ nhận `eastern` hoặc `western`, client cũ không gửi vẫn tương thích. Frontend không tự triển khai function hoặc cấu hình secrets. Kiểm thử persona hiện dùng mock, cần kiểm tra hội thoại thật sau đăng nhập trên môi trường đã cấu hình.

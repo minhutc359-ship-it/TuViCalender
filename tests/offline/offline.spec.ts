@@ -78,6 +78,13 @@ test('Complete download enables cold offline reload, all 78 JoJo images, detaile
   );
   await page.screenshot({ path: testInfo.outputPath('offline-settings.png'), fullPage: true });
   await page.getByRole('radio', { name: 'Celestial · Huyền Tinh', exact: true }).check();
+  await page.getByRole('radio', { name: 'Western · Tây phương', exact: true }).check();
+  await page.getByLabel('Không gian tĩnh', { exact: true }).check();
+  await page.goto('/');
+  await expect(page.locator('html')).toHaveAttribute('data-visual-theme', 'western');
+  await expect(page.locator('.fortune-medallion .astro-zodiac-wheel')).toHaveCount(1);
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('data-motion', 'calm');
   await page.goto('/tarot');
   await page.getByRole('tab', { name: 'Thư viện 78 lá' }).click();
   await expect(page.locator('.library-card')).toHaveCount(78);

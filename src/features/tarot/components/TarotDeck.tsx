@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
 import { getCardBack } from '../data/appearance';
 import { useTarotAppearance } from '../context/TarotAppearance';
+import { useVisualTheme } from '../../../app/components/astro/VisualTheme';
 import type { DrawnCard } from '../engine/draw';
 export function TarotDeck({
   deck,
@@ -14,7 +15,9 @@ export function TarotDeck({
   disabled: boolean;
   onChoose: (id: string) => void;
 }) {
-  const reduced = useReducedMotion();
+  const systemReduced = useReducedMotion();
+  const { motion: visualMotion } = useVisualTheme();
+  const reduced = systemReduced || visualMotion === 'calm';
   const { appearance } = useTarotAppearance();
   const container = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(730);
