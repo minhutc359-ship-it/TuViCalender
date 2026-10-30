@@ -3,22 +3,22 @@
  * Tính toán ngày tốt xấu theo phong thủy Việt Nam
  */
 
-import { solarToLunar, type LunarDate, DIA_CHI } from './lunar';
+import { solarToLunar, dateToJD, getDayCanChi, type LunarDate, DIA_CHI } from './lunar';
 
 // 12 Trực (12 Day Officers)
 export const TRUC = [
-  'Kiến',   // +++  Very good
-  'Trừ',    // +    Good
-  'Mãn',    // ++   Very good
-  'Bình',   // +    Average
-  'Định',   // +++  Very good
-  'Chấp',   // +    Good
-  'Phá',    // ---  Very bad (Hắc Đạo)
-  'Nguy',   // --   Bad (Hắc Đạo)
-  'Thành',  // +++  Very good
-  'Thâu',   // +    Good
-  'Khai',   // ++   Very good
-  'Bế'      // --   Bad (Hắc Đạo)
+  'Kiến', // +++  Very good
+  'Trừ', // +    Good
+  'Mãn', // ++   Very good
+  'Bình', // +    Average
+  'Định', // +++  Very good
+  'Chấp', // +    Good
+  'Phá', // ---  Very bad (Hắc Đạo)
+  'Nguy', // --   Bad (Hắc Đạo)
+  'Thành', // +++  Very good
+  'Thâu', // +    Good
+  'Khai', // ++   Very good
+  'Bế', // --   Bad (Hắc Đạo)
 ];
 
 // Hoàng Đạo days (good days)
@@ -63,36 +63,41 @@ export const TU_28 = [
   { name: 'Tinh', good: false, color: 'Đỏ' },
   { name: 'Trương', good: true, color: 'Đỏ' },
   { name: 'Dực', good: true, color: 'Đỏ' },
-  { name: 'Chẩn', good: true, color: 'Đỏ' }
+  { name: 'Chẩn', good: true, color: 'Đỏ' },
 ];
 
 // Event types and their suitable activities
 export const EVENT_TYPES = {
-  'wedding': {
+  wedding: {
     name: 'Cưới hỏi',
     requiredActivities: ['Cưới hỏi', 'Gia thất'],
-    avoidActivities: ['Tang sự']
+    avoidActivities: ['Tang sự'],
   },
-  'business': {
+  business: {
     name: 'Khai trương',
     requiredActivities: ['Khai trương', 'Xuất hành'],
-    avoidActivities: ['Phá thổ', 'Tang sự']
+    avoidActivities: ['Phá thổ', 'Tang sự'],
   },
-  'travel': {
+  travel: {
     name: 'Xuất hành',
     requiredActivities: ['Xuất hành'],
-    avoidActivities: ['Nhập trạch']
+    avoidActivities: ['Nhập trạch'],
   },
-  'moving': {
+  moving: {
     name: 'Nhập trạch',
-    requiredActivities: ['Nhập trạch', 'An táng'],
-    avoidActivities: []
+    requiredActivities: ['Nhập trạch'],
+    avoidActivities: ['Tang sự'],
   },
-  'contract': {
+  vehicle: {
+    name: 'Mua xe',
+    requiredActivities: ['Giao dịch'],
+    avoidActivities: ['Tang sự'],
+  },
+  contract: {
     name: 'Ký hợp đồng',
     requiredActivities: ['Giao dịch'],
-    avoidActivities: ['Tang sự']
-  }
+    avoidActivities: ['Tang sự'],
+  },
 };
 
 export interface DayAnalysis {
@@ -106,13 +111,15 @@ export interface DayAnalysis {
   badFor: string[];
   luckyHours: string[];
   description: string;
+  dayCanChi: string;
 }
 
 /**
  * Get Trực for a lunar day
  */
-export function getTruc(lunarDay: number, lunarMonth: number): string {
-  const index = (lunarMonth + lunarDay - 2) % 12;
+export function getTruc(dayBranch: number, lunarMonth: number): string {
+  // Lunar-month convention, without solar-term boundary correction.
+  const index = (dayBranch - ((lunarMonth + 1) % 12) + 12) % 12;
   return TRUC[index];
 }
 
@@ -130,54 +137,54 @@ export function getTu(lunar: LunarDate): { name: string; good: boolean; color: s
  */
 function getActivitiesForTruc(truc: string): { good: string[]; bad: string[] } {
   const activities: { [key: string]: { good: string[]; bad: string[] } } = {
-    'Kiến': {
+    Kiến: {
       good: ['Cưới hỏi', 'Khai trương', 'Xuất hành', 'Giao dịch'],
-      bad: ['Tang sự']
+      bad: ['Tang sự'],
     },
-    'Trừ': {
+    Trừ: {
       good: ['Trừ bệnh', 'Dọn dẹp', 'Sửa chữa'],
-      bad: ['Cưới hỏi', 'Nhập trạch']
+      bad: ['Cưới hỏi', 'Nhập trạch'],
     },
-    'Mãn': {
+    Mãn: {
       good: ['Cưới hỏi', 'Khai trương', 'An táng'],
-      bad: ['Xuất hành']
+      bad: ['Xuất hành'],
     },
-    'Bình': {
+    Bình: {
       good: ['Giao dịch', 'Học tập'],
-      bad: []
+      bad: [],
     },
-    'Định': {
+    Định: {
       good: ['Cưới hỏi', 'Nhập trạch', 'Khai trương'],
-      bad: ['Tang sự', 'Kiện tụng']
+      bad: ['Tang sự', 'Kiện tụng'],
     },
-    'Chấp': {
+    Chấp: {
       good: ['Nhập trạch', 'An táng', 'Sửa chữa'],
-      bad: ['Cưới hỏi', 'Xuất hành']
+      bad: ['Cưới hỏi', 'Xuất hành'],
     },
-    'Phá': {
+    Phá: {
       good: [],
-      bad: ['Cưới hỏi', 'Khai trương', 'Xuất hành', 'Nhập trạch', 'Giao dịch']
+      bad: ['Cưới hỏi', 'Khai trương', 'Xuất hành', 'Nhập trạch', 'Giao dịch'],
     },
-    'Nguy': {
+    Nguy: {
       good: ['Săn bắt', 'Đánh cá'],
-      bad: ['Cưới hỏi', 'Khai trương', 'Nhập trạch']
+      bad: ['Cưới hỏi', 'Khai trương', 'Nhập trạch'],
     },
-    'Thành': {
+    Thành: {
       good: ['Cưới hỏi', 'Khai trương', 'Xuất hành', 'Giao dịch', 'Nhập trạch'],
-      bad: []
+      bad: [],
     },
-    'Thâu': {
+    Thâu: {
       good: ['Thu hoạch', 'Giao dịch', 'Nhập kho'],
-      bad: ['Xuất hành']
+      bad: ['Xuất hành'],
     },
-    'Khai': {
+    Khai: {
       good: ['Khai trương', 'Xuất hành', 'Giao dịch', 'Học tập'],
-      bad: ['Tang sự', 'An táng']
+      bad: ['Tang sự', 'An táng'],
     },
-    'Bế': {
+    Bế: {
       good: ['Nghỉ ngơi', 'Tu dưỡng'],
-      bad: ['Cưới hỏi', 'Khai trương', 'Xuất hành', 'Nhập trạch']
-    }
+      bad: ['Cưới hỏi', 'Khai trương', 'Xuất hành', 'Nhập trạch'],
+    },
   };
 
   return activities[truc] || { good: [], bad: [] };
@@ -186,32 +193,35 @@ function getActivitiesForTruc(truc: string): { good: string[]; bad: string[] } {
 /**
  * Get lucky hours for a day
  */
-function getLuckyHours(lunar: LunarDate): string[] {
-  // Simplified version - in real implementation, use complex astrology calculations
-  const hours = [
-    '5-7h (Mão)', '7-9h (Thìn)', '9-11h (Tỵ)',
-    '11-13h (Ngọ)', '13-15h (Mùi)', '15-17h (Thân)',
-    '17-19h (Dậu)', '19-21h (Tuất)', '21-23h (Hợi)',
-    '23-1h (Tý)', '1-3h (Sửu)', '3-5h (Dần)'
+export function getLuckyHours(jd: number): string[] {
+  // Traditional six-row lookup, indexed by the Julian day's earthly branch.
+  const masks = [
+    '110100101100',
+    '001101001011',
+    '110011010010',
+    '101100110100',
+    '001011001101',
+    '010010110011',
   ];
+  const mask = masks[((jd + 1) % 12) % 6];
+  return DIA_CHI.flatMap((chi, i) =>
+    mask[i] === '1' ? [`${chi} (${(i * 2 + 23) % 24}–${(i * 2 + 1) % 24}h)`] : [],
+  );
+}
 
-  // Select 2-3 lucky hours based on day
-  const seed = (lunar.day + lunar.month) % hours.length;
-  return [
-    hours[seed],
-    hours[(seed + 4) % hours.length],
-    hours[(seed + 8) % hours.length]
-  ];
+export function isHoangDaoDay(lunarMonth: number, dayBranch: number): boolean {
+  const start = (lunarMonth * 2 - 2) % 12;
+  return [0, 1, 4, 5, 7, 10].some((offset) => (start + offset) % 12 === dayBranch);
 }
 
 /**
  * Calculate day score (0-100)
  */
-function calculateDayScore(truc: string, tu: { good: boolean }): number {
+function calculateDayScore(truc: string, tu: { good: boolean }, isHoangDao: boolean): number {
   let score = 50; // Base score
 
   // Hoàng Đạo bonus
-  if (HOANG_DAO.includes(truc)) {
+  if (isHoangDao) {
     score += 30;
   }
 
@@ -240,23 +250,26 @@ function calculateDayScore(truc: string, tu: { good: boolean }): number {
  */
 export function analyzeDay(day: number, month: number, year: number): DayAnalysis {
   const lunar = solarToLunar(day, month, year);
-  const truc = getTruc(lunar.day, lunar.month);
+  const jd = dateToJD(day, month, year);
+  const branch = (jd + 1) % 12;
+  const truc = getTruc(branch, lunar.month);
   const tu = getTu(lunar);
   const activities = getActivitiesForTruc(truc);
-  const score = calculateDayScore(truc, tu);
-  const isHoangDao = HOANG_DAO.includes(truc);
+  const isHoangDao = isHoangDaoDay(lunar.month, branch);
+  const score = calculateDayScore(truc, tu, isHoangDao);
 
   let description = '';
   if (isHoangDao) {
-    description = `Ngày ${truc} - Hoàng Đạo. Tốt cho hầu hết mọi việc.`;
+    description = `Ngày ${getDayCanChi(jd)}, trực ${truc} · Hoàng đạo theo bảng tháng âm và địa chi ngày.`;
   } else if (HAC_DAO.includes(truc)) {
-    description = `Ngày ${truc} - Hắc Đạo. Nên tránh các việc quan trọng.`;
+    description = `Ngày ${getDayCanChi(jd)}, trực ${truc} · Cân nhắc kế hoạch và điều kiện thực tế trước các việc quan trọng.`;
   } else {
     description = `Ngày ${truc}. Nên cân nhắc kỹ trước khi làm việc quan trọng.`;
   }
 
   return {
     date: new Date(year, month - 1, day),
+    dayCanChi: getDayCanChi(jd),
     lunar,
     truc,
     isHoangDao,
@@ -264,8 +277,8 @@ export function analyzeDay(day: number, month: number, year: number): DayAnalysi
     score,
     goodFor: activities.good,
     badFor: activities.bad,
-    luckyHours: getLuckyHours(lunar),
-    description
+    luckyHours: getLuckyHours(jd),
+    description,
   };
 }
 
@@ -276,7 +289,7 @@ export function findGoodDaysForEvent(
   year: number,
   month: number,
   eventType: keyof typeof EVENT_TYPES,
-  limit: number = 10
+  limit: number = 10,
 ): DayAnalysis[] {
   const daysInMonth = new Date(year, month, 0).getDate();
   const results: DayAnalysis[] = [];
@@ -286,13 +299,13 @@ export function findGoodDaysForEvent(
     const analysis = analyzeDay(day, month, year);
 
     // Check if day is suitable for the event
-    const hasRequiredActivity = eventConfig.requiredActivities.some(
-      activity => analysis.goodFor.includes(activity)
+    const hasRequiredActivity = eventConfig.requiredActivities.some((activity) =>
+      analysis.goodFor.includes(activity),
     );
 
-    const hasAvoidActivity = eventConfig.avoidActivities.some(
-      activity => analysis.badFor.includes(activity)
-    );
+    const hasAvoidActivity =
+      eventConfig.requiredActivities.some((activity) => analysis.badFor.includes(activity)) ||
+      eventConfig.avoidActivities.some((activity) => analysis.goodFor.includes(activity));
 
     // Must be Hoàng Đạo, have required activities, and not have avoid activities
     if (analysis.isHoangDao && hasRequiredActivity && !hasAvoidActivity) {
@@ -311,26 +324,25 @@ export function isGoodDayForAge(
   day: number,
   month: number,
   year: number,
-  birthYear: number
+  birthYear: number,
 ): { isGood: boolean; reason: string } {
-  const lunar = solarToLunar(day, month, year);
   const birthChi = DIA_CHI[(birthYear + 8) % 12];
-  const dayChi = DIA_CHI[(lunar.day - 1) % 12];
+  const dayChi = DIA_CHI[(dateToJD(day, month, year) + 1) % 12];
 
   // Simplified conflict check - in real implementation, use Kim Lâu, Hoang Ốc tables
   const conflictPairs: { [key: string]: string[] } = {
-    'Tý': ['Ngọ'],
-    'Sửu': ['Mùi'],
-    'Dần': ['Thân'],
-    'Mão': ['Dậu'],
-    'Thìn': ['Tuất'],
-    'Tị': ['Hợi'],
-    'Ngọ': ['Tý'],
-    'Mùi': ['Sửu'],
-    'Thân': ['Dần'],
-    'Dậu': ['Mão'],
-    'Tuất': ['Thìn'],
-    'Hợi': ['Tị']
+    Tý: ['Ngọ'],
+    Sửu: ['Mùi'],
+    Dần: ['Thân'],
+    Mão: ['Dậu'],
+    Thìn: ['Tuất'],
+    Tị: ['Hợi'],
+    Ngọ: ['Tý'],
+    Mùi: ['Sửu'],
+    Thân: ['Dần'],
+    Dậu: ['Mão'],
+    Tuất: ['Thìn'],
+    Hợi: ['Tị'],
   };
 
   if (conflictPairs[birthChi]?.includes(dayChi)) {

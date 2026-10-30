@@ -1,168 +1,274 @@
-import { useState, useEffect, useRef } from 'react';
-import { Send, Sparkles, AlertCircle } from 'lucide-react';
-import { chatWithAI, isOpenAIConfigured } from '../../lib/openai';
-import { getCurrentLunarDate, formatLunarDate } from '../../lib/lunar';
-
-interface Message {
-  role: 'user' | 'assistant';
-  content: string;
-}
-
+import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { Link, useLocation } from 'react-router';
+import { Send, LogOut, Trash2, Sparkles } from 'lucide-react';
+import { chatWithAI, isOpenAIConfigured, type AIMessage } from '../../lib/openai';
+import { supabase } from '../../lib/supabase';
+import { readStorage, writeStorage } from '../../lib/storage';
+import type { Session } from '@supabase/supabase-js';
+const welcome: AIMessage = {
+  role: 'assistant',
+  content:
+    'Chào bạn. Đây là một không gian để cùng nhìn lại, đặt câu hỏi và khám phá chiêm tinh, lịch Việt Nam hay thông điệp Tarot. Hôm nay bạn muốn bắt đầu từ đâu?',
+};
+const validMessages = (value: unknown): value is AIMessage[] =>
+  Array.isArray(value) &&
+  value.length <= 100 &&
+  value.every(
+    (m) =>
+      m &&
+      (m.role === 'user' || m.role === 'assistant') &&
+      typeof m.content === 'string' &&
+      m.content.length <= 12000,
+  );
 export default function ChatPage() {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: 'assistant',
-      content: 'Xin chào! Tôi là trợ lý AI tử vi của bạn. Bạn muốn hỏi gì về vận mệnh, ngày đẹp, hay chiêm tinh?',
-    },
-  ]);
-  const [input, setInput] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [isConfigured] = useState(isOpenAIConfigured());
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  // Auto-scroll to bottom when new messages arrive
+  const location = useLocation();
+  const [session, setSession] = useState<Session | null>(null);
+  const [messages, setMessages] = useState<AIMessage[]>([welcome]);
+  const [input, setInput] = useState(
+    typeof location.state?.prompt === 'string' ? location.state.prompt.slice(0, 4000) : '',
+  );
+  const [email, setEmail] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [authBusy, setAuthBusy] = useState(false);
+  const [notice, setNotice] = useState('');
+  const [error, setError] = useState('');
+  const end = useRef<HTMLDivElement>(null);
+  const mounted = useRef(true);
+  const messagesRef = useRef(messages);
+  const userIdRef = useRef<string | null>(null);
+  const configured = isOpenAIConfigured();
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
-
-  const handleSend = async () => {
-    if (!input.trim() || isLoading) return;
-
-    const userMessage: Message = { role: 'user', content: input };
-    setMessages([...messages, userMessage]);
-    setInput('');
-    setIsLoading(true);
-
-    try {
-      // Get AI response
-      const response = await chatWithAI(input, messages);
-
-      const aiResponse: Message = {
-        role: 'assistant',
-        content: response,
-      };
-
-      setMessages((prev) => [...prev, aiResponse]);
-    } catch (error) {
-      console.error('Chat error:', error);
-      const errorMessage: Message = {
-        role: 'assistant',
-        content: 'Xin lỗi, đã có lỗi xảy ra khi xử lý tin nhắn của bạn. Vui lòng thử lại.',
-      };
-      setMessages((prev) => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
+  useEffect(() => {
+    if (!configured) return;
+    function change(next: Session | null) {
+      if (!mounted.current) return;
+      setSession(next);
+      userIdRef.current = next?.user.id ?? null;
+      const history = next
+        ? readStorage<AIMessage[]>(`astroai.chat.${next.user.id}.v1`, [welcome], validMessages)
+        : [welcome];
+      setMessages(history);
+      messagesRef.current = history;
     }
-  };
-
-  const handleQuickQuestion = (question: string) => {
-    setInput(question);
-  };
-
-  const quickQuestions = [
-    'Hôm nay có may mắn không?',
-    'Tháng này cưới ngày nào đẹp?',
-    'Tuần này làm ăn có thuận lợi?',
-    'Tình duyên tháng này ra sao?',
-  ];
-
-  const lunar = getCurrentLunarDate();
-  const lunarDateStr = formatLunarDate(lunar);
-
+    supabase.auth.getSession().then(({ data }) => change(data.session));
+    const { data } = supabase.auth.onAuthStateChange((_event, next) => change(next));
+    return () => data.subscription.unsubscribe();
+  }, [configured]);
+  useEffect(() => {
+    end.current?.scrollIntoView({ behavior: 'instant', block: 'nearest' });
+  }, [messages, busy]);
+  async function signIn(e: FormEvent) {
+    e.preventDefault();
+    if (authBusy) return;
+    setAuthBusy(true);
+    setError('');
+    setNotice('');
+    try {
+      const { error } = await supabase.auth.signInWithOtp({
+        email,
+        options: { emailRedirectTo: `${window.location.origin}/chat` },
+      });
+      if (error) throw error;
+      setNotice('Kiểm tra email để mở liên kết đăng nhập.');
+    } catch {
+      setError('Chưa gửi được liên kết. Kiểm tra email hoặc thử lại sau.');
+    } finally {
+      if (mounted.current) setAuthBusy(false);
+    }
+  }
+  async function send(e: FormEvent) {
+    e.preventDefault();
+    const content = input.trim();
+    if (!content || busy || !session) return;
+    const owner = session.user.id;
+    setBusy(true);
+    setError('');
+    const history = messagesRef.current;
+    const next = [...history, { role: 'user', content } as AIMessage].slice(-100);
+    messagesRef.current = next;
+    setMessages(next);
+    setInput('');
+    try {
+      const reply = await chatWithAI(
+        content,
+        history.filter((m) => m !== welcome),
+      );
+      if (!mounted.current || userIdRef.current !== owner) return;
+      const updated = [...next, { role: 'assistant', content: reply } as AIMessage].slice(-100);
+      setMessages(updated);
+      messagesRef.current = updated;
+      if (!writeStorage(`astroai.chat.${owner}.v1`, updated))
+        setError('Không thể lưu lịch sử trên trình duyệt.');
+    } catch (err) {
+      if (mounted.current && userIdRef.current === owner) {
+        setError(err instanceof Error ? err.message : 'Chưa nhận được phản hồi.');
+        setInput(content);
+        setMessages(history);
+        messagesRef.current = history;
+      }
+    } finally {
+      if (mounted.current) setBusy(false);
+    }
+  }
+  function clear() {
+    setMessages([welcome]);
+    messagesRef.current = [welcome];
+    if (session && !writeStorage(`astroai.chat.${session.user.id}.v1`, [welcome]))
+      setError('Không thể xóa lịch sử đã lưu trên trình duyệt.');
+  }
   return (
-    <div className="pb-20 px-4 pt-8 max-w-lg mx-auto relative z-10 h-screen flex flex-col">
-      <h1 className="text-2xl mb-2 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent flex items-center justify-center gap-2">
-        <Sparkles size={24} className="text-purple-400" />
-        AI Thầy Bói
-      </h1>
-      <p className="text-purple-300/70 text-xs text-center mb-4">{lunarDateStr}</p>
-
-      {/* Configuration Warning */}
-      {!isConfigured && (
-        <div className="mb-4 bg-yellow-900/30 border border-yellow-500/30 rounded-xl p-3 flex gap-2">
-          <AlertCircle size={20} className="text-yellow-400 shrink-0 mt-0.5" />
-          <div className="text-xs text-yellow-200">
-            <p className="mb-1">⚠️ OpenAI chưa được cấu hình</p>
-            <p className="text-yellow-300/80">
-              Thêm <code className="bg-yellow-900/50 px-1 rounded">VITE_OPENAI_API_KEY</code> vào file .env để kích hoạt AI.
-              Xem DEPLOYMENT.md để biết thêm chi tiết.
+    <div className="chat-layout page-enter">
+      <div className="page-heading">
+        <div>
+          <span className="eyebrow">CÙNG BẠN ĐẶT NHỮNG CÂU HỎI</span>
+          <h1>
+            Người bạn từ những vì sao<span className="gold">.</span>
+          </h1>
+          <p>Khám phá những góc nhìn mới cùng trợ lý AstroAI.</p>
+        </div>
+      </div>
+      {!configured ? (
+        <div className="content-panel panel" style={{ marginBottom: 20 }}>
+          <h3>Trợ lý AI đang chờ được kích hoạt</h3>
+          <p>
+            Bạn có thể tiếp tục{' '}
+            <Link className="text-link" to="/tarot">
+              khám phá Tarot
+            </Link>{' '}
+            hoặc{' '}
+            <Link className="text-link" to="/calendar">
+              xem lịch Việt Nam
+            </Link>
+            .
+          </p>
+        </div>
+      ) : !session ? (
+        <section className="auth-panel panel">
+          <div>
+            <h3>Một cuộc trò chuyện của riêng bạn</h3>
+            <p>
+              Nhận liên kết đăng nhập qua email để bắt đầu. Lịch sử được lưu trên trình duyệt theo
+              tài khoản.
             </p>
           </div>
-        </div>
+          <form onSubmit={signIn}>
+            <input
+              type="email"
+              required
+              autoComplete="email"
+              aria-label="Email đăng nhập"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email của bạn"
+            />
+            <button className="button primary" disabled={authBusy}>
+              {authBusy ? 'Đang gửi…' : 'Gửi liên kết'}
+            </button>
+          </form>
+        </section>
+      ) : null}
+      {notice && (
+        <p className="success small" role="status" style={{ marginBottom: 16 }}>
+          {notice}
+        </p>
       )}
-
-      {/* Messages */}
-      <div className="flex-1 overflow-y-auto mb-4 space-y-4">
-        {messages.map((msg, idx) => (
-          <div
-            key={idx}
-            className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
-          >
-            <div
-              className={`max-w-[80%] rounded-2xl px-4 py-3 whitespace-pre-wrap ${
-                msg.role === 'user'
-                  ? 'bg-gradient-to-br from-purple-600 to-pink-600 text-white'
-                  : 'bg-purple-900/40 backdrop-blur-sm border border-purple-500/20 text-purple-100'
-              }`}
+      <section className="chat-panel panel">
+        <div className="chat-status">
+          <div>
+            <Sparkles
+              size={13}
+              style={{ display: 'inline', marginRight: 7, color: 'var(--gold)' }}
+            />
+            {session ? session.user.email : 'AstroAI · Góc nhìn để tham khảo'}
+          </div>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <button
+              className="button subtle"
+              disabled={busy}
+              onClick={clear}
+              aria-label="Xóa lịch sử chat"
             >
-              {msg.content}
-            </div>
-          </div>
-        ))}
-
-        {/* Loading indicator */}
-        {isLoading && (
-          <div className="flex justify-start">
-            <div className="bg-purple-900/40 backdrop-blur-sm border border-purple-500/20 rounded-2xl px-4 py-3">
-              <div className="flex gap-2">
-                <div className="w-2 h-2 rounded-full bg-purple-400 animate-bounce" />
-                <div className="w-2 h-2 rounded-full bg-purple-400 animate-bounce delay-100" />
-                <div className="w-2 h-2 rounded-full bg-purple-400 animate-bounce delay-200" />
-              </div>
-            </div>
-          </div>
-        )}
-
-        <div ref={messagesEndRef} />
-      </div>
-
-      {/* Quick Questions */}
-      {messages.length === 1 && (
-        <div className="mb-4">
-          <p className="text-purple-300/70 text-xs mb-2">Câu hỏi gợi ý:</p>
-          <div className="grid grid-cols-2 gap-2">
-            {quickQuestions.map((q) => (
+              <Trash2 size={13} />
+            </button>
+            {session && (
               <button
-                key={q}
-                onClick={() => handleQuickQuestion(q)}
-                className="bg-purple-900/30 hover:bg-purple-900/50 transition-colors rounded-lg px-3 py-2 text-xs text-purple-100 border border-purple-500/20 text-left"
+                className="button subtle"
+                disabled={busy}
+                onClick={async () => {
+                  await supabase.auth.signOut();
+                  setMessages([welcome]);
+                }}
               >
+                <LogOut size={13} />
+                Đăng xuất
+              </button>
+            )}
+          </div>
+        </div>
+        <div className="chat-messages" aria-live="polite" aria-busy={busy}>
+          {messages.map((m, i) => (
+            <div key={i} className={`chat-bubble ${m.role === 'user' ? 'user' : ''}`}>
+              {m.role === 'assistant' && <span className="eyebrow">✦ ASTROAI</span>}
+              {m.content}
+            </div>
+          ))}
+          {busy && (
+            <div className="chat-bubble">
+              <span className="loading-dots" aria-label="Đang suy ngẫm">
+                •••
+              </span>
+            </div>
+          )}
+          <div ref={end} />
+        </div>
+        {messages.length === 1 && (
+          <div className="chat-quick">
+            {[
+              'Hôm nay có những giờ hoàng đạo nào?',
+              'Tôi muốn hiểu thông điệp Tarot',
+              'Làm sao để bắt đầu một thói quen mới?',
+            ].map((q) => (
+              <button key={q} onClick={() => setInput(q)}>
                 {q}
               </button>
             ))}
           </div>
-        </div>
-      )}
-
-      {/* Input */}
-      <div className="bg-purple-900/30 backdrop-blur-sm rounded-2xl p-3 border border-purple-500/20 flex gap-2">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyPress={(e) => e.key === 'Enter' && !isLoading && handleSend()}
-          placeholder="Hỏi thầy bói AI..."
-          disabled={isLoading}
-          className="flex-1 bg-transparent text-purple-100 placeholder-purple-300/50 outline-none disabled:opacity-50"
-        />
-        <button
-          onClick={handleSend}
-          disabled={isLoading || !input.trim()}
-          className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl px-4 py-2 text-white hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          <Send size={18} />
-        </button>
-      </div>
+        )}
+        <form className="chat-input" onSubmit={send}>
+          <input
+            aria-label="Tin nhắn cho trợ lý"
+            maxLength={4000}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder={
+              session ? 'Điều gì đang ở trong tâm trí bạn?' : 'Đăng nhập để bắt đầu trò chuyện…'
+            }
+            disabled={!session || busy}
+          />
+          <button
+            className="button primary"
+            type="submit"
+            aria-label="Gửi tin nhắn"
+            disabled={!session || busy || !input.trim()}
+          >
+            <Send size={17} />
+          </button>
+        </form>
+        {error && (
+          <p className="error-message" role="alert">
+            {error}
+          </p>
+        )}
+      </section>
+      <p className="method-note">
+        AI có thể nhầm lẫn. Ngữ cảnh lịch được tính từ ngày Việt Nam và chỉ mang tính tham khảo. Hãy
+        kiểm tra lại thông tin trước những quyết định quan trọng.
+      </p>
     </div>
   );
 }

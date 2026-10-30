@@ -1,129 +1,24 @@
-# ✅ Checklist Deploy Vercel + Supabase
-
-## 🗄️ Supabase Setup
-
-- [ ] Đăng ký/Đăng nhập [Supabase](https://supabase.com)
-- [ ] Tạo project mới
-- [ ] Copy SQL schema từ `DEPLOYMENT.md` và chạy trong SQL Editor
-- [ ] Lấy **Project URL** (Settings → API)
-- [ ] Lấy **anon/public key** (Settings → API)
-- [ ] (Tùy chọn) Enable Authentication nếu cần đăng nhập user
-
-## 🔑 API Keys
-
-- [ ] Đăng ký OpenAI tại [platform.openai.com](https://platform.openai.com)
-  - Tạo API key
-  - Nạp credits ($5-10 cho testing)
-  
-  **HOẶC**
-  
-- [ ] Đăng ký Anthropic tại [console.anthropic.com](https://console.anthropic.com)
-  - Tạo API key
-  - Nạp credits
-
-## 🚀 Vercel Deployment
-
-- [ ] Push code lên GitHub/GitLab/Bitbucket
-- [ ] Đăng nhập [Vercel](https://vercel.com)
-- [ ] Import repository
-- [ ] Thêm Environment Variables:
-  - `VITE_SUPABASE_URL` = your_project_url
-  - `VITE_SUPABASE_ANON_KEY` = your_anon_key
-  - `VITE_OPENAI_API_KEY` = sk-... (hoặc)
-  - `VITE_ANTHROPIC_API_KEY` = sk-ant-...
-- [ ] Deploy!
-
-## 🔧 Post-Deployment
-
-- [ ] Test app trên Vercel URL
-- [ ] Kiểm tra Console không có errors
-- [ ] Test các tính năng:
-  - [ ] Navigation giữa các pages
-  - [ ] Responsive trên mobile
-  - [ ] Dark theme hiển thị đúng
-
-## 📦 Tích hợp Supabase vào Code
-
-- [ ] Cài đặt Supabase client: `pnpm add @supabase/supabase-js`
-- [ ] Uncomment code trong `src/lib/supabase.ts`
-- [ ] Update các pages để fetch data từ Supabase
-- [ ] Test local trước khi deploy
-
-## 🤖 Tích hợp AI
-
-### OpenAI
-- [ ] `pnpm add openai`
-- [ ] Import và setup trong `ChatPage.tsx`
-- [ ] Test AI responses
-
-### Anthropic
-- [ ] `pnpm add @anthropic-ai/sdk`
-- [ ] Import và setup trong `ChatPage.tsx`
-- [ ] Test AI responses
-
-⚠️ **Lưu ý**: Gọi AI trực tiếp từ frontend sẽ lộ API key. Nên dùng Supabase Edge Functions cho production.
-
-## 🔐 Bảo mật (Production)
-
-- [ ] Tạo Supabase Edge Function cho AI calls
-- [ ] Move API keys to Supabase Secrets
-- [ ] Enable Row Level Security policies
-- [ ] Setup user authentication
-- [ ] Rate limiting cho AI requests
-
-## 🎯 Performance Optimization
-
-- [ ] Add React Query/SWR cho data caching
-- [ ] Lazy load pages
-- [ ] Optimize images
-- [ ] Enable Vercel Analytics
-
-## 📱 Next Features
-
-- [ ] Google Calendar sync
-- [ ] Push notifications (Firebase)
-- [ ] Payment integration (Stripe)
-- [ ] AI image generation
-- [ ] Lunar calendar calculations
-
----
-
-## ⚡ Quick Commands
+# Kiểm tra bản cập nhật
 
 ```bash
-# Local development
-pnpm dev
-
-# Build for production
-pnpm build
-
-# Deploy to Vercel (with Vercel CLI)
-vercel
-
-# Install Supabase client
-pnpm add @supabase/supabase-js
-
-# Install AI SDK
-pnpm add openai
-# OR
-pnpm add @anthropic-ai/sdk
+npm ci
+npm run typecheck
+npm test
+npm run build
+npm run test:e2e
+npm run test:offline
+npm audit
 ```
 
-## 🆘 Troubleshooting
+- Tarot: chọn đủ số lá, không trùng, lật xuôi/ngược, mở artwork, lưu/sửa/xóa nhật ký sau reload.
+- JoJo ref: đủ 78 ảnh, 22 đối ứng Major và 56 liên tưởng Minor được phân biệt trong UI, lựa chọn phục hồi sau reload.
+- Luận giải: dữ liệu riêng cho 780 tổ hợp lá/hướng/chủ đề, vai trò vị trí, cặp lá, hành động, giới hạn và tương lai có điều kiện.
+- Offline: chờ tải đủ, ngắt mạng rồi mở lại route, xem ảnh chưa mở, rút/đọc/lưu nhật ký; tải lỗi không báo sẵn sàng, thử lại hoàn tất.
+- Daily: lá/ngày/hồ sơ và chỉ số không thay đổi sau reload.
+- Hồ sơ: thêm nhiều người, đổi/sửa/xóa và phục hồi sau reload.
+- Lịch: qua tháng/năm, sáu bộ lọc, âm lịch/giờ, lưu/xóa sự kiện.
+- Responsive: desktop và mobile, điều hướng bàn phím, reduced motion, dữ liệu LocalStorage hỏng/bị chặn.
+- AI: unit tests origin/auth/schema/quota/upstream; integration thật thực hiện sau khi cấu hình Supabase.
+- Triển khai: theo [DEPLOYMENT.md](./DEPLOYMENT.md); revoke khóa cũ, deploy migration/function, cấu hình email và allowlist origin.
 
-**Build fails on Vercel?**
-- Kiểm tra Node version (Settings → General → Node.js Version)
-- Đảm bảo dependencies trong package.json đầy đủ
-
-**Environment variables không hoạt động?**
-- Phải có prefix `VITE_`
-- Redeploy sau khi add env vars
-
-**Supabase connection error?**
-- Kiểm tra URL và key
-- Test trong Supabase Dashboard → API Docs
-
-**AI API errors?**
-- Kiểm tra API key valid
-- Kiểm tra credits balance
-- Check rate limits
+Đợt cập nhật chỉ thay đổi source cục bộ; chưa xác nhận triển khai backend/frontend hoặc đồng bộ dữ liệu giữa thiết bị.

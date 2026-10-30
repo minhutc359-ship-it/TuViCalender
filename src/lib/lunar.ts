@@ -1,3 +1,4 @@
+import { vietnamToday } from './date';
 /**
  * Vietnamese Lunar Calendar Utilities
  * Based on: https://www.informatik.uni-leipzig.de/~duc/amlich/
@@ -14,26 +15,52 @@ export interface LunarDate {
 export const THIEN_CAN = ['Giáp', 'Ất', 'Bính', 'Đinh', 'Mậu', 'Kỷ', 'Canh', 'Tân', 'Nhâm', 'Quý'];
 
 // 12 Địa Chi (Earthly Branches)
-export const DIA_CHI = ['Tý', 'Sửu', 'Dần', 'Mão', 'Thìn', 'Tị', 'Ngọ', 'Mùi', 'Thân', 'Dậu', 'Tuất', 'Hợi'];
+export const DIA_CHI = [
+  'Tý',
+  'Sửu',
+  'Dần',
+  'Mão',
+  'Thìn',
+  'Tị',
+  'Ngọ',
+  'Mùi',
+  'Thân',
+  'Dậu',
+  'Tuất',
+  'Hợi',
+];
 
 // 12 Con Giáp (Zodiac Animals)
-export const CON_GIAP = ['Tý', 'Sửu', 'Dần', 'Mão', 'Thìn', 'Rắn', 'Ngựa', 'Mùi', 'Thân', 'Dậu', 'Tuất', 'Hợi'];
+export const CON_GIAP = [
+  'Tý',
+  'Sửu',
+  'Dần',
+  'Mão',
+  'Thìn',
+  'Rắn',
+  'Ngựa',
+  'Mùi',
+  'Thân',
+  'Dậu',
+  'Tuất',
+  'Hợi',
+];
 
 // Ngũ Hành (Five Elements)
 export const NGU_HANH = ['Kim', 'Mộc', 'Thủy', 'Hỏa', 'Thổ'];
 
 // Mapping Thiên Can to Ngũ Hành
 export const CAN_TO_NGU_HANH: { [key: string]: string } = {
-  'Giáp': 'Mộc',
-  'Ất': 'Mộc',
-  'Bính': 'Hỏa',
-  'Đinh': 'Hỏa',
-  'Mậu': 'Thổ',
-  'Kỷ': 'Thổ',
-  'Canh': 'Kim',
-  'Tân': 'Kim',
-  'Nhâm': 'Thủy',
-  'Quý': 'Thủy'
+  Giáp: 'Mộc',
+  Ất: 'Mộc',
+  Bính: 'Hỏa',
+  Đinh: 'Hỏa',
+  Mậu: 'Thổ',
+  Kỷ: 'Thổ',
+  Canh: 'Kim',
+  Tân: 'Kim',
+  Nhâm: 'Thủy',
+  Quý: 'Thủy',
 };
 
 /**
@@ -57,12 +84,19 @@ function jdToDate(jd: number): { day: number; month: number; year: number } {
 /**
  * Convert Date to Julian Day Number
  */
-function dateToJD(day: number, month: number, year: number): number {
+export function dateToJD(day: number, month: number, year: number): number {
   const a = Math.floor((14 - month) / 12);
   const y = year + 4800 - a;
   const m = month + 12 * a - 3;
 
-  let jd = day + Math.floor((153 * m + 2) / 5) + 365 * y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) - 32045;
+  let jd =
+    day +
+    Math.floor((153 * m + 2) / 5) +
+    365 * y +
+    Math.floor(y / 4) -
+    Math.floor(y / 100) +
+    Math.floor(y / 400) -
+    32045;
 
   if (jd < 2299161) {
     jd = day + Math.floor((153 * m + 2) / 5) + 365 * y + Math.floor(y / 4) - 32083;
@@ -177,11 +211,12 @@ export function solarToLunar(day: number, month: number, year: number): LunarDat
   let a11 = getLunarMonth11(year, timeZone);
   let b11 = a11;
 
+  let lunarYear: number;
   if (a11 >= monthStart) {
-    const lunarYear = year;
+    lunarYear = year;
     a11 = getLunarMonth11(year - 1, timeZone);
   } else {
-    const lunarYear = year + 1;
+    lunarYear = year + 1;
     b11 = getLunarMonth11(year + 1, timeZone);
   }
 
@@ -204,11 +239,10 @@ export function solarToLunar(day: number, month: number, year: number): LunarDat
     lunarMonth = lunarMonth - 12;
   }
   if (lunarMonth >= 11 && diff < 4) {
-    const lunarYear = year - 1;
-    return { day: lunarDay, month: lunarMonth, year: lunarYear, isLeap: lunarLeap };
+    lunarYear -= 1;
   }
 
-  return { day: lunarDay, month: lunarMonth, year, isLeap: lunarLeap };
+  return { day: lunarDay, month: lunarMonth, year: lunarYear, isLeap: lunarLeap };
 }
 
 /**
@@ -241,7 +275,7 @@ export function getDayCanChi(jd: number): string {
  * Get current lunar date
  */
 export function getCurrentLunarDate(): LunarDate {
-  const now = new Date();
+  const now = vietnamToday();
   return solarToLunar(now.getDate(), now.getMonth() + 1, now.getFullYear());
 }
 

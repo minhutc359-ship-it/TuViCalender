@@ -1,0 +1,562 @@
+[
+  {
+    "cardId": "wands-01",
+    "stand": "Red Hot Chili Pepper",
+    "user": "Akira Otoishi",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-01.png",
+    "sourceUrl": "https://jojowiki.com/Red_Hot_Chili_Pepper",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/5/59/latest/20191015213016/RHCP_Infobox_Anime.png/400px-RHCP_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "wands-02",
+    "stand": "Sticky Fingers",
+    "user": "Bruno Bucciarati",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-02.png",
+    "sourceUrl": "https://jojowiki.com/Sticky_Fingers",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/7/78/latest/20221006032155/Sticky_Fingers_Infobox_Anime.png/400px-Sticky_Fingers_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "wands-03",
+    "stand": "Aerosmith",
+    "user": "Narancia Ghirga",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-03.png",
+    "sourceUrl": "https://jojowiki.com/Aerosmith",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/7/7c/latest/20210701024635/Aerosmith_Infobox_Anime.png/400px-Aerosmith_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "wands-04",
+    "stand": "Burning Down the House",
+    "user": "Emporio Alnino",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-04.png",
+    "sourceUrl": "https://jojowiki.com/Burning_Down_the_House",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/2/20/latest/20220919210706/BDtH_Infobox_Anime.png/400px-BDtH_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "wands-05",
+    "stand": "Bad Company",
+    "user": "Keicho Nijimura",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-05.png",
+    "sourceUrl": "https://jojowiki.com/Bad_Company",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/4/4a/latest/20221020231958/Bad_Company_Infobox_Anime.png/400px-Bad_Company_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "wands-06",
+    "stand": "Sex Pistols",
+    "user": "Guido Mista",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-06.png",
+    "sourceUrl": "https://jojowiki.com/Sex_Pistols",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/b/b9/latest/20210521114106/Sex_Pistols_Infobox_Anime.png/400px-Sex_Pistols_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "wands-07",
+    "stand": "Spice Girl",
+    "user": "Trish Una",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-07.png",
+    "sourceUrl": "https://jojowiki.com/Spice_Girl",
+    "standImageSource": "https://static.jojowiki.com/images/2/21/latest/20200118002424/Spice_Girl_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "wands-08",
+    "stand": "Highway Star",
+    "user": "Yuya Fungami",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-08.png",
+    "sourceUrl": "https://jojowiki.com/Highway_Star",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/0/07/latest/20230228171739/Highway_Star_Infobox_Anime.png/400px-Highway_Star_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "wands-09",
+    "stand": "Planet Waves",
+    "user": "Viviano Westwood",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-09.png",
+    "sourceUrl": "https://jojowiki.com/Planet_Waves",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/e/ec/latest/20221125230133/Planet_Waves_Infobox_Anime.png/400px-Planet_Waves_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "wands-10",
+    "stand": "Super Fly",
+    "user": "Toyohiro Kanedaichi",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-10.png",
+    "sourceUrl": "https://jojowiki.com/Super_Fly",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/4/45/latest/20191015215742/Super_Fly_Infobox_Anime.png/400px-Super_Fly_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "wands-11",
+    "stand": "Echoes",
+    "user": "Koichi Hirose",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-11.png",
+    "sourceUrl": "https://jojowiki.com/Echoes",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/d/dc/latest/20210424210829/Echoes_ACT1_DU_Infobox_Anime.png/400px-Echoes_ACT1_DU_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "wands-12",
+    "stand": "Horus",
+    "user": "Pet Shop",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-12.png",
+    "sourceUrl": "https://jojowiki.com/Horus",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/d/d7/latest/20221008021726/Horus_Infobox_Anime.png/400px-Horus_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "wands-13",
+    "stand": "Stone Free",
+    "user": "Jolyne Cujoh",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-13.png",
+    "sourceUrl": "https://jojowiki.com/Stone_Free",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/0/03/latest/20230826070709/Stone_Free_Infobox_Anime.png/400px-Stone_Free_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "wands-14",
+    "stand": "Gold Experience Requiem",
+    "user": "Giorno Giovanna",
+    "standImage": "/assets/tarot/jojo-ref/minor/wands-14.png",
+    "sourceUrl": "https://jojowiki.com/Gold_Experience_Requiem",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/1/19/latest/20220802141706/GER_Infobox_Anime.png/400px-GER_Infobox_Anime.png",
+    "accent": "#d69a75",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-01",
+    "stand": "Crazy Diamond",
+    "user": "Josuke Higashikata",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-01.png",
+    "sourceUrl": "https://jojowiki.com/Crazy_Diamond",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/b/b5/latest/20191015215419/Crazy_Diamond_Infobox_Anime.png/400px-Crazy_Diamond_Infobox_Anime.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-02",
+    "stand": "Kiss",
+    "user": "Ermes Costello",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-02.png",
+    "sourceUrl": "https://jojowiki.com/Kiss",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/2/24/latest/20260911052444/Kiss_Infobox_Anime.png/400px-Kiss_Infobox_Anime.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-03",
+    "stand": "Pearl Jam",
+    "user": "Tonio Trussardi",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-03.png",
+    "sourceUrl": "https://jojowiki.com/Pearl_Jam",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/7/70/latest/20250722142541/Pearl_Jam_Infobox_Anime.png/400px-Pearl_Jam_Infobox_Anime.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-04",
+    "stand": "Talking Head",
+    "user": "Tiziano",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-04.png",
+    "sourceUrl": "https://jojowiki.com/Talking_Head",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/6/68/latest/20210719190437/Talking_Head_Infobox_Anime.png/400px-Talking_Head_Infobox_Anime.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-05",
+    "stand": "Moody Blues",
+    "user": "Leone Abbacchio",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-05.png",
+    "sourceUrl": "https://jojowiki.com/Moody_Blues",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/9/91/latest/20220916205647/Moody_Blues_Infobox_Anime.png/400px-Moody_Blues_Infobox_Anime.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-06",
+    "stand": "Sethan",
+    "user": "Alessi",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-06.png",
+    "sourceUrl": "https://jojowiki.com/Sethan",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/4/44/latest/20211010231516/Sethan_Infobox_Anime.png/400px-Sethan_Infobox_Anime.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-07",
+    "stand": "Bohemian Rhapsody",
+    "user": "Ungalo",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-07.png",
+    "sourceUrl": "https://jojowiki.com/Bohemian_Rhapsody",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/b/b4/latest/20260503053546/Bohemian_Rhapsody_Infobox_Anime.png/400px-Bohemian_Rhapsody_Infobox_Anime.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-08",
+    "stand": "Under World",
+    "user": "Donatello Versus",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-08.png",
+    "sourceUrl": "https://jojowiki.com/Under_World",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/3/3d/latest/20251123210313/Under_World_Infobox_Anime.png/400px-Under_World_Infobox_Anime.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-09",
+    "stand": "Cinderella",
+    "user": "Aya Tsuji",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-09.png",
+    "sourceUrl": "https://jojowiki.com/Cinderella",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/3/38/latest/20251004150611/Cinderella_Infobox_Anime.png/400px-Cinderella_Infobox_Anime.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-10",
+    "stand": "Mr.President",
+    "user": "Coco Jumbo",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-10.png",
+    "sourceUrl": "https://jojowiki.com/Mr.President",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/d/da/latest/20191015213903/Mr.President_Infobox_Anime.png/400px-Mr.President_Infobox_Anime.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-11",
+    "stand": "Foo Fighters",
+    "user": "F.F.",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-11.png",
+    "sourceUrl": "https://jojowiki.com/Foo_Fighters",
+    "standImageSource": "https://static.jojowiki.com/images/d/de/latest/20211204055511/F.F._Infobox_Anime.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-12",
+    "stand": "Diver Down",
+    "user": "Narciso Anasui",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-12.png",
+    "sourceUrl": "https://jojowiki.com/Diver_Down",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/c/c6/latest/20260911052445/Diver_Down_Anime_Infobox.png/400px-Diver_Down_Anime_Infobox.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-13",
+    "stand": "Love Deluxe",
+    "user": "Yukako Yamagishi",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-13.png",
+    "sourceUrl": "https://jojowiki.com/Love_Deluxe",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/d/d3/latest/20210222045719/Love_Deluxe_Infobox_Anime.png/400px-Love_Deluxe_Infobox_Anime.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "cups-14",
+    "stand": "Weather Report",
+    "user": "Weather Report",
+    "standImage": "/assets/tarot/jojo-ref/minor/cups-14.png",
+    "sourceUrl": "https://jojowiki.com/Weather_Report_(Stand)",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/a/ac/latest/20260911052445/Weather_Report_Stand_Anime_Infobox.png/400px-Weather_Report_Stand_Anime_Infobox.png",
+    "accent": "#9ba7e0",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-01",
+    "stand": "Anubis",
+    "user": "Chaka / Khan",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-01.png",
+    "sourceUrl": "https://jojowiki.com/Anubis",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/6/64/latest/20220916183812/Anubis_Infobox_Anime.png/400px-Anubis_Infobox_Anime.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-02",
+    "stand": "Khnum",
+    "user": "Oingo",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-02.png",
+    "sourceUrl": "https://jojowiki.com/Khnum",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/1/1c/latest/20220920014323/Khnum_Infobox_Anime.png/400px-Khnum_Infobox_Anime.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-03",
+    "stand": "Highway to Hell",
+    "user": "Thunder McQueen",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-03.png",
+    "sourceUrl": "https://jojowiki.com/Highway_to_Hell",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/f/f3/latest/20211201174538/Highway_to_Hell_Infobox_Anime.png/400px-Highway_to_Hell_Infobox_Anime.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-04",
+    "stand": "Man in the Mirror",
+    "user": "Illuso",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-04.png",
+    "sourceUrl": "https://jojowiki.com/Man_in_the_Mirror",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/e/eb/latest/20241122152028/Man_in_the_Mirror_Infobox_Anime.png/400px-Man_in_the_Mirror_Infobox_Anime.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-05",
+    "stand": "Survivor",
+    "user": "Guccio",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-05.png",
+    "sourceUrl": "https://jojowiki.com/Survivor",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/9/92/latest/20220905144547/Survivor_Infobox_Anime.png/400px-Survivor_Infobox_Anime.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-06",
+    "stand": "White Album",
+    "user": "Ghiaccio",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-06.png",
+    "sourceUrl": "https://jojowiki.com/White_Album",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/b/be/latest/20240405022040/White_Album_Infobox_Manga.png/400px-White_Album_Infobox_Manga.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-07",
+    "stand": "Bastet",
+    "user": "Mariah",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-07.png",
+    "sourceUrl": "https://jojowiki.com/Bastet",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/d/dd/latest/20211010231924/Bastet_Infobox_Anime.png/400px-Bastet_Infobox_Anime.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-08",
+    "stand": "Enigma",
+    "user": "Terunosuke Miyamoto",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-08.png",
+    "sourceUrl": "https://jojowiki.com/Enigma",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/5/51/latest/20221010022748/Enigma_Infobox_Anime.png/400px-Enigma_Infobox_Anime.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-09",
+    "stand": "Cheap Trick",
+    "user": "Masazo Kinoto",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-09.png",
+    "sourceUrl": "https://jojowiki.com/Cheap_Trick",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/8/8e/latest/20250724150945/Cheap_Trick_Infobox_Anime.png/400px-Cheap_Trick_Infobox_Anime.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-10",
+    "stand": "Notorious B.I.G",
+    "user": "Carne",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-10.png",
+    "sourceUrl": "https://jojowiki.com/Notorious_B.I.G",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/6/68/latest/20250502191031/Notorious_B.I.G_Original_Infobox_Anime.png/400px-Notorious_B.I.G_Original_Infobox_Anime.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-11",
+    "stand": "Heaven's Door",
+    "user": "Rohan Kishibe",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-11.png",
+    "sourceUrl": "https://jojowiki.com/Heaven%27s_Door",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/5/50/latest/20210203193008/Heaven%27s_Door_Infobox_Anime.png/400px-Heaven%27s_Door_Infobox_Anime.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-12",
+    "stand": "Chariot Requiem",
+    "user": "Jean Pierre Polnareff",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-12.png",
+    "sourceUrl": "https://jojowiki.com/Chariot_Requiem",
+    "standImageSource": "https://static.jojowiki.com/images/1/12/latest/20211210020712/Chariot_Requiem_Infobox_Anime.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-13",
+    "stand": "Whitesnake",
+    "user": "Enrico Pucci",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-13.png",
+    "sourceUrl": "https://jojowiki.com/Whitesnake",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/9/91/latest/20241001191051/Whitesnake_Infobox_Anime.png/400px-Whitesnake_Infobox_Anime.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "swords-14",
+    "stand": "King Crimson",
+    "user": "Diavolo",
+    "standImage": "/assets/tarot/jojo-ref/minor/swords-14.png",
+    "sourceUrl": "https://jojowiki.com/King_Crimson",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/c/c6/latest/20241012182526/King_Crimson_Infobox_Anime.png/400px-King_Crimson_Infobox_Anime.png",
+    "accent": "#b7c6db",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-01",
+    "stand": "Harvest",
+    "user": "Shigekiyo Yangu",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-01.png",
+    "sourceUrl": "https://jojowiki.com/Harvest",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/7/73/latest/20220904041353/Harvest_Infobox_Anime.png/400px-Harvest_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-02",
+    "stand": "Soft Machine",
+    "user": "Mario Zucchero",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-02.png",
+    "sourceUrl": "https://jojowiki.com/Soft_Machine",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/6/69/latest/20240118150429/Soft_Machine_Infobox_Anime.png/400px-Soft_Machine_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-03",
+    "stand": "Kraft Work",
+    "user": "Sale",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-03.png",
+    "sourceUrl": "https://jojowiki.com/Kraft_Work",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/4/49/latest/20231109191433/Kraft_Work_Infobox_Anime.png/400px-Kraft_Work_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-04",
+    "stand": "Osiris",
+    "user": "Daniel J. D'Arby",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-04.png",
+    "sourceUrl": "https://jojowiki.com/Osiris",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/a/ae/latest/20221008021422/Osiris_Infobox_Anime.png/400px-Osiris_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-05",
+    "stand": "The Lock",
+    "user": "Tamami Kobayashi",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-05.png",
+    "sourceUrl": "https://jojowiki.com/The_Lock",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/5/5d/latest/20211012143104/The_Lock_Infobox_Anime.png/400px-The_Lock_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-06",
+    "stand": "Gold Experience",
+    "user": "Giorno Giovanna",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-06.png",
+    "sourceUrl": "https://jojowiki.com/Gold_Experience",
+    "standImageSource": "https://static.jojowiki.com/images/8/81/latest/20210707053105/Gold_Experience_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-07",
+    "stand": "Green Day",
+    "user": "Cioccolata",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-07.png",
+    "sourceUrl": "https://jojowiki.com/Green_Day",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/a/a4/latest/20230303153451/Green_Day_Infobox_Anime.png/400px-Green_Day_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-08",
+    "stand": "Metallica",
+    "user": "Risotto Nero",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-08.png",
+    "sourceUrl": "https://jojowiki.com/Metallica",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/c/c0/latest/20241122144847/Metallica_Infobox_Anime.png/400px-Metallica_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-09",
+    "stand": "Oasis",
+    "user": "Secco",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-09.png",
+    "sourceUrl": "https://jojowiki.com/Oasis",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/0/06/latest/20241005192306/Oasis_Infobox_Anime.png/400px-Oasis_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-10",
+    "stand": "Atum",
+    "user": "Terence T. D'Arby",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-10.png",
+    "sourceUrl": "https://jojowiki.com/Atum",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/5/50/latest/20211114224746/Atum_Infobox_Anime.png/400px-Atum_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-11",
+    "stand": "Marilyn Manson",
+    "user": "Miraschon",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-11.png",
+    "sourceUrl": "https://jojowiki.com/Marilyn_Manson",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/9/9d/latest/20211201173825/Marilyn_Manson_Infobox_Anime.png/400px-Marilyn_Manson_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-12",
+    "stand": "Beach Boy",
+    "user": "Pesci",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-12.png",
+    "sourceUrl": "https://jojowiki.com/Beach_Boy",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/e/ec/latest/20241122152334/Beach_Boy_Infobox_Anime.png/400px-Beach_Boy_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-13",
+    "stand": "Sky High",
+    "user": "Rikiel",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-13.png",
+    "sourceUrl": "https://jojowiki.com/Sky_High",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/4/4e/latest/20221216105935/Rods_Infobox_Anime.png/200px-Rods_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  },
+  {
+    "cardId": "pentacles-14",
+    "stand": "The Hand",
+    "user": "Okuyasu Nijimura",
+    "standImage": "/assets/tarot/jojo-ref/minor/pentacles-14.png",
+    "sourceUrl": "https://jojowiki.com/The_Hand",
+    "standImageSource": "https://static.jojowiki.com/images/thumb/a/ae/latest/20210111150120/The_Hand_Infobox_Anime.png/400px-The_Hand_Infobox_Anime.png",
+    "accent": "#b9c990",
+    "association": "editorial"
+  }
+]

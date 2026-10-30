@@ -3,30 +3,40 @@
  * Tính toán cung hoàng đạo và bát tự
  */
 
-import { solarToLunar, THIEN_CAN, DIA_CHI, CAN_TO_NGU_HANH } from './lunar';
+import { solarToLunar, dateToJD, THIEN_CAN, DIA_CHI, CAN_TO_NGU_HANH } from './lunar';
 
 // Western Zodiac Signs
 export const ZODIAC_SIGNS = [
-  'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
-  'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'
+  'Aries',
+  'Taurus',
+  'Gemini',
+  'Cancer',
+  'Leo',
+  'Virgo',
+  'Libra',
+  'Scorpio',
+  'Sagittarius',
+  'Capricorn',
+  'Aquarius',
+  'Pisces',
 ] as const;
 
-export type ZodiacSign = typeof ZODIAC_SIGNS[number];
+export type ZodiacSign = (typeof ZODIAC_SIGNS)[number];
 
 // Vietnamese names for zodiac signs
 export const ZODIAC_VN: { [K in ZodiacSign]: string } = {
-  'Aries': 'Bạch Dương',
-  'Taurus': 'Kim Ngưu',
-  'Gemini': 'Song Tử',
-  'Cancer': 'Cự Giải',
-  'Leo': 'Sư Tử',
-  'Virgo': 'Xử Nữ',
-  'Libra': 'Thiên Bình',
-  'Scorpio': 'Thần Cung',
-  'Sagittarius': 'Nhân Mã',
-  'Capricorn': 'Ma Kết',
-  'Aquarius': 'Bảo Bình',
-  'Pisces': 'Song Ngư'
+  Aries: 'Bạch Dương',
+  Taurus: 'Kim Ngưu',
+  Gemini: 'Song Tử',
+  Cancer: 'Cự Giải',
+  Leo: 'Sư Tử',
+  Virgo: 'Xử Nữ',
+  Libra: 'Thiên Bình',
+  Scorpio: 'Bọ Cạp',
+  Sagittarius: 'Nhân Mã',
+  Capricorn: 'Ma Kết',
+  Aquarius: 'Bảo Bình',
+  Pisces: 'Song Ngư',
 };
 
 // 8 Cung (8 Trigrams)
@@ -38,7 +48,7 @@ export const BAT_QUAI = [
   { name: 'Tốn', element: 'Mộc', direction: 'Đông Nam', meaning: 'Gió' },
   { name: 'Khảm', element: 'Thủy', direction: 'Bắc', meaning: 'Nước' },
   { name: 'Cấn', element: 'Thổ', direction: 'Đông Bắc', meaning: 'Núi' },
-  { name: 'Khôn', element: 'Thổ', direction: 'Tây Nam', meaning: 'Đất' }
+  { name: 'Khôn', element: 'Thổ', direction: 'Tây Nam', meaning: 'Đất' },
 ];
 
 export interface WesternChart {
@@ -74,17 +84,17 @@ export interface EasternChart {
 export function getSunSign(day: number, month: number): ZodiacSign {
   const dateNum = month * 100 + day;
 
-  if ((dateNum >= 321 && dateNum <= 419)) return 'Aries';
-  if ((dateNum >= 420 && dateNum <= 520)) return 'Taurus';
-  if ((dateNum >= 521 && dateNum <= 620)) return 'Gemini';
-  if ((dateNum >= 621 && dateNum <= 722)) return 'Cancer';
-  if ((dateNum >= 723 && dateNum <= 822)) return 'Leo';
-  if ((dateNum >= 823 && dateNum <= 922)) return 'Virgo';
-  if ((dateNum >= 923 && dateNum <= 1022)) return 'Libra';
-  if ((dateNum >= 1023 && dateNum <= 1121)) return 'Scorpio';
-  if ((dateNum >= 1122 && dateNum <= 1221)) return 'Sagittarius';
-  if ((dateNum >= 1222 || dateNum <= 119)) return 'Capricorn';
-  if ((dateNum >= 120 && dateNum <= 218)) return 'Aquarius';
+  if (dateNum >= 321 && dateNum <= 419) return 'Aries';
+  if (dateNum >= 420 && dateNum <= 520) return 'Taurus';
+  if (dateNum >= 521 && dateNum <= 620) return 'Gemini';
+  if (dateNum >= 621 && dateNum <= 722) return 'Cancer';
+  if (dateNum >= 723 && dateNum <= 822) return 'Leo';
+  if (dateNum >= 823 && dateNum <= 922) return 'Virgo';
+  if (dateNum >= 923 && dateNum <= 1022) return 'Libra';
+  if (dateNum >= 1023 && dateNum <= 1121) return 'Scorpio';
+  if (dateNum >= 1122 && dateNum <= 1221) return 'Sagittarius';
+  if (dateNum >= 1222 || dateNum <= 119) return 'Capricorn';
+  if (dateNum >= 120 && dateNum <= 218) return 'Aquarius';
   return 'Pisces';
 }
 
@@ -93,18 +103,18 @@ export function getSunSign(day: number, month: number): ZodiacSign {
  */
 function getSignAttributes(sign: ZodiacSign): Pick<WesternChart, 'element' | 'quality' | 'ruler'> {
   const attributes: { [K in ZodiacSign]: Pick<WesternChart, 'element' | 'quality' | 'ruler'> } = {
-    'Aries': { element: 'Fire', quality: 'Cardinal', ruler: 'Mars' },
-    'Taurus': { element: 'Earth', quality: 'Fixed', ruler: 'Venus' },
-    'Gemini': { element: 'Air', quality: 'Mutable', ruler: 'Mercury' },
-    'Cancer': { element: 'Water', quality: 'Cardinal', ruler: 'Moon' },
-    'Leo': { element: 'Fire', quality: 'Fixed', ruler: 'Sun' },
-    'Virgo': { element: 'Earth', quality: 'Mutable', ruler: 'Mercury' },
-    'Libra': { element: 'Air', quality: 'Cardinal', ruler: 'Venus' },
-    'Scorpio': { element: 'Water', quality: 'Fixed', ruler: 'Pluto' },
-    'Sagittarius': { element: 'Fire', quality: 'Mutable', ruler: 'Jupiter' },
-    'Capricorn': { element: 'Earth', quality: 'Cardinal', ruler: 'Saturn' },
-    'Aquarius': { element: 'Air', quality: 'Fixed', ruler: 'Uranus' },
-    'Pisces': { element: 'Water', quality: 'Mutable', ruler: 'Neptune' }
+    Aries: { element: 'Fire', quality: 'Cardinal', ruler: 'Mars' },
+    Taurus: { element: 'Earth', quality: 'Fixed', ruler: 'Venus' },
+    Gemini: { element: 'Air', quality: 'Mutable', ruler: 'Mercury' },
+    Cancer: { element: 'Water', quality: 'Cardinal', ruler: 'Moon' },
+    Leo: { element: 'Fire', quality: 'Fixed', ruler: 'Sun' },
+    Virgo: { element: 'Earth', quality: 'Mutable', ruler: 'Mercury' },
+    Libra: { element: 'Air', quality: 'Cardinal', ruler: 'Venus' },
+    Scorpio: { element: 'Water', quality: 'Fixed', ruler: 'Pluto' },
+    Sagittarius: { element: 'Fire', quality: 'Mutable', ruler: 'Jupiter' },
+    Capricorn: { element: 'Earth', quality: 'Cardinal', ruler: 'Saturn' },
+    Aquarius: { element: 'Air', quality: 'Fixed', ruler: 'Uranus' },
+    Pisces: { element: 'Water', quality: 'Mutable', ruler: 'Neptune' },
   };
 
   return attributes[sign];
@@ -113,11 +123,7 @@ function getSignAttributes(sign: ZodiacSign): Pick<WesternChart, 'element' | 'qu
 /**
  * Calculate Western birth chart
  */
-export function calculateWesternChart(
-  day: number,
-  month: number,
-  year: number
-): WesternChart {
+export function calculateWesternChart(day: number, month: number, year: number): WesternChart {
   const sunSign = getSunSign(day, month);
   const attributes = getSignAttributes(sunSign);
 
@@ -125,35 +131,37 @@ export function calculateWesternChart(
     sunSign,
     sunSignVN: ZODIAC_VN[sunSign],
     birthDate: new Date(year, month - 1, day),
-    ...attributes
+    ...attributes,
   };
 }
 
 /**
  * Get Can Chi for year/month/day/hour
  */
-function getCanChiForDate(year: number, month: number, day: number, hour?: number): EasternChart['canChi'] {
+function getCanChiForDate(
+  year: number,
+  month: number,
+  day: number,
+  hour?: number,
+): EasternChart['canChi'] {
   // Year Can Chi
-  const yearCan = THIEN_CAN[(year + 6) % 10];
-  const yearChi = DIA_CHI[(year + 8) % 12];
+  const lunar = solarToLunar(day, month, year);
+  const yearCan = THIEN_CAN[(lunar.year + 6) % 10];
+  const yearChi = DIA_CHI[(lunar.year + 8) % 12];
 
   // Month Can Chi (simplified - needs solar term adjustment for accuracy)
-  const monthIndex = ((year - 4) * 12 + month + 12) % 60;
-  const monthCan = THIEN_CAN[monthIndex % 10];
-  const monthChi = DIA_CHI[(month + 1) % 12];
+  const monthCan = THIEN_CAN[(lunar.year * 12 + lunar.month + 3) % 10];
+  const monthChi = DIA_CHI[(lunar.month + 1) % 12];
 
   // Day Can Chi (using Julian Day approximation)
-  const jd = Math.floor((1461 * (year + 4800 + Math.floor((month - 14) / 12))) / 4 +
-    (367 * (month - 2 - 12 * Math.floor((month - 14) / 12))) / 12 -
-    (3 * Math.floor((year + 4900 + Math.floor((month - 14) / 12)) / 100)) / 4 +
-    day - 32075);
+  const jd = dateToJD(day, month, year);
   const dayCan = THIEN_CAN[(jd + 9) % 10];
   const dayChi = DIA_CHI[(jd + 1) % 12];
 
   const canChi: EasternChart['canChi'] = {
     year: `${yearCan} ${yearChi}`,
     month: `${monthCan} ${monthChi}`,
-    day: `${dayCan} ${dayChi}`
+    day: `${dayCan} ${dayChi}`,
   };
 
   // Hour Can Chi (if provided)
@@ -161,7 +169,7 @@ function getCanChiForDate(year: number, month: number, day: number, hour?: numbe
     const hourIndex = Math.floor((hour + 1) / 2) % 12;
     const hourChi = DIA_CHI[hourIndex];
     // Hour Can depends on day Can (complex calculation - simplified here)
-    const hourCanIndex = ((jd % 5) * 12 + hourIndex) % 10;
+    const hourCanIndex = ((((jd + 9) % 10) % 5) * 2 + hourIndex) % 10;
     const hourCan = THIEN_CAN[hourCanIndex];
     canChi.hour = `${hourCan} ${hourChi}`;
   }
@@ -174,7 +182,20 @@ function getCanChiForDate(year: number, month: number, day: number, hour?: numbe
  */
 function getCungMenh(year: number): string {
   const index = (year + 8) % 12;
-  const palaces = ['Khảm', 'Khôn', 'Chấn', 'Tốn', 'Càn', 'Đoài', 'Cấn', 'Ly', 'Càn', 'Đoài', 'Cấn', 'Ly'];
+  const palaces = [
+    'Khảm',
+    'Khôn',
+    'Chấn',
+    'Tốn',
+    'Càn',
+    'Đoài',
+    'Cấn',
+    'Ly',
+    'Càn',
+    'Đoài',
+    'Cấn',
+    'Ly',
+  ];
   return palaces[index];
 }
 
@@ -185,20 +206,20 @@ export function calculateEasternChart(
   day: number,
   month: number,
   year: number,
-  hour?: number
+  hour?: number,
 ): EasternChart {
   const lunar = solarToLunar(day, month, year);
   const canChi = getCanChiForDate(year, month, day, hour);
 
   // Get Ngũ Hành from year Can
-  const yearCan = THIEN_CAN[(year + 6) % 10];
+  const yearCan = THIEN_CAN[(lunar.year + 6) % 10];
   const nguHanh = CAN_TO_NGU_HANH[yearCan];
 
   // Get Cung Mệnh
   const cungMenh = getCungMenh(year);
 
   // Get Con Giáp
-  const conGiap = DIA_CHI[(year + 8) % 12];
+  const conGiap = DIA_CHI[(lunar.year + 8) % 12];
 
   return {
     canChi,
@@ -208,53 +229,82 @@ export function calculateEasternChart(
     batTu: {
       yearPillar: {
         can: canChi.year.split(' ')[0],
-        chi: canChi.year.split(' ')[1]
+        chi: canChi.year.split(' ')[1],
       },
       monthPillar: {
         can: canChi.month.split(' ')[0],
-        chi: canChi.month.split(' ')[1]
+        chi: canChi.month.split(' ')[1],
       },
       dayPillar: {
         can: canChi.day.split(' ')[0],
-        chi: canChi.day.split(' ')[1]
+        chi: canChi.day.split(' ')[1],
       },
-      ...(hour !== undefined && canChi.hour ? {
-        hourPillar: {
-          can: canChi.hour.split(' ')[0],
-          chi: canChi.hour.split(' ')[1]
-        }
-      } : {})
-    }
+      ...(hour !== undefined && canChi.hour
+        ? {
+            hourPillar: {
+              can: canChi.hour.split(' ')[0],
+              chi: canChi.hour.split(' ')[1],
+            },
+          }
+        : {}),
+    },
   };
 }
 
 /**
  * Calculate zodiac compatibility (simplified)
  */
-export function calculateCompatibility(sign1: ZodiacSign, sign2: ZodiacSign): {
+export function calculateCompatibility(
+  sign1: ZodiacSign,
+  sign2: ZodiacSign,
+): {
   score: number;
   description: string;
 } {
   const compatibilityMap: { [key: string]: number } = {
     // Fire signs
-    'Aries-Leo': 90, 'Aries-Sagittarius': 85, 'Aries-Aquarius': 75,
-    'Leo-Sagittarius': 90, 'Leo-Aries': 90, 'Leo-Gemini': 80,
-    'Sagittarius-Aries': 85, 'Sagittarius-Leo': 90, 'Sagittarius-Aquarius': 80,
+    'Aries-Leo': 90,
+    'Aries-Sagittarius': 85,
+    'Aries-Aquarius': 75,
+    'Leo-Sagittarius': 90,
+    'Leo-Aries': 90,
+    'Leo-Gemini': 80,
+    'Sagittarius-Aries': 85,
+    'Sagittarius-Leo': 90,
+    'Sagittarius-Aquarius': 80,
 
     // Earth signs
-    'Taurus-Virgo': 90, 'Taurus-Capricorn': 85, 'Taurus-Cancer': 80,
-    'Virgo-Capricorn': 90, 'Virgo-Taurus': 90, 'Virgo-Scorpio': 75,
-    'Capricorn-Taurus': 85, 'Capricorn-Virgo': 90, 'Capricorn-Pisces': 70,
+    'Taurus-Virgo': 90,
+    'Taurus-Capricorn': 85,
+    'Taurus-Cancer': 80,
+    'Virgo-Capricorn': 90,
+    'Virgo-Taurus': 90,
+    'Virgo-Scorpio': 75,
+    'Capricorn-Taurus': 85,
+    'Capricorn-Virgo': 90,
+    'Capricorn-Pisces': 70,
 
     // Air signs
-    'Gemini-Libra': 90, 'Gemini-Aquarius': 85, 'Gemini-Leo': 80,
-    'Libra-Aquarius': 90, 'Libra-Gemini': 90, 'Libra-Sagittarius': 75,
-    'Aquarius-Gemini': 85, 'Aquarius-Libra': 90, 'Aquarius-Aries': 75,
+    'Gemini-Libra': 90,
+    'Gemini-Aquarius': 85,
+    'Gemini-Leo': 80,
+    'Libra-Aquarius': 90,
+    'Libra-Gemini': 90,
+    'Libra-Sagittarius': 75,
+    'Aquarius-Gemini': 85,
+    'Aquarius-Libra': 90,
+    'Aquarius-Aries': 75,
 
     // Water signs
-    'Cancer-Scorpio': 90, 'Cancer-Pisces': 85, 'Cancer-Taurus': 80,
-    'Scorpio-Pisces': 90, 'Scorpio-Cancer': 90, 'Scorpio-Capricorn': 75,
-    'Pisces-Cancer': 85, 'Pisces-Scorpio': 90, 'Pisces-Taurus': 70
+    'Cancer-Scorpio': 90,
+    'Cancer-Pisces': 85,
+    'Cancer-Taurus': 80,
+    'Scorpio-Pisces': 90,
+    'Scorpio-Cancer': 90,
+    'Scorpio-Capricorn': 75,
+    'Pisces-Cancer': 85,
+    'Pisces-Scorpio': 90,
+    'Pisces-Taurus': 70,
   };
 
   const key1 = `${sign1}-${sign2}`;
@@ -285,66 +335,66 @@ export function getZodiacTraits(sign: ZodiacSign): {
   personality: string;
 } {
   const traits: { [K in ZodiacSign]: ReturnType<typeof getZodiacTraits> } = {
-    'Aries': {
+    Aries: {
       strengths: ['Dũng cảm', 'Quyết đoán', 'Nhiệt huyết', 'Tự tin'],
       weaknesses: ['Bốc đồng', 'Nóng tính', 'Thiếu kiên nhẫn'],
-      personality: 'Năng động, thích dẫn đầu, luôn tràn đầy năng lượng'
+      personality: 'Năng động, thích dẫn đầu, luôn tràn đầy năng lượng',
     },
-    'Taurus': {
+    Taurus: {
       strengths: ['Kiên định', 'Đáng tin cậy', 'Thực tế', 'Kiên nhẫn'],
       weaknesses: ['Cứng đầu', 'Bảo thủ', 'Vật chất'],
-      personality: 'Ổn định, yêu thích sự thoải mái và an toàn'
+      personality: 'Ổn định, yêu thích sự thoải mái và an toàn',
     },
-    'Gemini': {
+    Gemini: {
       strengths: ['Thông minh', 'Linh hoạt', 'Giao tiếp tốt', 'Tò mò'],
       weaknesses: ['Hay thay đổi', 'Thiếu kiên định', 'Lo lắng'],
-      personality: 'Năng động, thích giao lưu, luôn tìm kiếm điều mới'
+      personality: 'Năng động, thích giao lưu, luôn tìm kiếm điều mới',
     },
-    'Cancer': {
+    Cancer: {
       strengths: ['Trung thành', 'Nhạy cảm', 'Thấu hiểu', 'Bảo vệ'],
       weaknesses: ['Dễ tổn thương', 'Hay suy nghĩ', 'Bảo thủ'],
-      personality: 'Tình cảm sâu sắc, coi trọng gia đình và tình bạn'
+      personality: 'Tình cảm sâu sắc, coi trọng gia đình và tình bạn',
     },
-    'Leo': {
+    Leo: {
       strengths: ['Tự tin', 'Hào phóng', 'Lãnh đạo', 'Sáng tạo'],
       weaknesses: ['Kiêu ngạo', 'Ích kỷ', 'Thống trị'],
-      personality: 'Nổi bật, thích là trung tâm chú ý, có khả năng lãnh đạo'
+      personality: 'Nổi bật, thích là trung tâm chú ý, có khả năng lãnh đạo',
     },
-    'Virgo': {
+    Virgo: {
       strengths: ['Tỉ mỉ', 'Thực tế', 'Chăm chỉ', 'Phân tích'],
       weaknesses: ['Cầu toàn', 'Lo lắng', 'Phê bình'],
-      personality: 'Chi tiết, thích hoàn hảo, luôn cải thiện'
+      personality: 'Chi tiết, thích hoàn hảo, luôn cải thiện',
     },
-    'Libra': {
+    Libra: {
       strengths: ['Công bằng', 'Hòa đồng', 'Ngoại giao', 'Thẩm mỹ'],
       weaknesses: ['Lưỡng lự', 'Tránh xung đột', 'Phụ thuộc'],
-      personality: 'Cân bằng, yêu hòa bình, thích sự hài hòa'
+      personality: 'Cân bằng, yêu hòa bình, thích sự hài hòa',
     },
-    'Scorpio': {
+    Scorpio: {
       strengths: ['Đam mê', 'Quyết tâm', 'Trung thành', 'Thông minh'],
       weaknesses: ['Ghen tuông', 'Bí mật', 'Thù hận'],
-      personality: 'Sâu sắc, bí ẩn, cảm xúc mạnh mẽ'
+      personality: 'Sâu sắc, bí ẩn, cảm xúc mạnh mẽ',
     },
-    'Sagittarius': {
+    Sagittarius: {
       strengths: ['Lạc quan', 'Tự do', 'Phiêu lưu', 'Trung thực'],
       weaknesses: ['Thiếu trách nhiệm', 'Bốc đồng', 'Thiếu tế nhị'],
-      personality: 'Phóng khoáng, yêu tự do, khám phá'
+      personality: 'Phóng khoáng, yêu tự do, khám phá',
     },
-    'Capricorn': {
+    Capricorn: {
       strengths: ['Kỷ luật', 'Tham vọng', 'Trách nhiệm', 'Kiên nhẫn'],
       weaknesses: ['Cứng nhắc', 'Bi quan', 'Lạnh lùng'],
-      personality: 'Nghiêm túc, hướng đến mục tiêu, đáng tin cậy'
+      personality: 'Nghiêm túc, hướng đến mục tiêu, đáng tin cậy',
     },
-    'Aquarius': {
+    Aquarius: {
       strengths: ['Sáng tạo', 'Độc lập', 'Nhân đạo', 'Thông minh'],
       weaknesses: ['Cô độc', 'Xa cách', 'Cứng đầu'],
-      personality: 'Độc đáo, tiến bộ, quan tâm xã hội'
+      personality: 'Độc đáo, tiến bộ, quan tâm xã hội',
     },
-    'Pisces': {
+    Pisces: {
       strengths: ['Đồng cảm', 'Nghệ thuật', 'Trực giác', 'Từ bi'],
       weaknesses: ['Quá nhạy cảm', 'Mơ mộng', 'Thoái lui'],
-      personality: 'Tinh tế, nghệ sĩ, đầy cảm xúc'
-    }
+      personality: 'Tinh tế, nghệ sĩ, đầy cảm xúc',
+    },
   };
 
   return traits[sign];

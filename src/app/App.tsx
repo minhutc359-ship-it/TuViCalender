@@ -1,96 +1,118 @@
-import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router';
-import { Home, Calendar, MessageCircle, Sparkles, User, Moon } from 'lucide-react';
-import HomePage from './pages/HomePage';
-import CalendarPage from './pages/CalendarPage';
-import ChatPage from './pages/ChatPage';
-import TarotPage from './pages/TarotPage';
-import ProfilePage from './pages/ProfilePage';
+import { BrowserRouter, Routes, Route, NavLink, Link, useLocation } from 'react-router';
+import { useEffect, lazy, Suspense } from 'react';
+import {
+  Home,
+  CalendarDays,
+  MessageCircle,
+  Sparkles,
+  UserRound,
+  Orbit,
+  Settings,
+} from 'lucide-react';
+import { MotionConfig } from 'motion/react';
+import { TarotAppearanceProvider } from '../features/tarot/context/TarotAppearance';
+const HomePage = lazy(() => import('./pages/HomePage'));
+const CalendarPage = lazy(() => import('./pages/CalendarPage'));
+const ChatPage = lazy(() => import('./pages/ChatPage'));
+const TarotPage = lazy(() => import('./pages/TarotPage'));
+const ProfilePage = lazy(() => import('./pages/ProfilePage'));
+const SettingsPage = lazy(() => import('./pages/SettingsPage'));
 
-function Navigation() {
-  const location = useLocation();
-
-  const isActive = (path: string) => location.pathname === path;
-
+const links = [
+  { to: '/', name: 'Tổng quan', icon: Home },
+  { to: '/calendar', name: 'Lịch vạn niên', icon: CalendarDays },
+  { to: '/tarot', name: 'Tarot', icon: Sparkles },
+  { to: '/chat', name: 'Trợ lý AI', icon: MessageCircle },
+  { to: '/profile', name: 'Hồ sơ', icon: UserRound },
+  { to: '/settings', name: 'Cài đặt', icon: Settings },
+];
+function Shell() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+    document.title = `${links.find((l) => l.to === pathname)?.name ?? 'Trang không tồn tại'} · AstroAI`;
+  }, [pathname]);
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-sm border-t border-purple-500/20 z-50">
-      <div className="flex justify-around items-center h-16 max-w-lg mx-auto px-4">
-        <Link
-          to="/"
-          className={`flex flex-col items-center gap-1 transition-colors ${
-            isActive('/') ? 'text-purple-400' : 'text-slate-400 hover:text-purple-300'
-          }`}
-        >
-          <Home size={24} />
-          <span className="text-xs">Trang chủ</span>
+    <div className="app-shell">
+      <a className="skip-link" href="#main">
+        Đến nội dung chính
+      </a>
+      <header className="site-header">
+        <Link to="/" className="brand" aria-label="AstroAI — Trang chủ">
+          <span className="brand-mark">
+            <Orbit size={29} />
+          </span>
+          <span>
+            Astro<span className="gold">AI</span>
+            <small>YOUR CELESTIAL COMPANION</small>
+          </span>
         </Link>
-
-        <Link
-          to="/calendar"
-          className={`flex flex-col items-center gap-1 transition-colors ${
-            isActive('/calendar') ? 'text-purple-400' : 'text-slate-400 hover:text-purple-300'
-          }`}
-        >
-          <Calendar size={24} />
-          <span className="text-xs">Lịch</span>
+        <nav className="desktop-nav" aria-label="Điều hướng chính">
+          {links.map(({ to, name }) => (
+            <NavLink end={to === '/'} key={to} to={to}>
+              {name}
+            </NavLink>
+          ))}
+        </nav>
+        <Link to="/profile" className="header-profile" aria-label="Mở hồ sơ cá nhân">
+          <UserRound size={18} />
+          <span>Không gian của bạn</span>
         </Link>
-
-        <Link
-          to="/chat"
-          className={`flex flex-col items-center gap-1 transition-colors ${
-            isActive('/chat') ? 'text-purple-400' : 'text-slate-400 hover:text-purple-300'
-          }`}
+      </header>
+      <main id="main" className="main-content">
+        <Suspense
+          fallback={
+            <div className="empty-state" role="status">
+              Đang mở không gian của bạn…
+            </div>
+          }
         >
-          <MessageCircle size={24} />
-          <span className="text-xs">AI Chat</span>
-        </Link>
-
-        <Link
-          to="/tarot"
-          className={`flex flex-col items-center gap-1 transition-colors ${
-            isActive('/tarot') ? 'text-purple-400' : 'text-slate-400 hover:text-purple-300'
-          }`}
-        >
-          <Sparkles size={24} />
-          <span className="text-xs">Tarot</span>
-        </Link>
-
-        <Link
-          to="/profile"
-          className={`flex flex-col items-center gap-1 transition-colors ${
-            isActive('/profile') ? 'text-purple-400' : 'text-slate-400 hover:text-purple-300'
-          }`}
-        >
-          <User size={24} />
-          <span className="text-xs">Cá nhân</span>
-        </Link>
-      </div>
-    </nav>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/calendar" element={<CalendarPage />} />
+            <Route path="/chat" element={<ChatPage />} />
+            <Route path="/tarot" element={<TarotPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/settings" element={<SettingsPage />} />
+            <Route
+              path="*"
+              element={
+                <div className="empty-state">
+                  <Orbit />
+                  <h1>Chưa tìm thấy vì sao này</h1>
+                  <Link to="/" className="button primary">
+                    Về trang chủ
+                  </Link>
+                </div>
+              }
+            />
+          </Routes>
+        </Suspense>
+      </main>
+      <footer className="site-footer">
+        <span>✦ ASTROAI</span>
+        <p>Một khoảng lặng để hiểu mình hơn.</p>
+        <small>Chiêm tinh & Tarot dành cho tham khảo và tự suy ngẫm.</small>
+      </footer>
+      <nav className="mobile-nav" aria-label="Điều hướng di động">
+        {links.map(({ to, name, icon: Icon }) => (
+          <NavLink end={to === '/'} key={to} to={to}>
+            <Icon size={20} />
+            <span>{name}</span>
+          </NavLink>
+        ))}
+      </nav>
+    </div>
   );
 }
-
 export default function App() {
   return (
-    <BrowserRouter>
-      <div className="min-h-screen bg-gradient-to-b from-slate-950 via-purple-950 to-slate-950">
-        {/* Starry background effect */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 left-10 w-1 h-1 bg-purple-300 rounded-full animate-pulse" />
-          <div className="absolute top-20 right-20 w-1 h-1 bg-purple-400 rounded-full animate-pulse delay-100" />
-          <div className="absolute top-40 left-1/4 w-1 h-1 bg-purple-200 rounded-full animate-pulse delay-200" />
-          <div className="absolute bottom-40 right-1/3 w-1 h-1 bg-purple-300 rounded-full animate-pulse delay-300" />
-          <Moon className="absolute top-8 right-8 text-purple-300/30 animate-pulse" size={80} />
-        </div>
-
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/calendar" element={<CalendarPage />} />
-          <Route path="/chat" element={<ChatPage />} />
-          <Route path="/tarot" element={<TarotPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-        </Routes>
-
-        <Navigation />
-      </div>
-    </BrowserRouter>
+    <MotionConfig reducedMotion="user">
+      <TarotAppearanceProvider>
+        <BrowserRouter>
+          <Shell />
+        </BrowserRouter>
+      </TarotAppearanceProvider>
+    </MotionConfig>
   );
 }

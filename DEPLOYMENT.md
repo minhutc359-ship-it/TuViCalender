@@ -1,333 +1,67 @@
-# Hướng dẫn Deploy lên Vercel với Supabase
+# Triển khai AstroAI
 
-## Bước 1: Chuẩn bị Supabase
+## Frontend
 
-### 1.1. Tạo Project Supabase
-1. Truy cập [https://supabase.com](https://supabase.com)
-2. Đăng ký/Đăng nhập
-3. Tạo project mới
-4. Lưu lại **Project URL** và **anon/public key**
-
-### 1.2. Tạo Database Schema
-
-Chạy SQL sau trong Supabase SQL Editor:
-
-```sql
--- Users table
-CREATE TABLE users (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  email TEXT UNIQUE,
-  full_name TEXT,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Birth profiles table
-CREATE TABLE birth_profiles (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  user_id UUID REFERENCES users(id) ON DELETE CASCADE,
-  birth_date DATE NOT NULL,
-  birth_time TIME,
-  birth_place TEXT,
-  latitude DECIMAL(9, 6),
-  longitude DECIMAL(9, 6),
-  timezone TEXT,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Natal charts (Eastern & Western)
-CREATE TABLE natal_charts (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  birth_profile_id UUID REFERENCES birth_profiles(id) ON DELETE CASCADE,
-  chart_type TEXT NOT NULL, -- 'eastern' or 'western'
-  chart_data JSONB NOT NULL, -- stores can_chi, ngu_hanh, sun_sign, moon_sign, etc.
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Daily predictions
-CREATE TABLE daily_predictions (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  user_id UUID REFERENCES users(id) ON DELETE CASCADE,
-  prediction_date DATE NOT NULL,
-  fortune_score INTEGER, -- 0-10
-  love_score INTEGER,
-  career_score INTEGER,
-  health_score INTEGER,
-  lucky_color TEXT,
-  lucky_numbers TEXT[],
-  lucky_direction TEXT,
-  lucky_hours TEXT,
-  summary TEXT,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  UNIQUE(user_id, prediction_date)
-);
-
--- Chat histories
-CREATE TABLE chat_histories (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  user_id UUID REFERENCES users(id) ON DELETE CASCADE,
-  role TEXT NOT NULL, -- 'user' or 'assistant'
-  content TEXT NOT NULL,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Tarot sessions
-CREATE TABLE tarot_sessions (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  user_id UUID REFERENCES users(id) ON DELETE CASCADE,
-  cards_selected INTEGER[] NOT NULL,
-  interpretation JSONB,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Calendar events (good days)
-CREATE TABLE calendar_events (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  user_id UUID REFERENCES users(id) ON DELETE CASCADE,
-  event_type TEXT NOT NULL, -- 'wedding', 'business_opening', 'travel', etc.
-  event_date DATE NOT NULL,
-  is_good_day BOOLEAN DEFAULT true,
-  notes TEXT,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Subscriptions
-CREATE TABLE subscriptions (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  user_id UUID REFERENCES users(id) ON DELETE CASCADE,
-  plan_type TEXT NOT NULL, -- 'free', 'premium'
-  status TEXT DEFAULT 'active', -- 'active', 'cancelled', 'expired'
-  started_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  expires_at TIMESTAMP WITH TIME ZONE
-);
-
--- Notifications settings
-CREATE TABLE notification_settings (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  user_id UUID REFERENCES users(id) ON DELETE CASCADE,
-  daily_horoscope BOOLEAN DEFAULT true,
-  hourly_energy BOOLEAN DEFAULT false,
-  event_reminders BOOLEAN DEFAULT true,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Enable Row Level Security
-ALTER TABLE users ENABLE ROW LEVEL SECURITY;
-ALTER TABLE birth_profiles ENABLE ROW LEVEL SECURITY;
-ALTER TABLE natal_charts ENABLE ROW LEVEL SECURITY;
-ALTER TABLE daily_predictions ENABLE ROW LEVEL SECURITY;
-ALTER TABLE chat_histories ENABLE ROW LEVEL SECURITY;
-ALTER TABLE tarot_sessions ENABLE ROW LEVEL SECURITY;
-ALTER TABLE calendar_events ENABLE ROW LEVEL SECURITY;
-ALTER TABLE subscriptions ENABLE ROW LEVEL SECURITY;
-ALTER TABLE notification_settings ENABLE ROW LEVEL SECURITY;
-
--- Create RLS policies (users can only access their own data)
-CREATE POLICY "Users can view own data" ON users
-  FOR SELECT USING (auth.uid() = id);
-
-CREATE POLICY "Users can update own data" ON users
-  FOR UPDATE USING (auth.uid() = id);
-
-CREATE POLICY "Users can view own birth profile" ON birth_profiles
-  FOR ALL USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can view own natal charts" ON natal_charts
-  FOR ALL USING (
-    EXISTS (
-      SELECT 1 FROM birth_profiles 
-      WHERE birth_profiles.id = natal_charts.birth_profile_id 
-      AND birth_profiles.user_id = auth.uid()
-    )
-  );
-
-CREATE POLICY "Users can view own predictions" ON daily_predictions
-  FOR ALL USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can view own chat history" ON chat_histories
-  FOR ALL USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can view own tarot sessions" ON tarot_sessions
-  FOR ALL USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can view own calendar events" ON calendar_events
-  FOR ALL USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can view own subscription" ON subscriptions
-  FOR ALL USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can view own notification settings" ON notification_settings
-  FOR ALL USING (auth.uid() = user_id);
-```
-
-## Bước 2: Deploy lên Vercel
-
-### 2.1. Cài đặt Vercel CLI (tùy chọn)
 ```bash
-npm i -g vercel
+npm ci
+npm run typecheck
+npm test
+npm run build
 ```
 
-### 2.2. Deploy qua Vercel Dashboard
-1. Truy cập [https://vercel.com](https://vercel.com)
-2. Đăng nhập và nhấn **Add New Project**
-3. Import repository Git của bạn (GitHub/GitLab/Bitbucket)
-4. Vercel sẽ tự động nhận diện Vite project
+Đưa thư mục `dist/` lên hosting static hoặc import repository vào Vercel. `vercel.json` dùng npm và fallback các route về `index.html`. Chỉ khai báo các biến công khai:
 
-### 2.3. Cấu hình Environment Variables trên Vercel
-Trong Vercel Project Settings → Environment Variables, thêm:
-
-```
+```env
 VITE_SUPABASE_URL=https://your-project.supabase.co
-VITE_SUPABASE_ANON_KEY=your-anon-key
-VITE_OPENAI_API_KEY=sk-...
+VITE_SUPABASE_ANON_KEY=your-public-anon-key
 ```
 
-### 2.4. Deploy
-- Nhấn **Deploy**
-- Vercel sẽ build và deploy tự động
+Không cần Supabase để dùng Tarot, hồ sơ hoặc lịch cục bộ. Không có secret AI trong frontend. Mọi khóa OpenAI từng được commit cần được thu hồi trước khi sử dụng ứng dụng công khai; kiểm tra usage và chi phí trong tài khoản OpenAI. Không sử dụng lại khóa cũ.
 
-## Bước 3: Kết nối Frontend với Supabase
+## Ngoại tuyến
 
-### 3.1. Cài đặt Supabase Client
+Đưa **toàn bộ** `dist/` lên cùng origin HTTPS, bao gồm `sw.js`, manifest, JS/CSS và các hình. Build tự tạo danh sách tệp và hash; không sửa tệp trong `dist/` sau build. `/sw.js` phải trả JavaScript đúng MIME, không phải HTML fallback. Nên đặt `Cache-Control: no-cache` cho worker và index để nhận bản mới.
+
+Người dùng mở **Cài đặt → Dùng ngoại tuyến → Tải bộ dữ liệu offline** khi còn mạng, chờ trạng thái sẵn sàng rồi mới ngắt mạng. Worker chỉ cache static public trong manifest, không cache API/auth hoặc dữ liệu gửi tới AI. Nhật ký/hồ sơ vẫn lưu LocalStorage tại thiết bị. Sau cập nhật cần mở lại khi có mạng và tải đủ bộ mới.
+
+Kiểm tra production tại máy bằng `npm run build`, `npm run preview`; kiểm thử tự động bằng `npm run test:offline` sau build. Dev server không đăng ký service worker.
+
+## Supabase AI
+
+1. Tạo/link project Supabase bằng CLI của bạn.
+2. Bật đăng nhập email trong Authentication. Cấu hình Site URL và Redirect URLs bao gồm `https://your-app.example/chat` và URL local cần dùng.
+3. Chạy migration [202610290001_ai_quota.sql](./supabase/migrations/202610290001_ai_quota.sql) bằng SQL Editor hoặc `supabase db push` nếu project đã link.
+4. Đặt secrets theo [.env.server.example](./.env.server.example):
+
 ```bash
-pnpm add @supabase/supabase-js
+supabase secrets set OPENAI_API_KEY=YOUR_NEW_KEY
+supabase secrets set OPENAI_MODEL=gpt-4
+supabase secrets set ALLOWED_ORIGINS=https://your-app.example,http://localhost:5173
+supabase functions deploy chat-ai
 ```
 
-### 3.2. Tạo Supabase Client
-Tạo file `src/lib/supabase.ts`:
+Không dùng khóa thật trong lịch sử shell; nên nhập secrets qua Supabase Dashboard hoặc một tệp secrets được ignore rồi dùng `--env-file`. Ví dụ lệnh trên chỉ mô tả tên biến và giá trị mẫu.
 
-```typescript
-import { createClient } from '@supabase/supabase-js';
+`SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` do môi trường Edge Function cung cấp. Service-role key chỉ dùng phía server để tiêu thụ hạn mức; tuyệt đối không đưa vào cấu hình Vite.
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+Frontend dùng `supabase.functions.invoke('chat-ai')` với JWT phiên đăng nhập. Function xác minh user bằng `auth.getUser`; chỉ chấp nhận origin được liệt kê chính xác, POST/OPTIONS, body tối đa 64 KiB, tin nhắn 4.000 ký tự và tối đa 10 lượt lịch sử với role user/assistant. Giữ JWT verification mặc định; không triển khai function dưới dạng endpoint AI công khai.
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-```
+Hạn mức trong PostgreSQL là **20 yêu cầu/người/ngày Việt Nam**, tối thiểu **3 giây giữa hai yêu cầu**. Update quota là atomic và dùng user ID đã xác thực. RPC chỉ cấp quyền execute cho `service_role`; bảng bật RLS, không cấp quyền cho anon/authenticated. Khi quota/migration không hoạt động, function từ chối gọi AI. Lượt upstream lỗi vẫn tiêu thụ hạn mức.
 
-### 3.3. Sử dụng trong Components
-```typescript
-import { supabase } from '../lib/supabase';
+Không cần bảng chat/profile cũ để chạy bản này: hồ sơ, nhật ký, sự kiện và lịch sử chat nằm trên trình duyệt. Function không ghi cuộc hội thoại vào database. Nếu thêm đồng bộ sau này, cần migration/RLS riêng theo `auth.uid()`.
 
-// Lấy daily prediction
-const { data, error } = await supabase
-  .from('daily_predictions')
-  .select('*')
-  .eq('user_id', userId)
-  .eq('prediction_date', today)
-  .single();
+## Kiểm tra sau triển khai
 
-// Thêm chat message
-await supabase
-  .from('chat_histories')
-  .insert({ user_id: userId, role: 'user', content: message });
-```
+- Truy cập trực tiếp `/tarot`, `/calendar`, `/profile`, `/chat`, `/settings` và tải lại.
+- Tải bộ offline, tắt mạng, mở lại `/tarot`, thử ảnh Minor JoJo chưa mở, đọc luận giải và lưu/mở nhật ký.
+- Đăng nhập bằng liên kết email với origin đã cấu hình.
+- Thử một câu hỏi ngắn; xác nhận không có khóa OpenAI/service-role trong bundle hoặc request từ browser.
+- Kiểm tra 401 khi thiếu user, 403 với origin khác, 429 khi đạt hạn mức.
+- Xem log function; lỗi trả về không tiết lộ khóa hay nội dung lỗi upstream.
 
-## Bước 4: Tích hợp AI (OpenAI hoặc Anthropic)
+Bộ kiểm thử cục bộ mock dịch vụ AI/auth/quota để xác minh các nhánh này. Không thay thế kiểm tra integration với project Supabase thật. Bản cập nhật source không tự triển khai migration, function hoặc frontend.
 
-### 4.1. Với OpenAI
-```bash
-pnpm add openai
-```
+## Nguồn kỹ thuật
 
-```typescript
-import OpenAI from 'openai';
-
-const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true // chỉ dùng cho demo, production nên dùng backend
-});
-
-const response = await openai.chat.completions.create({
-  model: 'gpt-4',
-  messages: [
-    { role: 'system', content: 'Bạn là chuyên gia tử vi và chiêm tinh...' },
-    { role: 'user', content: userMessage }
-  ]
-});
-```
-
-### 4.2. Với Anthropic Claude
-```bash
-pnpm add @anthropic-ai/sdk
-```
-
-```typescript
-import Anthropic from '@anthropic-ai/sdk';
-
-const anthropic = new Anthropic({
-  apiKey: import.meta.env.VITE_ANTHROPIC_API_KEY,
-  dangerouslyAllowBrowser: true
-});
-
-const response = await anthropic.messages.create({
-  model: 'claude-3-5-sonnet-20241022',
-  max_tokens: 1024,
-  messages: [
-    { role: 'user', content: userMessage }
-  ]
-});
-```
-
-⚠️ **Lưu ý Bảo mật**: Gọi AI API trực tiếp từ frontend sẽ lộ API key. Trong production, nên:
-1. Tạo Supabase Edge Function để gọi AI API
-2. Frontend chỉ gọi Edge Function
-3. API key chỉ lưu trong Supabase Secrets
-
-## Bước 5: Tối ưu Production
-
-### 5.1. Caching
-- Sử dụng React Query hoặc SWR để cache data
-- Cache daily predictions
-
-### 5.2. Performance
-- Lazy load pages với React.lazy()
-- Optimize images
-- Minify và compress
-
-### 5.3. SEO
-- Thêm meta tags
-- Sử dụng React Helmet
-
-### 5.4. Analytics
-- Google Analytics
-- Vercel Analytics
-
-## Bước 6: Tính năng nâng cao (sau MVP)
-
-### 6.1. Google Calendar Integration
-- OAuth2 authentication
-- Sync events với lịch đẹp
-
-### 6.2. Push Notifications
-- Firebase Cloud Messaging
-- Gửi thông báo daily horoscope
-
-### 6.3. Payment Integration (Premium)
-- Stripe hoặc PayPal
-- Quản lý subscriptions
-
-### 6.4. AI Image Generation
-- DALL-E hoặc Stable Diffusion API
-- Generate aura/zodiac images
-
-## Troubleshooting
-
-### Build fails trên Vercel
-- Kiểm tra Node version trong Vercel settings
-- Đảm bảo tất cả dependencies đã được install
-
-### Environment variables không hoạt động
-- Phải có prefix `VITE_` cho Vite
-- Restart development server sau khi thêm env vars
-
-### CORS errors với Supabase
-- Kiểm tra Row Level Security policies
-- Xác nhận đã enable authentication nếu cần
-
-## Resources
-
-- [Supabase Documentation](https://supabase.com/docs)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Vite Environment Variables](https://vitejs.dev/guide/env-and-mode.html)
-- [OpenAI API](https://platform.openai.com/docs)
-- [Anthropic API](https://docs.anthropic.com)
+- [OpenAI — xác thực và giữ secret ở server](https://developers.openai.com/api/reference/overview#authentication)
+- [Supabase — xác thực Edge Functions](https://supabase.com/docs/guides/functions/auth)

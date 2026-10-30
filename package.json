@@ -1,11 +1,16 @@
 {
-  "name": "@figma/my-make-file",
+  "name": "astroai",
   "private": true,
-  "version": "0.0.1",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite"
+    "build": "vite build && node scripts/build-offline.mjs",
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx tests/core.test.ts && node --import tsx tests/tarot-reading.test.ts && node --import tsx tests/ai-handler.test.ts",
+    "test:e2e": "playwright test",
+    "preview": "vite preview",
+    "test:offline": "playwright test --config playwright.offline.config.ts"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
@@ -50,7 +55,6 @@
     "lucide-react": "0.487.0",
     "motion": "12.23.24",
     "next-themes": "0.4.6",
-    "openai": "^6.35.0",
     "react-day-picker": "8.10.1",
     "react-dnd": "16.0.1",
     "react-dnd-html5-backend": "16.0.1",
@@ -58,7 +62,7 @@
     "react-popper": "2.3.0",
     "react-resizable-panels": "2.1.7",
     "react-responsive-masonry": "2.7.1",
-    "react-router": "7.13.0",
+    "react-router": "7.18.5",
     "react-slick": "0.31.0",
     "recharts": "2.15.2",
     "sonner": "2.0.3",
@@ -67,10 +71,16 @@
     "vaul": "1.1.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.1",
     "@tailwindcss/vite": "4.1.12",
+    "@types/node": "^26.6.6",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "4.7.0",
     "tailwindcss": "4.1.12",
-    "vite": "6.3.5"
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "6.4.5"
   },
   "peerDependencies": {
     "react": "18.3.1",
@@ -86,7 +96,7 @@
   },
   "pnpm": {
     "overrides": {
-      "vite": "6.3.5"
+      "vite": "6.4.5"
     }
   }
 }
