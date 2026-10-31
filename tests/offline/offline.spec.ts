@@ -1,12 +1,13 @@
 import { test, expect } from '@playwright/test';
 
-test('Complete download enables cold offline reload, all 78 original Celestial images, detailed readings and journal persistence', async ({
+test('Complete download enables cold offline reload, all 78 JoJo refs, detailed readings and journal persistence', async ({
   page,
   context,
 }, testInfo) => {
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/settings');
+  await page.getByRole('radio', { name: 'JoJo ref', exact: true }).check();
   await page.getByRole('button', { name: 'Tải bộ dữ liệu offline' }).click();
   await expect(page.locator('.offline-settings .offline-bundle-status')).toContainText(
     'Đã sẵn sàng dùng offline',
@@ -60,10 +61,21 @@ test('Complete download enables cold offline reload, all 78 original Celestial i
   await expect(page.getByRole('heading', { name: 'Không gian Tarot.' })).toBeVisible();
   await page.getByRole('tab', { name: 'Thư viện 78 lá' }).click();
   await expect(page.locator('.library-card .tarot-artwork')).toHaveCount(78);
+  await expect(page.locator('.library-card .jojo-artwork')).toHaveCount(78);
+  const lastJoJoArtwork = page.locator('.library-card .jojo-artwork').last();
+  await lastJoJoArtwork.scrollIntoViewIfNeeded();
+  await expect
+    .poll(() =>
+      lastJoJoArtwork
+        .locator('img')
+        .first()
+        .evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0),
+    )
+    .toBe(true);
   await page.getByRole('button', { name: 'Gậy', exact: true }).click();
   await expect(page.locator('.library-card')).toHaveCount(14);
   await page.screenshot({
-    path: testInfo.outputPath('celestial-minor-library.png'),
+    path: testInfo.outputPath('jojo-minor-library.png'),
     fullPage: true,
   });
   await page.locator('.library-card').first().click();

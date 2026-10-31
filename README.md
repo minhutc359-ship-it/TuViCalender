@@ -78,6 +78,8 @@ Các phần tiếp theo của lộ trình như 75 tranh Celestial chi tiết, đ
 
 Mở **Cài đặt → Minh họa thẻ bài Tarot → JoJo ref** (`/settings`). Lựa chọn lưu trên trình duyệt và áp dụng cho lật bài, thư viện, trang chủ và nhật ký. 22 Major Arcana dùng Stand/người sử dụng đúng theo Stardust Crusaders (ví dụ The Star → Star Platinum / Jotaro; The World → The World / DIO). 56 Minor dùng hình Stand từ các phần JoJo khác, được ghi rõ là **liên tưởng mỹ thuật do ứng dụng chọn**, không phải đối ứng Tarot trong truyện. Có thể tìm theo tên Stand hoặc nhân vật trong thư viện khi bật JoJo ref.
 
+JoJo ref được đóng gói và hiển thị mặc định trong production. Nhà phát hành có thể tạo bản chỉ dùng Celestial bằng `VITE_ENABLE_REFERENCE_ART=false npm run build`.
+
 Asset tải về chạy cục bộ, không hotlink trong giao diện. Nguồn từng ảnh nằm trong `src/features/tarot/data/jojo-stands.json` và `jojo-minor-art.json`; xem [ATTRIBUTIONS.md](./ATTRIBUTIONS.md). Tải lại asset bằng `python3 scripts/fetch-jojo-assets.py` và `python3 scripts/fetch-jojo-minor-assets.py` (cần mạng).
 
 ### Mức độ của phần luận giải

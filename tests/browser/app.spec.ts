@@ -205,8 +205,8 @@ test('JoJo setting persists, library maps Star Platinum/Jotaro, and journal keep
   page,
 }) => {
   test.skip(
-    process.env.VITE_ENABLE_REFERENCE_ART !== 'true',
-    'Reference images require publisher rights verification and an opt-in build.',
+    process.env.VITE_ENABLE_REFERENCE_ART === 'false',
+    'JoJo reference art was explicitly disabled for this build.',
   );
   const reading = {
     id: 'jojo-fixture',
@@ -282,8 +282,8 @@ test('Mobile JoJo setting and real flips show the corresponding Stands and prese
   page,
 }) => {
   test.skip(
-    process.env.VITE_ENABLE_REFERENCE_ART !== 'true',
-    'Reference images require publisher rights verification and an opt-in build.',
+    process.env.VITE_ENABLE_REFERENCE_ART === 'false',
+    'JoJo reference art was explicitly disabled for this build.',
   );
   await page.setViewportSize({ width: 390, height: 844 });
   await page.addInitScript(() => {

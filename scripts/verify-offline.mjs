@@ -39,8 +39,14 @@ for (const size of [192, 512]) {
 }
 const report = JSON.parse(await readFile('reports/offline-size.json', 'utf8'));
 assert.ok(report.storageBytes <= 50 * 1048576 && report.estimatedGzipTransferBytes <= 50 * 1048576);
-if (process.env.VITE_ENABLE_REFERENCE_ART !== 'true')
+if (process.env.VITE_ENABLE_REFERENCE_ART === 'false')
   assert.ok(!manifest.files.some((file) => file.path.includes('/jojo-ref/')));
+else {
+  const jojoFiles = manifest.files.filter((file) => file.path.includes('/jojo-ref/'));
+  assert.equal(jojoFiles.length, 101);
+  const tarotPack = manifest.packs.find((pack) => pack.id === 'tarot');
+  assert.ok(jojoFiles.every((file) => tarotPack.files.includes(file.path)));
+}
 console.log(
   `Verified four packs: ${manifest.files.length} unique files, SHA-256/size/ownership/dependencies/icons and 50 MiB gate.`,
 );

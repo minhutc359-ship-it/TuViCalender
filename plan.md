@@ -95,7 +95,7 @@ React PWA → application services → calendar/tarot/knowledge/profile engines 
 - [x] Trải 1/3/5/10 lá có nhãn vị trí, luận giải local theo chủ đề và liên hệ lá; AI chỉ mở rộng.
 - [x] Nhật ký lưu/mở/sửa/xóa; thư viện lọc/tìm/zoom.
 - [x] Motion rút/lật, reduced motion/không gian tĩnh.
-- [x] 78 cảnh SVG Celestial gốc, có script tái tạo và attribution. Build chuẩn loại ảnh JoJo chưa xác minh quyền; cấu hình opt-in giữ khả năng tham chiếu riêng.
+- [x] 78 cảnh SVG Celestial gốc, có script tái tạo và attribution. JoJo ref bật mặc định theo yêu cầu chủ dự án, có 78 Stand, 22 chân dung, mặt lưng, mapping và attribution; có thể opt-out bằng biến build.
 - [x] Nhật ký lưu snapshot nội dung/version; reopen giữ nguyên giải nghĩa khi nguồn thay đổi; snapshot nhập sai bị chặn.
 - [x] Swipe lịch phân biệt trục/scroll và chặn click ngày cũ; skip Tarot, reduced-motion, keyboard/modal và 320–1280 px đã qua browser tests. FPS thiết bị thật vẫn cần kiểm chứng.
 
@@ -186,7 +186,7 @@ Xem [báo cáo nghiệm thu](docs/OFFLINE_FIRST_VERIFICATION.md) để biết l�
 
 ## Kết quả bản gộp
 
-- 45 unit/integration tests pass; 13 browser flows pass (2 bộ hình tham chiếu opt-in được bỏ qua); 4 production-offline flows pass.
+- 45 unit/integration tests pass; 15 browser flows pass, gồm 2 luồng JoJo ref; 4 production-offline flows pass, gồm cold reload JoJo sau khi ngắt mạng.
 - Tải đủ → tắt mạng → đóng tab/mở tab mới → chat, lịch, 78 hình, luận giải, nhật ký và hồ sơ vẫn hoạt động.
 - Không còn hạng mục code nền IndexedDB/content pack/backup/chat/Tarot/visual đang được mô tả như chưa triển khai. Các mục chưa đánh dấu ở trên là kiểm chứng tài khoản, phương pháp/thiết bị thật hoặc phát triển sau MVP.
 - 28 Tú được hiển thị chưa kiểm định và loại khỏi điểm; không dùng thuật toán reset theo tháng để công bố kết quả.

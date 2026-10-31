@@ -10,7 +10,7 @@ Base `a843eb1`. Thay đổi được chuẩn bị thành một commit để push
 | `npm test` | **45 tests pass**: core 11, Tarot 7, AI handler 6, local chat 5, backup 4, service worker 6, IndexedDB 4, solar/snapshot 2 |
 | Local corpus | 128 câu mẫu độc lập và câu chuẩn cho cả 229 nhóm tra cứu đều đúng intent |
 | `npm run build` | Pass, kèm kiểm chứng 4 pack, SHA-256, sizes, ownership, icons và gate dung lượng |
-| Browser E2E | **13 pass**, 2 test JoJo opt-in được bỏ qua ở cấu hình phát hành chuẩn |
+| Browser E2E | **15 pass**, gồm 2 luồng JoJo ref trên desktop và mobile |
 | Production offline E2E | **4 pass** |
 | Responsive | 7 route ở 320, 375, 390, 768, 1280 px; ba theme ở 360 px; không overflow |
 | Motion/keyboard | OS reduced-motion, không gian tĩnh, modal Escape, swipe lịch không click nhầm ngày |
@@ -32,12 +32,12 @@ Chromium kiểm thử cục bộ: 141.0.7390.0, chạy qua Playwright 1.64.1. Bi
 
 ## Dung lượng đo từ build
 
-Manifest `3d33fc8e501a66ad`; tổng gồm worker/manifest:
+Manifest `ca614f3f32194cac`; tổng gồm worker/manifest:
 
 | Chỉ số | MiB |
 | --- | ---: |
-| Raw assets | 2.081 |
-| Ước tính gzip transfer | 0.517 |
+| Raw assets | 23.394 |
+| Ước tính gzip transfer | 21.804 |
 | Core raw | 1.033 |
 | Giới hạn raw và gzip estimate | 50 |
 
@@ -46,13 +46,13 @@ Manifest `3d33fc8e501a66ad`; tổng gồm worker/manifest:
 | core | 29 | 1.033 |
 | eastern | 1 | 0.033 |
 | western | 1 | 0.009 |
-| tarot | 81 | 0.953 |
+| tarot | 182 | 22.232 |
 
 SVG được nén rất hiệu quả; gzip là ước tính từ file build, không phải số traffic đã đo trên hosting. Không cộng dữ liệu cá nhân, metadata của browser hoặc cache phiên bản trước. `reports/offline-size.json` là báo cáo từng file do build/CI tạo.
 
 ## Nguồn và giới hạn
 
-Bộ Celestial chuẩn gồm 78 cảnh SVG gốc, có source tái tạo. Bộ ảnh nhân vật JoJo chỉ còn ở cấu hình opt-in, không xuất trong build chuẩn khi chưa xác minh quyền phát hành. Nghĩa Tarot không đổi khi chọn bộ hình.
+Bộ Celestial gồm 78 cảnh SVG gốc, có source tái tạo. JoJo ref được bật mặc định và đóng gói trong Tarot offline pack, gồm 78 Stand, 22 chân dung và mặt lưng riêng. Nghĩa Tarot không đổi khi chọn bộ hình; trách nhiệm xác minh quyền phân phối hình tham chiếu vẫn thuộc nhà phát hành.
 
 Lịch Việt Nam dùng UTC+7. Trực theo tháng tiết khí ở 12:00 UTC+7; mô hình Mặt Trời và bốn trụ là xấp xỉ, đổi ngày lúc 00:00. Năm Bát tự theo Lập Xuân có thể khác năm âm theo Tết. Cung Mặt Trời dùng khoảng ngày; chưa có Moon/Rising/natal chart ephemeris.
 

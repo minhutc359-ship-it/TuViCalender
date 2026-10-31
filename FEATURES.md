@@ -10,7 +10,7 @@
 | AI | Opt-in mặc định tắt, local-first, auth Edge Function; timeout/401/429/5xx fallback | Cần cấu hình/deploy Supabase; không tự gửi hồ sơ sinh |
 | Knowledge | Versioned JSON theo pack; search/filter/bookmark; vòng Ngũ hành/Bát quái/Zodiac tương tác | Chỉ đọc các pack đã tải khi offline; không âm thầm tải lại pack đã xóa |
 | Tarot | 78 lá, nghĩa xuôi/ngược và ngữ cảnh, 1/3/5/10 lá, Web Crypto không trùng | Nội dung biên soạn để chiêm nghiệm, không dự báo chắc chắn |
-| Artwork | 78 cảnh SVG Celestial gốc, source tái tạo và attribution | Ảnh JoJo tham chiếu không đi vào build chuẩn; opt-in cần quyền phát hành riêng |
+| Artwork | 78 cảnh SVG Celestial gốc, source tái tạo và attribution | JoJo ref bật mặc định: 78 Stand, 22 chân dung và mặt lưng; có nguồn/attribution riêng |
 | Nhật ký | Lưu/sửa/xóa, orientation, snapshot nghĩa/version; reopen nhất quán | Tối đa 200 phiên; chưa sync giữa thiết bị |
 | Hồ sơ | CRUD nhiều người, timezone IANA, consent, góc nhìn ưu tiên, lưu offline | Bốn trụ xấp xỉ UTC+7 khi đủ giờ; natal chart thiên văn chưa có |
 | Lịch | Âm dương UTC+7, Can Chi, 6 giờ dân gian, Hoàng đạo theo tháng/chi ngày, filter/sự kiện, swipe tháng | Trực theo tháng tiết khí xấp xỉ; 28 Tú chưa kiểm định và không dùng cho điểm |

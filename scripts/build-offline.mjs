@@ -5,7 +5,7 @@ import { gzipSync } from 'node:zlib';
 import { mkdir, rm } from 'node:fs/promises';
 const limit = 50 * 1048576;
 const root = resolve('dist');
-if (process.env.VITE_ENABLE_REFERENCE_ART !== 'true')
+if (process.env.VITE_ENABLE_REFERENCE_ART === 'false')
   await rm(resolve(root, 'assets/tarot/jojo-ref'), { recursive: true, force: true });
 async function walk(directory) {
   return (
