@@ -9,6 +9,18 @@ export interface OfflineState {
   bytes: number;
   error: string;
   version: string;
+  updateAvailable: boolean;
+  packs: Array<{
+    id: string;
+    version: string;
+    done: number;
+    total: number;
+    bytes: number;
+    cachedBytes: number;
+    ready: boolean;
+    checksum: string;
+    dependencies: string[];
+  }>;
 }
 let state: OfflineState = {
   supported:
@@ -24,6 +36,8 @@ let state: OfflineState = {
   bytes: 0,
   error: '',
   version: '',
+  updateAvailable: false,
+  packs: [],
 };
 const listeners = new Set<() => void>();
 const update = (next: Partial<OfflineState>) => {
@@ -52,7 +66,11 @@ async function waitForActivation(registered: ServiceWorkerRegistration) {
   });
   return registered;
 }
-function exchange(worker: ServiceWorker, type: 'STATUS' | 'PREPARE') {
+function exchange(
+  worker: ServiceWorker,
+  type: 'STATUS' | 'PREPARE' | 'DELETE_PACK' | 'CANCEL' | 'CLEAR_OLD',
+  packId?: string,
+) {
   return new Promise<void>((resolve, reject) => {
     const channel = new MessageChannel();
     let timer: ReturnType<typeof setTimeout>;
@@ -73,9 +91,15 @@ function exchange(worker: ServiceWorker, type: 'STATUS' | 'PREPARE') {
         total: message.total ?? state.total,
         bytes: message.bytes ?? state.bytes,
         version: message.version ?? state.version,
-        ready: !!message.ready,
-        busy: type === 'PREPARE' ? message.kind === 'progress' : state.busy,
+        ready: message.ready ?? state.ready,
+        busy:
+          typeof message.busy === 'boolean'
+            ? message.busy
+            : type === 'PREPARE'
+              ? message.kind === 'progress'
+              : state.busy,
         error: message.error ?? '',
+        packs: message.packs ?? state.packs,
       });
       if (message.kind === 'complete' || message.kind === 'error') {
         clearTimeout(timer);
@@ -83,7 +107,7 @@ function exchange(worker: ServiceWorker, type: 'STATUS' | 'PREPARE') {
         message.kind === 'error' ? reject(new Error(message.error)) : resolve();
       }
     };
-    worker.postMessage({ type }, [channel.port2]);
+    worker.postMessage({ type, packId }, [channel.port2]);
   });
 }
 export function registerOffline() {
@@ -108,6 +132,13 @@ export function registerOffline() {
             ? await navigator.serviceWorker.register('/sw.js', { scope: '/' })
             : existing;
         const ready = await waitForActivation(registered);
+        const checkUpdate = () => update({ updateAvailable: !!registered.waiting });
+        checkUpdate();
+        const watchInstalling = () => {
+          registered.installing?.addEventListener('statechange', checkUpdate);
+        };
+        watchInstalling();
+        registered.addEventListener('updatefound', watchInstalling);
         update({ registered: true });
         if (ready.active) await exchange(ready.active, 'STATUS');
         return ready;
@@ -121,7 +152,7 @@ export function registerOffline() {
     })();
   return registration;
 }
-export async function prepareOffline() {
+export async function prepareOffline(packId?: string) {
   if (state.busy) return;
   update({ busy: true, error: '' });
   try {
@@ -130,11 +161,26 @@ export async function prepareOffline() {
       throw new Error(
         state.error || 'Chế độ ngoại tuyến cần bản ứng dụng hoàn chỉnh trên HTTPS hoặc localhost.',
       );
-    await exchange(ready.active, 'PREPARE');
+    await exchange(ready.active, 'PREPARE', packId);
   } catch (error) {
     update({
       busy: false,
       error: error instanceof Error ? error.message : 'Chưa lưu được bộ ngoại tuyến.',
+    });
+  }
+}
+export async function offlineAction(
+  type: 'STATUS' | 'DELETE_PACK' | 'CANCEL' | 'CLEAR_OLD',
+  packId?: string,
+) {
+  try {
+    const registered = await registerOffline();
+    if (!registered?.active) return;
+    await exchange(registered.active, type, packId);
+  } catch (error) {
+    update({
+      busy: false,
+      error: error instanceof Error ? error.message : 'Chưa hoàn thành thao tác.',
     });
   }
 }
@@ -147,4 +193,27 @@ export function useOfflineState() {
     () => state,
     () => state,
   );
+}
+export async function acceptOfflineUpdate() {
+  if (state.busy) return;
+  const registered = await registerOffline();
+  const waiting = registered?.waiting;
+  if (!waiting) return;
+  update({ busy: true, error: '' });
+  try {
+    // Verify the full next version before switching to it.
+    await exchange(waiting, 'PREPARE');
+    navigator.serviceWorker.addEventListener('controllerchange', () => window.location.reload(), {
+      once: true,
+    });
+    waiting.postMessage({ type: 'ACTIVATE_UPDATE' });
+  } catch (error) {
+    update({
+      busy: false,
+      error:
+        error instanceof Error
+          ? error.message
+          : 'Chưa cập nhật được. Phiên hiện tại vẫn sử dụng được.',
+    });
+  }
 }

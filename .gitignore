@@ -6,5 +6,6 @@ dist/
 !.env.server.example
 test-results/
 *.log
+reports/offline-size.json
 # The unpacked concept sources are tracked; keep the duplicate archive local.
 /AstroAI_Celestial_Tarot_Concept.zip

@@ -6,6 +6,8 @@ import { vietnamToday, vietnamDateKey } from '../../lib/date';
 import { useStoredState } from '../../lib/storage';
 import { AstroSymbol } from '../components/astro/AstroSymbol';
 import { BaguaWheel } from '../components/astro/AstroWheels';
+import { useMonthSwipe } from '../../motion/gestures';
+import { traditionalSolarMonth } from '../../lib/solar-terms';
 import { Modal } from '../components/Modal';
 type EventType = keyof typeof EVENT_TYPES;
 interface CalendarEvent {
@@ -92,6 +94,7 @@ export default function CalendarPage() {
     setEventTitle('');
     setNotice('');
   }
+  const swipe = useMonthSwipe(changeMonth);
   function addEvent(e: FormEvent) {
     e.preventDefault();
     if (!eventTitle.trim()) return;
@@ -190,7 +193,7 @@ export default function CalendarPage() {
               <ChevronRight size={18} />
             </button>
           </div>
-          <div className="calendar-grid">
+          <div className="calendar-grid" {...swipe} style={{ touchAction: 'pan-y' }}>
             {['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'].map((day) => (
               <div className="weekday" key={day}>
                 {day}
@@ -268,9 +271,10 @@ export default function CalendarPage() {
             <p>
               Âm lịch được tính theo UTC+7 bằng thuật toán thiên văn hiện có. Can Chi ngày dùng số
               ngày Julian; hoàng đạo tra theo tháng âm và địa chi; giờ hoàng đạo tra theo địa chi
-              ngày, đủ 6 khung giờ. Trực dùng tháng âm, chưa hiệu chỉnh tiết khí; 28 Tú và điểm ngày
-              còn là quy tắc giản lược. Lọc tuổi chỉ xét lục xung theo năm âm, chưa phải phép chọn
-              ngày chuyên sâu. Kết quả dùng để tham khảo cùng điều kiện thực tế.
+              ngày, đủ 6 khung giờ. Trực theo tháng tiết khí ở 12:00 UTC+7 (xấp xỉ); 28 Tú chưa kiểm
+              định và không tham gia điểm ngày. Điểm ngày còn là quy tắc giản lược. Lọc tuổi chỉ xét
+              lục xung theo năm âm, chưa phải phép chọn ngày chuyên sâu. Kết quả dùng để tham khảo
+              cùng điều kiện thực tế.
             </p>
           </details>
         </section>
@@ -367,6 +371,10 @@ export default function CalendarPage() {
               <span className="eyebrow">ÂM LỊCH {formatLunarDate(selected.lunar)}</span>
               <h3>{selected.dayCanChi}</h3>
               <p>{selected.description}</p>
+              <p className="small muted">
+                Tiết khí ở 12:00 UTC+7: {traditionalSolarMonth(selectedDay, month, year).term} · mô
+                hình Mặt Trời xấp xỉ.
+              </p>
               <div className="day-sheet-facts">
                 <span>
                   <AstroSymbol name={selectedElement} size={22} />
@@ -392,8 +400,8 @@ export default function CalendarPage() {
                 ))}
               </div>
               <p className="small muted">
-                Trực theo tháng âm; 28 Tú và điểm ngày còn giản lược. Kết hợp lịch tham khảo với
-                điều kiện thực tế.
+                Trực theo tháng tiết khí xấp xỉ UTC+7; 28 Tú chưa có mốc tham chiếu được kiểm định.
+                Điểm ngày chỉ là quy tắc giải trí. Kết hợp lịch tham khảo với điều kiện thực tế.
               </p>
               <button
                 className="button primary"

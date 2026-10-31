@@ -4,6 +4,7 @@
  */
 
 import { solarToLunar, dateToJD, THIEN_CAN, DIA_CHI, CAN_TO_NGU_HANH } from './lunar';
+import { approximateFourPillars } from './solar-terms';
 
 // Western Zodiac Signs
 export const ZODIAC_SIGNS = [
@@ -207,6 +208,7 @@ export function calculateEasternChart(
   month: number,
   year: number,
   hour?: number,
+  minute = 0,
 ): EasternChart {
   const lunar = solarToLunar(day, month, year);
   const canChi = getCanChiForDate(year, month, day, hour);
@@ -226,28 +228,31 @@ export function calculateEasternChart(
     nguHanh,
     cungMenh,
     conGiap,
-    batTu: {
-      yearPillar: {
-        can: canChi.year.split(' ')[0],
-        chi: canChi.year.split(' ')[1],
-      },
-      monthPillar: {
-        can: canChi.month.split(' ')[0],
-        chi: canChi.month.split(' ')[1],
-      },
-      dayPillar: {
-        can: canChi.day.split(' ')[0],
-        chi: canChi.day.split(' ')[1],
-      },
-      ...(hour !== undefined && canChi.hour
-        ? {
-            hourPillar: {
-              can: canChi.hour.split(' ')[0],
-              chi: canChi.hour.split(' ')[1],
+    batTu:
+      hour !== undefined
+        ? approximateFourPillars(day, month, year, hour, minute)
+        : {
+            yearPillar: {
+              can: canChi.year.split(' ')[0],
+              chi: canChi.year.split(' ')[1],
             },
-          }
-        : {}),
-    },
+            monthPillar: {
+              can: canChi.month.split(' ')[0],
+              chi: canChi.month.split(' ')[1],
+            },
+            dayPillar: {
+              can: canChi.day.split(' ')[0],
+              chi: canChi.day.split(' ')[1],
+            },
+            ...(hour !== undefined && canChi.hour
+              ? {
+                  hourPillar: {
+                    can: canChi.hour.split(' ')[0],
+                    chi: canChi.hour.split(' ')[1],
+                  },
+                }
+              : {}),
+          },
   };
 }
 

@@ -98,3 +98,11 @@ npm run preview
 ```
 
 `npm run dev` vẫn luận giải tại máy nhưng không bật bộ lưu ngoại tuyến. Chat AI và liên kết nguồn bên ngoài cần mạng. Dữ liệu thuộc trình duyệt hiện tại, có thể mất khi xóa dữ liệu hoặc trình duyệt thu hồi bộ nhớ. Khi có bản cập nhật, mở lại Cài đặt lúc có mạng để tải đủ phiên bản mới.
+
+### AstroAI 2.0 Offline-First — 31/10/2026
+
+Bản chuẩn có bốn content pack độc lập, IndexedDB và chuyển dữ liệu cũ, backup JSON có preview/transaction, chatbot local không cần đăng nhập, thư viện 229 nhóm tra cứu và 78 cảnh Tarot Celestial gốc. AI online là opt-in; thiếu mạng/key/API lỗi vẫn có local fallback. Nhật ký lưu snapshot để giữ nguyên luận giải qua cập nhật.
+
+Chạy `npm ci`, `npm run typecheck`, `npm test`, `npm run build`, `npm run test:e2e`, `npm run test:offline`. Build kiểm SHA-256, pack ownership và gate 50 MiB. Nội dung tính lịch/chiêm tinh là truyền thống hoặc xấp xỉ có giới hạn công khai.
+
+Chi tiết: [plan.md](plan.md), [FEATURES.md](FEATURES.md), [kiểm chứng](docs/OFFLINE_FIRST_VERIFICATION.md), [triển khai](DEPLOYMENT.md). Các bước thu hồi khóa/deploy RLS/kiểm thiết bị thật cần thực hiện ngoài source; cloud sync và natal chart đầy đủ là sau MVP.

@@ -2,6 +2,7 @@ import { CARD_BACK, type TarotCard } from './cards';
 import references from './jojo-stands.json';
 import minorReferences from './jojo-minor-art.json';
 
+export const REFERENCE_ART_ENABLED = import.meta.env?.VITE_ENABLE_REFERENCE_ART === 'true';
 export type TarotAppearanceId = 'celestial-v1' | 'jojo-ref';
 export const APPEARANCE_KEY = 'astroai.tarot-appearance.v1';
 export const JOJO_MAPPING_SOURCE = 'https://jojowiki.com/Tarot_Cards';

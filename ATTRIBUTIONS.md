@@ -23,3 +23,11 @@ The historical comparison source is Arthur Edward Waite, _The Pictorial Key to t
 ## Mystic Fusion vectors
 
 The symbols, constellation ornaments, cloud lines and diagram wheels in `src/app/components/astro/` are original SVG constructions. The eight trigram line patterns are checked against the [Unicode Miscellaneous Symbols chart, U2630–U2637](https://www.unicode.org/charts/PDF/U2600.pdf). Wheels are symbolic graphics, not computed planetary charts or compass readings. Existing Tarot illustration sources remain as described above.
+
+## Original Celestial narrative deck — 31/10/2026
+
+All 78 front SVG illustrations are authored from the source scene definitions in `scripts/generate-tarot-scenes.py`: original vector figures, landscapes, objects and compositions for AstroAI. They use general traditional Tarot motifs, with no downloaded photographs, commercial character art or bundled font. The project may use and modify these newly authored scene definitions and generated SVG assets; no exclusive ownership or rights in traditional Tarot concepts is claimed.
+
+The earlier concept archive remains a design reference. The production deck now uses the same original narrative vector system for all 78 cards. Run `python scripts/generate-tarot-scenes.py` to reproduce it.
+
+The existing JoJo reference source assets and mappings are retained for continuity, but production builds omit their image folder by default and the option is hidden. Enabling `VITE_ENABLE_REFERENCE_ART=true` is a separate publisher decision requiring rights verification; source links and attribution alone do not grant redistribution rights. These reference images are not needed by the four standard offline packs.

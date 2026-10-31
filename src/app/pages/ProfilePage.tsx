@@ -2,7 +2,13 @@ import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router';
 import { Plus, Save, Trash2 } from 'lucide-react';
 import { useStoredState } from '../../lib/storage';
-import { PROFILE_KEY, ACTIVE_PROFILE_KEY, isProfiles, type Profile } from '../../lib/profiles';
+import {
+  PROFILE_KEY,
+  ACTIVE_PROFILE_KEY,
+  isProfiles,
+  isTimeZone,
+  type Profile,
+} from '../../lib/profiles';
 import { calculateEasternChart, calculateWesternChart, getZodiacTraits } from '../../lib/astrology';
 import { solarToLunar, formatLunarDate } from '../../lib/lunar';
 import { vietnamDateKey } from '../../lib/date';
@@ -16,6 +22,8 @@ const blank = (): Profile => ({
   birthDate: '',
   birthTime: '',
   birthPlace: '',
+  timezone: 'Asia/Ho_Chi_Minh',
+  tradition: 'fusion',
 });
 export default function ProfilePage() {
   const [profiles, setProfiles, storageError] = useStoredState<Profile[]>(
@@ -32,6 +40,7 @@ export default function ProfilePage() {
   const [draft, setDraft] = useState<Profile>(() => active ?? blank());
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const [consent, setConsent] = useState(!!active?.consentAt);
   const [year, month, day] = (active?.birthDate ?? '').split('-').map(Number);
   const western = active ? calculateWesternChart(day, month, year) : null;
   const eastern = active
@@ -39,12 +48,19 @@ export default function ProfilePage() {
         day,
         month,
         year,
-        active.birthTime ? Number(active.birthTime.split(':')[0]) : undefined,
+        active.birthTime && (active.timezone ?? 'Asia/Ho_Chi_Minh') === 'Asia/Ho_Chi_Minh'
+          ? Number(active.birthTime.split(':')[0])
+          : undefined,
+        active.birthTime ? Number(active.birthTime.split(':')[1]) : 0,
       )
     : null;
   const traits = western ? getZodiacTraits(western.sunSign) : null;
   function save(e: FormEvent) {
     e.preventDefault();
+    if (!consent || !isTimeZone(draft.timezone ?? 'Asia/Ho_Chi_Minh')) {
+      setError('Hãy chọn múi giờ hợp lệ và đồng ý lưu dữ liệu tại thiết bị.');
+      return;
+    }
     if (
       !draft.name.trim() ||
       !draft.birthDate ||
@@ -54,7 +70,13 @@ export default function ProfilePage() {
       setError('Nhập tên và ngày sinh hợp lệ từ năm 1900 đến hôm nay.');
       return;
     }
-    const updated = { ...draft, name: draft.name.trim(), birthPlace: draft.birthPlace.trim() };
+    const updated = {
+      ...draft,
+      name: draft.name.trim(),
+      birthPlace: draft.birthPlace.trim(),
+      timezone: draft.timezone ?? 'Asia/Ho_Chi_Minh',
+      consentAt: draft.consentAt ?? new Date().toISOString(),
+    };
     setProfiles([...profiles.filter((p) => p.id !== updated.id), updated]);
     setActiveId(updated.id);
     setMessage('Đã cập nhật hồ sơ.');
@@ -63,6 +85,7 @@ export default function ProfilePage() {
   function choose(p: Profile) {
     setActiveId(p.id);
     setDraft(p);
+    setConsent(!!p.consentAt);
     setMessage('');
     setError('');
   }
@@ -71,6 +94,7 @@ export default function ProfilePage() {
     setProfiles(remaining);
     setActiveId(remaining[0]?.id ?? '');
     setDraft(remaining[0] ?? blank());
+    setConsent(!!remaining[0]?.consentAt);
     setMessage('Đã xóa hồ sơ.');
   }
   return (
@@ -100,6 +124,7 @@ export default function ProfilePage() {
         <button
           onClick={() => {
             setDraft(blank());
+            setConsent(false);
             setMessage('');
             setError('');
           }}
@@ -157,6 +182,42 @@ export default function ProfilePage() {
               />
             </div>
             <div className="form-actions">
+              <div className="form-field full">
+                <label htmlFor="birth-timezone">Múi giờ nơi sinh</label>
+                <input
+                  id="birth-timezone"
+                  value={draft.timezone ?? 'Asia/Ho_Chi_Minh'}
+                  onChange={(e) => setDraft({ ...draft, timezone: e.target.value })}
+                  placeholder="Asia/Ho_Chi_Minh"
+                />
+                <small className="muted">
+                  Lịch Việt Nam vẫn dùng UTC+7. Chưa tính Bát tự hoặc lá số thiên văn theo múi giờ
+                  khác.
+                </small>
+              </div>
+              <div className="form-field full">
+                <label htmlFor="profile-tradition">Góc nhìn ưu tiên</label>
+                <select
+                  id="profile-tradition"
+                  value={draft.tradition ?? 'fusion'}
+                  onChange={(e) =>
+                    setDraft({ ...draft, tradition: e.target.value as Profile['tradition'] })
+                  }
+                >
+                  <option value="fusion">Đông & Tây</option>
+                  <option value="eastern">Đông phương</option>
+                  <option value="western">Tây phương</option>
+                </select>
+              </div>
+              <label className="profile-consent">
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                />
+                Tôi đồng ý lưu thông tin sinh trên thiết bị này. Dữ liệu không tự gửi cho AI hoặc
+                cloud.
+              </label>
               <button className="button primary" type="submit">
                 <Save size={16} />
                 Lưu hồ sơ
@@ -212,10 +273,7 @@ export default function ProfilePage() {
                       <strong>{western.ruler}</strong>
                     </span>
                     <span>
-                      <AstroSymbol
-                        name={western.element}
-                        size={22}
-                      />
+                      <AstroSymbol name={western.element} size={22} />
                       <small>Nguyên tố cung Mặt Trời</small>
                       <strong>
                         {{ Fire: 'Lửa', Earth: 'Đất', Air: 'Khí', Water: 'Nước' }[western.element]}
@@ -287,9 +345,10 @@ export default function ProfilePage() {
                 <summary>Phương pháp và giới hạn</summary>
                 <p>
                   Can Chi năm dùng năm âm lịch, ngày dùng số ngày Julian và giờ dùng can ngày. Trụ
-                  tháng dùng tháng âm, chưa hiệu chỉnh theo tiết khí. Cung Mặt Trời dùng khoảng ngày
-                  phổ biến. Chưa tính cung Mọc, Mặt Trăng hoặc lá số Bát tự chuyên sâu. Nơi sinh
-                  hiện chỉ được lưu; phép tính dùng UTC+7 và ngày đổi lúc 00:00.
+                  năm tuổi theo lịch âm. Bốn trụ khi đủ giờ dùng tháng tiết khí xấp xỉ UTC+7, quy
+                  ước đổi ngày lúc 00:00; có thể khác tên năm âm quanh Tết/Lập Xuân. Cung Mặt Trời
+                  dùng khoảng ngày phổ biến. Chưa tính cung Mọc, Mặt Trăng hoặc lá số Bát tự chuyên
+                  sâu. Nơi sinh hiện chỉ được lưu; phép tính dùng UTC+7 và ngày đổi lúc 00:00.
                 </p>
               </details>
             </>

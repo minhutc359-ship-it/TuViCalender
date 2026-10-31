@@ -69,3 +69,12 @@ Bộ kiểm thử cục bộ mock dịch vụ AI/auth/quota để xác minh các
 ## Cập nhật persona AI
 
 Bản Mystic Fusion thêm `persona` vào request chatbot. Deploy lại `chat-ai` để dùng hai chỉ dẫn Đông/Tây; schema chỉ nhận `eastern` hoặc `western`, client cũ không gửi vẫn tương thích. Frontend không tự triển khai function hoặc cấu hình secrets. Kiểm thử persona hiện dùng mock, cần kiểm tra hội thoại thật sau đăng nhập trên môi trường đã cấu hình.
+
+## Bản gộp Offline-First hoàn chỉnh trong source
+
+- Cấu hình chuẩn không có `VITE_ENABLE_REFERENCE_ART=true`: build loại bỏ thư mục ảnh JoJo khỏi dist và UI dùng 78 cảnh Celestial gốc. Chỉ bật cờ tham chiếu sau khi bên phát hành xác minh quyền sử dụng.
+- `npm run build` tự tạo versioned content JSON, manifest bốn pack và chạy `verify-offline.mjs`. Core tự precache; các pack còn lại tải riêng hoặc tải đầy đủ trong Settings. UI có hủy/tiếp tục, xóa pack, dọn cache cũ và lưu trữ bền vững.
+- Dữ liệu người dùng dùng IndexedDB, có migration/snapshot/mirror tương thích LocalStorage. Import dùng transaction nguyên tử. Không clear browser data khi cập nhật.
+- Không đặt immutable cho URL nội dung/artwork không có hash trong tên. `vercel.json` buộc revalidate `/content/`, `/assets/tarot/`, index và manifest; hashed JS/CSS vẫn được SW quản lý theo version và SHA-256.
+- CI đã chạy được trong kiểm chứng cục bộ: 45 logic tests, 13 browser flows, 4 production-offline flows; hai test bộ hình tham chiếu chỉ chạy khi opt-in. Xem báo cáo chi tiết để biết giới hạn kiểm thử.
+- Theo yêu cầu chủ dự án, source được gộp thành một commit và đẩy thẳng master. Điều này không tự deploy migration Supabase hay thu hồi khóa ở tài khoản nhà cung cấp.

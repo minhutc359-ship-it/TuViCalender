@@ -3,10 +3,12 @@ import { getCurrentLunarDate, formatLunarDate, getCanChi } from './lunar';
 import { analyzeDay } from './goodDays';
 import { vietnamToday } from './date';
 import type { ChatPersona } from './chat-personas';
+import type { ChatResponse } from '../features/chatbot/engine';
 export interface AIMessage {
   role: 'user' | 'assistant';
   content: string;
   persona?: ChatPersona;
+  response?: ChatResponse;
 }
 export function getCurrentContext() {
   const now = vietnamToday(),
@@ -18,7 +20,7 @@ export function getCurrentContext() {
     canChi: getCanChi(lunar.year),
     dayCanChi: day.dayCanChi,
     luckyHours: day.luckyHours,
-    method: 'UTC+7; lịch truyền thống tham khảo, Trực và 28 Tú chưa hiệu chỉnh đầy đủ',
+    method: 'UTC+7; lịch truyền thống tham khảo, Trực theo tiết khí xấp xỉ; 28 Tú chưa kiểm định',
   };
 }
 export function isOpenAIConfigured() {
@@ -28,6 +30,7 @@ export async function chatWithAI(
   message: string,
   chatHistory: AIMessage[] = [],
   persona: ChatPersona = 'eastern',
+  signal?: AbortSignal,
 ): Promise<string> {
   if (!isSupabaseConfigured())
     throw new Error('Trợ lý AI chưa được kích hoạt. Bạn vẫn có thể khám phá Tarot và lịch.');
@@ -36,6 +39,7 @@ export async function chatWithAI(
   } = await supabase.auth.getSession();
   if (!session) throw new Error('Đăng nhập bằng email để trò chuyện với trợ lý AI.');
   const { data, error } = await supabase.functions.invoke('chat-ai', {
+    signal,
     body: { message, chatHistory: chatHistory.slice(-10), context: getCurrentContext(), persona },
   });
   if (error) {

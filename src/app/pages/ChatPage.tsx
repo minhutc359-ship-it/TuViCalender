@@ -6,6 +6,10 @@ import { supabase } from '../../lib/supabase';
 import { readStorage, writeStorage, useStoredState } from '../../lib/storage';
 import { CHAT_PERSONAS, isChatPersona, type ChatPersona } from '../../lib/chat-personas';
 import { AstroSymbol } from '../components/astro/AstroSymbol';
+import { validMessages } from '../../features/chatbot/messages';
+import { loadKnowledge } from '../../features/knowledge/catalog';
+import { deviceStorage } from '../../offline/db';
+import { replyHybrid, SOURCE_LABELS } from '../../features/chatbot/engine';
 import type { Session } from '@supabase/supabase-js';
 const welcome: AIMessage = {
   role: 'assistant',
@@ -22,17 +26,6 @@ const isWelcome = (m: AIMessage) =>
   (m.content === welcome.content ||
     m.content === CHAT_PERSONAS.eastern.welcome ||
     m.content === CHAT_PERSONAS.western.welcome);
-const validMessages = (value: unknown): value is AIMessage[] =>
-  Array.isArray(value) &&
-  value.length <= 100 &&
-  value.every(
-    (m) =>
-      m &&
-      (m.role === 'user' || m.role === 'assistant') &&
-      (m.persona === undefined || isChatPersona(m.persona)) &&
-      typeof m.content === 'string' &&
-      m.content.length <= 12000,
-  );
 export default function ChatPage() {
   const location = useLocation();
   const [persona, setPersona, personaStorageError] = useStoredState<ChatPersona>(
@@ -43,7 +36,29 @@ export default function ChatPage() {
   const personaRef = useRef(persona);
   const voice = CHAT_PERSONAS[persona];
   const [session, setSession] = useState<Session | null>(null);
-  const [messages, setMessages] = useState<AIMessage[]>([welcomeFor(persona)]);
+  const [messages, setMessages] = useState<AIMessage[]>(() =>
+    readStorage('astroai.chat.local.v1', [welcomeFor(persona)], validMessages),
+  );
+  const [aiEnabled, setAIEnabled] = useStoredState(
+    'astroai.chat-ai-enabled.v1',
+    false,
+    (v): v is boolean => typeof v === 'boolean',
+  );
+  const [saveHistory, setSaveHistory] = useStoredState(
+    'astroai.chat-save.v1',
+    true,
+    (v): v is boolean => typeof v === 'boolean',
+  );
+  const [online, setOnline] = useState(navigator.onLine);
+  useEffect(() => {
+    const update = () => setOnline(navigator.onLine);
+    window.addEventListener('online', update);
+    window.addEventListener('offline', update);
+    return () => {
+      window.removeEventListener('online', update);
+      window.removeEventListener('offline', update);
+    };
+  }, []);
   const [input, setInput] = useState(
     typeof location.state?.prompt === 'string' ? location.state.prompt.slice(0, 4000) : '',
   );
@@ -69,17 +84,20 @@ export default function ChatPage() {
       if (!mounted.current) return;
       setSession(next);
       userIdRef.current = next?.user.id ?? null;
-      const history = next
-        ? readStorage<AIMessage[]>(
-            `astroai.chat.${next.user.id}.v1`,
-            [welcomeFor(personaRef.current)],
-            validMessages,
-          )
-        : [welcomeFor(personaRef.current)];
+      const history = readStorage<AIMessage[]>(
+        next ? `astroai.chat.${next.user.id}.v1` : 'astroai.chat.local.v1',
+        [welcomeFor(personaRef.current)],
+        validMessages,
+      );
       setMessages(history);
       messagesRef.current = history;
     }
-    supabase.auth.getSession().then(({ data }) => change(data.session));
+    supabase.auth
+      .getSession()
+      .then(({ data }) => change(data.session))
+      .catch(() => {
+        if (mounted.current) setNotice('Chưa đọc được phiên AI. Tra cứu local vẫn sẵn sàng.');
+      });
     const { data } = supabase.auth.onAuthStateChange((_event, next) => change(next));
     return () => data.subscription.unsubscribe();
   }, [configured]);
@@ -108,8 +126,8 @@ export default function ChatPage() {
   async function send(e: FormEvent) {
     e.preventDefault();
     const content = input.trim();
-    if (!content || busy || !session) return;
-    const owner = session.user.id;
+    if (!content || busy) return;
+    const owner = session?.user.id ?? null;
     setBusy(true);
     setError('');
     const history = messagesRef.current;
@@ -118,18 +136,29 @@ export default function ChatPage() {
     setMessages(next);
     setInput('');
     try {
-      const reply = await chatWithAI(
-        content,
-        history.filter((m) => !isWelcome(m)),
-        persona,
-      );
+      await loadKnowledge();
+      const response = await replyHybrid(content, {
+        aiEnabled: aiEnabled && configured && !!session,
+        online,
+        ai: (signal) =>
+          chatWithAI(
+            content,
+            history.filter((m) => !isWelcome(m)),
+            persona,
+            signal,
+          ),
+      });
       if (!mounted.current || userIdRef.current !== owner) return;
-      const updated = [...next, { role: 'assistant', content: reply, persona } as AIMessage].slice(
-        -100,
-      );
+      const updated = [
+        ...next,
+        { role: 'assistant', content: response.content, response, persona } as AIMessage,
+      ].slice(-100);
       setMessages(updated);
       messagesRef.current = updated;
-      if (!writeStorage(`astroai.chat.${owner}.v1`, updated))
+      if (
+        saveHistory &&
+        !writeStorage(owner ? `astroai.chat.${owner}.v1` : 'astroai.chat.local.v1', updated)
+      )
         setError('Không thể lưu lịch sử trên trình duyệt.');
     } catch (err) {
       if (mounted.current && userIdRef.current === owner) {
@@ -155,7 +184,11 @@ export default function ChatPage() {
   function clear() {
     setMessages([welcomeFor(persona)]);
     messagesRef.current = [welcomeFor(persona)];
-    if (session && !writeStorage(`astroai.chat.${session.user.id}.v1`, [welcomeFor(persona)]))
+    if (
+      !writeStorage(session ? `astroai.chat.${session.user.id}.v1` : 'astroai.chat.local.v1', [
+        welcomeFor(persona),
+      ])
+    )
       setError('Không thể xóa lịch sử đã lưu trên trình duyệt.');
   }
   return (
@@ -196,9 +229,9 @@ export default function ChatPage() {
       )}
       {!configured ? (
         <div className="content-panel panel" style={{ marginBottom: 20 }}>
-          <h3>Trợ lý AI đang chờ được kích hoạt</h3>
+          <h3>Thư viện local đã sẵn sàng</h3>
           <p>
-            Bạn có thể tiếp tục{' '}
+            Tra cứu ngay trong ô chat, không cần đăng nhập hoặc kết nối AI. Bạn cũng có thể{' '}
             <Link className="text-link" to="/tarot">
               khám phá Tarot
             </Link>{' '}
@@ -214,8 +247,8 @@ export default function ChatPage() {
           <div>
             <h3>Một cuộc trò chuyện của riêng bạn</h3>
             <p>
-              Nhận liên kết đăng nhập qua email để bắt đầu. Lịch sử được lưu trên trình duyệt theo
-              tài khoản.
+              Tra cứu local không cần đăng nhập. Đăng nhập qua email nếu muốn bật AI online; chỉ câu
+              hỏi và lịch sử chat gần đây được gửi khi thư viện chưa đủ nội dung.
             </p>
           </div>
           <form onSubmit={signIn}>
@@ -239,6 +272,40 @@ export default function ChatPage() {
           {notice}
         </p>
       )}
+      <div className="local-chat-options panel">
+        <label>
+          <input
+            type="checkbox"
+            checked={aiEnabled}
+            onChange={(e) => setAIEnabled(e.target.checked)}
+          />{' '}
+          Cho phép AI online khi local chưa có câu trả lời
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            checked={saveHistory}
+            onChange={(e) => {
+              setSaveHistory(e.target.checked);
+              if (!e.target.checked) {
+                try {
+                  deviceStorage.removeItem(
+                    session ? `astroai.chat.${session.user.id}.v1` : 'astroai.chat.local.v1',
+                  );
+                } catch {
+                  setError('Chưa xóa được lịch sử đã lưu.');
+                }
+              }
+            }}
+          />{' '}
+          Lưu lịch sử chat trên thiết bị
+        </label>
+        {aiEnabled && (!configured || !session) && (
+          <p className="small muted">
+            AI online cần cấu hình và đăng nhập. Tra cứu local vẫn hoạt động.
+          </p>
+        )}
+      </div>
       <section className="chat-panel panel">
         <div className="chat-status">
           <div>
@@ -246,7 +313,7 @@ export default function ChatPage() {
               size={13}
               style={{ display: 'inline', marginRight: 7, color: 'var(--gold)' }}
             />
-            {voice.name} · {session ? session.user.email : 'Góc nhìn để tham khảo'}
+            {voice.name} · {online ? 'Local sẵn sàng' : 'Đang offline · Local sẵn sàng'}
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
             <button
@@ -288,6 +355,21 @@ export default function ChatPage() {
                 </span>
               )}
               {m.content}
+              {m.response && (
+                <div className="chat-answer-meta">
+                  <small className="chat-source">{SOURCE_LABELS[m.response.source]}</small>
+                  {m.response.references?.map((ref) => (
+                    <small key={ref.id}>Nguồn: {ref.title}</small>
+                  ))}
+                  <div className="chat-answer-actions">
+                    {m.response.actions?.map((action) => (
+                      <Link key={action.route} className="button subtle" to={action.route}>
+                        {action.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
           {busy && (
@@ -321,22 +403,25 @@ export default function ChatPage() {
             ))}
           </div>
         )}
+        <p className="small muted" style={{ padding: '0 20px' }}>
+          <Link className="text-link" to="/knowledge">
+            Tra cứu thư viện Đông–Tây và Tarot
+          </Link>
+        </p>
         <form className="chat-input" onSubmit={send}>
           <input
             aria-label="Tin nhắn cho trợ lý"
             maxLength={4000}
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={
-              session ? 'Điều gì đang ở trong tâm trí bạn?' : 'Đăng nhập để bắt đầu trò chuyện…'
-            }
-            disabled={!session || busy}
+            placeholder={'Hỏi về lịch, cung hoàng đạo, ngũ hành hoặc một lá Tarot…'}
+            disabled={busy}
           />
           <button
             className="button primary"
             type="submit"
             aria-label="Gửi tin nhắn"
-            disabled={!session || busy || !input.trim()}
+            disabled={busy || !input.trim()}
           >
             <Send size={17} />
           </button>
@@ -348,8 +433,9 @@ export default function ChatPage() {
         )}
       </section>
       <p className="method-note">
-        AI có thể nhầm lẫn. Ngữ cảnh lịch được tính từ ngày Việt Nam và chỉ mang tính tham khảo. Hãy
-        kiểm tra lại thông tin trước những quyết định quan trọng.
+        Local dùng quy tắc và nội dung biên soạn sẵn; AI online chỉ hoạt động khi bạn cho phép.
+        Nguồn được ghi ở từng câu trả lời. Nội dung truyền thống/chiêm nghiệm không thay thế tư vấn
+        chuyên môn.
       </p>
     </div>
   );

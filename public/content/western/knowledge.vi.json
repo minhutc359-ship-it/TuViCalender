@@ -1,0 +1,238 @@
+{
+  "id": "western",
+  "locale": "vi",
+  "version": "vi-2026.10.31-1",
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-31",
+  "source": "AstroAI · Nội dung biên soạn và bảng quy tắc nội bộ",
+  "entries": [
+    {
+      "id": "zodiac-Aries",
+      "title": "Cung Bạch Dương",
+      "category": "western",
+      "aliases": [
+        "Aries",
+        "Bạch Dương"
+      ],
+      "content": "Bạch Dương (Aries) thuộc nguyên tố Lửa, tính chất Cardinal, chủ quản Mars theo bảng chiêm tinh của ứng dụng. Đây là biểu tượng truyền thống, không xác định tính cách hay tương lai của mọi người cùng cung.",
+      "source": "AstroAI · Bảng cung Mặt Trời",
+      "intentId": "zodiac-Aries",
+      "examples": [
+        "Cung Bạch Dương là gì?",
+        "Giải thích Cung Bạch Dương",
+        "Tôi muốn tìm hiểu Cung Bạch Dương",
+        "Tra cứu Cung Bạch Dương"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "zodiac-Taurus",
+      "title": "Cung Kim Ngưu",
+      "category": "western",
+      "aliases": [
+        "Taurus",
+        "Kim Ngưu"
+      ],
+      "content": "Kim Ngưu (Taurus) thuộc nguyên tố Đất, tính chất Fixed, chủ quản Venus theo bảng chiêm tinh của ứng dụng. Đây là biểu tượng truyền thống, không xác định tính cách hay tương lai của mọi người cùng cung.",
+      "source": "AstroAI · Bảng cung Mặt Trời",
+      "intentId": "zodiac-Taurus",
+      "examples": [
+        "Cung Kim Ngưu là gì?",
+        "Giải thích Cung Kim Ngưu",
+        "Tôi muốn tìm hiểu Cung Kim Ngưu",
+        "Tra cứu Cung Kim Ngưu"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "zodiac-Gemini",
+      "title": "Cung Song Tử",
+      "category": "western",
+      "aliases": [
+        "Gemini",
+        "Song Tử"
+      ],
+      "content": "Song Tử (Gemini) thuộc nguyên tố Khí, tính chất Mutable, chủ quản Mercury theo bảng chiêm tinh của ứng dụng. Đây là biểu tượng truyền thống, không xác định tính cách hay tương lai của mọi người cùng cung.",
+      "source": "AstroAI · Bảng cung Mặt Trời",
+      "intentId": "zodiac-Gemini",
+      "examples": [
+        "Cung Song Tử là gì?",
+        "Giải thích Cung Song Tử",
+        "Tôi muốn tìm hiểu Cung Song Tử",
+        "Tra cứu Cung Song Tử"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "zodiac-Cancer",
+      "title": "Cung Cự Giải",
+      "category": "western",
+      "aliases": [
+        "Cancer",
+        "Cự Giải"
+      ],
+      "content": "Cự Giải (Cancer) thuộc nguyên tố Nước, tính chất Cardinal, chủ quản Moon theo bảng chiêm tinh của ứng dụng. Đây là biểu tượng truyền thống, không xác định tính cách hay tương lai của mọi người cùng cung.",
+      "source": "AstroAI · Bảng cung Mặt Trời",
+      "intentId": "zodiac-Cancer",
+      "examples": [
+        "Cung Cự Giải là gì?",
+        "Giải thích Cung Cự Giải",
+        "Tôi muốn tìm hiểu Cung Cự Giải",
+        "Tra cứu Cung Cự Giải"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "zodiac-Leo",
+      "title": "Cung Sư Tử",
+      "category": "western",
+      "aliases": [
+        "Leo",
+        "Sư Tử"
+      ],
+      "content": "Sư Tử (Leo) thuộc nguyên tố Lửa, tính chất Fixed, chủ quản Sun theo bảng chiêm tinh của ứng dụng. Đây là biểu tượng truyền thống, không xác định tính cách hay tương lai của mọi người cùng cung.",
+      "source": "AstroAI · Bảng cung Mặt Trời",
+      "intentId": "zodiac-Leo",
+      "examples": [
+        "Cung Sư Tử là gì?",
+        "Giải thích Cung Sư Tử",
+        "Tôi muốn tìm hiểu Cung Sư Tử",
+        "Tra cứu Cung Sư Tử"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "zodiac-Virgo",
+      "title": "Cung Xử Nữ",
+      "category": "western",
+      "aliases": [
+        "Virgo",
+        "Xử Nữ"
+      ],
+      "content": "Xử Nữ (Virgo) thuộc nguyên tố Đất, tính chất Mutable, chủ quản Mercury theo bảng chiêm tinh của ứng dụng. Đây là biểu tượng truyền thống, không xác định tính cách hay tương lai của mọi người cùng cung.",
+      "source": "AstroAI · Bảng cung Mặt Trời",
+      "intentId": "zodiac-Virgo",
+      "examples": [
+        "Cung Xử Nữ là gì?",
+        "Giải thích Cung Xử Nữ",
+        "Tôi muốn tìm hiểu Cung Xử Nữ",
+        "Tra cứu Cung Xử Nữ"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "zodiac-Libra",
+      "title": "Cung Thiên Bình",
+      "category": "western",
+      "aliases": [
+        "Libra",
+        "Thiên Bình"
+      ],
+      "content": "Thiên Bình (Libra) thuộc nguyên tố Khí, tính chất Cardinal, chủ quản Venus theo bảng chiêm tinh của ứng dụng. Đây là biểu tượng truyền thống, không xác định tính cách hay tương lai của mọi người cùng cung.",
+      "source": "AstroAI · Bảng cung Mặt Trời",
+      "intentId": "zodiac-Libra",
+      "examples": [
+        "Cung Thiên Bình là gì?",
+        "Giải thích Cung Thiên Bình",
+        "Tôi muốn tìm hiểu Cung Thiên Bình",
+        "Tra cứu Cung Thiên Bình"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "zodiac-Scorpio",
+      "title": "Cung Bọ Cạp",
+      "category": "western",
+      "aliases": [
+        "Scorpio",
+        "Bọ Cạp"
+      ],
+      "content": "Bọ Cạp (Scorpio) thuộc nguyên tố Nước, tính chất Fixed, chủ quản Pluto theo bảng chiêm tinh của ứng dụng. Đây là biểu tượng truyền thống, không xác định tính cách hay tương lai của mọi người cùng cung.",
+      "source": "AstroAI · Bảng cung Mặt Trời",
+      "intentId": "zodiac-Scorpio",
+      "examples": [
+        "Cung Bọ Cạp là gì?",
+        "Giải thích Cung Bọ Cạp",
+        "Tôi muốn tìm hiểu Cung Bọ Cạp",
+        "Tra cứu Cung Bọ Cạp"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "zodiac-Sagittarius",
+      "title": "Cung Nhân Mã",
+      "category": "western",
+      "aliases": [
+        "Sagittarius",
+        "Nhân Mã"
+      ],
+      "content": "Nhân Mã (Sagittarius) thuộc nguyên tố Lửa, tính chất Mutable, chủ quản Jupiter theo bảng chiêm tinh của ứng dụng. Đây là biểu tượng truyền thống, không xác định tính cách hay tương lai của mọi người cùng cung.",
+      "source": "AstroAI · Bảng cung Mặt Trời",
+      "intentId": "zodiac-Sagittarius",
+      "examples": [
+        "Cung Nhân Mã là gì?",
+        "Giải thích Cung Nhân Mã",
+        "Tôi muốn tìm hiểu Cung Nhân Mã",
+        "Tra cứu Cung Nhân Mã"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "zodiac-Capricorn",
+      "title": "Cung Ma Kết",
+      "category": "western",
+      "aliases": [
+        "Capricorn",
+        "Ma Kết"
+      ],
+      "content": "Ma Kết (Capricorn) thuộc nguyên tố Đất, tính chất Cardinal, chủ quản Saturn theo bảng chiêm tinh của ứng dụng. Đây là biểu tượng truyền thống, không xác định tính cách hay tương lai của mọi người cùng cung.",
+      "source": "AstroAI · Bảng cung Mặt Trời",
+      "intentId": "zodiac-Capricorn",
+      "examples": [
+        "Cung Ma Kết là gì?",
+        "Giải thích Cung Ma Kết",
+        "Tôi muốn tìm hiểu Cung Ma Kết",
+        "Tra cứu Cung Ma Kết"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "zodiac-Aquarius",
+      "title": "Cung Bảo Bình",
+      "category": "western",
+      "aliases": [
+        "Aquarius",
+        "Bảo Bình"
+      ],
+      "content": "Bảo Bình (Aquarius) thuộc nguyên tố Khí, tính chất Fixed, chủ quản Uranus theo bảng chiêm tinh của ứng dụng. Đây là biểu tượng truyền thống, không xác định tính cách hay tương lai của mọi người cùng cung.",
+      "source": "AstroAI · Bảng cung Mặt Trời",
+      "intentId": "zodiac-Aquarius",
+      "examples": [
+        "Cung Bảo Bình là gì?",
+        "Giải thích Cung Bảo Bình",
+        "Tôi muốn tìm hiểu Cung Bảo Bình",
+        "Tra cứu Cung Bảo Bình"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "zodiac-Pisces",
+      "title": "Cung Song Ngư",
+      "category": "western",
+      "aliases": [
+        "Pisces",
+        "Song Ngư"
+      ],
+      "content": "Song Ngư (Pisces) thuộc nguyên tố Nước, tính chất Mutable, chủ quản Neptune theo bảng chiêm tinh của ứng dụng. Đây là biểu tượng truyền thống, không xác định tính cách hay tương lai của mọi người cùng cung.",
+      "source": "AstroAI · Bảng cung Mặt Trời",
+      "intentId": "zodiac-Pisces",
+      "examples": [
+        "Cung Song Ngư là gì?",
+        "Giải thích Cung Song Ngư",
+        "Tôi muốn tìm hiểu Cung Song Ngư",
+        "Tra cứu Cung Song Ngư"
+      ],
+      "kind": "traditionalInterpretation"
+    }
+  ]
+}

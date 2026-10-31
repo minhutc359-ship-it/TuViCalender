@@ -1,0 +1,895 @@
+{
+  "id": "eastern",
+  "locale": "vi",
+  "version": "vi-2026.10.31-1",
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-31",
+  "source": "AstroAI · Nội dung biên soạn và bảng quy tắc nội bộ",
+  "entries": [
+    {
+      "id": "element-0",
+      "title": "Hành Mộc",
+      "category": "eastern",
+      "aliases": [
+        "mệnh Mộc",
+        "hành Mộc",
+        "Mộc hợp màu",
+        "màu mệnh Mộc"
+      ],
+      "content": "Theo biểu tượng ngũ hành, Mộc thường gắn với xanh lá. Mộc sinh Hỏa và khắc Thổ. Đây là quy ước trang trí truyền thống, không bảo đảm may mắn. Không suy mệnh nạp âm từ Thiên can riêng lẻ.",
+      "source": "AstroAI · Biên soạn biểu tượng ngũ hành v1",
+      "intentId": "element-0",
+      "examples": [
+        "Hành Mộc là gì?",
+        "Giải thích Hành Mộc",
+        "Tôi muốn tìm hiểu Hành Mộc",
+        "Tra cứu Hành Mộc"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "element-1",
+      "title": "Hành Hỏa",
+      "category": "eastern",
+      "aliases": [
+        "mệnh Hỏa",
+        "hành Hỏa",
+        "Hỏa hợp màu",
+        "màu mệnh Hỏa"
+      ],
+      "content": "Theo biểu tượng ngũ hành, Hỏa thường gắn với đỏ, cam. Hỏa sinh Thổ và khắc Kim. Đây là quy ước trang trí truyền thống, không bảo đảm may mắn. Không suy mệnh nạp âm từ Thiên can riêng lẻ.",
+      "source": "AstroAI · Biên soạn biểu tượng ngũ hành v1",
+      "intentId": "element-1",
+      "examples": [
+        "Hành Hỏa là gì?",
+        "Giải thích Hành Hỏa",
+        "Tôi muốn tìm hiểu Hành Hỏa",
+        "Tra cứu Hành Hỏa"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "element-2",
+      "title": "Hành Thổ",
+      "category": "eastern",
+      "aliases": [
+        "mệnh Thổ",
+        "hành Thổ",
+        "Thổ hợp màu",
+        "màu mệnh Thổ"
+      ],
+      "content": "Theo biểu tượng ngũ hành, Thổ thường gắn với vàng, nâu. Thổ sinh Kim và khắc Thủy. Đây là quy ước trang trí truyền thống, không bảo đảm may mắn. Không suy mệnh nạp âm từ Thiên can riêng lẻ.",
+      "source": "AstroAI · Biên soạn biểu tượng ngũ hành v1",
+      "intentId": "element-2",
+      "examples": [
+        "Hành Thổ là gì?",
+        "Giải thích Hành Thổ",
+        "Tôi muốn tìm hiểu Hành Thổ",
+        "Tra cứu Hành Thổ"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "element-3",
+      "title": "Hành Kim",
+      "category": "eastern",
+      "aliases": [
+        "mệnh Kim",
+        "hành Kim",
+        "Kim hợp màu",
+        "màu mệnh Kim"
+      ],
+      "content": "Theo biểu tượng ngũ hành, Kim thường gắn với trắng, ánh kim. Kim sinh Thủy và khắc Mộc. Đây là quy ước trang trí truyền thống, không bảo đảm may mắn. Không suy mệnh nạp âm từ Thiên can riêng lẻ.",
+      "source": "AstroAI · Biên soạn biểu tượng ngũ hành v1",
+      "intentId": "element-3",
+      "examples": [
+        "Hành Kim là gì?",
+        "Giải thích Hành Kim",
+        "Tôi muốn tìm hiểu Hành Kim",
+        "Tra cứu Hành Kim"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "element-4",
+      "title": "Hành Thủy",
+      "category": "eastern",
+      "aliases": [
+        "mệnh Thủy",
+        "hành Thủy",
+        "Thủy hợp màu",
+        "màu mệnh Thủy"
+      ],
+      "content": "Theo biểu tượng ngũ hành, Thủy thường gắn với đen, xanh dương. Thủy sinh Mộc và khắc Hỏa. Đây là quy ước trang trí truyền thống, không bảo đảm may mắn. Không suy mệnh nạp âm từ Thiên can riêng lẻ.",
+      "source": "AstroAI · Biên soạn biểu tượng ngũ hành v1",
+      "intentId": "element-4",
+      "examples": [
+        "Hành Thủy là gì?",
+        "Giải thích Hành Thủy",
+        "Tôi muốn tìm hiểu Hành Thủy",
+        "Tra cứu Hành Thủy"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "bagua-can",
+      "title": "Quẻ Càn",
+      "category": "eastern",
+      "aliases": [
+        "quẻ Càn"
+      ],
+      "content": "Càn: hình tượng Trời, hành Kim, hướng Tây Bắc trong bảng Hậu thiên Bát quái. Chỉ tra cứu biểu tượng, không phải kết quả gieo quẻ.",
+      "source": "AstroAI · Bảng Bát quái",
+      "intentId": "bagua-can",
+      "examples": [
+        "Quẻ Càn là gì?",
+        "Giải thích Quẻ Càn",
+        "Tôi muốn tìm hiểu Quẻ Càn",
+        "Tra cứu Quẻ Càn"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "bagua-doai",
+      "title": "Quẻ Đoài",
+      "category": "eastern",
+      "aliases": [
+        "quẻ Đoài"
+      ],
+      "content": "Đoài: hình tượng Hồ, hành Kim, hướng Tây trong bảng Hậu thiên Bát quái. Chỉ tra cứu biểu tượng, không phải kết quả gieo quẻ.",
+      "source": "AstroAI · Bảng Bát quái",
+      "intentId": "bagua-doai",
+      "examples": [
+        "Quẻ Đoài là gì?",
+        "Giải thích Quẻ Đoài",
+        "Tôi muốn tìm hiểu Quẻ Đoài",
+        "Tra cứu Quẻ Đoài"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "bagua-ly",
+      "title": "Quẻ Ly",
+      "category": "eastern",
+      "aliases": [
+        "quẻ Ly"
+      ],
+      "content": "Ly: hình tượng Lửa, hành Hỏa, hướng Nam trong bảng Hậu thiên Bát quái. Chỉ tra cứu biểu tượng, không phải kết quả gieo quẻ.",
+      "source": "AstroAI · Bảng Bát quái",
+      "intentId": "bagua-ly",
+      "examples": [
+        "Quẻ Ly là gì?",
+        "Giải thích Quẻ Ly",
+        "Tôi muốn tìm hiểu Quẻ Ly",
+        "Tra cứu Quẻ Ly"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "bagua-chan",
+      "title": "Quẻ Chấn",
+      "category": "eastern",
+      "aliases": [
+        "quẻ Chấn"
+      ],
+      "content": "Chấn: hình tượng Sấm, hành Mộc, hướng Đông trong bảng Hậu thiên Bát quái. Chỉ tra cứu biểu tượng, không phải kết quả gieo quẻ.",
+      "source": "AstroAI · Bảng Bát quái",
+      "intentId": "bagua-chan",
+      "examples": [
+        "Quẻ Chấn là gì?",
+        "Giải thích Quẻ Chấn",
+        "Tôi muốn tìm hiểu Quẻ Chấn",
+        "Tra cứu Quẻ Chấn"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "bagua-ton",
+      "title": "Quẻ Tốn",
+      "category": "eastern",
+      "aliases": [
+        "quẻ Tốn"
+      ],
+      "content": "Tốn: hình tượng Gió, hành Mộc, hướng Đông Nam trong bảng Hậu thiên Bát quái. Chỉ tra cứu biểu tượng, không phải kết quả gieo quẻ.",
+      "source": "AstroAI · Bảng Bát quái",
+      "intentId": "bagua-ton",
+      "examples": [
+        "Quẻ Tốn là gì?",
+        "Giải thích Quẻ Tốn",
+        "Tôi muốn tìm hiểu Quẻ Tốn",
+        "Tra cứu Quẻ Tốn"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "bagua-kham",
+      "title": "Quẻ Khảm",
+      "category": "eastern",
+      "aliases": [
+        "quẻ Khảm"
+      ],
+      "content": "Khảm: hình tượng Nước, hành Thủy, hướng Bắc trong bảng Hậu thiên Bát quái. Chỉ tra cứu biểu tượng, không phải kết quả gieo quẻ.",
+      "source": "AstroAI · Bảng Bát quái",
+      "intentId": "bagua-kham",
+      "examples": [
+        "Quẻ Khảm là gì?",
+        "Giải thích Quẻ Khảm",
+        "Tôi muốn tìm hiểu Quẻ Khảm",
+        "Tra cứu Quẻ Khảm"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "bagua-can-son",
+      "title": "Quẻ Cấn",
+      "category": "eastern",
+      "aliases": [
+        "quẻ Cấn"
+      ],
+      "content": "Cấn: hình tượng Núi, hành Thổ, hướng Đông Bắc trong bảng Hậu thiên Bát quái. Chỉ tra cứu biểu tượng, không phải kết quả gieo quẻ.",
+      "source": "AstroAI · Bảng Bát quái",
+      "intentId": "bagua-can-son",
+      "examples": [
+        "Quẻ Cấn là gì?",
+        "Giải thích Quẻ Cấn",
+        "Tôi muốn tìm hiểu Quẻ Cấn",
+        "Tra cứu Quẻ Cấn"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "bagua-khon",
+      "title": "Quẻ Khôn",
+      "category": "eastern",
+      "aliases": [
+        "quẻ Khôn"
+      ],
+      "content": "Khôn: hình tượng Đất, hành Thổ, hướng Tây Nam trong bảng Hậu thiên Bát quái. Chỉ tra cứu biểu tượng, không phải kết quả gieo quẻ.",
+      "source": "AstroAI · Bảng Bát quái",
+      "intentId": "bagua-khon",
+      "examples": [
+        "Quẻ Khôn là gì?",
+        "Giải thích Quẻ Khôn",
+        "Tôi muốn tìm hiểu Quẻ Khôn",
+        "Tra cứu Quẻ Khôn"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "branch-0",
+      "title": "Địa chi Tý",
+      "category": "eastern",
+      "aliases": [
+        "tuổi Tý",
+        "chi Tý",
+        "con giáp Tý"
+      ],
+      "content": "Tý là chi thứ 1 trong chu kỳ 12 Địa chi. Chu kỳ lặp lại mỗi 12 năm; người sinh trước Tết cần đối chiếu ngày âm để xác định chi năm.",
+      "source": "AstroAI · Địa chi",
+      "intentId": "branch-0",
+      "examples": [
+        "Địa chi Tý là gì?",
+        "Giải thích Địa chi Tý",
+        "Tôi muốn tìm hiểu Địa chi Tý",
+        "Tra cứu Địa chi Tý"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "branch-1",
+      "title": "Địa chi Sửu",
+      "category": "eastern",
+      "aliases": [
+        "tuổi Sửu",
+        "chi Sửu",
+        "con giáp Sửu"
+      ],
+      "content": "Sửu là chi thứ 2 trong chu kỳ 12 Địa chi. Chu kỳ lặp lại mỗi 12 năm; người sinh trước Tết cần đối chiếu ngày âm để xác định chi năm.",
+      "source": "AstroAI · Địa chi",
+      "intentId": "branch-1",
+      "examples": [
+        "Địa chi Sửu là gì?",
+        "Giải thích Địa chi Sửu",
+        "Tôi muốn tìm hiểu Địa chi Sửu",
+        "Tra cứu Địa chi Sửu"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "branch-2",
+      "title": "Địa chi Dần",
+      "category": "eastern",
+      "aliases": [
+        "tuổi Dần",
+        "chi Dần",
+        "con giáp Dần"
+      ],
+      "content": "Dần là chi thứ 3 trong chu kỳ 12 Địa chi. Chu kỳ lặp lại mỗi 12 năm; người sinh trước Tết cần đối chiếu ngày âm để xác định chi năm.",
+      "source": "AstroAI · Địa chi",
+      "intentId": "branch-2",
+      "examples": [
+        "Địa chi Dần là gì?",
+        "Giải thích Địa chi Dần",
+        "Tôi muốn tìm hiểu Địa chi Dần",
+        "Tra cứu Địa chi Dần"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "branch-3",
+      "title": "Địa chi Mão",
+      "category": "eastern",
+      "aliases": [
+        "tuổi Mão",
+        "chi Mão",
+        "con giáp Mão"
+      ],
+      "content": "Mão là chi thứ 4 trong chu kỳ 12 Địa chi. Chu kỳ lặp lại mỗi 12 năm; người sinh trước Tết cần đối chiếu ngày âm để xác định chi năm.",
+      "source": "AstroAI · Địa chi",
+      "intentId": "branch-3",
+      "examples": [
+        "Địa chi Mão là gì?",
+        "Giải thích Địa chi Mão",
+        "Tôi muốn tìm hiểu Địa chi Mão",
+        "Tra cứu Địa chi Mão"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "branch-4",
+      "title": "Địa chi Thìn",
+      "category": "eastern",
+      "aliases": [
+        "tuổi Thìn",
+        "chi Thìn",
+        "con giáp Thìn"
+      ],
+      "content": "Thìn là chi thứ 5 trong chu kỳ 12 Địa chi. Chu kỳ lặp lại mỗi 12 năm; người sinh trước Tết cần đối chiếu ngày âm để xác định chi năm.",
+      "source": "AstroAI · Địa chi",
+      "intentId": "branch-4",
+      "examples": [
+        "Địa chi Thìn là gì?",
+        "Giải thích Địa chi Thìn",
+        "Tôi muốn tìm hiểu Địa chi Thìn",
+        "Tra cứu Địa chi Thìn"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "branch-5",
+      "title": "Địa chi Tị",
+      "category": "eastern",
+      "aliases": [
+        "tuổi Tị",
+        "chi Tị",
+        "con giáp Tị"
+      ],
+      "content": "Tị là chi thứ 6 trong chu kỳ 12 Địa chi. Chu kỳ lặp lại mỗi 12 năm; người sinh trước Tết cần đối chiếu ngày âm để xác định chi năm.",
+      "source": "AstroAI · Địa chi",
+      "intentId": "branch-5",
+      "examples": [
+        "Địa chi Tị là gì?",
+        "Giải thích Địa chi Tị",
+        "Tôi muốn tìm hiểu Địa chi Tị",
+        "Tra cứu Địa chi Tị"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "branch-6",
+      "title": "Địa chi Ngọ",
+      "category": "eastern",
+      "aliases": [
+        "tuổi Ngọ",
+        "chi Ngọ",
+        "con giáp Ngọ"
+      ],
+      "content": "Ngọ là chi thứ 7 trong chu kỳ 12 Địa chi. Chu kỳ lặp lại mỗi 12 năm; người sinh trước Tết cần đối chiếu ngày âm để xác định chi năm.",
+      "source": "AstroAI · Địa chi",
+      "intentId": "branch-6",
+      "examples": [
+        "Địa chi Ngọ là gì?",
+        "Giải thích Địa chi Ngọ",
+        "Tôi muốn tìm hiểu Địa chi Ngọ",
+        "Tra cứu Địa chi Ngọ"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "branch-7",
+      "title": "Địa chi Mùi",
+      "category": "eastern",
+      "aliases": [
+        "tuổi Mùi",
+        "chi Mùi",
+        "con giáp Mùi"
+      ],
+      "content": "Mùi là chi thứ 8 trong chu kỳ 12 Địa chi. Chu kỳ lặp lại mỗi 12 năm; người sinh trước Tết cần đối chiếu ngày âm để xác định chi năm.",
+      "source": "AstroAI · Địa chi",
+      "intentId": "branch-7",
+      "examples": [
+        "Địa chi Mùi là gì?",
+        "Giải thích Địa chi Mùi",
+        "Tôi muốn tìm hiểu Địa chi Mùi",
+        "Tra cứu Địa chi Mùi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "branch-8",
+      "title": "Địa chi Thân",
+      "category": "eastern",
+      "aliases": [
+        "tuổi Thân",
+        "chi Thân",
+        "con giáp Thân"
+      ],
+      "content": "Thân là chi thứ 9 trong chu kỳ 12 Địa chi. Chu kỳ lặp lại mỗi 12 năm; người sinh trước Tết cần đối chiếu ngày âm để xác định chi năm.",
+      "source": "AstroAI · Địa chi",
+      "intentId": "branch-8",
+      "examples": [
+        "Địa chi Thân là gì?",
+        "Giải thích Địa chi Thân",
+        "Tôi muốn tìm hiểu Địa chi Thân",
+        "Tra cứu Địa chi Thân"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "branch-9",
+      "title": "Địa chi Dậu",
+      "category": "eastern",
+      "aliases": [
+        "tuổi Dậu",
+        "chi Dậu",
+        "con giáp Dậu"
+      ],
+      "content": "Dậu là chi thứ 10 trong chu kỳ 12 Địa chi. Chu kỳ lặp lại mỗi 12 năm; người sinh trước Tết cần đối chiếu ngày âm để xác định chi năm.",
+      "source": "AstroAI · Địa chi",
+      "intentId": "branch-9",
+      "examples": [
+        "Địa chi Dậu là gì?",
+        "Giải thích Địa chi Dậu",
+        "Tôi muốn tìm hiểu Địa chi Dậu",
+        "Tra cứu Địa chi Dậu"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "branch-10",
+      "title": "Địa chi Tuất",
+      "category": "eastern",
+      "aliases": [
+        "tuổi Tuất",
+        "chi Tuất",
+        "con giáp Tuất"
+      ],
+      "content": "Tuất là chi thứ 11 trong chu kỳ 12 Địa chi. Chu kỳ lặp lại mỗi 12 năm; người sinh trước Tết cần đối chiếu ngày âm để xác định chi năm.",
+      "source": "AstroAI · Địa chi",
+      "intentId": "branch-10",
+      "examples": [
+        "Địa chi Tuất là gì?",
+        "Giải thích Địa chi Tuất",
+        "Tôi muốn tìm hiểu Địa chi Tuất",
+        "Tra cứu Địa chi Tuất"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "branch-11",
+      "title": "Địa chi Hợi",
+      "category": "eastern",
+      "aliases": [
+        "tuổi Hợi",
+        "chi Hợi",
+        "con giáp Hợi"
+      ],
+      "content": "Hợi là chi thứ 12 trong chu kỳ 12 Địa chi. Chu kỳ lặp lại mỗi 12 năm; người sinh trước Tết cần đối chiếu ngày âm để xác định chi năm.",
+      "source": "AstroAI · Địa chi",
+      "intentId": "branch-11",
+      "examples": [
+        "Địa chi Hợi là gì?",
+        "Giải thích Địa chi Hợi",
+        "Tôi muốn tìm hiểu Địa chi Hợi",
+        "Tra cứu Địa chi Hợi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "stem-0",
+      "title": "Thiên can Giáp",
+      "category": "eastern",
+      "aliases": [
+        "can Giáp"
+      ],
+      "content": "Giáp là Thiên can thứ 1, thuộc Mộc trong bảng ngũ hành của Thiên can. Điều này không đồng nghĩa với mệnh nạp âm của cả năm sinh.",
+      "source": "AstroAI · Thiên can",
+      "intentId": "stem-0",
+      "examples": [
+        "Thiên can Giáp là gì?",
+        "Giải thích Thiên can Giáp",
+        "Tôi muốn tìm hiểu Thiên can Giáp",
+        "Tra cứu Thiên can Giáp"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "stem-1",
+      "title": "Thiên can Ất",
+      "category": "eastern",
+      "aliases": [
+        "can Ất"
+      ],
+      "content": "Ất là Thiên can thứ 2, thuộc Mộc trong bảng ngũ hành của Thiên can. Điều này không đồng nghĩa với mệnh nạp âm của cả năm sinh.",
+      "source": "AstroAI · Thiên can",
+      "intentId": "stem-1",
+      "examples": [
+        "Thiên can Ất là gì?",
+        "Giải thích Thiên can Ất",
+        "Tôi muốn tìm hiểu Thiên can Ất",
+        "Tra cứu Thiên can Ất"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "stem-2",
+      "title": "Thiên can Bính",
+      "category": "eastern",
+      "aliases": [
+        "can Bính"
+      ],
+      "content": "Bính là Thiên can thứ 3, thuộc Hỏa trong bảng ngũ hành của Thiên can. Điều này không đồng nghĩa với mệnh nạp âm của cả năm sinh.",
+      "source": "AstroAI · Thiên can",
+      "intentId": "stem-2",
+      "examples": [
+        "Thiên can Bính là gì?",
+        "Giải thích Thiên can Bính",
+        "Tôi muốn tìm hiểu Thiên can Bính",
+        "Tra cứu Thiên can Bính"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "stem-3",
+      "title": "Thiên can Đinh",
+      "category": "eastern",
+      "aliases": [
+        "can Đinh"
+      ],
+      "content": "Đinh là Thiên can thứ 4, thuộc Hỏa trong bảng ngũ hành của Thiên can. Điều này không đồng nghĩa với mệnh nạp âm của cả năm sinh.",
+      "source": "AstroAI · Thiên can",
+      "intentId": "stem-3",
+      "examples": [
+        "Thiên can Đinh là gì?",
+        "Giải thích Thiên can Đinh",
+        "Tôi muốn tìm hiểu Thiên can Đinh",
+        "Tra cứu Thiên can Đinh"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "stem-4",
+      "title": "Thiên can Mậu",
+      "category": "eastern",
+      "aliases": [
+        "can Mậu"
+      ],
+      "content": "Mậu là Thiên can thứ 5, thuộc Thổ trong bảng ngũ hành của Thiên can. Điều này không đồng nghĩa với mệnh nạp âm của cả năm sinh.",
+      "source": "AstroAI · Thiên can",
+      "intentId": "stem-4",
+      "examples": [
+        "Thiên can Mậu là gì?",
+        "Giải thích Thiên can Mậu",
+        "Tôi muốn tìm hiểu Thiên can Mậu",
+        "Tra cứu Thiên can Mậu"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "stem-5",
+      "title": "Thiên can Kỷ",
+      "category": "eastern",
+      "aliases": [
+        "can Kỷ"
+      ],
+      "content": "Kỷ là Thiên can thứ 6, thuộc Thổ trong bảng ngũ hành của Thiên can. Điều này không đồng nghĩa với mệnh nạp âm của cả năm sinh.",
+      "source": "AstroAI · Thiên can",
+      "intentId": "stem-5",
+      "examples": [
+        "Thiên can Kỷ là gì?",
+        "Giải thích Thiên can Kỷ",
+        "Tôi muốn tìm hiểu Thiên can Kỷ",
+        "Tra cứu Thiên can Kỷ"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "stem-6",
+      "title": "Thiên can Canh",
+      "category": "eastern",
+      "aliases": [
+        "can Canh"
+      ],
+      "content": "Canh là Thiên can thứ 7, thuộc Kim trong bảng ngũ hành của Thiên can. Điều này không đồng nghĩa với mệnh nạp âm của cả năm sinh.",
+      "source": "AstroAI · Thiên can",
+      "intentId": "stem-6",
+      "examples": [
+        "Thiên can Canh là gì?",
+        "Giải thích Thiên can Canh",
+        "Tôi muốn tìm hiểu Thiên can Canh",
+        "Tra cứu Thiên can Canh"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "stem-7",
+      "title": "Thiên can Tân",
+      "category": "eastern",
+      "aliases": [
+        "can Tân"
+      ],
+      "content": "Tân là Thiên can thứ 8, thuộc Kim trong bảng ngũ hành của Thiên can. Điều này không đồng nghĩa với mệnh nạp âm của cả năm sinh.",
+      "source": "AstroAI · Thiên can",
+      "intentId": "stem-7",
+      "examples": [
+        "Thiên can Tân là gì?",
+        "Giải thích Thiên can Tân",
+        "Tôi muốn tìm hiểu Thiên can Tân",
+        "Tra cứu Thiên can Tân"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "stem-8",
+      "title": "Thiên can Nhâm",
+      "category": "eastern",
+      "aliases": [
+        "can Nhâm"
+      ],
+      "content": "Nhâm là Thiên can thứ 9, thuộc Thủy trong bảng ngũ hành của Thiên can. Điều này không đồng nghĩa với mệnh nạp âm của cả năm sinh.",
+      "source": "AstroAI · Thiên can",
+      "intentId": "stem-8",
+      "examples": [
+        "Thiên can Nhâm là gì?",
+        "Giải thích Thiên can Nhâm",
+        "Tôi muốn tìm hiểu Thiên can Nhâm",
+        "Tra cứu Thiên can Nhâm"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "stem-9",
+      "title": "Thiên can Quý",
+      "category": "eastern",
+      "aliases": [
+        "can Quý"
+      ],
+      "content": "Quý là Thiên can thứ 10, thuộc Thủy trong bảng ngũ hành của Thiên can. Điều này không đồng nghĩa với mệnh nạp âm của cả năm sinh.",
+      "source": "AstroAI · Thiên can",
+      "intentId": "stem-9",
+      "examples": [
+        "Thiên can Quý là gì?",
+        "Giải thích Thiên can Quý",
+        "Tôi muốn tìm hiểu Thiên can Quý",
+        "Tra cứu Thiên can Quý"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "truc-0",
+      "title": "Trực Kiến",
+      "category": "eastern",
+      "aliases": [
+        "trực Kiến"
+      ],
+      "content": "Kiến là một trong 12 Trực (thứ 1 trong bảng). Trực theo tháng tiết khí tại 12:00 UTC+7, tính từ kinh độ Mặt Trời xấp xỉ. Ngày sát chuyển tiết có thể cần đối chiếu thời điểm cụ thể. Xem Lịch để đọc các hoạt động gợi ý; không dùng riêng Trực để kết luận ngày Hoàng đạo.",
+      "source": "AstroAI · Giới hạn bảng 12 Trực",
+      "intentId": "truc-0",
+      "examples": [
+        "Trực Kiến là gì?",
+        "Giải thích Trực Kiến",
+        "Tôi muốn tìm hiểu Trực Kiến",
+        "Tra cứu Trực Kiến"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "truc-1",
+      "title": "Trực Trừ",
+      "category": "eastern",
+      "aliases": [
+        "trực Trừ"
+      ],
+      "content": "Trừ là một trong 12 Trực (thứ 2 trong bảng). Trực theo tháng tiết khí tại 12:00 UTC+7, tính từ kinh độ Mặt Trời xấp xỉ. Ngày sát chuyển tiết có thể cần đối chiếu thời điểm cụ thể. Xem Lịch để đọc các hoạt động gợi ý; không dùng riêng Trực để kết luận ngày Hoàng đạo.",
+      "source": "AstroAI · Giới hạn bảng 12 Trực",
+      "intentId": "truc-1",
+      "examples": [
+        "Trực Trừ là gì?",
+        "Giải thích Trực Trừ",
+        "Tôi muốn tìm hiểu Trực Trừ",
+        "Tra cứu Trực Trừ"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "truc-2",
+      "title": "Trực Mãn",
+      "category": "eastern",
+      "aliases": [
+        "trực Mãn"
+      ],
+      "content": "Mãn là một trong 12 Trực (thứ 3 trong bảng). Trực theo tháng tiết khí tại 12:00 UTC+7, tính từ kinh độ Mặt Trời xấp xỉ. Ngày sát chuyển tiết có thể cần đối chiếu thời điểm cụ thể. Xem Lịch để đọc các hoạt động gợi ý; không dùng riêng Trực để kết luận ngày Hoàng đạo.",
+      "source": "AstroAI · Giới hạn bảng 12 Trực",
+      "intentId": "truc-2",
+      "examples": [
+        "Trực Mãn là gì?",
+        "Giải thích Trực Mãn",
+        "Tôi muốn tìm hiểu Trực Mãn",
+        "Tra cứu Trực Mãn"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "truc-3",
+      "title": "Trực Bình",
+      "category": "eastern",
+      "aliases": [
+        "trực Bình"
+      ],
+      "content": "Bình là một trong 12 Trực (thứ 4 trong bảng). Trực theo tháng tiết khí tại 12:00 UTC+7, tính từ kinh độ Mặt Trời xấp xỉ. Ngày sát chuyển tiết có thể cần đối chiếu thời điểm cụ thể. Xem Lịch để đọc các hoạt động gợi ý; không dùng riêng Trực để kết luận ngày Hoàng đạo.",
+      "source": "AstroAI · Giới hạn bảng 12 Trực",
+      "intentId": "truc-3",
+      "examples": [
+        "Trực Bình là gì?",
+        "Giải thích Trực Bình",
+        "Tôi muốn tìm hiểu Trực Bình",
+        "Tra cứu Trực Bình"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "truc-4",
+      "title": "Trực Định",
+      "category": "eastern",
+      "aliases": [
+        "trực Định"
+      ],
+      "content": "Định là một trong 12 Trực (thứ 5 trong bảng). Trực theo tháng tiết khí tại 12:00 UTC+7, tính từ kinh độ Mặt Trời xấp xỉ. Ngày sát chuyển tiết có thể cần đối chiếu thời điểm cụ thể. Xem Lịch để đọc các hoạt động gợi ý; không dùng riêng Trực để kết luận ngày Hoàng đạo.",
+      "source": "AstroAI · Giới hạn bảng 12 Trực",
+      "intentId": "truc-4",
+      "examples": [
+        "Trực Định là gì?",
+        "Giải thích Trực Định",
+        "Tôi muốn tìm hiểu Trực Định",
+        "Tra cứu Trực Định"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "truc-5",
+      "title": "Trực Chấp",
+      "category": "eastern",
+      "aliases": [
+        "trực Chấp"
+      ],
+      "content": "Chấp là một trong 12 Trực (thứ 6 trong bảng). Trực theo tháng tiết khí tại 12:00 UTC+7, tính từ kinh độ Mặt Trời xấp xỉ. Ngày sát chuyển tiết có thể cần đối chiếu thời điểm cụ thể. Xem Lịch để đọc các hoạt động gợi ý; không dùng riêng Trực để kết luận ngày Hoàng đạo.",
+      "source": "AstroAI · Giới hạn bảng 12 Trực",
+      "intentId": "truc-5",
+      "examples": [
+        "Trực Chấp là gì?",
+        "Giải thích Trực Chấp",
+        "Tôi muốn tìm hiểu Trực Chấp",
+        "Tra cứu Trực Chấp"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "truc-6",
+      "title": "Trực Phá",
+      "category": "eastern",
+      "aliases": [
+        "trực Phá"
+      ],
+      "content": "Phá là một trong 12 Trực (thứ 7 trong bảng). Trực theo tháng tiết khí tại 12:00 UTC+7, tính từ kinh độ Mặt Trời xấp xỉ. Ngày sát chuyển tiết có thể cần đối chiếu thời điểm cụ thể. Xem Lịch để đọc các hoạt động gợi ý; không dùng riêng Trực để kết luận ngày Hoàng đạo.",
+      "source": "AstroAI · Giới hạn bảng 12 Trực",
+      "intentId": "truc-6",
+      "examples": [
+        "Trực Phá là gì?",
+        "Giải thích Trực Phá",
+        "Tôi muốn tìm hiểu Trực Phá",
+        "Tra cứu Trực Phá"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "truc-7",
+      "title": "Trực Nguy",
+      "category": "eastern",
+      "aliases": [
+        "trực Nguy"
+      ],
+      "content": "Nguy là một trong 12 Trực (thứ 8 trong bảng). Trực theo tháng tiết khí tại 12:00 UTC+7, tính từ kinh độ Mặt Trời xấp xỉ. Ngày sát chuyển tiết có thể cần đối chiếu thời điểm cụ thể. Xem Lịch để đọc các hoạt động gợi ý; không dùng riêng Trực để kết luận ngày Hoàng đạo.",
+      "source": "AstroAI · Giới hạn bảng 12 Trực",
+      "intentId": "truc-7",
+      "examples": [
+        "Trực Nguy là gì?",
+        "Giải thích Trực Nguy",
+        "Tôi muốn tìm hiểu Trực Nguy",
+        "Tra cứu Trực Nguy"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "truc-8",
+      "title": "Trực Thành",
+      "category": "eastern",
+      "aliases": [
+        "trực Thành"
+      ],
+      "content": "Thành là một trong 12 Trực (thứ 9 trong bảng). Trực theo tháng tiết khí tại 12:00 UTC+7, tính từ kinh độ Mặt Trời xấp xỉ. Ngày sát chuyển tiết có thể cần đối chiếu thời điểm cụ thể. Xem Lịch để đọc các hoạt động gợi ý; không dùng riêng Trực để kết luận ngày Hoàng đạo.",
+      "source": "AstroAI · Giới hạn bảng 12 Trực",
+      "intentId": "truc-8",
+      "examples": [
+        "Trực Thành là gì?",
+        "Giải thích Trực Thành",
+        "Tôi muốn tìm hiểu Trực Thành",
+        "Tra cứu Trực Thành"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "truc-9",
+      "title": "Trực Thâu",
+      "category": "eastern",
+      "aliases": [
+        "trực Thâu"
+      ],
+      "content": "Thâu là một trong 12 Trực (thứ 10 trong bảng). Trực theo tháng tiết khí tại 12:00 UTC+7, tính từ kinh độ Mặt Trời xấp xỉ. Ngày sát chuyển tiết có thể cần đối chiếu thời điểm cụ thể. Xem Lịch để đọc các hoạt động gợi ý; không dùng riêng Trực để kết luận ngày Hoàng đạo.",
+      "source": "AstroAI · Giới hạn bảng 12 Trực",
+      "intentId": "truc-9",
+      "examples": [
+        "Trực Thâu là gì?",
+        "Giải thích Trực Thâu",
+        "Tôi muốn tìm hiểu Trực Thâu",
+        "Tra cứu Trực Thâu"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "truc-10",
+      "title": "Trực Khai",
+      "category": "eastern",
+      "aliases": [
+        "trực Khai"
+      ],
+      "content": "Khai là một trong 12 Trực (thứ 11 trong bảng). Trực theo tháng tiết khí tại 12:00 UTC+7, tính từ kinh độ Mặt Trời xấp xỉ. Ngày sát chuyển tiết có thể cần đối chiếu thời điểm cụ thể. Xem Lịch để đọc các hoạt động gợi ý; không dùng riêng Trực để kết luận ngày Hoàng đạo.",
+      "source": "AstroAI · Giới hạn bảng 12 Trực",
+      "intentId": "truc-10",
+      "examples": [
+        "Trực Khai là gì?",
+        "Giải thích Trực Khai",
+        "Tôi muốn tìm hiểu Trực Khai",
+        "Tra cứu Trực Khai"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "truc-11",
+      "title": "Trực Bế",
+      "category": "eastern",
+      "aliases": [
+        "trực Bế"
+      ],
+      "content": "Bế là một trong 12 Trực (thứ 12 trong bảng). Trực theo tháng tiết khí tại 12:00 UTC+7, tính từ kinh độ Mặt Trời xấp xỉ. Ngày sát chuyển tiết có thể cần đối chiếu thời điểm cụ thể. Xem Lịch để đọc các hoạt động gợi ý; không dùng riêng Trực để kết luận ngày Hoàng đạo.",
+      "source": "AstroAI · Giới hạn bảng 12 Trực",
+      "intentId": "truc-11",
+      "examples": [
+        "Trực Bế là gì?",
+        "Giải thích Trực Bế",
+        "Tôi muốn tìm hiểu Trực Bế",
+        "Tra cứu Trực Bế"
+      ],
+      "kind": "traditionalInterpretation"
+    }
+  ]
+}

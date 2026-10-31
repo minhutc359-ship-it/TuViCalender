@@ -1,0 +1,3130 @@
+{
+  "id": "tarot",
+  "locale": "vi",
+  "version": "vi-2026.10.31-1",
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-31",
+  "source": "AstroAI · Nội dung biên soạn và bảng quy tắc nội bộ",
+  "entries": [
+    {
+      "id": "major-00-upright",
+      "title": "The Fool · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Fool",
+        "Khởi đầu",
+        "major-00"
+      ],
+      "content": "Khởi đầu: Đón nhận một khởi đầu mới bằng sự tò mò. Hãy bước một bước nhỏ và chuẩn bị nền tảng trước khi đi xa.\nTừ khóa: Tự do, Khám phá, Niềm tin. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-00-upright",
+      "examples": [
+        "The Fool · xuôi là gì?",
+        "Giải thích The Fool · xuôi",
+        "Tôi muốn tìm hiểu The Fool · xuôi",
+        "Tra cứu The Fool · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-00-reversed",
+      "title": "The Fool · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Fool",
+        "Khởi đầu",
+        "major-00"
+      ],
+      "content": "Khởi đầu: Bạn có thể đang hành động quá vội hoặc sợ thay đổi. Kiểm tra rủi ro thực tế trước bước tiếp theo.\nTừ khóa: Vội vàng, Thiếu chuẩn bị. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-00-reversed",
+      "examples": [
+        "The Fool · ngược là gì?",
+        "Giải thích The Fool · ngược",
+        "Tôi muốn tìm hiểu The Fool · ngược",
+        "Tra cứu The Fool · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-01-upright",
+      "title": "The Magician · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Magician",
+        "Kiến tạo",
+        "major-01"
+      ],
+      "content": "Kiến tạo: Bạn đã có những công cụ cần thiết. Chọn một mục tiêu rõ ràng và biến ý tưởng thành một hành động cụ thể.\nTừ khóa: Chủ động, Kỹ năng, Tập trung. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-01-upright",
+      "examples": [
+        "The Magician · xuôi là gì?",
+        "Giải thích The Magician · xuôi",
+        "Tôi muốn tìm hiểu The Magician · xuôi",
+        "Tra cứu The Magician · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-01-reversed",
+      "title": "The Magician · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Magician",
+        "Kiến tạo",
+        "major-01"
+      ],
+      "content": "Kiến tạo: Năng lượng đang bị chia nhỏ. Hãy nhìn lại nguồn lực và tránh hứa nhiều hơn khả năng thực hiện.\nTừ khóa: Phân tán, Tiềm năng bị bỏ quên. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-01-reversed",
+      "examples": [
+        "The Magician · ngược là gì?",
+        "Giải thích The Magician · ngược",
+        "Tôi muốn tìm hiểu The Magician · ngược",
+        "Tra cứu The Magician · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-02-upright",
+      "title": "The High Priestess · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The High Priestess",
+        "Trực giác",
+        "major-02"
+      ],
+      "content": "Trực giác: Dành một khoảng lặng để nghe chính mình. Có những điều cần thời gian và quan sát trước khi có thể gọi tên.\nTừ khóa: Lắng nghe, Bí ẩn, Nội tâm. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-02-upright",
+      "examples": [
+        "The High Priestess · xuôi là gì?",
+        "Giải thích The High Priestess · xuôi",
+        "Tôi muốn tìm hiểu The High Priestess · xuôi",
+        "Tra cứu The High Priestess · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-02-reversed",
+      "title": "The High Priestess · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The High Priestess",
+        "Trực giác",
+        "major-02"
+      ],
+      "content": "Trực giác: Quá nhiều ý kiến có thể làm bạn mất kết nối với bản thân. Phân biệt cảm nhận, giả định và sự thật.\nTừ khóa: Nhiễu loạn, Bỏ qua cảm nhận. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-02-reversed",
+      "examples": [
+        "The High Priestess · ngược là gì?",
+        "Giải thích The High Priestess · ngược",
+        "Tôi muốn tìm hiểu The High Priestess · ngược",
+        "Tra cứu The High Priestess · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-03-upright",
+      "title": "The Empress · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Empress",
+        "Nuôi dưỡng",
+        "major-03"
+      ],
+      "content": "Nuôi dưỡng: Chăm sóc điều bạn muốn phát triển bằng sự kiên nhẫn, từ một ý tưởng đến một mối quan hệ.\nTừ khóa: Sáng tạo, Chăm sóc, Trù phú. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-03-upright",
+      "examples": [
+        "The Empress · xuôi là gì?",
+        "Giải thích The Empress · xuôi",
+        "Tôi muốn tìm hiểu The Empress · xuôi",
+        "Tra cứu The Empress · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-03-reversed",
+      "title": "The Empress · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Empress",
+        "Nuôi dưỡng",
+        "major-03"
+      ],
+      "content": "Nuôi dưỡng: Bạn cũng cần được chăm sóc. Đặt giới hạn và dành thời gian hồi phục thay vì cho đi liên tục.\nTừ khóa: Cạn kiệt, Phụ thuộc. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-03-reversed",
+      "examples": [
+        "The Empress · ngược là gì?",
+        "Giải thích The Empress · ngược",
+        "Tôi muốn tìm hiểu The Empress · ngược",
+        "Tra cứu The Empress · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-04-upright",
+      "title": "The Emperor · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Emperor",
+        "Nền tảng",
+        "major-04"
+      ],
+      "content": "Nền tảng: Một kế hoạch rõ ràng và giới hạn lành mạnh giúp bạn xây dựng sự ổn định lâu dài.\nTừ khóa: Cấu trúc, Trách nhiệm, Ổn định. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-04-upright",
+      "examples": [
+        "The Emperor · xuôi là gì?",
+        "Giải thích The Emperor · xuôi",
+        "Tôi muốn tìm hiểu The Emperor · xuôi",
+        "Tra cứu The Emperor · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-04-reversed",
+      "title": "The Emperor · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Emperor",
+        "Nền tảng",
+        "major-04"
+      ],
+      "content": "Nền tảng: Hãy xem lại quy tắc nào còn hữu ích. Sự linh hoạt có thể giúp bạn tiến xa hơn việc kiểm soát mọi thứ.\nTừ khóa: Cứng nhắc, Kiểm soát. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-04-reversed",
+      "examples": [
+        "The Emperor · ngược là gì?",
+        "Giải thích The Emperor · ngược",
+        "Tôi muốn tìm hiểu The Emperor · ngược",
+        "Tra cứu The Emperor · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-05-upright",
+      "title": "The Hierophant · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Hierophant",
+        "Minh triết",
+        "major-05"
+      ],
+      "content": "Minh triết: Tìm một người hướng dẫn hoặc hệ thống kiến thức đáng tin. Hiểu nguyên tắc trước khi tự tìm con đường riêng.\nTừ khóa: Học hỏi, Truyền thống, Dẫn dắt. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-05-upright",
+      "examples": [
+        "The Hierophant · xuôi là gì?",
+        "Giải thích The Hierophant · xuôi",
+        "Tôi muốn tìm hiểu The Hierophant · xuôi",
+        "Tra cứu The Hierophant · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-05-reversed",
+      "title": "The Hierophant · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Hierophant",
+        "Minh triết",
+        "major-05"
+      ],
+      "content": "Minh triết: Một khuôn mẫu quen thuộc có thể không còn phù hợp. Xem lại niềm tin bằng trải nghiệm của chính bạn.\nTừ khóa: Khuôn mẫu, Niềm tin cũ. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-05-reversed",
+      "examples": [
+        "The Hierophant · ngược là gì?",
+        "Giải thích The Hierophant · ngược",
+        "Tôi muốn tìm hiểu The Hierophant · ngược",
+        "Tra cứu The Hierophant · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-06-upright",
+      "title": "The Lovers · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Lovers",
+        "Kết nối",
+        "major-06"
+      ],
+      "content": "Kết nối: Lựa chọn phù hợp bắt đầu từ giá trị của bạn. Một cuộc trò chuyện chân thành có thể tạo nên sự kết nối.\nTừ khóa: Đồng điệu, Lựa chọn, Giá trị. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-06-upright",
+      "examples": [
+        "The Lovers · xuôi là gì?",
+        "Giải thích The Lovers · xuôi",
+        "Tôi muốn tìm hiểu The Lovers · xuôi",
+        "Tra cứu The Lovers · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-06-reversed",
+      "title": "The Lovers · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Lovers",
+        "Kết nối",
+        "major-06"
+      ],
+      "content": "Kết nối: Nhìn thẳng vào điều đang lệch nhịp. Hãy trao đổi nhu cầu và mong đợi thay vì đoán suy nghĩ của nhau.\nTừ khóa: Bất đồng, Thiếu cân bằng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-06-reversed",
+      "examples": [
+        "The Lovers · ngược là gì?",
+        "Giải thích The Lovers · ngược",
+        "Tôi muốn tìm hiểu The Lovers · ngược",
+        "Tra cứu The Lovers · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-07-upright",
+      "title": "The Chariot · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Chariot",
+        "Tiến bước",
+        "major-07"
+      ],
+      "content": "Tiến bước: Giữ mục tiêu trong tầm nhìn, điều hòa những mong muốn trái chiều và tiến từng bước có chủ đích.\nTừ khóa: Ý chí, Định hướng, Quyết tâm. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-07-upright",
+      "examples": [
+        "The Chariot · xuôi là gì?",
+        "Giải thích The Chariot · xuôi",
+        "Tôi muốn tìm hiểu The Chariot · xuôi",
+        "Tra cứu The Chariot · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-07-reversed",
+      "title": "The Chariot · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Chariot",
+        "Tiến bước",
+        "major-07"
+      ],
+      "content": "Tiến bước: Dừng lại để chỉnh hướng. Đi nhanh sẽ ít ý nghĩa nếu bạn chưa biết điều mình thực sự muốn.\nTừ khóa: Mất phương hướng, Ép buộc. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-07-reversed",
+      "examples": [
+        "The Chariot · ngược là gì?",
+        "Giải thích The Chariot · ngược",
+        "Tôi muốn tìm hiểu The Chariot · ngược",
+        "Tra cứu The Chariot · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-08-upright",
+      "title": "Strength · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Strength",
+        "Nội lực",
+        "major-08"
+      ],
+      "content": "Nội lực: Sức mạnh có thể đến từ sự bình tĩnh. Đối xử tử tế với bản thân khi đối diện một thử thách.\nTừ khóa: Can đảm, Kiên nhẫn, Dịu dàng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-08-upright",
+      "examples": [
+        "Strength · xuôi là gì?",
+        "Giải thích Strength · xuôi",
+        "Tôi muốn tìm hiểu Strength · xuôi",
+        "Tra cứu Strength · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-08-reversed",
+      "title": "Strength · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Strength",
+        "Nội lực",
+        "major-08"
+      ],
+      "content": "Nội lực: Hạ kỳ vọng về việc phải luôn mạnh mẽ. Một khoảng nghỉ hoặc sự hỗ trợ là điều đáng đón nhận.\nTừ khóa: Tự nghi ngờ, Kiệt sức. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-08-reversed",
+      "examples": [
+        "Strength · ngược là gì?",
+        "Giải thích Strength · ngược",
+        "Tôi muốn tìm hiểu Strength · ngược",
+        "Tra cứu Strength · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-09-upright",
+      "title": "The Hermit · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Hermit",
+        "Soi chiếu",
+        "major-09"
+      ],
+      "content": "Soi chiếu: Tạm rời nhịp vội để nhìn lại điều quan trọng. Viết xuống câu hỏi mà bạn muốn tự trả lời.\nTừ khóa: Chiêm nghiệm, Tĩnh lặng, Tự hiểu. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-09-upright",
+      "examples": [
+        "The Hermit · xuôi là gì?",
+        "Giải thích The Hermit · xuôi",
+        "Tôi muốn tìm hiểu The Hermit · xuôi",
+        "Tra cứu The Hermit · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-09-reversed",
+      "title": "The Hermit · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Hermit",
+        "Soi chiếu",
+        "major-09"
+      ],
+      "content": "Soi chiếu: Khoảng lặng hữu ích khác với việc cắt đứt kết nối. Hãy tìm một người bạn tin để chia sẻ.\nTừ khóa: Cô lập, Thu mình. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-09-reversed",
+      "examples": [
+        "The Hermit · ngược là gì?",
+        "Giải thích The Hermit · ngược",
+        "Tôi muốn tìm hiểu The Hermit · ngược",
+        "Tra cứu The Hermit · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-10-upright",
+      "title": "Wheel of Fortune · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Wheel of Fortune",
+        "Chuyển vận",
+        "major-10"
+      ],
+      "content": "Chuyển vận: Mọi chu kỳ đều chuyển động. Tập trung vào phần bạn có thể chủ động khi hoàn cảnh thay đổi.\nTừ khóa: Chu kỳ, Thay đổi, Cơ hội. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-10-upright",
+      "examples": [
+        "Wheel of Fortune · xuôi là gì?",
+        "Giải thích Wheel of Fortune · xuôi",
+        "Tôi muốn tìm hiểu Wheel of Fortune · xuôi",
+        "Tra cứu Wheel of Fortune · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-10-reversed",
+      "title": "Wheel of Fortune · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Wheel of Fortune",
+        "Chuyển vận",
+        "major-10"
+      ],
+      "content": "Chuyển vận: Nhận diện một vòng lặp cũ và thử một phản ứng mới. Bạn không cần kiểm soát mọi biến động.\nTừ khóa: Kháng cự, Lặp lại. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-10-reversed",
+      "examples": [
+        "Wheel of Fortune · ngược là gì?",
+        "Giải thích Wheel of Fortune · ngược",
+        "Tôi muốn tìm hiểu Wheel of Fortune · ngược",
+        "Tra cứu Wheel of Fortune · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-11-upright",
+      "title": "Justice · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Justice",
+        "Cân bằng",
+        "major-11"
+      ],
+      "content": "Cân bằng: Xem xét sự việc từ nhiều phía. Quyết định dựa trên thông tin rõ ràng và trách nhiệm với lựa chọn của mình.\nTừ khóa: Công bằng, Trung thực, Hệ quả. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-11-upright",
+      "examples": [
+        "Justice · xuôi là gì?",
+        "Giải thích Justice · xuôi",
+        "Tôi muốn tìm hiểu Justice · xuôi",
+        "Tra cứu Justice · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-11-reversed",
+      "title": "Justice · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Justice",
+        "Cân bằng",
+        "major-11"
+      ],
+      "content": "Cân bằng: Kiểm tra những giả định đang dẫn dắt bạn. Có một sự thật hoặc trách nhiệm nào đang bị né tránh?\nTừ khóa: Thiên lệch, Né tránh. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-11-reversed",
+      "examples": [
+        "Justice · ngược là gì?",
+        "Giải thích Justice · ngược",
+        "Tôi muốn tìm hiểu Justice · ngược",
+        "Tra cứu Justice · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-12-upright",
+      "title": "The Hanged Man · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Hanged Man",
+        "Góc nhìn mới",
+        "major-12"
+      ],
+      "content": "Góc nhìn mới: Một khoảng dừng có thể mở ra cách nhìn khác. Thử đặt mình vào vị trí của người đối diện.\nTừ khóa: Tạm dừng, Buông bỏ, Đổi góc nhìn. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-12-upright",
+      "examples": [
+        "The Hanged Man · xuôi là gì?",
+        "Giải thích The Hanged Man · xuôi",
+        "Tôi muốn tìm hiểu The Hanged Man · xuôi",
+        "Tra cứu The Hanged Man · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-12-reversed",
+      "title": "The Hanged Man · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Hanged Man",
+        "Góc nhìn mới",
+        "major-12"
+      ],
+      "content": "Góc nhìn mới: Phân biệt chờ đợi có mục đích với trì hoãn. Chọn một việc nhỏ giúp bạn thoát khỏi thế đứng yên.\nTừ khóa: Trì hoãn, Bế tắc. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-12-reversed",
+      "examples": [
+        "The Hanged Man · ngược là gì?",
+        "Giải thích The Hanged Man · ngược",
+        "Tôi muốn tìm hiểu The Hanged Man · ngược",
+        "Tra cứu The Hanged Man · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-13-upright",
+      "title": "Death · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Death",
+        "Chuyển hóa",
+        "major-13"
+      ],
+      "content": "Chuyển hóa: Một giai đoạn khép lại để tạo không gian cho điều mới. Lá bài nói về sự chuyển đổi, không dự báo cái chết.\nTừ khóa: Khép lại, Đổi mới, Chuyển tiếp. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-13-upright",
+      "examples": [
+        "Death · xuôi là gì?",
+        "Giải thích Death · xuôi",
+        "Tôi muốn tìm hiểu Death · xuôi",
+        "Tra cứu Death · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-13-reversed",
+      "title": "Death · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Death",
+        "Chuyển hóa",
+        "major-13"
+      ],
+      "content": "Chuyển hóa: Bạn có thể đang níu một điều đã hoàn thành vai trò. Buông từng phần nhỏ sẽ dễ hơn thay đổi tất cả cùng lúc.\nTừ khóa: Níu giữ, Sợ thay đổi. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-13-reversed",
+      "examples": [
+        "Death · ngược là gì?",
+        "Giải thích Death · ngược",
+        "Tôi muốn tìm hiểu Death · ngược",
+        "Tra cứu Death · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-14-upright",
+      "title": "Temperance · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Temperance",
+        "Điều hòa",
+        "major-14"
+      ],
+      "content": "Điều hòa: Tìm nhịp điệu vừa sức. Kết hợp những điều khác biệt bằng thử nghiệm nhỏ và điều chỉnh đều đặn.\nTừ khóa: Hài hòa, Chừng mực, Hợp nhất. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-14-upright",
+      "examples": [
+        "Temperance · xuôi là gì?",
+        "Giải thích Temperance · xuôi",
+        "Tôi muốn tìm hiểu Temperance · xuôi",
+        "Tra cứu Temperance · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-14-reversed",
+      "title": "Temperance · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Temperance",
+        "Điều hòa",
+        "major-14"
+      ],
+      "content": "Điều hòa: Lịch sinh hoạt hoặc kỳ vọng đang mất cân đối. Bắt đầu bằng việc giảm một điều đang quá tải.\nTừ khóa: Quá mức, Mất nhịp. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-14-reversed",
+      "examples": [
+        "Temperance · ngược là gì?",
+        "Giải thích Temperance · ngược",
+        "Tôi muốn tìm hiểu Temperance · ngược",
+        "Tra cứu Temperance · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-15-upright",
+      "title": "The Devil · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Devil",
+        "Ràng buộc",
+        "major-15"
+      ],
+      "content": "Ràng buộc: Nhận diện một thói quen hoặc ràng buộc đang giới hạn bạn. Việc gọi tên nó là bước đầu lấy lại quyền lựa chọn.\nTừ khóa: Thói quen, Ham muốn, Nhận diện. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-15-upright",
+      "examples": [
+        "The Devil · xuôi là gì?",
+        "Giải thích The Devil · xuôi",
+        "Tôi muốn tìm hiểu The Devil · xuôi",
+        "Tra cứu The Devil · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-15-reversed",
+      "title": "The Devil · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Devil",
+        "Ràng buộc",
+        "major-15"
+      ],
+      "content": "Ràng buộc: Bạn có cơ hội nới lỏng một ràng buộc cũ. Tìm sự hỗ trợ thực tế và ghi nhận từng bước tiến.\nTừ khóa: Giải phóng, Tự chủ. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-15-reversed",
+      "examples": [
+        "The Devil · ngược là gì?",
+        "Giải thích The Devil · ngược",
+        "Tôi muốn tìm hiểu The Devil · ngược",
+        "Tra cứu The Devil · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-16-upright",
+      "title": "The Tower · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Tower",
+        "Thức tỉnh",
+        "major-16"
+      ],
+      "content": "Thức tỉnh: Một giả định có thể cần thay đổi. Ưu tiên điều ổn định và xây lại từ những gì đã được kiểm chứng.\nTừ khóa: Biến chuyển, Sự thật, Tái thiết. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-16-upright",
+      "examples": [
+        "The Tower · xuôi là gì?",
+        "Giải thích The Tower · xuôi",
+        "Tôi muốn tìm hiểu The Tower · xuôi",
+        "Tra cứu The Tower · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-16-reversed",
+      "title": "The Tower · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Tower",
+        "Thức tỉnh",
+        "major-16"
+      ],
+      "content": "Thức tỉnh: Bạn có đang trì hoãn một thay đổi cần thiết? Điều chỉnh có kế hoạch giúp giảm cảm giác bị động.\nTừ khóa: Kháng cự, Lo ngại. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-16-reversed",
+      "examples": [
+        "The Tower · ngược là gì?",
+        "Giải thích The Tower · ngược",
+        "Tôi muốn tìm hiểu The Tower · ngược",
+        "Tra cứu The Tower · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-17-upright",
+      "title": "The Star · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Star",
+        "Hy vọng",
+        "major-17"
+      ],
+      "content": "Hy vọng: Cho mình không gian hồi phục. Một nguồn cảm hứng nhỏ có thể giúp bạn kết nối lại với điều muốn hướng đến.\nTừ khóa: Hồi phục, Niềm tin, Cảm hứng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-17-upright",
+      "examples": [
+        "The Star · xuôi là gì?",
+        "Giải thích The Star · xuôi",
+        "Tôi muốn tìm hiểu The Star · xuôi",
+        "Tra cứu The Star · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-17-reversed",
+      "title": "The Star · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Star",
+        "Hy vọng",
+        "major-17"
+      ],
+      "content": "Hy vọng: Hy vọng đôi khi bắt đầu từ việc rất bình thường. Chọn một hoạt động nuôi dưỡng bạn hôm nay.\nTừ khóa: Nản lòng, Mất kết nối. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-17-reversed",
+      "examples": [
+        "The Star · ngược là gì?",
+        "Giải thích The Star · ngược",
+        "Tôi muốn tìm hiểu The Star · ngược",
+        "Tra cứu The Star · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-18-upright",
+      "title": "The Moon · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Moon",
+        "Tiềm thức",
+        "major-18"
+      ],
+      "content": "Tiềm thức: Đừng vội kết luận khi thông tin còn thiếu. Ghi nhận cảm xúc rồi tìm thêm bằng chứng trước quyết định.\nTừ khóa: Cảm xúc, Mơ hồ, Tưởng tượng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-18-upright",
+      "examples": [
+        "The Moon · xuôi là gì?",
+        "Giải thích The Moon · xuôi",
+        "Tôi muốn tìm hiểu The Moon · xuôi",
+        "Tra cứu The Moon · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-18-reversed",
+      "title": "The Moon · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Moon",
+        "Tiềm thức",
+        "major-18"
+      ],
+      "content": "Tiềm thức: Một điều chưa rõ đang dần được gọi tên. Tách nỗi lo khỏi những gì bạn thực sự biết.\nTừ khóa: Sáng tỏ, Đối diện. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-18-reversed",
+      "examples": [
+        "The Moon · ngược là gì?",
+        "Giải thích The Moon · ngược",
+        "Tôi muốn tìm hiểu The Moon · ngược",
+        "Tra cứu The Moon · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-19-upright",
+      "title": "The Sun · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The Sun",
+        "Rạng rỡ",
+        "major-19"
+      ],
+      "content": "Rạng rỡ: Ghi nhận điều đang diễn ra tốt đẹp và chia sẻ niềm vui. Sự rõ ràng giúp bạn bước tiếp nhẹ nhàng hơn.\nTừ khóa: Niềm vui, Rõ ràng, Sinh lực. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-19-upright",
+      "examples": [
+        "The Sun · xuôi là gì?",
+        "Giải thích The Sun · xuôi",
+        "Tôi muốn tìm hiểu The Sun · xuôi",
+        "Tra cứu The Sun · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-19-reversed",
+      "title": "The Sun · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The Sun",
+        "Rạng rỡ",
+        "major-19"
+      ],
+      "content": "Rạng rỡ: Niềm vui không cần hoàn hảo. Giảm một kỳ vọng và để bản thân tận hưởng những tiến bộ nhỏ.\nTừ khóa: Chậm lại, Kỳ vọng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-19-reversed",
+      "examples": [
+        "The Sun · ngược là gì?",
+        "Giải thích The Sun · ngược",
+        "Tôi muốn tìm hiểu The Sun · ngược",
+        "Tra cứu The Sun · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-20-upright",
+      "title": "Judgement · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Judgement",
+        "Tiếng gọi",
+        "major-20"
+      ],
+      "content": "Tiếng gọi: Nhìn lại hành trình bằng lòng cảm thông. Bài học cũ có thể giúp bạn chọn một hướng đi có ý nghĩa hơn.\nTừ khóa: Nhìn lại, Thức tỉnh, Đổi hướng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-20-upright",
+      "examples": [
+        "Judgement · xuôi là gì?",
+        "Giải thích Judgement · xuôi",
+        "Tôi muốn tìm hiểu Judgement · xuôi",
+        "Tra cứu Judgement · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-20-reversed",
+      "title": "Judgement · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Judgement",
+        "Tiếng gọi",
+        "major-20"
+      ],
+      "content": "Tiếng gọi: Bớt khắt khe với quá khứ. Một quyết định chưa cần hoàn hảo để trở thành điểm khởi đầu tốt.\nTừ khóa: Tự phán xét, Chần chừ. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-20-reversed",
+      "examples": [
+        "Judgement · ngược là gì?",
+        "Giải thích Judgement · ngược",
+        "Tôi muốn tìm hiểu Judgement · ngược",
+        "Tra cứu Judgement · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-21-upright",
+      "title": "The World · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "The World",
+        "Viên mãn",
+        "major-21"
+      ],
+      "content": "Viên mãn: Dừng lại để ghi nhận một chặng đường. Hoàn tất điều còn lại và mang theo bài học cho chu kỳ tiếp theo.\nTừ khóa: Hoàn thành, Kết nối, Trọn vẹn. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-21-upright",
+      "examples": [
+        "The World · xuôi là gì?",
+        "Giải thích The World · xuôi",
+        "Tôi muốn tìm hiểu The World · xuôi",
+        "Tra cứu The World · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "major-21-reversed",
+      "title": "The World · ngược",
+      "category": "tarot",
+      "aliases": [
+        "The World",
+        "Viên mãn",
+        "major-21"
+      ],
+      "content": "Viên mãn: Một việc nhỏ chưa kết thúc có thể chiếm nhiều tâm trí. Hãy khép lại hoặc chủ động quyết định buông nó.\nTừ khóa: Dang dở, Thiếu khép lại. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "major-21-reversed",
+      "examples": [
+        "The World · ngược là gì?",
+        "Giải thích The World · ngược",
+        "Tôi muốn tìm hiểu The World · ngược",
+        "Tra cứu The World · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-01-upright",
+      "title": "Ace of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Ace of Wands",
+        "Át Gậy",
+        "wands-01"
+      ],
+      "content": "Át Gậy: Một ý tưởng mới đang cần hành động đầu tiên. Thử một phiên bản nhỏ trước khi đầu tư nhiều công sức.\nTừ khóa: Cảm hứng, Khởi đầu. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-01-upright",
+      "examples": [
+        "Ace of Wands · xuôi là gì?",
+        "Giải thích Ace of Wands · xuôi",
+        "Tôi muốn tìm hiểu Ace of Wands · xuôi",
+        "Tra cứu Ace of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-01-reversed",
+      "title": "Ace of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Ace of Wands",
+        "Át Gậy",
+        "wands-01"
+      ],
+      "content": "Át Gậy: Tìm lại điều khiến bạn hứng thú, thay vì ép mình theo một kế hoạch đã hết ý nghĩa.\nTừ khóa: Chậm nhịp, Thiếu động lực. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-01-reversed",
+      "examples": [
+        "Ace of Wands · ngược là gì?",
+        "Giải thích Ace of Wands · ngược",
+        "Tôi muốn tìm hiểu Ace of Wands · ngược",
+        "Tra cứu Ace of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-02-upright",
+      "title": "Two of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Two of Wands",
+        "Hai Gậy",
+        "wands-02"
+      ],
+      "content": "Hai Gậy: Đặt các lựa chọn cạnh nhau và xác định nơi bạn muốn đến. Một kế hoạch giúp cảm hứng có hướng đi.\nTừ khóa: Tầm nhìn, Lập kế hoạch. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-02-upright",
+      "examples": [
+        "Two of Wands · xuôi là gì?",
+        "Giải thích Two of Wands · xuôi",
+        "Tôi muốn tìm hiểu Two of Wands · xuôi",
+        "Tra cứu Two of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-02-reversed",
+      "title": "Two of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Two of Wands",
+        "Hai Gậy",
+        "wands-02"
+      ],
+      "content": "Hai Gậy: Bạn có thể đang chờ sự chắc chắn tuyệt đối. Chọn bước thử nghiệm có thể điều chỉnh.\nTừ khóa: Sợ đổi mới, Do dự. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-02-reversed",
+      "examples": [
+        "Two of Wands · ngược là gì?",
+        "Giải thích Two of Wands · ngược",
+        "Tôi muốn tìm hiểu Two of Wands · ngược",
+        "Tra cứu Two of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-03-upright",
+      "title": "Three of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Three of Wands",
+        "Ba Gậy",
+        "wands-03"
+      ],
+      "content": "Ba Gậy: Nhìn xa hơn điều quen thuộc. Kết nối mới và sự chuẩn bị giúp bạn mở rộng một ý tưởng.\nTừ khóa: Mở rộng, Đón cơ hội. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-03-upright",
+      "examples": [
+        "Three of Wands · xuôi là gì?",
+        "Giải thích Three of Wands · xuôi",
+        "Tôi muốn tìm hiểu Three of Wands · xuôi",
+        "Tra cứu Three of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-03-reversed",
+      "title": "Three of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Three of Wands",
+        "Ba Gậy",
+        "wands-03"
+      ],
+      "content": "Ba Gậy: Tiến độ có thể khác kỳ vọng. Xem lại phạm vi và tìm một cách tiếp cận linh hoạt hơn.\nTừ khóa: Trở ngại, Chậm tiến. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-03-reversed",
+      "examples": [
+        "Three of Wands · ngược là gì?",
+        "Giải thích Three of Wands · ngược",
+        "Tôi muốn tìm hiểu Three of Wands · ngược",
+        "Tra cứu Three of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-04-upright",
+      "title": "Four of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Four of Wands",
+        "Bốn Gậy",
+        "wands-04"
+      ],
+      "content": "Bốn Gậy: Dành thời gian ghi nhận một cột mốc cùng những người đồng hành. Cảm giác thuộc về là một nguồn lực.\nTừ khóa: Gắn kết, Ăn mừng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-04-upright",
+      "examples": [
+        "Four of Wands · xuôi là gì?",
+        "Giải thích Four of Wands · xuôi",
+        "Tôi muốn tìm hiểu Four of Wands · xuôi",
+        "Tra cứu Four of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-04-reversed",
+      "title": "Four of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Four of Wands",
+        "Bốn Gậy",
+        "wands-04"
+      ],
+      "content": "Bốn Gậy: Xem lại điều giúp bạn cảm thấy an toàn và được đón nhận trong một tập thể.\nTừ khóa: Thiếu ổn định, Lệch nhịp. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-04-reversed",
+      "examples": [
+        "Four of Wands · ngược là gì?",
+        "Giải thích Four of Wands · ngược",
+        "Tôi muốn tìm hiểu Four of Wands · ngược",
+        "Tra cứu Four of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-05-upright",
+      "title": "Five of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Five of Wands",
+        "Năm Gậy",
+        "wands-05"
+      ],
+      "content": "Năm Gậy: Các ý kiến khác nhau có thể tạo ma sát. Thống nhất mục tiêu và quy tắc đối thoại trước khi hành động.\nTừ khóa: Cạnh tranh, Bất đồng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-05-upright",
+      "examples": [
+        "Five of Wands · xuôi là gì?",
+        "Giải thích Five of Wands · xuôi",
+        "Tôi muốn tìm hiểu Five of Wands · xuôi",
+        "Tra cứu Five of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-05-reversed",
+      "title": "Five of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Five of Wands",
+        "Năm Gậy",
+        "wands-05"
+      ],
+      "content": "Năm Gậy: Một xung đột đang cần được giải quyết bình tĩnh. Im lặng chưa chắc đã là đồng thuận.\nTừ khóa: Hòa giải, Tránh né. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-05-reversed",
+      "examples": [
+        "Five of Wands · ngược là gì?",
+        "Giải thích Five of Wands · ngược",
+        "Tôi muốn tìm hiểu Five of Wands · ngược",
+        "Tra cứu Five of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-06-upright",
+      "title": "Six of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Six of Wands",
+        "Sáu Gậy",
+        "wands-06"
+      ],
+      "content": "Sáu Gậy: Đón nhận sự ghi nhận và nhớ đến người đã hỗ trợ bạn. Một thành tựu nhỏ cũng xứng đáng được trân trọng.\nTừ khóa: Ghi nhận, Tự tin. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-06-upright",
+      "examples": [
+        "Six of Wands · xuôi là gì?",
+        "Giải thích Six of Wands · xuôi",
+        "Tôi muốn tìm hiểu Six of Wands · xuôi",
+        "Tra cứu Six of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-06-reversed",
+      "title": "Six of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Six of Wands",
+        "Sáu Gậy",
+        "wands-06"
+      ],
+      "content": "Sáu Gậy: Giá trị của bạn không chỉ nằm ở lời khen. Xác định tiêu chí tiến bộ của riêng mình.\nTừ khóa: Cần công nhận, Tự nghi ngờ. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-06-reversed",
+      "examples": [
+        "Six of Wands · ngược là gì?",
+        "Giải thích Six of Wands · ngược",
+        "Tôi muốn tìm hiểu Six of Wands · ngược",
+        "Tra cứu Six of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-07-upright",
+      "title": "Seven of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Seven of Wands",
+        "Bảy Gậy",
+        "wands-07"
+      ],
+      "content": "Bảy Gậy: Bảo vệ điều bạn tin bằng sự rõ ràng. Chọn những cuộc tranh luận thực sự đáng dành năng lượng.\nTừ khóa: Giữ lập trường, Ranh giới. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-07-upright",
+      "examples": [
+        "Seven of Wands · xuôi là gì?",
+        "Giải thích Seven of Wands · xuôi",
+        "Tôi muốn tìm hiểu Seven of Wands · xuôi",
+        "Tra cứu Seven of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-07-reversed",
+      "title": "Seven of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Seven of Wands",
+        "Bảy Gậy",
+        "wands-07"
+      ],
+      "content": "Bảy Gậy: Bạn không cần chứng minh mình trong mọi tình huống. Nghỉ ngơi và xem lại giới hạn.\nTừ khóa: Quá tải, Phòng vệ. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-07-reversed",
+      "examples": [
+        "Seven of Wands · ngược là gì?",
+        "Giải thích Seven of Wands · ngược",
+        "Tôi muốn tìm hiểu Seven of Wands · ngược",
+        "Tra cứu Seven of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-08-upright",
+      "title": "Eight of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Eight of Wands",
+        "Tám Gậy",
+        "wands-08"
+      ],
+      "content": "Tám Gậy: Nhịp độ có thể nhanh hơn thường lệ. Tổ chức thông tin và phối hợp rõ ràng để tránh bỏ sót.\nTừ khóa: Chuyển động, Tin tức. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-08-upright",
+      "examples": [
+        "Eight of Wands · xuôi là gì?",
+        "Giải thích Eight of Wands · xuôi",
+        "Tôi muốn tìm hiểu Eight of Wands · xuôi",
+        "Tra cứu Eight of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-08-reversed",
+      "title": "Eight of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Eight of Wands",
+        "Tám Gậy",
+        "wands-08"
+      ],
+      "content": "Tám Gậy: Trước khi thúc tiến độ, kiểm tra điều đang tắc và ưu tiên thông điệp cần làm rõ.\nTừ khóa: Chậm trễ, Vội vàng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-08-reversed",
+      "examples": [
+        "Eight of Wands · ngược là gì?",
+        "Giải thích Eight of Wands · ngược",
+        "Tôi muốn tìm hiểu Eight of Wands · ngược",
+        "Tra cứu Eight of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-09-upright",
+      "title": "Nine of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Nine of Wands",
+        "Chín Gậy",
+        "wands-09"
+      ],
+      "content": "Chín Gậy: Bạn đã đi qua nhiều thử thách. Dùng kinh nghiệm để chuẩn bị, đồng thời cho mình quyền nhận hỗ trợ.\nTừ khóa: Bền bỉ, Cảnh giác. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-09-upright",
+      "examples": [
+        "Nine of Wands · xuôi là gì?",
+        "Giải thích Nine of Wands · xuôi",
+        "Tôi muốn tìm hiểu Nine of Wands · xuôi",
+        "Tra cứu Nine of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-09-reversed",
+      "title": "Nine of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Nine of Wands",
+        "Chín Gậy",
+        "wands-09"
+      ],
+      "content": "Chín Gậy: Một lớp phòng vệ cũ có thể đang làm bạn kiệt sức. Dành khoảng nghỉ trước bước tiếp theo.\nTừ khóa: Mệt mỏi, Đề phòng quá mức. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-09-reversed",
+      "examples": [
+        "Nine of Wands · ngược là gì?",
+        "Giải thích Nine of Wands · ngược",
+        "Tôi muốn tìm hiểu Nine of Wands · ngược",
+        "Tra cứu Nine of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-10-upright",
+      "title": "Ten of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Ten of Wands",
+        "Mười Gậy",
+        "wands-10"
+      ],
+      "content": "Mười Gậy: Kiểm tra điều gì thực sự thuộc trách nhiệm của bạn. Chia việc giúp hành trình bền vững hơn.\nTừ khóa: Gánh vác, Trách nhiệm. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-10-upright",
+      "examples": [
+        "Ten of Wands · xuôi là gì?",
+        "Giải thích Ten of Wands · xuôi",
+        "Tôi muốn tìm hiểu Ten of Wands · xuôi",
+        "Tra cứu Ten of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-10-reversed",
+      "title": "Ten of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Ten of Wands",
+        "Mười Gậy",
+        "wands-10"
+      ],
+      "content": "Mười Gậy: Đặt xuống một gánh nặng không còn cần thiết và trao đổi lại kỳ vọng với người liên quan.\nTừ khóa: Chia sẻ, Quá sức. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-10-reversed",
+      "examples": [
+        "Ten of Wands · ngược là gì?",
+        "Giải thích Ten of Wands · ngược",
+        "Tôi muốn tìm hiểu Ten of Wands · ngược",
+        "Tra cứu Ten of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-11-upright",
+      "title": "Page of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Page of Wands",
+        "Tiểu đồng Gậy",
+        "wands-11"
+      ],
+      "content": "Tiểu đồng Gậy: Đón nhận một ý tưởng bằng tinh thần khám phá. Ghi chép và thực hành để biến tò mò thành kinh nghiệm.\nTừ khóa: Khám phá, Nhiệt huyết. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-11-upright",
+      "examples": [
+        "Page of Wands · xuôi là gì?",
+        "Giải thích Page of Wands · xuôi",
+        "Tôi muốn tìm hiểu Page of Wands · xuôi",
+        "Tra cứu Page of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-11-reversed",
+      "title": "Page of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Page of Wands",
+        "Tiểu đồng Gậy",
+        "wands-11"
+      ],
+      "content": "Tiểu đồng Gậy: Cảm hứng đang cần cấu trúc. Chọn một việc để hoàn thành trước khi bắt đầu thêm.\nTừ khóa: Thiếu hướng, Bốc đồng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-11-reversed",
+      "examples": [
+        "Page of Wands · ngược là gì?",
+        "Giải thích Page of Wands · ngược",
+        "Tôi muốn tìm hiểu Page of Wands · ngược",
+        "Tra cứu Page of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-12-upright",
+      "title": "Knight of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Knight of Wands",
+        "Kỵ sĩ Gậy",
+        "wands-12"
+      ],
+      "content": "Kỵ sĩ Gậy: Hãy đưa nhiệt huyết vào một hướng đi rõ ràng. Cân bằng lòng can đảm với sự chuẩn bị thực tế.\nTừ khóa: Dấn thân, Đam mê. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-12-upright",
+      "examples": [
+        "Knight of Wands · xuôi là gì?",
+        "Giải thích Knight of Wands · xuôi",
+        "Tôi muốn tìm hiểu Knight of Wands · xuôi",
+        "Tra cứu Knight of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-12-reversed",
+      "title": "Knight of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Knight of Wands",
+        "Kỵ sĩ Gậy",
+        "wands-12"
+      ],
+      "content": "Kỵ sĩ Gậy: Đừng để sự vội vã quyết định thay bạn. Kiểm tra động lực và hệ quả trước hành động.\nTừ khóa: Hấp tấp, Thiếu kiên nhẫn. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-12-reversed",
+      "examples": [
+        "Knight of Wands · ngược là gì?",
+        "Giải thích Knight of Wands · ngược",
+        "Tôi muốn tìm hiểu Knight of Wands · ngược",
+        "Tra cứu Knight of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-13-upright",
+      "title": "Queen of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Queen of Wands",
+        "Hoàng hậu Gậy",
+        "wands-13"
+      ],
+      "content": "Hoàng hậu Gậy: Bạn có thể truyền cảm hứng bằng sự hiện diện tự tin và rộng lượng. Dành chỗ cho cá tính của mình.\nTừ khóa: Ấm áp, Tự tin. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-13-upright",
+      "examples": [
+        "Queen of Wands · xuôi là gì?",
+        "Giải thích Queen of Wands · xuôi",
+        "Tôi muốn tìm hiểu Queen of Wands · xuôi",
+        "Tra cứu Queen of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-13-reversed",
+      "title": "Queen of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Queen of Wands",
+        "Hoàng hậu Gậy",
+        "wands-13"
+      ],
+      "content": "Hoàng hậu Gậy: Tìm lại sự tự tin từ bên trong và tránh so sánh hành trình của bạn với người khác.\nTừ khóa: Tự nghi ngờ, Đòi hỏi. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-13-reversed",
+      "examples": [
+        "Queen of Wands · ngược là gì?",
+        "Giải thích Queen of Wands · ngược",
+        "Tôi muốn tìm hiểu Queen of Wands · ngược",
+        "Tra cứu Queen of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-14-upright",
+      "title": "King of Wands · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "King of Wands",
+        "Nhà vua Gậy",
+        "wands-14"
+      ],
+      "content": "Nhà vua Gậy: Dùng tầm nhìn để kết nối mọi người, rồi tạo không gian cho họ chủ động thực hiện.\nTừ khóa: Tầm nhìn, Dẫn dắt. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-14-upright",
+      "examples": [
+        "King of Wands · xuôi là gì?",
+        "Giải thích King of Wands · xuôi",
+        "Tôi muốn tìm hiểu King of Wands · xuôi",
+        "Tra cứu King of Wands · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "wands-14-reversed",
+      "title": "King of Wands · ngược",
+      "category": "tarot",
+      "aliases": [
+        "King of Wands",
+        "Nhà vua Gậy",
+        "wands-14"
+      ],
+      "content": "Nhà vua Gậy: Một người dẫn dắt cũng cần lắng nghe. Điều chỉnh cách trao quyền thay vì kiểm soát chi tiết.\nTừ khóa: Áp đặt, Thiếu kiên nhẫn. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "wands-14-reversed",
+      "examples": [
+        "King of Wands · ngược là gì?",
+        "Giải thích King of Wands · ngược",
+        "Tôi muốn tìm hiểu King of Wands · ngược",
+        "Tra cứu King of Wands · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-01-upright",
+      "title": "Ace of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Ace of Cups",
+        "Át Cốc",
+        "cups-01"
+      ],
+      "content": "Át Cốc: Cho phép mình đón nhận một cảm xúc hoặc sự kết nối mới. Bắt đầu bằng lòng tử tế với bản thân.\nTừ khóa: Mở lòng, Cảm xúc mới. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-01-upright",
+      "examples": [
+        "Ace of Cups · xuôi là gì?",
+        "Giải thích Ace of Cups · xuôi",
+        "Tôi muốn tìm hiểu Ace of Cups · xuôi",
+        "Tra cứu Ace of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-01-reversed",
+      "title": "Ace of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Ace of Cups",
+        "Át Cốc",
+        "cups-01"
+      ],
+      "content": "Át Cốc: Cảm xúc có thể đang cần một nơi an toàn để được gọi tên. Đừng ép mình phải luôn vui vẻ.\nTừ khóa: Khép kín, Cần chăm sóc. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-01-reversed",
+      "examples": [
+        "Ace of Cups · ngược là gì?",
+        "Giải thích Ace of Cups · ngược",
+        "Tôi muốn tìm hiểu Ace of Cups · ngược",
+        "Tra cứu Ace of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-02-upright",
+      "title": "Two of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Two of Cups",
+        "Hai Cốc",
+        "cups-02"
+      ],
+      "content": "Hai Cốc: Một kết nối được nuôi dưỡng bằng sự lắng nghe hai chiều. Chia sẻ điều bạn cần một cách chân thành.\nTừ khóa: Đồng điệu, Đối thoại. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-02-upright",
+      "examples": [
+        "Two of Cups · xuôi là gì?",
+        "Giải thích Two of Cups · xuôi",
+        "Tôi muốn tìm hiểu Two of Cups · xuôi",
+        "Tra cứu Two of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-02-reversed",
+      "title": "Two of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Two of Cups",
+        "Hai Cốc",
+        "cups-02"
+      ],
+      "content": "Hai Cốc: Nhìn lại sự cân bằng giữa cho và nhận. Đối thoại rõ ràng hữu ích hơn việc đoán ý nhau.\nTừ khóa: Bất đồng, Mất cân bằng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-02-reversed",
+      "examples": [
+        "Two of Cups · ngược là gì?",
+        "Giải thích Two of Cups · ngược",
+        "Tôi muốn tìm hiểu Two of Cups · ngược",
+        "Tra cứu Two of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-03-upright",
+      "title": "Three of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Three of Cups",
+        "Ba Cốc",
+        "cups-03"
+      ],
+      "content": "Ba Cốc: Tìm niềm vui trong cộng đồng hoặc những người bạn tin cậy. Bạn không phải đi một mình.\nTừ khóa: Tình bạn, Niềm vui chung. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-03-upright",
+      "examples": [
+        "Three of Cups · xuôi là gì?",
+        "Giải thích Three of Cups · xuôi",
+        "Tôi muốn tìm hiểu Three of Cups · xuôi",
+        "Tra cứu Three of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-03-reversed",
+      "title": "Three of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Three of Cups",
+        "Ba Cốc",
+        "cups-03"
+      ],
+      "content": "Ba Cốc: Chọn sự kết nối phù hợp với nhu cầu của bạn, thay vì tham gia chỉ để tránh cảm giác lạc lõng.\nTừ khóa: Thiếu kết nối, Quá mức. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-03-reversed",
+      "examples": [
+        "Three of Cups · ngược là gì?",
+        "Giải thích Three of Cups · ngược",
+        "Tôi muốn tìm hiểu Three of Cups · ngược",
+        "Tra cứu Three of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-04-upright",
+      "title": "Four of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Four of Cups",
+        "Bốn Cốc",
+        "cups-04"
+      ],
+      "content": "Bốn Cốc: Nếu mọi thứ trở nên nhạt nhòa, dành thời gian hiểu điều mình đang thiếu trước khi tìm thêm.\nTừ khóa: Chiêm nghiệm, Chán nản. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-04-upright",
+      "examples": [
+        "Four of Cups · xuôi là gì?",
+        "Giải thích Four of Cups · xuôi",
+        "Tôi muốn tìm hiểu Four of Cups · xuôi",
+        "Tra cứu Four of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-04-reversed",
+      "title": "Four of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Four of Cups",
+        "Bốn Cốc",
+        "cups-04"
+      ],
+      "content": "Bốn Cốc: Một khả năng mới có thể hiện ra khi bạn đổi góc nhìn. Thử đón nhận một lời mời nhỏ.\nTừ khóa: Mở lại lòng, Nhìn thấy cơ hội. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-04-reversed",
+      "examples": [
+        "Four of Cups · ngược là gì?",
+        "Giải thích Four of Cups · ngược",
+        "Tôi muốn tìm hiểu Four of Cups · ngược",
+        "Tra cứu Four of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-05-upright",
+      "title": "Five of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Five of Cups",
+        "Năm Cốc",
+        "cups-05"
+      ],
+      "content": "Năm Cốc: Cho mình thời gian với điều đã mất, đồng thời nhận diện những điểm tựa vẫn còn hiện diện.\nTừ khóa: Mất mát, Tiếc nuối. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-05-upright",
+      "examples": [
+        "Five of Cups · xuôi là gì?",
+        "Giải thích Five of Cups · xuôi",
+        "Tôi muốn tìm hiểu Five of Cups · xuôi",
+        "Tra cứu Five of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-05-reversed",
+      "title": "Five of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Five of Cups",
+        "Năm Cốc",
+        "cups-05"
+      ],
+      "content": "Năm Cốc: Bạn có thể bắt đầu mang bài học đi tiếp mà không cần phủ nhận những gì từng quan trọng.\nTừ khóa: Chấp nhận, Hồi phục. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-05-reversed",
+      "examples": [
+        "Five of Cups · ngược là gì?",
+        "Giải thích Five of Cups · ngược",
+        "Tôi muốn tìm hiểu Five of Cups · ngược",
+        "Tra cứu Five of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-06-upright",
+      "title": "Six of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Six of Cups",
+        "Sáu Cốc",
+        "cups-06"
+      ],
+      "content": "Sáu Cốc: Một ký ức hoặc điều quen thuộc có thể nhắc bạn về sự chăm sóc giản dị. Mang điều tốt đẹp ấy vào hiện tại.\nTừ khóa: Ký ức, Sự dịu dàng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-06-upright",
+      "examples": [
+        "Six of Cups · xuôi là gì?",
+        "Giải thích Six of Cups · xuôi",
+        "Tôi muốn tìm hiểu Six of Cups · xuôi",
+        "Tra cứu Six of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-06-reversed",
+      "title": "Six of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Six of Cups",
+        "Sáu Cốc",
+        "cups-06"
+      ],
+      "content": "Sáu Cốc: Nhìn lại quá khứ với lòng cảm thông, nhưng để nhu cầu hiện tại có tiếng nói trong lựa chọn của bạn.\nTừ khóa: Vướng quá khứ, Trưởng thành. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-06-reversed",
+      "examples": [
+        "Six of Cups · ngược là gì?",
+        "Giải thích Six of Cups · ngược",
+        "Tôi muốn tìm hiểu Six of Cups · ngược",
+        "Tra cứu Six of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-07-upright",
+      "title": "Seven of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Seven of Cups",
+        "Bảy Cốc",
+        "cups-07"
+      ],
+      "content": "Bảy Cốc: Phân biệt điều hấp dẫn trong tưởng tượng với điều phù hợp thực tế. Viết ra tiêu chí trước khi chọn.\nTừ khóa: Nhiều lựa chọn, Tưởng tượng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-07-upright",
+      "examples": [
+        "Seven of Cups · xuôi là gì?",
+        "Giải thích Seven of Cups · xuôi",
+        "Tôi muốn tìm hiểu Seven of Cups · xuôi",
+        "Tra cứu Seven of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-07-reversed",
+      "title": "Seven of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Seven of Cups",
+        "Bảy Cốc",
+        "cups-07"
+      ],
+      "content": "Bảy Cốc: Thu hẹp danh sách lựa chọn và kiểm chứng một khả năng cụ thể thay vì suy nghĩ mọi kịch bản.\nTừ khóa: Sáng tỏ, Quá tải. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-07-reversed",
+      "examples": [
+        "Seven of Cups · ngược là gì?",
+        "Giải thích Seven of Cups · ngược",
+        "Tôi muốn tìm hiểu Seven of Cups · ngược",
+        "Tra cứu Seven of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-08-upright",
+      "title": "Eight of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Eight of Cups",
+        "Tám Cốc",
+        "cups-08"
+      ],
+      "content": "Tám Cốc: Có điều từng phù hợp nhưng nay không còn nuôi dưỡng bạn. Lắng nghe nhu cầu thay đổi một cách thực tế.\nTừ khóa: Rời điều cũ, Tìm ý nghĩa. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-08-upright",
+      "examples": [
+        "Eight of Cups · xuôi là gì?",
+        "Giải thích Eight of Cups · xuôi",
+        "Tôi muốn tìm hiểu Eight of Cups · xuôi",
+        "Tra cứu Eight of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-08-reversed",
+      "title": "Eight of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Eight of Cups",
+        "Tám Cốc",
+        "cups-08"
+      ],
+      "content": "Tám Cốc: Xem lại điều khiến bạn muốn ở lại hoặc rời đi. Bạn có thể chuẩn bị dần cho một quyết định.\nTừ khóa: Níu giữ, Chưa sẵn sàng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-08-reversed",
+      "examples": [
+        "Eight of Cups · ngược là gì?",
+        "Giải thích Eight of Cups · ngược",
+        "Tôi muốn tìm hiểu Eight of Cups · ngược",
+        "Tra cứu Eight of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-09-upright",
+      "title": "Nine of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Nine of Cups",
+        "Chín Cốc",
+        "cups-09"
+      ],
+      "content": "Chín Cốc: Ghi nhận những điều đang đủ đầy và tận hưởng một niềm vui vừa sức trong hôm nay.\nTừ khóa: Hài lòng, Biết ơn. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-09-upright",
+      "examples": [
+        "Nine of Cups · xuôi là gì?",
+        "Giải thích Nine of Cups · xuôi",
+        "Tôi muốn tìm hiểu Nine of Cups · xuôi",
+        "Tra cứu Nine of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-09-reversed",
+      "title": "Nine of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Nine of Cups",
+        "Chín Cốc",
+        "cups-09"
+      ],
+      "content": "Chín Cốc: Thỏa mãn bên ngoài có thể chưa đáp ứng nhu cầu bên trong. Hỏi mình điều gì thực sự có ý nghĩa.\nTừ khóa: Trống vắng, Kỳ vọng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-09-reversed",
+      "examples": [
+        "Nine of Cups · ngược là gì?",
+        "Giải thích Nine of Cups · ngược",
+        "Tôi muốn tìm hiểu Nine of Cups · ngược",
+        "Tra cứu Nine of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-10-upright",
+      "title": "Ten of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Ten of Cups",
+        "Mười Cốc",
+        "cups-10"
+      ],
+      "content": "Mười Cốc: Nuôi dưỡng cảm giác thuộc về bằng những hành động quan tâm hằng ngày và sự chia sẻ chân thành.\nTừ khóa: Gia đình, Hòa hợp. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-10-upright",
+      "examples": [
+        "Ten of Cups · xuôi là gì?",
+        "Giải thích Ten of Cups · xuôi",
+        "Tôi muốn tìm hiểu Ten of Cups · xuôi",
+        "Tra cứu Ten of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-10-reversed",
+      "title": "Ten of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Ten of Cups",
+        "Mười Cốc",
+        "cups-10"
+      ],
+      "content": "Mười Cốc: Mỗi người có thể hiểu hạnh phúc khác nhau. Trao đổi kỳ vọng thay vì theo một hình mẫu hoàn hảo.\nTừ khóa: Lệch kỳ vọng, Khoảng cách. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-10-reversed",
+      "examples": [
+        "Ten of Cups · ngược là gì?",
+        "Giải thích Ten of Cups · ngược",
+        "Tôi muốn tìm hiểu Ten of Cups · ngược",
+        "Tra cứu Ten of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-11-upright",
+      "title": "Page of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Page of Cups",
+        "Tiểu đồng Cốc",
+        "cups-11"
+      ],
+      "content": "Tiểu đồng Cốc: Cho sự sáng tạo và cảm xúc một hình thức biểu đạt nhỏ: một lời nhắn, nét vẽ hoặc trang viết.\nTừ khóa: Nhạy cảm, Lời nhắn. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-11-upright",
+      "examples": [
+        "Page of Cups · xuôi là gì?",
+        "Giải thích Page of Cups · xuôi",
+        "Tôi muốn tìm hiểu Page of Cups · xuôi",
+        "Tra cứu Page of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-11-reversed",
+      "title": "Page of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Page of Cups",
+        "Tiểu đồng Cốc",
+        "cups-11"
+      ],
+      "content": "Tiểu đồng Cốc: Gọi tên cảm xúc bằng ngôn ngữ rõ ràng. Đừng để điều chưa nói biến thành giả định.\nTừ khóa: Mơ mộng, Ngại bộc lộ. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-11-reversed",
+      "examples": [
+        "Page of Cups · ngược là gì?",
+        "Giải thích Page of Cups · ngược",
+        "Tôi muốn tìm hiểu Page of Cups · ngược",
+        "Tra cứu Page of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-12-upright",
+      "title": "Knight of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Knight of Cups",
+        "Kỵ sĩ Cốc",
+        "cups-12"
+      ],
+      "content": "Kỵ sĩ Cốc: Theo đuổi điều chạm đến cảm xúc, đồng thời giữ sự chân thành trong lời nói và hành động.\nTừ khóa: Lãng mạn, Lý tưởng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-12-upright",
+      "examples": [
+        "Knight of Cups · xuôi là gì?",
+        "Giải thích Knight of Cups · xuôi",
+        "Tôi muốn tìm hiểu Knight of Cups · xuôi",
+        "Tra cứu Knight of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-12-reversed",
+      "title": "Knight of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Knight of Cups",
+        "Kỵ sĩ Cốc",
+        "cups-12"
+      ],
+      "content": "Kỵ sĩ Cốc: Đặt lý tưởng cạnh hành vi thực tế. Một lời hứa cần được đánh giá qua sự nhất quán.\nTừ khóa: Lý tưởng hóa, Thất vọng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-12-reversed",
+      "examples": [
+        "Knight of Cups · ngược là gì?",
+        "Giải thích Knight of Cups · ngược",
+        "Tôi muốn tìm hiểu Knight of Cups · ngược",
+        "Tra cứu Knight of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-13-upright",
+      "title": "Queen of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Queen of Cups",
+        "Hoàng hậu Cốc",
+        "cups-13"
+      ],
+      "content": "Hoàng hậu Cốc: Lắng nghe cảm xúc mà không vội phán xét. Lòng đồng cảm sẽ vững hơn khi đi cùng ranh giới rõ ràng.\nTừ khóa: Đồng cảm, Trực giác. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-13-upright",
+      "examples": [
+        "Queen of Cups · xuôi là gì?",
+        "Giải thích Queen of Cups · xuôi",
+        "Tôi muốn tìm hiểu Queen of Cups · xuôi",
+        "Tra cứu Queen of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-13-reversed",
+      "title": "Queen of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Queen of Cups",
+        "Hoàng hậu Cốc",
+        "cups-13"
+      ],
+      "content": "Hoàng hậu Cốc: Bạn không cần gánh cảm xúc của tất cả mọi người. Dành không gian để chăm sóc nhu cầu của mình.\nTừ khóa: Quá nhạy cảm, Quên mình. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-13-reversed",
+      "examples": [
+        "Queen of Cups · ngược là gì?",
+        "Giải thích Queen of Cups · ngược",
+        "Tôi muốn tìm hiểu Queen of Cups · ngược",
+        "Tra cứu Queen of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-14-upright",
+      "title": "King of Cups · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "King of Cups",
+        "Nhà vua Cốc",
+        "cups-14"
+      ],
+      "content": "Nhà vua Cốc: Sự bình tĩnh giúp bạn giữ chỗ cho cảm xúc mà vẫn lựa chọn cách phản hồi có trách nhiệm.\nTừ khóa: Điềm tĩnh, Thấu hiểu. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-14-upright",
+      "examples": [
+        "King of Cups · xuôi là gì?",
+        "Giải thích King of Cups · xuôi",
+        "Tôi muốn tìm hiểu King of Cups · xuôi",
+        "Tra cứu King of Cups · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "cups-14-reversed",
+      "title": "King of Cups · ngược",
+      "category": "tarot",
+      "aliases": [
+        "King of Cups",
+        "Nhà vua Cốc",
+        "cups-14"
+      ],
+      "content": "Nhà vua Cốc: Cảm xúc bị nén có thể đang cần được nhận diện. Tìm một cách biểu đạt an toàn và thành thật.\nTừ khóa: Dồn nén, Thiếu cân bằng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "cups-14-reversed",
+      "examples": [
+        "King of Cups · ngược là gì?",
+        "Giải thích King of Cups · ngược",
+        "Tôi muốn tìm hiểu King of Cups · ngược",
+        "Tra cứu King of Cups · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-01-upright",
+      "title": "Ace of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Ace of Swords",
+        "Át Kiếm",
+        "swords-01"
+      ],
+      "content": "Át Kiếm: Một góc nhìn rõ ràng bắt đầu bằng câu hỏi chính xác. Phân biệt dữ kiện với suy đoán trước khi quyết định.\nTừ khóa: Sáng tỏ, Sự thật. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-01-upright",
+      "examples": [
+        "Ace of Swords · xuôi là gì?",
+        "Giải thích Ace of Swords · xuôi",
+        "Tôi muốn tìm hiểu Ace of Swords · xuôi",
+        "Tra cứu Ace of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-01-reversed",
+      "title": "Ace of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Ace of Swords",
+        "Át Kiếm",
+        "swords-01"
+      ],
+      "content": "Át Kiếm: Kiểm tra lại thông tin và diễn đạt điều bạn muốn nói bằng ngôn ngữ đơn giản.\nTừ khóa: Mơ hồ, Thiếu thông tin. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-01-reversed",
+      "examples": [
+        "Ace of Swords · ngược là gì?",
+        "Giải thích Ace of Swords · ngược",
+        "Tôi muốn tìm hiểu Ace of Swords · ngược",
+        "Tra cứu Ace of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-02-upright",
+      "title": "Two of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Two of Swords",
+        "Hai Kiếm",
+        "swords-02"
+      ],
+      "content": "Hai Kiếm: Bạn có thể đang đứng giữa hai lựa chọn. Tìm thông tin còn thiếu thay vì trì hoãn vô hạn.\nTừ khóa: Phân vân, Tạm dừng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-02-upright",
+      "examples": [
+        "Two of Swords · xuôi là gì?",
+        "Giải thích Two of Swords · xuôi",
+        "Tôi muốn tìm hiểu Two of Swords · xuôi",
+        "Tra cứu Two of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-02-reversed",
+      "title": "Two of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Two of Swords",
+        "Hai Kiếm",
+        "swords-02"
+      ],
+      "content": "Hai Kiếm: Nhận diện điều bạn đang tránh nhìn vào. Một cuộc trao đổi có thể giúp tháo nút thắt.\nTừ khóa: Bế tắc, Quá tải. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-02-reversed",
+      "examples": [
+        "Two of Swords · ngược là gì?",
+        "Giải thích Two of Swords · ngược",
+        "Tôi muốn tìm hiểu Two of Swords · ngược",
+        "Tra cứu Two of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-03-upright",
+      "title": "Three of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Three of Swords",
+        "Ba Kiếm",
+        "swords-03"
+      ],
+      "content": "Ba Kiếm: Một sự thật có thể chạm vào nỗi buồn. Cho phép mình cảm nhận và tìm sự hỗ trợ từ người đáng tin.\nTừ khóa: Tổn thương, Sự thật khó nghe. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-03-upright",
+      "examples": [
+        "Three of Swords · xuôi là gì?",
+        "Giải thích Three of Swords · xuôi",
+        "Tôi muốn tìm hiểu Three of Swords · xuôi",
+        "Tra cứu Three of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-03-reversed",
+      "title": "Three of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Three of Swords",
+        "Ba Kiếm",
+        "swords-03"
+      ],
+      "content": "Ba Kiếm: Hồi phục không cần diễn ra ngay lập tức. Đối xử dịu dàng với mình và thử một cách biểu đạt cảm xúc.\nTừ khóa: Hàn gắn, Buông đau. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-03-reversed",
+      "examples": [
+        "Three of Swords · ngược là gì?",
+        "Giải thích Three of Swords · ngược",
+        "Tôi muốn tìm hiểu Three of Swords · ngược",
+        "Tra cứu Three of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-04-upright",
+      "title": "Four of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Four of Swords",
+        "Bốn Kiếm",
+        "swords-04"
+      ],
+      "content": "Bốn Kiếm: Tạm nghỉ khỏi việc phân tích liên tục. Một khoảng yên tĩnh giúp bạn sắp xếp lại suy nghĩ.\nTừ khóa: Nghỉ ngơi, Hồi phục. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-04-upright",
+      "examples": [
+        "Four of Swords · xuôi là gì?",
+        "Giải thích Four of Swords · xuôi",
+        "Tôi muốn tìm hiểu Four of Swords · xuôi",
+        "Tra cứu Four of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-04-reversed",
+      "title": "Four of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Four of Swords",
+        "Bốn Kiếm",
+        "swords-04"
+      ],
+      "content": "Bốn Kiếm: Xem lại mức năng lượng trước khi quay vào nhịp bận rộn. Hồi phục cần được ưu tiên thật sự.\nTừ khóa: Kiệt sức, Trở lại nhịp. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-04-reversed",
+      "examples": [
+        "Four of Swords · ngược là gì?",
+        "Giải thích Four of Swords · ngược",
+        "Tôi muốn tìm hiểu Four of Swords · ngược",
+        "Tra cứu Four of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-05-upright",
+      "title": "Five of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Five of Swords",
+        "Năm Kiếm",
+        "swords-05"
+      ],
+      "content": "Năm Kiếm: Có cuộc tranh luận mà thắng chưa chắc mang lại điều bạn cần. Cân nhắc hệ quả đối với sự kết nối.\nTừ khóa: Xung đột, Cái giá chiến thắng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-05-upright",
+      "examples": [
+        "Five of Swords · xuôi là gì?",
+        "Giải thích Five of Swords · xuôi",
+        "Tôi muốn tìm hiểu Five of Swords · xuôi",
+        "Tra cứu Five of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-05-reversed",
+      "title": "Five of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Five of Swords",
+        "Năm Kiếm",
+        "swords-05"
+      ],
+      "content": "Năm Kiếm: Một lời thừa nhận và đối thoại bình tĩnh có thể giúp khép lại xung đột.\nTừ khóa: Hòa giải, Bất đồng còn lại. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-05-reversed",
+      "examples": [
+        "Five of Swords · ngược là gì?",
+        "Giải thích Five of Swords · ngược",
+        "Tôi muốn tìm hiểu Five of Swords · ngược",
+        "Tra cứu Five of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-06-upright",
+      "title": "Six of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Six of Swords",
+        "Sáu Kiếm",
+        "swords-06"
+      ],
+      "content": "Sáu Kiếm: Bạn có thể đưa mình đến một cách tiếp cận bình yên hơn. Mang bài học theo và để lại điều không còn hữu ích.\nTừ khóa: Chuyển tiếp, Rời sóng gió. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-06-upright",
+      "examples": [
+        "Six of Swords · xuôi là gì?",
+        "Giải thích Six of Swords · xuôi",
+        "Tôi muốn tìm hiểu Six of Swords · xuôi",
+        "Tra cứu Six of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-06-reversed",
+      "title": "Six of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Six of Swords",
+        "Sáu Kiếm",
+        "swords-06"
+      ],
+      "content": "Sáu Kiếm: Nhận diện trở ngại thực tế đang khiến bạn khó thay đổi. Tìm một điểm tựa để bắt đầu.\nTừ khóa: Vướng mắc, Khó rời đi. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-06-reversed",
+      "examples": [
+        "Six of Swords · ngược là gì?",
+        "Giải thích Six of Swords · ngược",
+        "Tôi muốn tìm hiểu Six of Swords · ngược",
+        "Tra cứu Six of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-07-upright",
+      "title": "Seven of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Seven of Swords",
+        "Bảy Kiếm",
+        "swords-07"
+      ],
+      "content": "Bảy Kiếm: Cân nhắc cách tiếp cận khéo léo, nhưng giữ sự minh bạch với những người chịu ảnh hưởng từ lựa chọn của bạn.\nTừ khóa: Chiến lược, Kín đáo. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-07-upright",
+      "examples": [
+        "Seven of Swords · xuôi là gì?",
+        "Giải thích Seven of Swords · xuôi",
+        "Tôi muốn tìm hiểu Seven of Swords · xuôi",
+        "Tra cứu Seven of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-07-reversed",
+      "title": "Seven of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Seven of Swords",
+        "Bảy Kiếm",
+        "swords-07"
+      ],
+      "content": "Bảy Kiếm: Một điều bị né tránh có thể cần được nói rõ. Trung thực là bước đầu để khôi phục niềm tin.\nTừ khóa: Thành thật, Hệ quả. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-07-reversed",
+      "examples": [
+        "Seven of Swords · ngược là gì?",
+        "Giải thích Seven of Swords · ngược",
+        "Tôi muốn tìm hiểu Seven of Swords · ngược",
+        "Tra cứu Seven of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-08-upright",
+      "title": "Eight of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Eight of Swords",
+        "Tám Kiếm",
+        "swords-08"
+      ],
+      "content": "Tám Kiếm: Phân biệt giới hạn thực tế với điều bạn đang tự giả định. Có thể tồn tại một lựa chọn nhỏ chưa được nhìn thấy.\nTừ khóa: Giới hạn, Niềm tin bó hẹp. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-08-upright",
+      "examples": [
+        "Eight of Swords · xuôi là gì?",
+        "Giải thích Eight of Swords · xuôi",
+        "Tôi muốn tìm hiểu Eight of Swords · xuôi",
+        "Tra cứu Eight of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-08-reversed",
+      "title": "Eight of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Eight of Swords",
+        "Tám Kiếm",
+        "swords-08"
+      ],
+      "content": "Tám Kiếm: Ghi nhận điều bạn có thể chủ động và thử một bước giúp mở rộng không gian lựa chọn.\nTừ khóa: Tự do, Gỡ ràng buộc. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-08-reversed",
+      "examples": [
+        "Eight of Swords · ngược là gì?",
+        "Giải thích Eight of Swords · ngược",
+        "Tôi muốn tìm hiểu Eight of Swords · ngược",
+        "Tra cứu Eight of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-09-upright",
+      "title": "Nine of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Nine of Swords",
+        "Chín Kiếm",
+        "swords-09"
+      ],
+      "content": "Chín Kiếm: Nếu suy nghĩ đang lặp lại, viết chúng xuống và tìm người hỗ trợ. Nỗi lo không phải bằng chứng về tương lai.\nTừ khóa: Lo âu, Suy nghĩ lặp lại. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-09-upright",
+      "examples": [
+        "Nine of Swords · xuôi là gì?",
+        "Giải thích Nine of Swords · xuôi",
+        "Tôi muốn tìm hiểu Nine of Swords · xuôi",
+        "Tra cứu Nine of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-09-reversed",
+      "title": "Nine of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Nine of Swords",
+        "Chín Kiếm",
+        "swords-09"
+      ],
+      "content": "Chín Kiếm: Chia sẻ điều đang nặng lòng có thể giúp bạn nhìn tình huống rõ hơn và bớt phải gánh một mình.\nTừ khóa: Chia sẻ, Nhẹ dần. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-09-reversed",
+      "examples": [
+        "Nine of Swords · ngược là gì?",
+        "Giải thích Nine of Swords · ngược",
+        "Tôi muốn tìm hiểu Nine of Swords · ngược",
+        "Tra cứu Nine of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-10-upright",
+      "title": "Ten of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Ten of Swords",
+        "Mười Kiếm",
+        "swords-10"
+      ],
+      "content": "Mười Kiếm: Một cách làm có thể đã đi đến giới hạn. Ưu tiên nghỉ ngơi và khép lại điều không còn phù hợp.\nTừ khóa: Kết thúc, Chạm giới hạn. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-10-upright",
+      "examples": [
+        "Ten of Swords · xuôi là gì?",
+        "Giải thích Ten of Swords · xuôi",
+        "Tôi muốn tìm hiểu Ten of Swords · xuôi",
+        "Tra cứu Ten of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-10-reversed",
+      "title": "Ten of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Ten of Swords",
+        "Mười Kiếm",
+        "swords-10"
+      ],
+      "content": "Mười Kiếm: Bạn không cần bắt đầu lại mọi thứ cùng lúc. Tìm một bước nhỏ để hồi phục cảm giác chủ động.\nTừ khóa: Hồi phục, Bắt đầu lại. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-10-reversed",
+      "examples": [
+        "Ten of Swords · ngược là gì?",
+        "Giải thích Ten of Swords · ngược",
+        "Tôi muốn tìm hiểu Ten of Swords · ngược",
+        "Tra cứu Ten of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-11-upright",
+      "title": "Page of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Page of Swords",
+        "Tiểu đồng Kiếm",
+        "swords-11"
+      ],
+      "content": "Tiểu đồng Kiếm: Hỏi thêm và tìm nguồn tin đáng tin trước khi khẳng định. Tinh thần người học giúp tư duy sắc nét hơn.\nTừ khóa: Tò mò, Quan sát. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-11-upright",
+      "examples": [
+        "Page of Swords · xuôi là gì?",
+        "Giải thích Page of Swords · xuôi",
+        "Tôi muốn tìm hiểu Page of Swords · xuôi",
+        "Tra cứu Page of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-11-reversed",
+      "title": "Page of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Page of Swords",
+        "Tiểu đồng Kiếm",
+        "swords-11"
+      ],
+      "content": "Tiểu đồng Kiếm: Kiểm chứng một thông tin trước khi chia sẻ. Cẩn trọng với việc đọc ý người khác qua quá ít dữ kiện.\nTừ khóa: Vội kết luận, Thông tin nhiễu. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-11-reversed",
+      "examples": [
+        "Page of Swords · ngược là gì?",
+        "Giải thích Page of Swords · ngược",
+        "Tôi muốn tìm hiểu Page of Swords · ngược",
+        "Tra cứu Page of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-12-upright",
+      "title": "Knight of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Knight of Swords",
+        "Kỵ sĩ Kiếm",
+        "swords-12"
+      ],
+      "content": "Kỵ sĩ Kiếm: Tập trung vào mục tiêu rõ ràng, đồng thời chừa thời gian cho người khác hiểu và phản hồi.\nTừ khóa: Quyết đoán, Tốc độ. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-12-upright",
+      "examples": [
+        "Knight of Swords · xuôi là gì?",
+        "Giải thích Knight of Swords · xuôi",
+        "Tôi muốn tìm hiểu Knight of Swords · xuôi",
+        "Tra cứu Knight of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-12-reversed",
+      "title": "Knight of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Knight of Swords",
+        "Kỵ sĩ Kiếm",
+        "swords-12"
+      ],
+      "content": "Kỵ sĩ Kiếm: Chậm lại trước khi gửi một thông điệp mạnh. Sự chính xác có ích hơn tốc độ đơn thuần.\nTừ khóa: Hấp tấp, Tranh cãi. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-12-reversed",
+      "examples": [
+        "Knight of Swords · ngược là gì?",
+        "Giải thích Knight of Swords · ngược",
+        "Tôi muốn tìm hiểu Knight of Swords · ngược",
+        "Tra cứu Knight of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-13-upright",
+      "title": "Queen of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Queen of Swords",
+        "Hoàng hậu Kiếm",
+        "swords-13"
+      ],
+      "content": "Hoàng hậu Kiếm: Nói điều mình cần bằng sự rõ ràng và tôn trọng. Ranh giới lành mạnh vẫn có thể đi cùng lòng cảm thông.\nTừ khóa: Ranh giới, Rõ ràng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-13-upright",
+      "examples": [
+        "Queen of Swords · xuôi là gì?",
+        "Giải thích Queen of Swords · xuôi",
+        "Tôi muốn tìm hiểu Queen of Swords · xuôi",
+        "Tra cứu Queen of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-13-reversed",
+      "title": "Queen of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Queen of Swords",
+        "Hoàng hậu Kiếm",
+        "swords-13"
+      ],
+      "content": "Hoàng hậu Kiếm: Kiểm tra xem sự phòng vệ có đang lấn át khả năng lắng nghe hay không.\nTừ khóa: Khắt khe, Lạnh lùng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-13-reversed",
+      "examples": [
+        "Queen of Swords · ngược là gì?",
+        "Giải thích Queen of Swords · ngược",
+        "Tôi muốn tìm hiểu Queen of Swords · ngược",
+        "Tra cứu Queen of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-14-upright",
+      "title": "King of Swords · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "King of Swords",
+        "Nhà vua Kiếm",
+        "swords-14"
+      ],
+      "content": "Nhà vua Kiếm: Dùng tư duy có cấu trúc và dữ kiện để đưa ra quyết định có trách nhiệm, đồng thời giải thích lý do.\nTừ khóa: Lý trí, Nguyên tắc. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-14-upright",
+      "examples": [
+        "King of Swords · xuôi là gì?",
+        "Giải thích King of Swords · xuôi",
+        "Tôi muốn tìm hiểu King of Swords · xuôi",
+        "Tra cứu King of Swords · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "swords-14-reversed",
+      "title": "King of Swords · ngược",
+      "category": "tarot",
+      "aliases": [
+        "King of Swords",
+        "Nhà vua Kiếm",
+        "swords-14"
+      ],
+      "content": "Nhà vua Kiếm: Một nguyên tắc cần được xem xét trong hoàn cảnh cụ thể. Tìm thêm góc nhìn trước khi chốt lại.\nTừ khóa: Cứng nhắc, Áp đặt. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "swords-14-reversed",
+      "examples": [
+        "King of Swords · ngược là gì?",
+        "Giải thích King of Swords · ngược",
+        "Tôi muốn tìm hiểu King of Swords · ngược",
+        "Tra cứu King of Swords · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-01-upright",
+      "title": "Ace of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Ace of Pentacles",
+        "Át Tiền",
+        "pentacles-01"
+      ],
+      "content": "Át Tiền: Một cơ hội thực tế cần được chăm sóc bằng kế hoạch và công sức đều đặn. Xác định nguồn lực đang có.\nTừ khóa: Cơ hội, Nền tảng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-01-upright",
+      "examples": [
+        "Ace of Pentacles · xuôi là gì?",
+        "Giải thích Ace of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu Ace of Pentacles · xuôi",
+        "Tra cứu Ace of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-01-reversed",
+      "title": "Ace of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Ace of Pentacles",
+        "Át Tiền",
+        "pentacles-01"
+      ],
+      "content": "Át Tiền: Kiểm tra điều kiện và khả năng thực hiện trước khi cam kết thêm nguồn lực.\nTừ khóa: Chưa sẵn sàng, Bỏ sót. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-01-reversed",
+      "examples": [
+        "Ace of Pentacles · ngược là gì?",
+        "Giải thích Ace of Pentacles · ngược",
+        "Tôi muốn tìm hiểu Ace of Pentacles · ngược",
+        "Tra cứu Ace of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-02-upright",
+      "title": "Two of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Two of Pentacles",
+        "Hai Tiền",
+        "pentacles-02"
+      ],
+      "content": "Hai Tiền: Sắp xếp những ưu tiên đang cạnh tranh thời gian và nguồn lực của bạn. Giữ một nhịp linh hoạt vừa sức.\nTừ khóa: Điều phối, Linh hoạt. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-02-upright",
+      "examples": [
+        "Two of Pentacles · xuôi là gì?",
+        "Giải thích Two of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu Two of Pentacles · xuôi",
+        "Tra cứu Two of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-02-reversed",
+      "title": "Two of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Two of Pentacles",
+        "Hai Tiền",
+        "pentacles-02"
+      ],
+      "content": "Hai Tiền: Giảm bớt việc song song và đưa nhu cầu thiết yếu lên trước.\nTừ khóa: Quá tải, Mất nhịp. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-02-reversed",
+      "examples": [
+        "Two of Pentacles · ngược là gì?",
+        "Giải thích Two of Pentacles · ngược",
+        "Tôi muốn tìm hiểu Two of Pentacles · ngược",
+        "Tra cứu Two of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-03-upright",
+      "title": "Three of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Three of Pentacles",
+        "Ba Tiền",
+        "pentacles-03"
+      ],
+      "content": "Ba Tiền: Mỗi người có một kỹ năng riêng. Thống nhất tiêu chuẩn và phối hợp để cùng tạo ra kết quả vững chắc.\nTừ khóa: Tay nghề, Hợp tác. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-03-upright",
+      "examples": [
+        "Three of Pentacles · xuôi là gì?",
+        "Giải thích Three of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu Three of Pentacles · xuôi",
+        "Tra cứu Three of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-03-reversed",
+      "title": "Three of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Three of Pentacles",
+        "Ba Tiền",
+        "pentacles-03"
+      ],
+      "content": "Ba Tiền: Trao đổi lại cách làm việc và trách nhiệm trước khi tiếp tục một kế hoạch chung.\nTừ khóa: Thiếu phối hợp, Chất lượng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-03-reversed",
+      "examples": [
+        "Three of Pentacles · ngược là gì?",
+        "Giải thích Three of Pentacles · ngược",
+        "Tôi muốn tìm hiểu Three of Pentacles · ngược",
+        "Tra cứu Three of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-04-upright",
+      "title": "Four of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Four of Pentacles",
+        "Bốn Tiền",
+        "pentacles-04"
+      ],
+      "content": "Bốn Tiền: Bảo vệ nguồn lực là hợp lý, nhưng kiểm tra xem nhu cầu an toàn có đang giới hạn sự linh hoạt của bạn.\nTừ khóa: Giữ gìn, An toàn. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-04-upright",
+      "examples": [
+        "Four of Pentacles · xuôi là gì?",
+        "Giải thích Four of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu Four of Pentacles · xuôi",
+        "Tra cứu Four of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-04-reversed",
+      "title": "Four of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Four of Pentacles",
+        "Bốn Tiền",
+        "pentacles-04"
+      ],
+      "content": "Bốn Tiền: Tìm điểm cân bằng giữa gìn giữ và chia sẻ, dựa trên khả năng thực tế.\nTừ khóa: Buông kiểm soát, Bất an. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-04-reversed",
+      "examples": [
+        "Four of Pentacles · ngược là gì?",
+        "Giải thích Four of Pentacles · ngược",
+        "Tôi muốn tìm hiểu Four of Pentacles · ngược",
+        "Tra cứu Four of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-05-upright",
+      "title": "Five of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Five of Pentacles",
+        "Năm Tiền",
+        "pentacles-05"
+      ],
+      "content": "Năm Tiền: Khi cảm thấy thiếu điểm tựa, hãy tìm những nguồn hỗ trợ thực tế. Bạn không cần tự giải quyết mọi điều.\nTừ khóa: Thiếu hụt, Cần giúp đỡ. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-05-upright",
+      "examples": [
+        "Five of Pentacles · xuôi là gì?",
+        "Giải thích Five of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu Five of Pentacles · xuôi",
+        "Tra cứu Five of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-05-reversed",
+      "title": "Five of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Five of Pentacles",
+        "Năm Tiền",
+        "pentacles-05"
+      ],
+      "content": "Năm Tiền: Đón nhận sự giúp đỡ và ghi nhận những bước nhỏ đang làm nền tảng ổn định trở lại.\nTừ khóa: Nhận hỗ trợ, Hồi phục. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-05-reversed",
+      "examples": [
+        "Five of Pentacles · ngược là gì?",
+        "Giải thích Five of Pentacles · ngược",
+        "Tôi muốn tìm hiểu Five of Pentacles · ngược",
+        "Tra cứu Five of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-06-upright",
+      "title": "Six of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Six of Pentacles",
+        "Sáu Tiền",
+        "pentacles-06"
+      ],
+      "content": "Sáu Tiền: Một sự hỗ trợ tốt tôn trọng nhu cầu và khả năng của cả hai phía. Làm rõ điều được trao và mong đợi.\nTừ khóa: Cho nhận, Chia sẻ. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-06-upright",
+      "examples": [
+        "Six of Pentacles · xuôi là gì?",
+        "Giải thích Six of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu Six of Pentacles · xuôi",
+        "Tra cứu Six of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-06-reversed",
+      "title": "Six of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Six of Pentacles",
+        "Sáu Tiền",
+        "pentacles-06"
+      ],
+      "content": "Sáu Tiền: Xem lại việc cho đi có đang khiến bạn quá sức hoặc tạo ra sự phụ thuộc không cần thiết.\nTừ khóa: Điều kiện, Mất cân bằng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-06-reversed",
+      "examples": [
+        "Six of Pentacles · ngược là gì?",
+        "Giải thích Six of Pentacles · ngược",
+        "Tôi muốn tìm hiểu Six of Pentacles · ngược",
+        "Tra cứu Six of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-07-upright",
+      "title": "Seven of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Seven of Pentacles",
+        "Bảy Tiền",
+        "pentacles-07"
+      ],
+      "content": "Bảy Tiền: Nhìn lại công sức đã đầu tư và điều thực sự đang phát triển. Điều chỉnh cách chăm sóc thay vì chỉ chờ đợi.\nTừ khóa: Kiên nhẫn, Đánh giá. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-07-upright",
+      "examples": [
+        "Seven of Pentacles · xuôi là gì?",
+        "Giải thích Seven of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu Seven of Pentacles · xuôi",
+        "Tra cứu Seven of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-07-reversed",
+      "title": "Seven of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Seven of Pentacles",
+        "Bảy Tiền",
+        "pentacles-07"
+      ],
+      "content": "Bảy Tiền: Không phải khoản công sức nào cũng cần tiếp tục chỉ vì bạn đã bắt đầu. Đánh giá lại mục tiêu.\nTừ khóa: Thiếu kiên nhẫn, Công sức lệch hướng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-07-reversed",
+      "examples": [
+        "Seven of Pentacles · ngược là gì?",
+        "Giải thích Seven of Pentacles · ngược",
+        "Tôi muốn tìm hiểu Seven of Pentacles · ngược",
+        "Tra cứu Seven of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-08-upright",
+      "title": "Eight of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Eight of Pentacles",
+        "Tám Tiền",
+        "pentacles-08"
+      ],
+      "content": "Tám Tiền: Một kỹ năng được xây qua thực hành đều đặn. Chọn một chi tiết để cải thiện trong công việc hôm nay.\nTừ khóa: Rèn luyện, Chuyên tâm. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-08-upright",
+      "examples": [
+        "Eight of Pentacles · xuôi là gì?",
+        "Giải thích Eight of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu Eight of Pentacles · xuôi",
+        "Tra cứu Eight of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-08-reversed",
+      "title": "Eight of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Eight of Pentacles",
+        "Tám Tiền",
+        "pentacles-08"
+      ],
+      "content": "Tám Tiền: Kiểm tra xem tiêu chuẩn hoàn hảo có đang khiến bạn mất niềm vui học hỏi.\nTừ khóa: Cầu toàn, Thiếu tập trung. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-08-reversed",
+      "examples": [
+        "Eight of Pentacles · ngược là gì?",
+        "Giải thích Eight of Pentacles · ngược",
+        "Tôi muốn tìm hiểu Eight of Pentacles · ngược",
+        "Tra cứu Eight of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-09-upright",
+      "title": "Nine of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Nine of Pentacles",
+        "Chín Tiền",
+        "pentacles-09"
+      ],
+      "content": "Chín Tiền: Trân trọng nền tảng bạn đã xây và dành thời gian tận hưởng thành quả bằng cách phù hợp với mình.\nTừ khóa: Tự chủ, Thành quả. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-09-upright",
+      "examples": [
+        "Nine of Pentacles · xuôi là gì?",
+        "Giải thích Nine of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu Nine of Pentacles · xuôi",
+        "Tra cứu Nine of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-09-reversed",
+      "title": "Nine of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Nine of Pentacles",
+        "Chín Tiền",
+        "pentacles-09"
+      ],
+      "content": "Chín Tiền: Xác định thế nào là đủ đối với bạn, thay vì dùng tiêu chuẩn của người khác.\nTừ khóa: So sánh, Phụ thuộc. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-09-reversed",
+      "examples": [
+        "Nine of Pentacles · ngược là gì?",
+        "Giải thích Nine of Pentacles · ngược",
+        "Tôi muốn tìm hiểu Nine of Pentacles · ngược",
+        "Tra cứu Nine of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-10-upright",
+      "title": "Ten of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Ten of Pentacles",
+        "Mười Tiền",
+        "pentacles-10"
+      ],
+      "content": "Mười Tiền: Nhìn xa hơn kết quả tức thời. Những thói quen và sự chăm sóc bền bỉ tạo nên một nền tảng chung.\nTừ khóa: Bền vững, Gia đình. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-10-upright",
+      "examples": [
+        "Ten of Pentacles · xuôi là gì?",
+        "Giải thích Ten of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu Ten of Pentacles · xuôi",
+        "Tra cứu Ten of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-10-reversed",
+      "title": "Ten of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Ten of Pentacles",
+        "Mười Tiền",
+        "pentacles-10"
+      ],
+      "content": "Mười Tiền: Trao đổi về giá trị và trách nhiệm giữa các thế hệ hoặc thành viên trong một tập thể.\nTừ khóa: Khác giá trị, Thiếu nền tảng. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-10-reversed",
+      "examples": [
+        "Ten of Pentacles · ngược là gì?",
+        "Giải thích Ten of Pentacles · ngược",
+        "Tôi muốn tìm hiểu Ten of Pentacles · ngược",
+        "Tra cứu Ten of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-11-upright",
+      "title": "Page of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Page of Pentacles",
+        "Tiểu đồng Tiền",
+        "pentacles-11"
+      ],
+      "content": "Tiểu đồng Tiền: Đưa sự tò mò vào một kỹ năng có thể luyện tập. Một kế hoạch học nhỏ sẽ giúp bạn thấy tiến bộ.\nTừ khóa: Học tập, Cơ hội thực tế. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-11-upright",
+      "examples": [
+        "Page of Pentacles · xuôi là gì?",
+        "Giải thích Page of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu Page of Pentacles · xuôi",
+        "Tra cứu Page of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-11-reversed",
+      "title": "Page of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Page of Pentacles",
+        "Tiểu đồng Tiền",
+        "pentacles-11"
+      ],
+      "content": "Tiểu đồng Tiền: Chọn một bài tập hoặc nhiệm vụ cụ thể thay vì tiếp tục chuẩn bị mà chưa bắt đầu.\nTừ khóa: Trì hoãn, Thiếu thực hành. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-11-reversed",
+      "examples": [
+        "Page of Pentacles · ngược là gì?",
+        "Giải thích Page of Pentacles · ngược",
+        "Tôi muốn tìm hiểu Page of Pentacles · ngược",
+        "Tra cứu Page of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-12-upright",
+      "title": "Knight of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Knight of Pentacles",
+        "Kỵ sĩ Tiền",
+        "pentacles-12"
+      ],
+      "content": "Kỵ sĩ Tiền: Nhịp làm việc nhất quán giúp ý định trở thành kết quả. Giữ lời hứa nhỏ với bản thân.\nTừ khóa: Đều đặn, Đáng tin. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-12-upright",
+      "examples": [
+        "Knight of Pentacles · xuôi là gì?",
+        "Giải thích Knight of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu Knight of Pentacles · xuôi",
+        "Tra cứu Knight of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-12-reversed",
+      "title": "Knight of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Knight of Pentacles",
+        "Kỵ sĩ Tiền",
+        "pentacles-12"
+      ],
+      "content": "Kỵ sĩ Tiền: Thử thay đổi một phần quy trình nếu sự đều đặn đã trở thành thói quen thiếu hiệu quả.\nTừ khóa: Trì trệ, Cứng nhắc. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-12-reversed",
+      "examples": [
+        "Knight of Pentacles · ngược là gì?",
+        "Giải thích Knight of Pentacles · ngược",
+        "Tôi muốn tìm hiểu Knight of Pentacles · ngược",
+        "Tra cứu Knight of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-13-upright",
+      "title": "Queen of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "Queen of Pentacles",
+        "Hoàng hậu Tiền",
+        "pentacles-13"
+      ],
+      "content": "Hoàng hậu Tiền: Chăm sóc không gian và những nhu cầu thiết yếu giúp bạn có điểm tựa. Lòng rộng lượng cần đi cùng khả năng thực tế.\nTừ khóa: Chăm sóc, Thực tế. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-13-upright",
+      "examples": [
+        "Queen of Pentacles · xuôi là gì?",
+        "Giải thích Queen of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu Queen of Pentacles · xuôi",
+        "Tra cứu Queen of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-13-reversed",
+      "title": "Queen of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "Queen of Pentacles",
+        "Hoàng hậu Tiền",
+        "pentacles-13"
+      ],
+      "content": "Hoàng hậu Tiền: Dành lại nguồn lực cho bản thân. Bạn không cần chăm lo mọi nhu cầu của người khác.\nTừ khóa: Quên mình, Quá nhiều trách nhiệm. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-13-reversed",
+      "examples": [
+        "Queen of Pentacles · ngược là gì?",
+        "Giải thích Queen of Pentacles · ngược",
+        "Tôi muốn tìm hiểu Queen of Pentacles · ngược",
+        "Tra cứu Queen of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-14-upright",
+      "title": "King of Pentacles · xuôi",
+      "category": "tarot",
+      "aliases": [
+        "King of Pentacles",
+        "Nhà vua Tiền",
+        "pentacles-14"
+      ],
+      "content": "Nhà vua Tiền: Dùng kinh nghiệm để quản lý nguồn lực có trách nhiệm và xây điều có giá trị lâu dài.\nTừ khóa: Ổn định, Quản lý. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-14-upright",
+      "examples": [
+        "King of Pentacles · xuôi là gì?",
+        "Giải thích King of Pentacles · xuôi",
+        "Tôi muốn tìm hiểu King of Pentacles · xuôi",
+        "Tra cứu King of Pentacles · xuôi"
+      ],
+      "kind": "traditionalInterpretation"
+    },
+    {
+      "id": "pentacles-14-reversed",
+      "title": "King of Pentacles · ngược",
+      "category": "tarot",
+      "aliases": [
+        "King of Pentacles",
+        "Nhà vua Tiền",
+        "pentacles-14"
+      ],
+      "content": "Nhà vua Tiền: Xem lại liệu việc theo đuổi thành quả có đang lấn át các nhu cầu và giá trị khác của bạn.\nTừ khóa: Bám giữ, Đặt nặng thành quả. Mang tính chiêm nghiệm, không dự báo chắc chắn.",
+      "source": "AstroAI · Nội dung Tarot RWS tiếng Việt",
+      "intentId": "pentacles-14-reversed",
+      "examples": [
+        "King of Pentacles · ngược là gì?",
+        "Giải thích King of Pentacles · ngược",
+        "Tôi muốn tìm hiểu King of Pentacles · ngược",
+        "Tra cứu King of Pentacles · ngược"
+      ],
+      "kind": "traditionalInterpretation"
+    }
+  ]
+}

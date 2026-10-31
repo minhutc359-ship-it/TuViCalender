@@ -39,12 +39,13 @@ export function useTarotSession() {
     topic: TopicSelection = 'auto',
   ) {
     const daily = spreadId === 'daily';
+    const todayCard = dailyCard(vietnamDateKey(), profileId);
     setReading({
       id: crypto.randomUUID(),
       deckId: 'celestial-v1',
       spreadId,
       question: question.trim(),
-      cards: daily ? [dailyCard(vietnamDateKey(), profileId)] : [],
+      cards: daily ? [{ ...todayCard, reversed: allowReversed && todayCard.reversed }] : [],
       createdAt: new Date().toISOString(),
       note: '',
       profileId,
@@ -67,6 +68,13 @@ export function useTarotSession() {
     setDeck(deck.filter((c) => c.cardId !== cardId));
   }
   return {
+    skipAnimation: () => {
+      if (phase === 'shuffling') setPhase('picking');
+      if (phase === 'revealing' && reading) {
+        setRevealed(reading.cards.length);
+        setPhase('complete');
+      }
+    },
     phase,
     deck,
     reading,

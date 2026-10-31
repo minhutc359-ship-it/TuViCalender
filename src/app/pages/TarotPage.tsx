@@ -20,6 +20,7 @@ import { TarotDeck } from '../../features/tarot/components/TarotDeck';
 import { TarotResult } from '../../features/tarot/components/TarotResult';
 import { JOURNAL_KEY, isReadings, type Reading } from '../../features/tarot/engine/reading';
 import { useStoredState } from '../../lib/storage';
+import { freezeReading } from '../../features/tarot/engine/snapshot';
 import { getActiveProfile } from '../../lib/profiles';
 import { Modal } from '../components/Modal';
 import { ZodiacWheel } from '../components/astro/AstroWheels';
@@ -72,7 +73,7 @@ export default function TarotPage() {
   );
   function saveReading() {
     if (!session.reading) return;
-    const reading = { ...session.reading, note };
+    const reading = freezeReading({ ...session.reading, note });
     setJournal([reading, ...journal.filter((r) => r.id !== reading.id)].slice(0, 200));
   }
   return (
@@ -288,6 +289,11 @@ export default function TarotPage() {
                   </span>
                 </div>
                 <div className="ritual-status" aria-live="polite">
+                  {(session.phase === 'shuffling' || session.phase === 'revealing') && (
+                    <button className="button subtle" onClick={session.skipAnimation}>
+                      Bỏ qua hoạt ảnh
+                    </button>
+                  )}
                   <span className="eyebrow">
                     {session.phase === 'shuffling'
                       ? 'KẾT NỐI VỚI BỘ BÀI'

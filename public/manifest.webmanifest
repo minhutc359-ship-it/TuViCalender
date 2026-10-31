@@ -1,1 +1,46 @@
-{"id":"/","name":"AstroAI · Tarot ngoại tuyến","short_name":"AstroAI","lang":"vi","start_url":"/tarot","scope":"/","display":"standalone","background_color":"#080f23","theme_color":"#080f23","description":"Lịch Việt Nam và luận giải Tarot tại thiết bị.","icons":[{"src":"/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]}
+{
+  "id": "/",
+  "name": "AstroAI · Đông Tây & Tarot",
+  "short_name": "AstroAI",
+  "lang": "vi",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#080f23",
+  "theme_color": "#080f23",
+  "description": "Lịch Việt Nam, tra cứu Đông–Tây và luận giải Tarot ngoại tuyến.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Lịch Việt Nam",
+      "url": "/calendar"
+    },
+    {
+      "name": "Tarot",
+      "url": "/tarot"
+    },
+    {
+      "name": "Thư viện Đông–Tây",
+      "url": "/knowledge"
+    }
+  ]
+}

@@ -13,12 +13,15 @@ import { TarotAppearanceProvider } from '../features/tarot/context/TarotAppearan
 import { VisualThemeProvider, useVisualTheme, THEME_NAMES } from './components/astro/VisualTheme';
 import { MysticBackdrop } from './components/astro/MysticBackdrop';
 import { AstroSymbol } from './components/astro/AstroSymbol';
+import { registerOffline } from '../lib/offline';
+import { PersistenceStatus } from './components/PersistenceStatus';
 const HomePage = lazy(() => import('./pages/HomePage'));
 const CalendarPage = lazy(() => import('./pages/CalendarPage'));
 const ChatPage = lazy(() => import('./pages/ChatPage'));
 const TarotPage = lazy(() => import('./pages/TarotPage'));
 const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const SettingsPage = lazy(() => import('./pages/SettingsPage'));
+const KnowledgePage = lazy(() => import('./pages/KnowledgePage'));
 
 const links = [
   { to: '/', name: 'Tổng quan', icon: Home },
@@ -32,8 +35,11 @@ function Shell() {
   const { pathname } = useLocation();
   const { resolved } = useVisualTheme();
   useEffect(() => {
+    void registerOffline();
+  }, []);
+  useEffect(() => {
     window.scrollTo({ top: 0 });
-    document.title = `${links.find((l) => l.to === pathname)?.name ?? 'Trang không tồn tại'} · AstroAI`;
+    document.title = `${links.find((l) => l.to === pathname)?.name ?? (pathname === '/knowledge' ? 'Thư viện chiêm nghiệm' : 'Trang không tồn tại')} · AstroAI`;
   }, [pathname]);
   return (
     <div className="app-shell">
@@ -74,6 +80,7 @@ function Shell() {
         </Link>
       </div>
       <main id="main" className="main-content">
+        <PersistenceStatus />
         <Suspense
           fallback={
             <div className="empty-state" role="status">
@@ -88,6 +95,7 @@ function Shell() {
             <Route path="/tarot" element={<TarotPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/knowledge" element={<KnowledgePage />} />
             <Route
               path="*"
               element={

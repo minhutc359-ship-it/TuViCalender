@@ -1,6 +1,11 @@
 import { createContext, useContext, type ReactNode } from 'react';
 import { useStoredState } from '../../../lib/storage';
-import { APPEARANCE_KEY, isTarotAppearance, type TarotAppearanceId } from '../data/appearance';
+import {
+  APPEARANCE_KEY,
+  REFERENCE_ART_ENABLED,
+  isTarotAppearance,
+  type TarotAppearanceId,
+} from '../data/appearance';
 
 interface AppearanceContext {
   appearance: TarotAppearanceId;
@@ -19,7 +24,15 @@ export function TarotAppearanceProvider({ children }: { children: ReactNode }) {
     isTarotAppearance,
   );
   return (
-    <Context.Provider value={{ appearance, setAppearance, storageError }}>
+    <Context.Provider
+      value={{
+        appearance: REFERENCE_ART_ENABLED ? appearance : 'celestial-v1',
+        setAppearance: (value) => {
+          if (value !== 'jojo-ref' || REFERENCE_ART_ENABLED) setAppearance(value);
+        },
+        storageError,
+      }}
+    >
       {children}
     </Context.Provider>
   );

@@ -4,6 +4,7 @@
  */
 
 import { solarToLunar, dateToJD, getDayCanChi, type LunarDate, DIA_CHI } from './lunar';
+import { traditionalSolarMonth } from './solar-terms';
 
 // 12 Trực (12 Day Officers)
 export const TRUC = [
@@ -127,9 +128,7 @@ export function getTruc(dayBranch: number, lunarMonth: number): string {
  * Get Tú (28 Lunar Mansions) for a day
  */
 export function getTu(lunar: LunarDate): { name: string; good: boolean; color: string } {
-  const totalDays = (lunar.month - 1) * 30 + lunar.day;
-  const index = (totalDays - 1) % 28;
-  return TU_28[index];
+  return { name: 'Chưa kiểm định', good: false, color: 'Trung tính' }; // Do not reset a continuous cycle every lunar month/year.
 }
 
 /**
@@ -217,7 +216,11 @@ export function isHoangDaoDay(lunarMonth: number, dayBranch: number): boolean {
 /**
  * Calculate day score (0-100)
  */
-function calculateDayScore(truc: string, tu: { good: boolean }, isHoangDao: boolean): number {
+function calculateDayScore(
+  truc: string,
+  tu: { good: boolean; verified?: boolean },
+  isHoangDao: boolean,
+): number {
   let score = 50; // Base score
 
   // Hoàng Đạo bonus
@@ -231,7 +234,9 @@ function calculateDayScore(truc: string, tu: { good: boolean }, isHoangDao: bool
   }
 
   // Tú bonus/penalty
-  if (tu.good) {
+  if (tu.verified === false) {
+    // No mansion weight until a referenced continuous-cycle anchor has been verified.
+  } else if (tu.good) {
     score += 10;
   } else {
     score -= 10;
@@ -252,8 +257,9 @@ export function analyzeDay(day: number, month: number, year: number): DayAnalysi
   const lunar = solarToLunar(day, month, year);
   const jd = dateToJD(day, month, year);
   const branch = (jd + 1) % 12;
-  const truc = getTruc(branch, lunar.month);
-  const tu = getTu(lunar);
+  const solarMonth = traditionalSolarMonth(day, month, year);
+  const truc = TRUC[(branch - solarMonth.branch + 12) % 12];
+  const tu = { name: 'Chưa kiểm định', good: false, color: 'Trung tính', verified: false };
   const activities = getActivitiesForTruc(truc);
   const isHoangDao = isHoangDaoDay(lunar.month, branch);
   const score = calculateDayScore(truc, tu, isHoangDao);

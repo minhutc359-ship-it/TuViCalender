@@ -1,4 +1,4 @@
-import { interpretReading } from '../engine/interpretation';
+import { readingResult } from '../engine/snapshot';
 import type { Reading } from '../engine/reading';
 import { TarotCard3D } from './TarotCard3D';
 import type { TarotCard } from '../data/cards';
@@ -13,7 +13,7 @@ export function TarotResult({
   reading: Reading;
   onInspect?: (card: TarotCard) => void;
 }) {
-  const result = interpretReading(reading);
+  const result = readingResult(reading);
   const { appearance } = useTarotAppearance();
   return (
     <div className="reading-result" data-interpretation-version={result.version}>

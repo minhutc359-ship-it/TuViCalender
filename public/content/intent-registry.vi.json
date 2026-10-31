@@ -1,0 +1,3155 @@
+{
+  "schemaVersion": 1,
+  "locale": "vi",
+  "version": "vi-2026.10.31-1",
+  "groups": [
+    {
+      "id": "ngu-hanh",
+      "referenceId": "ngu-hanh",
+      "aliases": [
+        "ngũ hành",
+        "tương sinh",
+        "tương khắc"
+      ],
+      "examples": [
+        "Ngũ hành là gì?",
+        "Giải thích Ngũ hành",
+        "Tra cứu Ngũ hành"
+      ]
+    },
+    {
+      "id": "bat-quai",
+      "referenceId": "bat-quai",
+      "aliases": [
+        "bát quái",
+        "tám quẻ"
+      ],
+      "examples": [
+        "Bát quái là gì?",
+        "Giải thích Bát quái",
+        "Tra cứu Bát quái"
+      ]
+    },
+    {
+      "id": "can-chi",
+      "referenceId": "can-chi",
+      "aliases": [
+        "can chi",
+        "thiên can",
+        "địa chi"
+      ],
+      "examples": [
+        "Can Chi là gì?",
+        "Giải thích Can Chi",
+        "Tra cứu Can Chi"
+      ]
+    },
+    {
+      "id": "bat-tu",
+      "referenceId": "bat-tu",
+      "aliases": [
+        "bát tự",
+        "tứ trụ",
+        "bốn trụ"
+      ],
+      "examples": [
+        "Bát tự và giới hạn là gì?",
+        "Giải thích Bát tự và giới hạn",
+        "Tra cứu Bát tự và giới hạn"
+      ]
+    },
+    {
+      "id": "tiet-khi",
+      "referenceId": "tiet-khi",
+      "aliases": [
+        "tiết khí",
+        "lập xuân"
+      ],
+      "examples": [
+        "Tiết khí là gì?",
+        "Giải thích Tiết khí",
+        "Tra cứu Tiết khí"
+      ]
+    },
+    {
+      "id": "lich-am",
+      "referenceId": "lich-am",
+      "aliases": [
+        "âm lịch",
+        "lịch âm",
+        "lịch âm dương",
+        "tháng nhuận"
+      ],
+      "examples": [
+        "Lịch âm Việt Nam là gì?",
+        "Giải thích Lịch âm Việt Nam",
+        "Tra cứu Lịch âm Việt Nam"
+      ]
+    },
+    {
+      "id": "gio-tot",
+      "referenceId": "gio-tot",
+      "aliases": [
+        "giờ hoàng đạo",
+        "giờ tốt"
+      ],
+      "examples": [
+        "Giờ hoàng đạo là gì?",
+        "Giải thích Giờ hoàng đạo",
+        "Tra cứu Giờ hoàng đạo"
+      ]
+    },
+    {
+      "id": "ngay-tot",
+      "referenceId": "ngay-tot",
+      "aliases": [
+        "ngày tốt",
+        "xem ngày",
+        "ngày hoàng đạo",
+        "hoàng đạo",
+        "khai trương"
+      ],
+      "examples": [
+        "Xem ngày cho kế hoạch là gì?",
+        "Giải thích Xem ngày cho kế hoạch",
+        "Tra cứu Xem ngày cho kế hoạch"
+      ]
+    },
+    {
+      "id": "sun-moon-rising",
+      "referenceId": "sun-moon-rising",
+      "aliases": [
+        "sun moon rising",
+        "sun moon",
+        "sun sign",
+        "moon sign",
+        "rising",
+        "cung mọc",
+        "cung mặt trăng",
+        "cung mặt trời"
+      ],
+      "examples": [
+        "Sun, Moon và Rising là gì?",
+        "Giải thích Sun, Moon và Rising",
+        "Tra cứu Sun, Moon và Rising"
+      ]
+    },
+    {
+      "id": "natal",
+      "referenceId": "natal",
+      "aliases": [
+        "natal chart",
+        "lá số",
+        "12 nhà",
+        "houses"
+      ],
+      "examples": [
+        "Natal chart và 12 nhà là gì?",
+        "Giải thích Natal chart và 12 nhà",
+        "Tra cứu Natal chart và 12 nhà"
+      ]
+    },
+    {
+      "id": "tarot-guide",
+      "referenceId": "tarot-guide",
+      "aliases": [
+        "tarot",
+        "bói bài",
+        "thông điệp tarot",
+        "câu hỏi tarot"
+      ],
+      "examples": [
+        "Tarot để tự chiêm nghiệm là gì?",
+        "Giải thích Tarot để tự chiêm nghiệm",
+        "Tra cứu Tarot để tự chiêm nghiệm"
+      ]
+    },
+    {
+      "id": "reversed",
+      "referenceId": "reversed",
+      "aliases": [
+        "lá ngược",
+        "bài ngược",
+        "xuôi ngược"
+      ],
+      "examples": [
+        "Lá ngược là gì?",
+        "Giải thích Lá ngược",
+        "Tra cứu Lá ngược"
+      ]
+    },
+    {
+      "id": "offline",
+      "referenceId": "offline",
+      "aliases": [
+        "offline",
+        "ngoại tuyến",
+        "mất mạng",
+        "không có mạng"
+      ],
+      "examples": [
+        "Dùng AstroAI offline là gì?",
+        "Giải thích Dùng AstroAI offline",
+        "Tra cứu Dùng AstroAI offline"
+      ]
+    },
+    {
+      "id": "privacy",
+      "referenceId": "privacy",
+      "aliases": [
+        "sao lưu",
+        "backup",
+        "dữ liệu",
+        "riêng tư"
+      ],
+      "examples": [
+        "Dữ liệu và sao lưu là gì?",
+        "Giải thích Dữ liệu và sao lưu",
+        "Tra cứu Dữ liệu và sao lưu"
+      ]
+    },
+    {
+      "id": "element-0",
+      "referenceId": "element-0",
+      "aliases": [
+        "mệnh Mộc",
+        "hành Mộc",
+        "Mộc hợp màu",
+        "màu mệnh Mộc"
+      ],
+      "examples": [
+        "Hành Mộc là gì?",
+        "Giải thích Hành Mộc",
+        "Tra cứu Hành Mộc"
+      ]
+    },
+    {
+      "id": "element-1",
+      "referenceId": "element-1",
+      "aliases": [
+        "mệnh Hỏa",
+        "hành Hỏa",
+        "Hỏa hợp màu",
+        "màu mệnh Hỏa"
+      ],
+      "examples": [
+        "Hành Hỏa là gì?",
+        "Giải thích Hành Hỏa",
+        "Tra cứu Hành Hỏa"
+      ]
+    },
+    {
+      "id": "element-2",
+      "referenceId": "element-2",
+      "aliases": [
+        "mệnh Thổ",
+        "hành Thổ",
+        "Thổ hợp màu",
+        "màu mệnh Thổ"
+      ],
+      "examples": [
+        "Hành Thổ là gì?",
+        "Giải thích Hành Thổ",
+        "Tra cứu Hành Thổ"
+      ]
+    },
+    {
+      "id": "element-3",
+      "referenceId": "element-3",
+      "aliases": [
+        "mệnh Kim",
+        "hành Kim",
+        "Kim hợp màu",
+        "màu mệnh Kim"
+      ],
+      "examples": [
+        "Hành Kim là gì?",
+        "Giải thích Hành Kim",
+        "Tra cứu Hành Kim"
+      ]
+    },
+    {
+      "id": "element-4",
+      "referenceId": "element-4",
+      "aliases": [
+        "mệnh Thủy",
+        "hành Thủy",
+        "Thủy hợp màu",
+        "màu mệnh Thủy"
+      ],
+      "examples": [
+        "Hành Thủy là gì?",
+        "Giải thích Hành Thủy",
+        "Tra cứu Hành Thủy"
+      ]
+    },
+    {
+      "id": "major-00-upright",
+      "referenceId": "major-00-upright",
+      "aliases": [
+        "The Fool",
+        "Khởi đầu",
+        "major-00"
+      ],
+      "examples": [
+        "The Fool · xuôi là gì?",
+        "Giải thích The Fool · xuôi",
+        "Tra cứu The Fool · xuôi"
+      ]
+    },
+    {
+      "id": "major-00-reversed",
+      "referenceId": "major-00-reversed",
+      "aliases": [
+        "The Fool",
+        "Khởi đầu",
+        "major-00"
+      ],
+      "examples": [
+        "The Fool · ngược là gì?",
+        "Giải thích The Fool · ngược",
+        "Tra cứu The Fool · ngược"
+      ]
+    },
+    {
+      "id": "major-01-upright",
+      "referenceId": "major-01-upright",
+      "aliases": [
+        "The Magician",
+        "Kiến tạo",
+        "major-01"
+      ],
+      "examples": [
+        "The Magician · xuôi là gì?",
+        "Giải thích The Magician · xuôi",
+        "Tra cứu The Magician · xuôi"
+      ]
+    },
+    {
+      "id": "major-01-reversed",
+      "referenceId": "major-01-reversed",
+      "aliases": [
+        "The Magician",
+        "Kiến tạo",
+        "major-01"
+      ],
+      "examples": [
+        "The Magician · ngược là gì?",
+        "Giải thích The Magician · ngược",
+        "Tra cứu The Magician · ngược"
+      ]
+    },
+    {
+      "id": "major-02-upright",
+      "referenceId": "major-02-upright",
+      "aliases": [
+        "The High Priestess",
+        "Trực giác",
+        "major-02"
+      ],
+      "examples": [
+        "The High Priestess · xuôi là gì?",
+        "Giải thích The High Priestess · xuôi",
+        "Tra cứu The High Priestess · xuôi"
+      ]
+    },
+    {
+      "id": "major-02-reversed",
+      "referenceId": "major-02-reversed",
+      "aliases": [
+        "The High Priestess",
+        "Trực giác",
+        "major-02"
+      ],
+      "examples": [
+        "The High Priestess · ngược là gì?",
+        "Giải thích The High Priestess · ngược",
+        "Tra cứu The High Priestess · ngược"
+      ]
+    },
+    {
+      "id": "major-03-upright",
+      "referenceId": "major-03-upright",
+      "aliases": [
+        "The Empress",
+        "Nuôi dưỡng",
+        "major-03"
+      ],
+      "examples": [
+        "The Empress · xuôi là gì?",
+        "Giải thích The Empress · xuôi",
+        "Tra cứu The Empress · xuôi"
+      ]
+    },
+    {
+      "id": "major-03-reversed",
+      "referenceId": "major-03-reversed",
+      "aliases": [
+        "The Empress",
+        "Nuôi dưỡng",
+        "major-03"
+      ],
+      "examples": [
+        "The Empress · ngược là gì?",
+        "Giải thích The Empress · ngược",
+        "Tra cứu The Empress · ngược"
+      ]
+    },
+    {
+      "id": "major-04-upright",
+      "referenceId": "major-04-upright",
+      "aliases": [
+        "The Emperor",
+        "Nền tảng",
+        "major-04"
+      ],
+      "examples": [
+        "The Emperor · xuôi là gì?",
+        "Giải thích The Emperor · xuôi",
+        "Tra cứu The Emperor · xuôi"
+      ]
+    },
+    {
+      "id": "major-04-reversed",
+      "referenceId": "major-04-reversed",
+      "aliases": [
+        "The Emperor",
+        "Nền tảng",
+        "major-04"
+      ],
+      "examples": [
+        "The Emperor · ngược là gì?",
+        "Giải thích The Emperor · ngược",
+        "Tra cứu The Emperor · ngược"
+      ]
+    },
+    {
+      "id": "major-05-upright",
+      "referenceId": "major-05-upright",
+      "aliases": [
+        "The Hierophant",
+        "Minh triết",
+        "major-05"
+      ],
+      "examples": [
+        "The Hierophant · xuôi là gì?",
+        "Giải thích The Hierophant · xuôi",
+        "Tra cứu The Hierophant · xuôi"
+      ]
+    },
+    {
+      "id": "major-05-reversed",
+      "referenceId": "major-05-reversed",
+      "aliases": [
+        "The Hierophant",
+        "Minh triết",
+        "major-05"
+      ],
+      "examples": [
+        "The Hierophant · ngược là gì?",
+        "Giải thích The Hierophant · ngược",
+        "Tra cứu The Hierophant · ngược"
+      ]
+    },
+    {
+      "id": "major-06-upright",
+      "referenceId": "major-06-upright",
+      "aliases": [
+        "The Lovers",
+        "Kết nối",
+        "major-06"
+      ],
+      "examples": [
+        "The Lovers · xuôi là gì?",
+        "Giải thích The Lovers · xuôi",
+        "Tra cứu The Lovers · xuôi"
+      ]
+    },
+    {
+      "id": "major-06-reversed",
+      "referenceId": "major-06-reversed",
+      "aliases": [
+        "The Lovers",
+        "Kết nối",
+        "major-06"
+      ],
+      "examples": [
+        "The Lovers · ngược là gì?",
+        "Giải thích The Lovers · ngược",
+        "Tra cứu The Lovers · ngược"
+      ]
+    },
+    {
+      "id": "major-07-upright",
+      "referenceId": "major-07-upright",
+      "aliases": [
+        "The Chariot",
+        "Tiến bước",
+        "major-07"
+      ],
+      "examples": [
+        "The Chariot · xuôi là gì?",
+        "Giải thích The Chariot · xuôi",
+        "Tra cứu The Chariot · xuôi"
+      ]
+    },
+    {
+      "id": "major-07-reversed",
+      "referenceId": "major-07-reversed",
+      "aliases": [
+        "The Chariot",
+        "Tiến bước",
+        "major-07"
+      ],
+      "examples": [
+        "The Chariot · ngược là gì?",
+        "Giải thích The Chariot · ngược",
+        "Tra cứu The Chariot · ngược"
+      ]
+    },
+    {
+      "id": "major-08-upright",
+      "referenceId": "major-08-upright",
+      "aliases": [
+        "Strength",
+        "Nội lực",
+        "major-08"
+      ],
+      "examples": [
+        "Strength · xuôi là gì?",
+        "Giải thích Strength · xuôi",
+        "Tra cứu Strength · xuôi"
+      ]
+    },
+    {
+      "id": "major-08-reversed",
+      "referenceId": "major-08-reversed",
+      "aliases": [
+        "Strength",
+        "Nội lực",
+        "major-08"
+      ],
+      "examples": [
+        "Strength · ngược là gì?",
+        "Giải thích Strength · ngược",
+        "Tra cứu Strength · ngược"
+      ]
+    },
+    {
+      "id": "major-09-upright",
+      "referenceId": "major-09-upright",
+      "aliases": [
+        "The Hermit",
+        "Soi chiếu",
+        "major-09"
+      ],
+      "examples": [
+        "The Hermit · xuôi là gì?",
+        "Giải thích The Hermit · xuôi",
+        "Tra cứu The Hermit · xuôi"
+      ]
+    },
+    {
+      "id": "major-09-reversed",
+      "referenceId": "major-09-reversed",
+      "aliases": [
+        "The Hermit",
+        "Soi chiếu",
+        "major-09"
+      ],
+      "examples": [
+        "The Hermit · ngược là gì?",
+        "Giải thích The Hermit · ngược",
+        "Tra cứu The Hermit · ngược"
+      ]
+    },
+    {
+      "id": "major-10-upright",
+      "referenceId": "major-10-upright",
+      "aliases": [
+        "Wheel of Fortune",
+        "Chuyển vận",
+        "major-10"
+      ],
+      "examples": [
+        "Wheel of Fortune · xuôi là gì?",
+        "Giải thích Wheel of Fortune · xuôi",
+        "Tra cứu Wheel of Fortune · xuôi"
+      ]
+    },
+    {
+      "id": "major-10-reversed",
+      "referenceId": "major-10-reversed",
+      "aliases": [
+        "Wheel of Fortune",
+        "Chuyển vận",
+        "major-10"
+      ],
+      "examples": [
+        "Wheel of Fortune · ngược là gì?",
+        "Giải thích Wheel of Fortune · ngược",
+        "Tra cứu Wheel of Fortune · ngược"
+      ]
+    },
+    {
+      "id": "major-11-upright",
+      "referenceId": "major-11-upright",
+      "aliases": [
+        "Justice",
+        "Cân bằng",
+        "major-11"
+      ],
+      "examples": [
+        "Justice · xuôi là gì?",
+        "Giải thích Justice · xuôi",
+        "Tra cứu Justice · xuôi"
+      ]
+    },
+    {
+      "id": "major-11-reversed",
+      "referenceId": "major-11-reversed",
+      "aliases": [
+        "Justice",
+        "Cân bằng",
+        "major-11"
+      ],
+      "examples": [
+        "Justice · ngược là gì?",
+        "Giải thích Justice · ngược",
+        "Tra cứu Justice · ngược"
+      ]
+    },
+    {
+      "id": "major-12-upright",
+      "referenceId": "major-12-upright",
+      "aliases": [
+        "The Hanged Man",
+        "Góc nhìn mới",
+        "major-12"
+      ],
+      "examples": [
+        "The Hanged Man · xuôi là gì?",
+        "Giải thích The Hanged Man · xuôi",
+        "Tra cứu The Hanged Man · xuôi"
+      ]
+    },
+    {
+      "id": "major-12-reversed",
+      "referenceId": "major-12-reversed",
+      "aliases": [
+        "The Hanged Man",
+        "Góc nhìn mới",
+        "major-12"
+      ],
+      "examples": [
+        "The Hanged Man · ngược là gì?",
+        "Giải thích The Hanged Man · ngược",
+        "Tra cứu The Hanged Man · ngược"
+      ]
+    },
+    {
+      "id": "major-13-upright",
+      "referenceId": "major-13-upright",
+      "aliases": [
+        "Death",
+        "Chuyển hóa",
+        "major-13"
+      ],
+      "examples": [
+        "Death · xuôi là gì?",
+        "Giải thích Death · xuôi",
+        "Tra cứu Death · xuôi"
+      ]
+    },
+    {
+      "id": "major-13-reversed",
+      "referenceId": "major-13-reversed",
+      "aliases": [
+        "Death",
+        "Chuyển hóa",
+        "major-13"
+      ],
+      "examples": [
+        "Death · ngược là gì?",
+        "Giải thích Death · ngược",
+        "Tra cứu Death · ngược"
+      ]
+    },
+    {
+      "id": "major-14-upright",
+      "referenceId": "major-14-upright",
+      "aliases": [
+        "Temperance",
+        "Điều hòa",
+        "major-14"
+      ],
+      "examples": [
+        "Temperance · xuôi là gì?",
+        "Giải thích Temperance · xuôi",
+        "Tra cứu Temperance · xuôi"
+      ]
+    },
+    {
+      "id": "major-14-reversed",
+      "referenceId": "major-14-reversed",
+      "aliases": [
+        "Temperance",
+        "Điều hòa",
+        "major-14"
+      ],
+      "examples": [
+        "Temperance · ngược là gì?",
+        "Giải thích Temperance · ngược",
+        "Tra cứu Temperance · ngược"
+      ]
+    },
+    {
+      "id": "major-15-upright",
+      "referenceId": "major-15-upright",
+      "aliases": [
+        "The Devil",
+        "Ràng buộc",
+        "major-15"
+      ],
+      "examples": [
+        "The Devil · xuôi là gì?",
+        "Giải thích The Devil · xuôi",
+        "Tra cứu The Devil · xuôi"
+      ]
+    },
+    {
+      "id": "major-15-reversed",
+      "referenceId": "major-15-reversed",
+      "aliases": [
+        "The Devil",
+        "Ràng buộc",
+        "major-15"
+      ],
+      "examples": [
+        "The Devil · ngược là gì?",
+        "Giải thích The Devil · ngược",
+        "Tra cứu The Devil · ngược"
+      ]
+    },
+    {
+      "id": "major-16-upright",
+      "referenceId": "major-16-upright",
+      "aliases": [
+        "The Tower",
+        "Thức tỉnh",
+        "major-16"
+      ],
+      "examples": [
+        "The Tower · xuôi là gì?",
+        "Giải thích The Tower · xuôi",
+        "Tra cứu The Tower · xuôi"
+      ]
+    },
+    {
+      "id": "major-16-reversed",
+      "referenceId": "major-16-reversed",
+      "aliases": [
+        "The Tower",
+        "Thức tỉnh",
+        "major-16"
+      ],
+      "examples": [
+        "The Tower · ngược là gì?",
+        "Giải thích The Tower · ngược",
+        "Tra cứu The Tower · ngược"
+      ]
+    },
+    {
+      "id": "major-17-upright",
+      "referenceId": "major-17-upright",
+      "aliases": [
+        "The Star",
+        "Hy vọng",
+        "major-17"
+      ],
+      "examples": [
+        "The Star · xuôi là gì?",
+        "Giải thích The Star · xuôi",
+        "Tra cứu The Star · xuôi"
+      ]
+    },
+    {
+      "id": "major-17-reversed",
+      "referenceId": "major-17-reversed",
+      "aliases": [
+        "The Star",
+        "Hy vọng",
+        "major-17"
+      ],
+      "examples": [
+        "The Star · ngược là gì?",
+        "Giải thích The Star · ngược",
+        "Tra cứu The Star · ngược"
+      ]
+    },
+    {
+      "id": "major-18-upright",
+      "referenceId": "major-18-upright",
+      "aliases": [
+        "The Moon",
+        "Tiềm thức",
+        "major-18"
+      ],
+      "examples": [
+        "The Moon · xuôi là gì?",
+        "Giải thích The Moon · xuôi",
+        "Tra cứu The Moon · xuôi"
+      ]
+    },
+    {
+      "id": "major-18-reversed",
+      "referenceId": "major-18-reversed",
+      "aliases": [
+        "The Moon",
+        "Tiềm thức",
+        "major-18"
+      ],
+      "examples": [
+        "The Moon · ngược là gì?",
+        "Giải thích The Moon · ngược",
+        "Tra cứu The Moon · ngược"
+      ]
+    },
+    {
+      "id": "major-19-upright",
+      "referenceId": "major-19-upright",
+      "aliases": [
+        "The Sun",
+        "Rạng rỡ",
+        "major-19"
+      ],
+      "examples": [
+        "The Sun · xuôi là gì?",
+        "Giải thích The Sun · xuôi",
+        "Tra cứu The Sun · xuôi"
+      ]
+    },
+    {
+      "id": "major-19-reversed",
+      "referenceId": "major-19-reversed",
+      "aliases": [
+        "The Sun",
+        "Rạng rỡ",
+        "major-19"
+      ],
+      "examples": [
+        "The Sun · ngược là gì?",
+        "Giải thích The Sun · ngược",
+        "Tra cứu The Sun · ngược"
+      ]
+    },
+    {
+      "id": "major-20-upright",
+      "referenceId": "major-20-upright",
+      "aliases": [
+        "Judgement",
+        "Tiếng gọi",
+        "major-20"
+      ],
+      "examples": [
+        "Judgement · xuôi là gì?",
+        "Giải thích Judgement · xuôi",
+        "Tra cứu Judgement · xuôi"
+      ]
+    },
+    {
+      "id": "major-20-reversed",
+      "referenceId": "major-20-reversed",
+      "aliases": [
+        "Judgement",
+        "Tiếng gọi",
+        "major-20"
+      ],
+      "examples": [
+        "Judgement · ngược là gì?",
+        "Giải thích Judgement · ngược",
+        "Tra cứu Judgement · ngược"
+      ]
+    },
+    {
+      "id": "major-21-upright",
+      "referenceId": "major-21-upright",
+      "aliases": [
+        "The World",
+        "Viên mãn",
+        "major-21"
+      ],
+      "examples": [
+        "The World · xuôi là gì?",
+        "Giải thích The World · xuôi",
+        "Tra cứu The World · xuôi"
+      ]
+    },
+    {
+      "id": "major-21-reversed",
+      "referenceId": "major-21-reversed",
+      "aliases": [
+        "The World",
+        "Viên mãn",
+        "major-21"
+      ],
+      "examples": [
+        "The World · ngược là gì?",
+        "Giải thích The World · ngược",
+        "Tra cứu The World · ngược"
+      ]
+    },
+    {
+      "id": "wands-01-upright",
+      "referenceId": "wands-01-upright",
+      "aliases": [
+        "Ace of Wands",
+        "Át Gậy",
+        "wands-01"
+      ],
+      "examples": [
+        "Ace of Wands · xuôi là gì?",
+        "Giải thích Ace of Wands · xuôi",
+        "Tra cứu Ace of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-01-reversed",
+      "referenceId": "wands-01-reversed",
+      "aliases": [
+        "Ace of Wands",
+        "Át Gậy",
+        "wands-01"
+      ],
+      "examples": [
+        "Ace of Wands · ngược là gì?",
+        "Giải thích Ace of Wands · ngược",
+        "Tra cứu Ace of Wands · ngược"
+      ]
+    },
+    {
+      "id": "wands-02-upright",
+      "referenceId": "wands-02-upright",
+      "aliases": [
+        "Two of Wands",
+        "Hai Gậy",
+        "wands-02"
+      ],
+      "examples": [
+        "Two of Wands · xuôi là gì?",
+        "Giải thích Two of Wands · xuôi",
+        "Tra cứu Two of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-02-reversed",
+      "referenceId": "wands-02-reversed",
+      "aliases": [
+        "Two of Wands",
+        "Hai Gậy",
+        "wands-02"
+      ],
+      "examples": [
+        "Two of Wands · ngược là gì?",
+        "Giải thích Two of Wands · ngược",
+        "Tra cứu Two of Wands · ngược"
+      ]
+    },
+    {
+      "id": "wands-03-upright",
+      "referenceId": "wands-03-upright",
+      "aliases": [
+        "Three of Wands",
+        "Ba Gậy",
+        "wands-03"
+      ],
+      "examples": [
+        "Three of Wands · xuôi là gì?",
+        "Giải thích Three of Wands · xuôi",
+        "Tra cứu Three of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-03-reversed",
+      "referenceId": "wands-03-reversed",
+      "aliases": [
+        "Three of Wands",
+        "Ba Gậy",
+        "wands-03"
+      ],
+      "examples": [
+        "Three of Wands · ngược là gì?",
+        "Giải thích Three of Wands · ngược",
+        "Tra cứu Three of Wands · ngược"
+      ]
+    },
+    {
+      "id": "wands-04-upright",
+      "referenceId": "wands-04-upright",
+      "aliases": [
+        "Four of Wands",
+        "Bốn Gậy",
+        "wands-04"
+      ],
+      "examples": [
+        "Four of Wands · xuôi là gì?",
+        "Giải thích Four of Wands · xuôi",
+        "Tra cứu Four of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-04-reversed",
+      "referenceId": "wands-04-reversed",
+      "aliases": [
+        "Four of Wands",
+        "Bốn Gậy",
+        "wands-04"
+      ],
+      "examples": [
+        "Four of Wands · ngược là gì?",
+        "Giải thích Four of Wands · ngược",
+        "Tra cứu Four of Wands · ngược"
+      ]
+    },
+    {
+      "id": "wands-05-upright",
+      "referenceId": "wands-05-upright",
+      "aliases": [
+        "Five of Wands",
+        "Năm Gậy",
+        "wands-05"
+      ],
+      "examples": [
+        "Five of Wands · xuôi là gì?",
+        "Giải thích Five of Wands · xuôi",
+        "Tra cứu Five of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-05-reversed",
+      "referenceId": "wands-05-reversed",
+      "aliases": [
+        "Five of Wands",
+        "Năm Gậy",
+        "wands-05"
+      ],
+      "examples": [
+        "Five of Wands · ngược là gì?",
+        "Giải thích Five of Wands · ngược",
+        "Tra cứu Five of Wands · ngược"
+      ]
+    },
+    {
+      "id": "wands-06-upright",
+      "referenceId": "wands-06-upright",
+      "aliases": [
+        "Six of Wands",
+        "Sáu Gậy",
+        "wands-06"
+      ],
+      "examples": [
+        "Six of Wands · xuôi là gì?",
+        "Giải thích Six of Wands · xuôi",
+        "Tra cứu Six of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-06-reversed",
+      "referenceId": "wands-06-reversed",
+      "aliases": [
+        "Six of Wands",
+        "Sáu Gậy",
+        "wands-06"
+      ],
+      "examples": [
+        "Six of Wands · ngược là gì?",
+        "Giải thích Six of Wands · ngược",
+        "Tra cứu Six of Wands · ngược"
+      ]
+    },
+    {
+      "id": "wands-07-upright",
+      "referenceId": "wands-07-upright",
+      "aliases": [
+        "Seven of Wands",
+        "Bảy Gậy",
+        "wands-07"
+      ],
+      "examples": [
+        "Seven of Wands · xuôi là gì?",
+        "Giải thích Seven of Wands · xuôi",
+        "Tra cứu Seven of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-07-reversed",
+      "referenceId": "wands-07-reversed",
+      "aliases": [
+        "Seven of Wands",
+        "Bảy Gậy",
+        "wands-07"
+      ],
+      "examples": [
+        "Seven of Wands · ngược là gì?",
+        "Giải thích Seven of Wands · ngược",
+        "Tra cứu Seven of Wands · ngược"
+      ]
+    },
+    {
+      "id": "wands-08-upright",
+      "referenceId": "wands-08-upright",
+      "aliases": [
+        "Eight of Wands",
+        "Tám Gậy",
+        "wands-08"
+      ],
+      "examples": [
+        "Eight of Wands · xuôi là gì?",
+        "Giải thích Eight of Wands · xuôi",
+        "Tra cứu Eight of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-08-reversed",
+      "referenceId": "wands-08-reversed",
+      "aliases": [
+        "Eight of Wands",
+        "Tám Gậy",
+        "wands-08"
+      ],
+      "examples": [
+        "Eight of Wands · ngược là gì?",
+        "Giải thích Eight of Wands · ngược",
+        "Tra cứu Eight of Wands · ngược"
+      ]
+    },
+    {
+      "id": "wands-09-upright",
+      "referenceId": "wands-09-upright",
+      "aliases": [
+        "Nine of Wands",
+        "Chín Gậy",
+        "wands-09"
+      ],
+      "examples": [
+        "Nine of Wands · xuôi là gì?",
+        "Giải thích Nine of Wands · xuôi",
+        "Tra cứu Nine of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-09-reversed",
+      "referenceId": "wands-09-reversed",
+      "aliases": [
+        "Nine of Wands",
+        "Chín Gậy",
+        "wands-09"
+      ],
+      "examples": [
+        "Nine of Wands · ngược là gì?",
+        "Giải thích Nine of Wands · ngược",
+        "Tra cứu Nine of Wands · ngược"
+      ]
+    },
+    {
+      "id": "wands-10-upright",
+      "referenceId": "wands-10-upright",
+      "aliases": [
+        "Ten of Wands",
+        "Mười Gậy",
+        "wands-10"
+      ],
+      "examples": [
+        "Ten of Wands · xuôi là gì?",
+        "Giải thích Ten of Wands · xuôi",
+        "Tra cứu Ten of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-10-reversed",
+      "referenceId": "wands-10-reversed",
+      "aliases": [
+        "Ten of Wands",
+        "Mười Gậy",
+        "wands-10"
+      ],
+      "examples": [
+        "Ten of Wands · ngược là gì?",
+        "Giải thích Ten of Wands · ngược",
+        "Tra cứu Ten of Wands · ngược"
+      ]
+    },
+    {
+      "id": "wands-11-upright",
+      "referenceId": "wands-11-upright",
+      "aliases": [
+        "Page of Wands",
+        "Tiểu đồng Gậy",
+        "wands-11"
+      ],
+      "examples": [
+        "Page of Wands · xuôi là gì?",
+        "Giải thích Page of Wands · xuôi",
+        "Tra cứu Page of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-11-reversed",
+      "referenceId": "wands-11-reversed",
+      "aliases": [
+        "Page of Wands",
+        "Tiểu đồng Gậy",
+        "wands-11"
+      ],
+      "examples": [
+        "Page of Wands · ngược là gì?",
+        "Giải thích Page of Wands · ngược",
+        "Tra cứu Page of Wands · ngược"
+      ]
+    },
+    {
+      "id": "wands-12-upright",
+      "referenceId": "wands-12-upright",
+      "aliases": [
+        "Knight of Wands",
+        "Kỵ sĩ Gậy",
+        "wands-12"
+      ],
+      "examples": [
+        "Knight of Wands · xuôi là gì?",
+        "Giải thích Knight of Wands · xuôi",
+        "Tra cứu Knight of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-12-reversed",
+      "referenceId": "wands-12-reversed",
+      "aliases": [
+        "Knight of Wands",
+        "Kỵ sĩ Gậy",
+        "wands-12"
+      ],
+      "examples": [
+        "Knight of Wands · ngược là gì?",
+        "Giải thích Knight of Wands · ngược",
+        "Tra cứu Knight of Wands · ngược"
+      ]
+    },
+    {
+      "id": "wands-13-upright",
+      "referenceId": "wands-13-upright",
+      "aliases": [
+        "Queen of Wands",
+        "Hoàng hậu Gậy",
+        "wands-13"
+      ],
+      "examples": [
+        "Queen of Wands · xuôi là gì?",
+        "Giải thích Queen of Wands · xuôi",
+        "Tra cứu Queen of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-13-reversed",
+      "referenceId": "wands-13-reversed",
+      "aliases": [
+        "Queen of Wands",
+        "Hoàng hậu Gậy",
+        "wands-13"
+      ],
+      "examples": [
+        "Queen of Wands · ngược là gì?",
+        "Giải thích Queen of Wands · ngược",
+        "Tra cứu Queen of Wands · ngược"
+      ]
+    },
+    {
+      "id": "wands-14-upright",
+      "referenceId": "wands-14-upright",
+      "aliases": [
+        "King of Wands",
+        "Nhà vua Gậy",
+        "wands-14"
+      ],
+      "examples": [
+        "King of Wands · xuôi là gì?",
+        "Giải thích King of Wands · xuôi",
+        "Tra cứu King of Wands · xuôi"
+      ]
+    },
+    {
+      "id": "wands-14-reversed",
+      "referenceId": "wands-14-reversed",
+      "aliases": [
+        "King of Wands",
+        "Nhà vua Gậy",
+        "wands-14"
+      ],
+      "examples": [
+        "King of Wands · ngược là gì?",
+        "Giải thích King of Wands · ngược",
+        "Tra cứu King of Wands · ngược"
+      ]
+    },
+    {
+      "id": "cups-01-upright",
+      "referenceId": "cups-01-upright",
+      "aliases": [
+        "Ace of Cups",
+        "Át Cốc",
+        "cups-01"
+      ],
+      "examples": [
+        "Ace of Cups · xuôi là gì?",
+        "Giải thích Ace of Cups · xuôi",
+        "Tra cứu Ace of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-01-reversed",
+      "referenceId": "cups-01-reversed",
+      "aliases": [
+        "Ace of Cups",
+        "Át Cốc",
+        "cups-01"
+      ],
+      "examples": [
+        "Ace of Cups · ngược là gì?",
+        "Giải thích Ace of Cups · ngược",
+        "Tra cứu Ace of Cups · ngược"
+      ]
+    },
+    {
+      "id": "cups-02-upright",
+      "referenceId": "cups-02-upright",
+      "aliases": [
+        "Two of Cups",
+        "Hai Cốc",
+        "cups-02"
+      ],
+      "examples": [
+        "Two of Cups · xuôi là gì?",
+        "Giải thích Two of Cups · xuôi",
+        "Tra cứu Two of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-02-reversed",
+      "referenceId": "cups-02-reversed",
+      "aliases": [
+        "Two of Cups",
+        "Hai Cốc",
+        "cups-02"
+      ],
+      "examples": [
+        "Two of Cups · ngược là gì?",
+        "Giải thích Two of Cups · ngược",
+        "Tra cứu Two of Cups · ngược"
+      ]
+    },
+    {
+      "id": "cups-03-upright",
+      "referenceId": "cups-03-upright",
+      "aliases": [
+        "Three of Cups",
+        "Ba Cốc",
+        "cups-03"
+      ],
+      "examples": [
+        "Three of Cups · xuôi là gì?",
+        "Giải thích Three of Cups · xuôi",
+        "Tra cứu Three of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-03-reversed",
+      "referenceId": "cups-03-reversed",
+      "aliases": [
+        "Three of Cups",
+        "Ba Cốc",
+        "cups-03"
+      ],
+      "examples": [
+        "Three of Cups · ngược là gì?",
+        "Giải thích Three of Cups · ngược",
+        "Tra cứu Three of Cups · ngược"
+      ]
+    },
+    {
+      "id": "cups-04-upright",
+      "referenceId": "cups-04-upright",
+      "aliases": [
+        "Four of Cups",
+        "Bốn Cốc",
+        "cups-04"
+      ],
+      "examples": [
+        "Four of Cups · xuôi là gì?",
+        "Giải thích Four of Cups · xuôi",
+        "Tra cứu Four of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-04-reversed",
+      "referenceId": "cups-04-reversed",
+      "aliases": [
+        "Four of Cups",
+        "Bốn Cốc",
+        "cups-04"
+      ],
+      "examples": [
+        "Four of Cups · ngược là gì?",
+        "Giải thích Four of Cups · ngược",
+        "Tra cứu Four of Cups · ngược"
+      ]
+    },
+    {
+      "id": "cups-05-upright",
+      "referenceId": "cups-05-upright",
+      "aliases": [
+        "Five of Cups",
+        "Năm Cốc",
+        "cups-05"
+      ],
+      "examples": [
+        "Five of Cups · xuôi là gì?",
+        "Giải thích Five of Cups · xuôi",
+        "Tra cứu Five of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-05-reversed",
+      "referenceId": "cups-05-reversed",
+      "aliases": [
+        "Five of Cups",
+        "Năm Cốc",
+        "cups-05"
+      ],
+      "examples": [
+        "Five of Cups · ngược là gì?",
+        "Giải thích Five of Cups · ngược",
+        "Tra cứu Five of Cups · ngược"
+      ]
+    },
+    {
+      "id": "cups-06-upright",
+      "referenceId": "cups-06-upright",
+      "aliases": [
+        "Six of Cups",
+        "Sáu Cốc",
+        "cups-06"
+      ],
+      "examples": [
+        "Six of Cups · xuôi là gì?",
+        "Giải thích Six of Cups · xuôi",
+        "Tra cứu Six of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-06-reversed",
+      "referenceId": "cups-06-reversed",
+      "aliases": [
+        "Six of Cups",
+        "Sáu Cốc",
+        "cups-06"
+      ],
+      "examples": [
+        "Six of Cups · ngược là gì?",
+        "Giải thích Six of Cups · ngược",
+        "Tra cứu Six of Cups · ngược"
+      ]
+    },
+    {
+      "id": "cups-07-upright",
+      "referenceId": "cups-07-upright",
+      "aliases": [
+        "Seven of Cups",
+        "Bảy Cốc",
+        "cups-07"
+      ],
+      "examples": [
+        "Seven of Cups · xuôi là gì?",
+        "Giải thích Seven of Cups · xuôi",
+        "Tra cứu Seven of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-07-reversed",
+      "referenceId": "cups-07-reversed",
+      "aliases": [
+        "Seven of Cups",
+        "Bảy Cốc",
+        "cups-07"
+      ],
+      "examples": [
+        "Seven of Cups · ngược là gì?",
+        "Giải thích Seven of Cups · ngược",
+        "Tra cứu Seven of Cups · ngược"
+      ]
+    },
+    {
+      "id": "cups-08-upright",
+      "referenceId": "cups-08-upright",
+      "aliases": [
+        "Eight of Cups",
+        "Tám Cốc",
+        "cups-08"
+      ],
+      "examples": [
+        "Eight of Cups · xuôi là gì?",
+        "Giải thích Eight of Cups · xuôi",
+        "Tra cứu Eight of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-08-reversed",
+      "referenceId": "cups-08-reversed",
+      "aliases": [
+        "Eight of Cups",
+        "Tám Cốc",
+        "cups-08"
+      ],
+      "examples": [
+        "Eight of Cups · ngược là gì?",
+        "Giải thích Eight of Cups · ngược",
+        "Tra cứu Eight of Cups · ngược"
+      ]
+    },
+    {
+      "id": "cups-09-upright",
+      "referenceId": "cups-09-upright",
+      "aliases": [
+        "Nine of Cups",
+        "Chín Cốc",
+        "cups-09"
+      ],
+      "examples": [
+        "Nine of Cups · xuôi là gì?",
+        "Giải thích Nine of Cups · xuôi",
+        "Tra cứu Nine of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-09-reversed",
+      "referenceId": "cups-09-reversed",
+      "aliases": [
+        "Nine of Cups",
+        "Chín Cốc",
+        "cups-09"
+      ],
+      "examples": [
+        "Nine of Cups · ngược là gì?",
+        "Giải thích Nine of Cups · ngược",
+        "Tra cứu Nine of Cups · ngược"
+      ]
+    },
+    {
+      "id": "cups-10-upright",
+      "referenceId": "cups-10-upright",
+      "aliases": [
+        "Ten of Cups",
+        "Mười Cốc",
+        "cups-10"
+      ],
+      "examples": [
+        "Ten of Cups · xuôi là gì?",
+        "Giải thích Ten of Cups · xuôi",
+        "Tra cứu Ten of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-10-reversed",
+      "referenceId": "cups-10-reversed",
+      "aliases": [
+        "Ten of Cups",
+        "Mười Cốc",
+        "cups-10"
+      ],
+      "examples": [
+        "Ten of Cups · ngược là gì?",
+        "Giải thích Ten of Cups · ngược",
+        "Tra cứu Ten of Cups · ngược"
+      ]
+    },
+    {
+      "id": "cups-11-upright",
+      "referenceId": "cups-11-upright",
+      "aliases": [
+        "Page of Cups",
+        "Tiểu đồng Cốc",
+        "cups-11"
+      ],
+      "examples": [
+        "Page of Cups · xuôi là gì?",
+        "Giải thích Page of Cups · xuôi",
+        "Tra cứu Page of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-11-reversed",
+      "referenceId": "cups-11-reversed",
+      "aliases": [
+        "Page of Cups",
+        "Tiểu đồng Cốc",
+        "cups-11"
+      ],
+      "examples": [
+        "Page of Cups · ngược là gì?",
+        "Giải thích Page of Cups · ngược",
+        "Tra cứu Page of Cups · ngược"
+      ]
+    },
+    {
+      "id": "cups-12-upright",
+      "referenceId": "cups-12-upright",
+      "aliases": [
+        "Knight of Cups",
+        "Kỵ sĩ Cốc",
+        "cups-12"
+      ],
+      "examples": [
+        "Knight of Cups · xuôi là gì?",
+        "Giải thích Knight of Cups · xuôi",
+        "Tra cứu Knight of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-12-reversed",
+      "referenceId": "cups-12-reversed",
+      "aliases": [
+        "Knight of Cups",
+        "Kỵ sĩ Cốc",
+        "cups-12"
+      ],
+      "examples": [
+        "Knight of Cups · ngược là gì?",
+        "Giải thích Knight of Cups · ngược",
+        "Tra cứu Knight of Cups · ngược"
+      ]
+    },
+    {
+      "id": "cups-13-upright",
+      "referenceId": "cups-13-upright",
+      "aliases": [
+        "Queen of Cups",
+        "Hoàng hậu Cốc",
+        "cups-13"
+      ],
+      "examples": [
+        "Queen of Cups · xuôi là gì?",
+        "Giải thích Queen of Cups · xuôi",
+        "Tra cứu Queen of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-13-reversed",
+      "referenceId": "cups-13-reversed",
+      "aliases": [
+        "Queen of Cups",
+        "Hoàng hậu Cốc",
+        "cups-13"
+      ],
+      "examples": [
+        "Queen of Cups · ngược là gì?",
+        "Giải thích Queen of Cups · ngược",
+        "Tra cứu Queen of Cups · ngược"
+      ]
+    },
+    {
+      "id": "cups-14-upright",
+      "referenceId": "cups-14-upright",
+      "aliases": [
+        "King of Cups",
+        "Nhà vua Cốc",
+        "cups-14"
+      ],
+      "examples": [
+        "King of Cups · xuôi là gì?",
+        "Giải thích King of Cups · xuôi",
+        "Tra cứu King of Cups · xuôi"
+      ]
+    },
+    {
+      "id": "cups-14-reversed",
+      "referenceId": "cups-14-reversed",
+      "aliases": [
+        "King of Cups",
+        "Nhà vua Cốc",
+        "cups-14"
+      ],
+      "examples": [
+        "King of Cups · ngược là gì?",
+        "Giải thích King of Cups · ngược",
+        "Tra cứu King of Cups · ngược"
+      ]
+    },
+    {
+      "id": "swords-01-upright",
+      "referenceId": "swords-01-upright",
+      "aliases": [
+        "Ace of Swords",
+        "Át Kiếm",
+        "swords-01"
+      ],
+      "examples": [
+        "Ace of Swords · xuôi là gì?",
+        "Giải thích Ace of Swords · xuôi",
+        "Tra cứu Ace of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-01-reversed",
+      "referenceId": "swords-01-reversed",
+      "aliases": [
+        "Ace of Swords",
+        "Át Kiếm",
+        "swords-01"
+      ],
+      "examples": [
+        "Ace of Swords · ngược là gì?",
+        "Giải thích Ace of Swords · ngược",
+        "Tra cứu Ace of Swords · ngược"
+      ]
+    },
+    {
+      "id": "swords-02-upright",
+      "referenceId": "swords-02-upright",
+      "aliases": [
+        "Two of Swords",
+        "Hai Kiếm",
+        "swords-02"
+      ],
+      "examples": [
+        "Two of Swords · xuôi là gì?",
+        "Giải thích Two of Swords · xuôi",
+        "Tra cứu Two of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-02-reversed",
+      "referenceId": "swords-02-reversed",
+      "aliases": [
+        "Two of Swords",
+        "Hai Kiếm",
+        "swords-02"
+      ],
+      "examples": [
+        "Two of Swords · ngược là gì?",
+        "Giải thích Two of Swords · ngược",
+        "Tra cứu Two of Swords · ngược"
+      ]
+    },
+    {
+      "id": "swords-03-upright",
+      "referenceId": "swords-03-upright",
+      "aliases": [
+        "Three of Swords",
+        "Ba Kiếm",
+        "swords-03"
+      ],
+      "examples": [
+        "Three of Swords · xuôi là gì?",
+        "Giải thích Three of Swords · xuôi",
+        "Tra cứu Three of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-03-reversed",
+      "referenceId": "swords-03-reversed",
+      "aliases": [
+        "Three of Swords",
+        "Ba Kiếm",
+        "swords-03"
+      ],
+      "examples": [
+        "Three of Swords · ngược là gì?",
+        "Giải thích Three of Swords · ngược",
+        "Tra cứu Three of Swords · ngược"
+      ]
+    },
+    {
+      "id": "swords-04-upright",
+      "referenceId": "swords-04-upright",
+      "aliases": [
+        "Four of Swords",
+        "Bốn Kiếm",
+        "swords-04"
+      ],
+      "examples": [
+        "Four of Swords · xuôi là gì?",
+        "Giải thích Four of Swords · xuôi",
+        "Tra cứu Four of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-04-reversed",
+      "referenceId": "swords-04-reversed",
+      "aliases": [
+        "Four of Swords",
+        "Bốn Kiếm",
+        "swords-04"
+      ],
+      "examples": [
+        "Four of Swords · ngược là gì?",
+        "Giải thích Four of Swords · ngược",
+        "Tra cứu Four of Swords · ngược"
+      ]
+    },
+    {
+      "id": "swords-05-upright",
+      "referenceId": "swords-05-upright",
+      "aliases": [
+        "Five of Swords",
+        "Năm Kiếm",
+        "swords-05"
+      ],
+      "examples": [
+        "Five of Swords · xuôi là gì?",
+        "Giải thích Five of Swords · xuôi",
+        "Tra cứu Five of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-05-reversed",
+      "referenceId": "swords-05-reversed",
+      "aliases": [
+        "Five of Swords",
+        "Năm Kiếm",
+        "swords-05"
+      ],
+      "examples": [
+        "Five of Swords · ngược là gì?",
+        "Giải thích Five of Swords · ngược",
+        "Tra cứu Five of Swords · ngược"
+      ]
+    },
+    {
+      "id": "swords-06-upright",
+      "referenceId": "swords-06-upright",
+      "aliases": [
+        "Six of Swords",
+        "Sáu Kiếm",
+        "swords-06"
+      ],
+      "examples": [
+        "Six of Swords · xuôi là gì?",
+        "Giải thích Six of Swords · xuôi",
+        "Tra cứu Six of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-06-reversed",
+      "referenceId": "swords-06-reversed",
+      "aliases": [
+        "Six of Swords",
+        "Sáu Kiếm",
+        "swords-06"
+      ],
+      "examples": [
+        "Six of Swords · ngược là gì?",
+        "Giải thích Six of Swords · ngược",
+        "Tra cứu Six of Swords · ngược"
+      ]
+    },
+    {
+      "id": "swords-07-upright",
+      "referenceId": "swords-07-upright",
+      "aliases": [
+        "Seven of Swords",
+        "Bảy Kiếm",
+        "swords-07"
+      ],
+      "examples": [
+        "Seven of Swords · xuôi là gì?",
+        "Giải thích Seven of Swords · xuôi",
+        "Tra cứu Seven of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-07-reversed",
+      "referenceId": "swords-07-reversed",
+      "aliases": [
+        "Seven of Swords",
+        "Bảy Kiếm",
+        "swords-07"
+      ],
+      "examples": [
+        "Seven of Swords · ngược là gì?",
+        "Giải thích Seven of Swords · ngược",
+        "Tra cứu Seven of Swords · ngược"
+      ]
+    },
+    {
+      "id": "swords-08-upright",
+      "referenceId": "swords-08-upright",
+      "aliases": [
+        "Eight of Swords",
+        "Tám Kiếm",
+        "swords-08"
+      ],
+      "examples": [
+        "Eight of Swords · xuôi là gì?",
+        "Giải thích Eight of Swords · xuôi",
+        "Tra cứu Eight of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-08-reversed",
+      "referenceId": "swords-08-reversed",
+      "aliases": [
+        "Eight of Swords",
+        "Tám Kiếm",
+        "swords-08"
+      ],
+      "examples": [
+        "Eight of Swords · ngược là gì?",
+        "Giải thích Eight of Swords · ngược",
+        "Tra cứu Eight of Swords · ngược"
+      ]
+    },
+    {
+      "id": "swords-09-upright",
+      "referenceId": "swords-09-upright",
+      "aliases": [
+        "Nine of Swords",
+        "Chín Kiếm",
+        "swords-09"
+      ],
+      "examples": [
+        "Nine of Swords · xuôi là gì?",
+        "Giải thích Nine of Swords · xuôi",
+        "Tra cứu Nine of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-09-reversed",
+      "referenceId": "swords-09-reversed",
+      "aliases": [
+        "Nine of Swords",
+        "Chín Kiếm",
+        "swords-09"
+      ],
+      "examples": [
+        "Nine of Swords · ngược là gì?",
+        "Giải thích Nine of Swords · ngược",
+        "Tra cứu Nine of Swords · ngược"
+      ]
+    },
+    {
+      "id": "swords-10-upright",
+      "referenceId": "swords-10-upright",
+      "aliases": [
+        "Ten of Swords",
+        "Mười Kiếm",
+        "swords-10"
+      ],
+      "examples": [
+        "Ten of Swords · xuôi là gì?",
+        "Giải thích Ten of Swords · xuôi",
+        "Tra cứu Ten of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-10-reversed",
+      "referenceId": "swords-10-reversed",
+      "aliases": [
+        "Ten of Swords",
+        "Mười Kiếm",
+        "swords-10"
+      ],
+      "examples": [
+        "Ten of Swords · ngược là gì?",
+        "Giải thích Ten of Swords · ngược",
+        "Tra cứu Ten of Swords · ngược"
+      ]
+    },
+    {
+      "id": "swords-11-upright",
+      "referenceId": "swords-11-upright",
+      "aliases": [
+        "Page of Swords",
+        "Tiểu đồng Kiếm",
+        "swords-11"
+      ],
+      "examples": [
+        "Page of Swords · xuôi là gì?",
+        "Giải thích Page of Swords · xuôi",
+        "Tra cứu Page of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-11-reversed",
+      "referenceId": "swords-11-reversed",
+      "aliases": [
+        "Page of Swords",
+        "Tiểu đồng Kiếm",
+        "swords-11"
+      ],
+      "examples": [
+        "Page of Swords · ngược là gì?",
+        "Giải thích Page of Swords · ngược",
+        "Tra cứu Page of Swords · ngược"
+      ]
+    },
+    {
+      "id": "swords-12-upright",
+      "referenceId": "swords-12-upright",
+      "aliases": [
+        "Knight of Swords",
+        "Kỵ sĩ Kiếm",
+        "swords-12"
+      ],
+      "examples": [
+        "Knight of Swords · xuôi là gì?",
+        "Giải thích Knight of Swords · xuôi",
+        "Tra cứu Knight of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-12-reversed",
+      "referenceId": "swords-12-reversed",
+      "aliases": [
+        "Knight of Swords",
+        "Kỵ sĩ Kiếm",
+        "swords-12"
+      ],
+      "examples": [
+        "Knight of Swords · ngược là gì?",
+        "Giải thích Knight of Swords · ngược",
+        "Tra cứu Knight of Swords · ngược"
+      ]
+    },
+    {
+      "id": "swords-13-upright",
+      "referenceId": "swords-13-upright",
+      "aliases": [
+        "Queen of Swords",
+        "Hoàng hậu Kiếm",
+        "swords-13"
+      ],
+      "examples": [
+        "Queen of Swords · xuôi là gì?",
+        "Giải thích Queen of Swords · xuôi",
+        "Tra cứu Queen of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-13-reversed",
+      "referenceId": "swords-13-reversed",
+      "aliases": [
+        "Queen of Swords",
+        "Hoàng hậu Kiếm",
+        "swords-13"
+      ],
+      "examples": [
+        "Queen of Swords · ngược là gì?",
+        "Giải thích Queen of Swords · ngược",
+        "Tra cứu Queen of Swords · ngược"
+      ]
+    },
+    {
+      "id": "swords-14-upright",
+      "referenceId": "swords-14-upright",
+      "aliases": [
+        "King of Swords",
+        "Nhà vua Kiếm",
+        "swords-14"
+      ],
+      "examples": [
+        "King of Swords · xuôi là gì?",
+        "Giải thích King of Swords · xuôi",
+        "Tra cứu King of Swords · xuôi"
+      ]
+    },
+    {
+      "id": "swords-14-reversed",
+      "referenceId": "swords-14-reversed",
+      "aliases": [
+        "King of Swords",
+        "Nhà vua Kiếm",
+        "swords-14"
+      ],
+      "examples": [
+        "King of Swords · ngược là gì?",
+        "Giải thích King of Swords · ngược",
+        "Tra cứu King of Swords · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-01-upright",
+      "referenceId": "pentacles-01-upright",
+      "aliases": [
+        "Ace of Pentacles",
+        "Át Tiền",
+        "pentacles-01"
+      ],
+      "examples": [
+        "Ace of Pentacles · xuôi là gì?",
+        "Giải thích Ace of Pentacles · xuôi",
+        "Tra cứu Ace of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-01-reversed",
+      "referenceId": "pentacles-01-reversed",
+      "aliases": [
+        "Ace of Pentacles",
+        "Át Tiền",
+        "pentacles-01"
+      ],
+      "examples": [
+        "Ace of Pentacles · ngược là gì?",
+        "Giải thích Ace of Pentacles · ngược",
+        "Tra cứu Ace of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-02-upright",
+      "referenceId": "pentacles-02-upright",
+      "aliases": [
+        "Two of Pentacles",
+        "Hai Tiền",
+        "pentacles-02"
+      ],
+      "examples": [
+        "Two of Pentacles · xuôi là gì?",
+        "Giải thích Two of Pentacles · xuôi",
+        "Tra cứu Two of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-02-reversed",
+      "referenceId": "pentacles-02-reversed",
+      "aliases": [
+        "Two of Pentacles",
+        "Hai Tiền",
+        "pentacles-02"
+      ],
+      "examples": [
+        "Two of Pentacles · ngược là gì?",
+        "Giải thích Two of Pentacles · ngược",
+        "Tra cứu Two of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-03-upright",
+      "referenceId": "pentacles-03-upright",
+      "aliases": [
+        "Three of Pentacles",
+        "Ba Tiền",
+        "pentacles-03"
+      ],
+      "examples": [
+        "Three of Pentacles · xuôi là gì?",
+        "Giải thích Three of Pentacles · xuôi",
+        "Tra cứu Three of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-03-reversed",
+      "referenceId": "pentacles-03-reversed",
+      "aliases": [
+        "Three of Pentacles",
+        "Ba Tiền",
+        "pentacles-03"
+      ],
+      "examples": [
+        "Three of Pentacles · ngược là gì?",
+        "Giải thích Three of Pentacles · ngược",
+        "Tra cứu Three of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-04-upright",
+      "referenceId": "pentacles-04-upright",
+      "aliases": [
+        "Four of Pentacles",
+        "Bốn Tiền",
+        "pentacles-04"
+      ],
+      "examples": [
+        "Four of Pentacles · xuôi là gì?",
+        "Giải thích Four of Pentacles · xuôi",
+        "Tra cứu Four of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-04-reversed",
+      "referenceId": "pentacles-04-reversed",
+      "aliases": [
+        "Four of Pentacles",
+        "Bốn Tiền",
+        "pentacles-04"
+      ],
+      "examples": [
+        "Four of Pentacles · ngược là gì?",
+        "Giải thích Four of Pentacles · ngược",
+        "Tra cứu Four of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-05-upright",
+      "referenceId": "pentacles-05-upright",
+      "aliases": [
+        "Five of Pentacles",
+        "Năm Tiền",
+        "pentacles-05"
+      ],
+      "examples": [
+        "Five of Pentacles · xuôi là gì?",
+        "Giải thích Five of Pentacles · xuôi",
+        "Tra cứu Five of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-05-reversed",
+      "referenceId": "pentacles-05-reversed",
+      "aliases": [
+        "Five of Pentacles",
+        "Năm Tiền",
+        "pentacles-05"
+      ],
+      "examples": [
+        "Five of Pentacles · ngược là gì?",
+        "Giải thích Five of Pentacles · ngược",
+        "Tra cứu Five of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-06-upright",
+      "referenceId": "pentacles-06-upright",
+      "aliases": [
+        "Six of Pentacles",
+        "Sáu Tiền",
+        "pentacles-06"
+      ],
+      "examples": [
+        "Six of Pentacles · xuôi là gì?",
+        "Giải thích Six of Pentacles · xuôi",
+        "Tra cứu Six of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-06-reversed",
+      "referenceId": "pentacles-06-reversed",
+      "aliases": [
+        "Six of Pentacles",
+        "Sáu Tiền",
+        "pentacles-06"
+      ],
+      "examples": [
+        "Six of Pentacles · ngược là gì?",
+        "Giải thích Six of Pentacles · ngược",
+        "Tra cứu Six of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-07-upright",
+      "referenceId": "pentacles-07-upright",
+      "aliases": [
+        "Seven of Pentacles",
+        "Bảy Tiền",
+        "pentacles-07"
+      ],
+      "examples": [
+        "Seven of Pentacles · xuôi là gì?",
+        "Giải thích Seven of Pentacles · xuôi",
+        "Tra cứu Seven of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-07-reversed",
+      "referenceId": "pentacles-07-reversed",
+      "aliases": [
+        "Seven of Pentacles",
+        "Bảy Tiền",
+        "pentacles-07"
+      ],
+      "examples": [
+        "Seven of Pentacles · ngược là gì?",
+        "Giải thích Seven of Pentacles · ngược",
+        "Tra cứu Seven of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-08-upright",
+      "referenceId": "pentacles-08-upright",
+      "aliases": [
+        "Eight of Pentacles",
+        "Tám Tiền",
+        "pentacles-08"
+      ],
+      "examples": [
+        "Eight of Pentacles · xuôi là gì?",
+        "Giải thích Eight of Pentacles · xuôi",
+        "Tra cứu Eight of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-08-reversed",
+      "referenceId": "pentacles-08-reversed",
+      "aliases": [
+        "Eight of Pentacles",
+        "Tám Tiền",
+        "pentacles-08"
+      ],
+      "examples": [
+        "Eight of Pentacles · ngược là gì?",
+        "Giải thích Eight of Pentacles · ngược",
+        "Tra cứu Eight of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-09-upright",
+      "referenceId": "pentacles-09-upright",
+      "aliases": [
+        "Nine of Pentacles",
+        "Chín Tiền",
+        "pentacles-09"
+      ],
+      "examples": [
+        "Nine of Pentacles · xuôi là gì?",
+        "Giải thích Nine of Pentacles · xuôi",
+        "Tra cứu Nine of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-09-reversed",
+      "referenceId": "pentacles-09-reversed",
+      "aliases": [
+        "Nine of Pentacles",
+        "Chín Tiền",
+        "pentacles-09"
+      ],
+      "examples": [
+        "Nine of Pentacles · ngược là gì?",
+        "Giải thích Nine of Pentacles · ngược",
+        "Tra cứu Nine of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-10-upright",
+      "referenceId": "pentacles-10-upright",
+      "aliases": [
+        "Ten of Pentacles",
+        "Mười Tiền",
+        "pentacles-10"
+      ],
+      "examples": [
+        "Ten of Pentacles · xuôi là gì?",
+        "Giải thích Ten of Pentacles · xuôi",
+        "Tra cứu Ten of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-10-reversed",
+      "referenceId": "pentacles-10-reversed",
+      "aliases": [
+        "Ten of Pentacles",
+        "Mười Tiền",
+        "pentacles-10"
+      ],
+      "examples": [
+        "Ten of Pentacles · ngược là gì?",
+        "Giải thích Ten of Pentacles · ngược",
+        "Tra cứu Ten of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-11-upright",
+      "referenceId": "pentacles-11-upright",
+      "aliases": [
+        "Page of Pentacles",
+        "Tiểu đồng Tiền",
+        "pentacles-11"
+      ],
+      "examples": [
+        "Page of Pentacles · xuôi là gì?",
+        "Giải thích Page of Pentacles · xuôi",
+        "Tra cứu Page of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-11-reversed",
+      "referenceId": "pentacles-11-reversed",
+      "aliases": [
+        "Page of Pentacles",
+        "Tiểu đồng Tiền",
+        "pentacles-11"
+      ],
+      "examples": [
+        "Page of Pentacles · ngược là gì?",
+        "Giải thích Page of Pentacles · ngược",
+        "Tra cứu Page of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-12-upright",
+      "referenceId": "pentacles-12-upright",
+      "aliases": [
+        "Knight of Pentacles",
+        "Kỵ sĩ Tiền",
+        "pentacles-12"
+      ],
+      "examples": [
+        "Knight of Pentacles · xuôi là gì?",
+        "Giải thích Knight of Pentacles · xuôi",
+        "Tra cứu Knight of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-12-reversed",
+      "referenceId": "pentacles-12-reversed",
+      "aliases": [
+        "Knight of Pentacles",
+        "Kỵ sĩ Tiền",
+        "pentacles-12"
+      ],
+      "examples": [
+        "Knight of Pentacles · ngược là gì?",
+        "Giải thích Knight of Pentacles · ngược",
+        "Tra cứu Knight of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-13-upright",
+      "referenceId": "pentacles-13-upright",
+      "aliases": [
+        "Queen of Pentacles",
+        "Hoàng hậu Tiền",
+        "pentacles-13"
+      ],
+      "examples": [
+        "Queen of Pentacles · xuôi là gì?",
+        "Giải thích Queen of Pentacles · xuôi",
+        "Tra cứu Queen of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-13-reversed",
+      "referenceId": "pentacles-13-reversed",
+      "aliases": [
+        "Queen of Pentacles",
+        "Hoàng hậu Tiền",
+        "pentacles-13"
+      ],
+      "examples": [
+        "Queen of Pentacles · ngược là gì?",
+        "Giải thích Queen of Pentacles · ngược",
+        "Tra cứu Queen of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "pentacles-14-upright",
+      "referenceId": "pentacles-14-upright",
+      "aliases": [
+        "King of Pentacles",
+        "Nhà vua Tiền",
+        "pentacles-14"
+      ],
+      "examples": [
+        "King of Pentacles · xuôi là gì?",
+        "Giải thích King of Pentacles · xuôi",
+        "Tra cứu King of Pentacles · xuôi"
+      ]
+    },
+    {
+      "id": "pentacles-14-reversed",
+      "referenceId": "pentacles-14-reversed",
+      "aliases": [
+        "King of Pentacles",
+        "Nhà vua Tiền",
+        "pentacles-14"
+      ],
+      "examples": [
+        "King of Pentacles · ngược là gì?",
+        "Giải thích King of Pentacles · ngược",
+        "Tra cứu King of Pentacles · ngược"
+      ]
+    },
+    {
+      "id": "zodiac-Aries",
+      "referenceId": "zodiac-Aries",
+      "aliases": [
+        "Aries",
+        "Bạch Dương"
+      ],
+      "examples": [
+        "Cung Bạch Dương là gì?",
+        "Giải thích Cung Bạch Dương",
+        "Tra cứu Cung Bạch Dương"
+      ]
+    },
+    {
+      "id": "zodiac-Taurus",
+      "referenceId": "zodiac-Taurus",
+      "aliases": [
+        "Taurus",
+        "Kim Ngưu"
+      ],
+      "examples": [
+        "Cung Kim Ngưu là gì?",
+        "Giải thích Cung Kim Ngưu",
+        "Tra cứu Cung Kim Ngưu"
+      ]
+    },
+    {
+      "id": "zodiac-Gemini",
+      "referenceId": "zodiac-Gemini",
+      "aliases": [
+        "Gemini",
+        "Song Tử"
+      ],
+      "examples": [
+        "Cung Song Tử là gì?",
+        "Giải thích Cung Song Tử",
+        "Tra cứu Cung Song Tử"
+      ]
+    },
+    {
+      "id": "zodiac-Cancer",
+      "referenceId": "zodiac-Cancer",
+      "aliases": [
+        "Cancer",
+        "Cự Giải"
+      ],
+      "examples": [
+        "Cung Cự Giải là gì?",
+        "Giải thích Cung Cự Giải",
+        "Tra cứu Cung Cự Giải"
+      ]
+    },
+    {
+      "id": "zodiac-Leo",
+      "referenceId": "zodiac-Leo",
+      "aliases": [
+        "Leo",
+        "Sư Tử"
+      ],
+      "examples": [
+        "Cung Sư Tử là gì?",
+        "Giải thích Cung Sư Tử",
+        "Tra cứu Cung Sư Tử"
+      ]
+    },
+    {
+      "id": "zodiac-Virgo",
+      "referenceId": "zodiac-Virgo",
+      "aliases": [
+        "Virgo",
+        "Xử Nữ"
+      ],
+      "examples": [
+        "Cung Xử Nữ là gì?",
+        "Giải thích Cung Xử Nữ",
+        "Tra cứu Cung Xử Nữ"
+      ]
+    },
+    {
+      "id": "zodiac-Libra",
+      "referenceId": "zodiac-Libra",
+      "aliases": [
+        "Libra",
+        "Thiên Bình"
+      ],
+      "examples": [
+        "Cung Thiên Bình là gì?",
+        "Giải thích Cung Thiên Bình",
+        "Tra cứu Cung Thiên Bình"
+      ]
+    },
+    {
+      "id": "zodiac-Scorpio",
+      "referenceId": "zodiac-Scorpio",
+      "aliases": [
+        "Scorpio",
+        "Bọ Cạp"
+      ],
+      "examples": [
+        "Cung Bọ Cạp là gì?",
+        "Giải thích Cung Bọ Cạp",
+        "Tra cứu Cung Bọ Cạp"
+      ]
+    },
+    {
+      "id": "zodiac-Sagittarius",
+      "referenceId": "zodiac-Sagittarius",
+      "aliases": [
+        "Sagittarius",
+        "Nhân Mã"
+      ],
+      "examples": [
+        "Cung Nhân Mã là gì?",
+        "Giải thích Cung Nhân Mã",
+        "Tra cứu Cung Nhân Mã"
+      ]
+    },
+    {
+      "id": "zodiac-Capricorn",
+      "referenceId": "zodiac-Capricorn",
+      "aliases": [
+        "Capricorn",
+        "Ma Kết"
+      ],
+      "examples": [
+        "Cung Ma Kết là gì?",
+        "Giải thích Cung Ma Kết",
+        "Tra cứu Cung Ma Kết"
+      ]
+    },
+    {
+      "id": "zodiac-Aquarius",
+      "referenceId": "zodiac-Aquarius",
+      "aliases": [
+        "Aquarius",
+        "Bảo Bình"
+      ],
+      "examples": [
+        "Cung Bảo Bình là gì?",
+        "Giải thích Cung Bảo Bình",
+        "Tra cứu Cung Bảo Bình"
+      ]
+    },
+    {
+      "id": "zodiac-Pisces",
+      "referenceId": "zodiac-Pisces",
+      "aliases": [
+        "Pisces",
+        "Song Ngư"
+      ],
+      "examples": [
+        "Cung Song Ngư là gì?",
+        "Giải thích Cung Song Ngư",
+        "Tra cứu Cung Song Ngư"
+      ]
+    },
+    {
+      "id": "bagua-can",
+      "referenceId": "bagua-can",
+      "aliases": [
+        "quẻ Càn"
+      ],
+      "examples": [
+        "Quẻ Càn là gì?",
+        "Giải thích Quẻ Càn",
+        "Tra cứu Quẻ Càn"
+      ]
+    },
+    {
+      "id": "bagua-doai",
+      "referenceId": "bagua-doai",
+      "aliases": [
+        "quẻ Đoài"
+      ],
+      "examples": [
+        "Quẻ Đoài là gì?",
+        "Giải thích Quẻ Đoài",
+        "Tra cứu Quẻ Đoài"
+      ]
+    },
+    {
+      "id": "bagua-ly",
+      "referenceId": "bagua-ly",
+      "aliases": [
+        "quẻ Ly"
+      ],
+      "examples": [
+        "Quẻ Ly là gì?",
+        "Giải thích Quẻ Ly",
+        "Tra cứu Quẻ Ly"
+      ]
+    },
+    {
+      "id": "bagua-chan",
+      "referenceId": "bagua-chan",
+      "aliases": [
+        "quẻ Chấn"
+      ],
+      "examples": [
+        "Quẻ Chấn là gì?",
+        "Giải thích Quẻ Chấn",
+        "Tra cứu Quẻ Chấn"
+      ]
+    },
+    {
+      "id": "bagua-ton",
+      "referenceId": "bagua-ton",
+      "aliases": [
+        "quẻ Tốn"
+      ],
+      "examples": [
+        "Quẻ Tốn là gì?",
+        "Giải thích Quẻ Tốn",
+        "Tra cứu Quẻ Tốn"
+      ]
+    },
+    {
+      "id": "bagua-kham",
+      "referenceId": "bagua-kham",
+      "aliases": [
+        "quẻ Khảm"
+      ],
+      "examples": [
+        "Quẻ Khảm là gì?",
+        "Giải thích Quẻ Khảm",
+        "Tra cứu Quẻ Khảm"
+      ]
+    },
+    {
+      "id": "bagua-can-son",
+      "referenceId": "bagua-can-son",
+      "aliases": [
+        "quẻ Cấn"
+      ],
+      "examples": [
+        "Quẻ Cấn là gì?",
+        "Giải thích Quẻ Cấn",
+        "Tra cứu Quẻ Cấn"
+      ]
+    },
+    {
+      "id": "bagua-khon",
+      "referenceId": "bagua-khon",
+      "aliases": [
+        "quẻ Khôn"
+      ],
+      "examples": [
+        "Quẻ Khôn là gì?",
+        "Giải thích Quẻ Khôn",
+        "Tra cứu Quẻ Khôn"
+      ]
+    },
+    {
+      "id": "branch-0",
+      "referenceId": "branch-0",
+      "aliases": [
+        "tuổi Tý",
+        "chi Tý",
+        "con giáp Tý"
+      ],
+      "examples": [
+        "Địa chi Tý là gì?",
+        "Giải thích Địa chi Tý",
+        "Tra cứu Địa chi Tý"
+      ]
+    },
+    {
+      "id": "branch-1",
+      "referenceId": "branch-1",
+      "aliases": [
+        "tuổi Sửu",
+        "chi Sửu",
+        "con giáp Sửu"
+      ],
+      "examples": [
+        "Địa chi Sửu là gì?",
+        "Giải thích Địa chi Sửu",
+        "Tra cứu Địa chi Sửu"
+      ]
+    },
+    {
+      "id": "branch-2",
+      "referenceId": "branch-2",
+      "aliases": [
+        "tuổi Dần",
+        "chi Dần",
+        "con giáp Dần"
+      ],
+      "examples": [
+        "Địa chi Dần là gì?",
+        "Giải thích Địa chi Dần",
+        "Tra cứu Địa chi Dần"
+      ]
+    },
+    {
+      "id": "branch-3",
+      "referenceId": "branch-3",
+      "aliases": [
+        "tuổi Mão",
+        "chi Mão",
+        "con giáp Mão"
+      ],
+      "examples": [
+        "Địa chi Mão là gì?",
+        "Giải thích Địa chi Mão",
+        "Tra cứu Địa chi Mão"
+      ]
+    },
+    {
+      "id": "branch-4",
+      "referenceId": "branch-4",
+      "aliases": [
+        "tuổi Thìn",
+        "chi Thìn",
+        "con giáp Thìn"
+      ],
+      "examples": [
+        "Địa chi Thìn là gì?",
+        "Giải thích Địa chi Thìn",
+        "Tra cứu Địa chi Thìn"
+      ]
+    },
+    {
+      "id": "branch-5",
+      "referenceId": "branch-5",
+      "aliases": [
+        "tuổi Tị",
+        "chi Tị",
+        "con giáp Tị"
+      ],
+      "examples": [
+        "Địa chi Tị là gì?",
+        "Giải thích Địa chi Tị",
+        "Tra cứu Địa chi Tị"
+      ]
+    },
+    {
+      "id": "branch-6",
+      "referenceId": "branch-6",
+      "aliases": [
+        "tuổi Ngọ",
+        "chi Ngọ",
+        "con giáp Ngọ"
+      ],
+      "examples": [
+        "Địa chi Ngọ là gì?",
+        "Giải thích Địa chi Ngọ",
+        "Tra cứu Địa chi Ngọ"
+      ]
+    },
+    {
+      "id": "branch-7",
+      "referenceId": "branch-7",
+      "aliases": [
+        "tuổi Mùi",
+        "chi Mùi",
+        "con giáp Mùi"
+      ],
+      "examples": [
+        "Địa chi Mùi là gì?",
+        "Giải thích Địa chi Mùi",
+        "Tra cứu Địa chi Mùi"
+      ]
+    },
+    {
+      "id": "branch-8",
+      "referenceId": "branch-8",
+      "aliases": [
+        "tuổi Thân",
+        "chi Thân",
+        "con giáp Thân"
+      ],
+      "examples": [
+        "Địa chi Thân là gì?",
+        "Giải thích Địa chi Thân",
+        "Tra cứu Địa chi Thân"
+      ]
+    },
+    {
+      "id": "branch-9",
+      "referenceId": "branch-9",
+      "aliases": [
+        "tuổi Dậu",
+        "chi Dậu",
+        "con giáp Dậu"
+      ],
+      "examples": [
+        "Địa chi Dậu là gì?",
+        "Giải thích Địa chi Dậu",
+        "Tra cứu Địa chi Dậu"
+      ]
+    },
+    {
+      "id": "branch-10",
+      "referenceId": "branch-10",
+      "aliases": [
+        "tuổi Tuất",
+        "chi Tuất",
+        "con giáp Tuất"
+      ],
+      "examples": [
+        "Địa chi Tuất là gì?",
+        "Giải thích Địa chi Tuất",
+        "Tra cứu Địa chi Tuất"
+      ]
+    },
+    {
+      "id": "branch-11",
+      "referenceId": "branch-11",
+      "aliases": [
+        "tuổi Hợi",
+        "chi Hợi",
+        "con giáp Hợi"
+      ],
+      "examples": [
+        "Địa chi Hợi là gì?",
+        "Giải thích Địa chi Hợi",
+        "Tra cứu Địa chi Hợi"
+      ]
+    },
+    {
+      "id": "stem-0",
+      "referenceId": "stem-0",
+      "aliases": [
+        "can Giáp"
+      ],
+      "examples": [
+        "Thiên can Giáp là gì?",
+        "Giải thích Thiên can Giáp",
+        "Tra cứu Thiên can Giáp"
+      ]
+    },
+    {
+      "id": "stem-1",
+      "referenceId": "stem-1",
+      "aliases": [
+        "can Ất"
+      ],
+      "examples": [
+        "Thiên can Ất là gì?",
+        "Giải thích Thiên can Ất",
+        "Tra cứu Thiên can Ất"
+      ]
+    },
+    {
+      "id": "stem-2",
+      "referenceId": "stem-2",
+      "aliases": [
+        "can Bính"
+      ],
+      "examples": [
+        "Thiên can Bính là gì?",
+        "Giải thích Thiên can Bính",
+        "Tra cứu Thiên can Bính"
+      ]
+    },
+    {
+      "id": "stem-3",
+      "referenceId": "stem-3",
+      "aliases": [
+        "can Đinh"
+      ],
+      "examples": [
+        "Thiên can Đinh là gì?",
+        "Giải thích Thiên can Đinh",
+        "Tra cứu Thiên can Đinh"
+      ]
+    },
+    {
+      "id": "stem-4",
+      "referenceId": "stem-4",
+      "aliases": [
+        "can Mậu"
+      ],
+      "examples": [
+        "Thiên can Mậu là gì?",
+        "Giải thích Thiên can Mậu",
+        "Tra cứu Thiên can Mậu"
+      ]
+    },
+    {
+      "id": "stem-5",
+      "referenceId": "stem-5",
+      "aliases": [
+        "can Kỷ"
+      ],
+      "examples": [
+        "Thiên can Kỷ là gì?",
+        "Giải thích Thiên can Kỷ",
+        "Tra cứu Thiên can Kỷ"
+      ]
+    },
+    {
+      "id": "stem-6",
+      "referenceId": "stem-6",
+      "aliases": [
+        "can Canh"
+      ],
+      "examples": [
+        "Thiên can Canh là gì?",
+        "Giải thích Thiên can Canh",
+        "Tra cứu Thiên can Canh"
+      ]
+    },
+    {
+      "id": "stem-7",
+      "referenceId": "stem-7",
+      "aliases": [
+        "can Tân"
+      ],
+      "examples": [
+        "Thiên can Tân là gì?",
+        "Giải thích Thiên can Tân",
+        "Tra cứu Thiên can Tân"
+      ]
+    },
+    {
+      "id": "stem-8",
+      "referenceId": "stem-8",
+      "aliases": [
+        "can Nhâm"
+      ],
+      "examples": [
+        "Thiên can Nhâm là gì?",
+        "Giải thích Thiên can Nhâm",
+        "Tra cứu Thiên can Nhâm"
+      ]
+    },
+    {
+      "id": "stem-9",
+      "referenceId": "stem-9",
+      "aliases": [
+        "can Quý"
+      ],
+      "examples": [
+        "Thiên can Quý là gì?",
+        "Giải thích Thiên can Quý",
+        "Tra cứu Thiên can Quý"
+      ]
+    },
+    {
+      "id": "truc-0",
+      "referenceId": "truc-0",
+      "aliases": [
+        "trực Kiến"
+      ],
+      "examples": [
+        "Trực Kiến là gì?",
+        "Giải thích Trực Kiến",
+        "Tra cứu Trực Kiến"
+      ]
+    },
+    {
+      "id": "truc-1",
+      "referenceId": "truc-1",
+      "aliases": [
+        "trực Trừ"
+      ],
+      "examples": [
+        "Trực Trừ là gì?",
+        "Giải thích Trực Trừ",
+        "Tra cứu Trực Trừ"
+      ]
+    },
+    {
+      "id": "truc-2",
+      "referenceId": "truc-2",
+      "aliases": [
+        "trực Mãn"
+      ],
+      "examples": [
+        "Trực Mãn là gì?",
+        "Giải thích Trực Mãn",
+        "Tra cứu Trực Mãn"
+      ]
+    },
+    {
+      "id": "truc-3",
+      "referenceId": "truc-3",
+      "aliases": [
+        "trực Bình"
+      ],
+      "examples": [
+        "Trực Bình là gì?",
+        "Giải thích Trực Bình",
+        "Tra cứu Trực Bình"
+      ]
+    },
+    {
+      "id": "truc-4",
+      "referenceId": "truc-4",
+      "aliases": [
+        "trực Định"
+      ],
+      "examples": [
+        "Trực Định là gì?",
+        "Giải thích Trực Định",
+        "Tra cứu Trực Định"
+      ]
+    },
+    {
+      "id": "truc-5",
+      "referenceId": "truc-5",
+      "aliases": [
+        "trực Chấp"
+      ],
+      "examples": [
+        "Trực Chấp là gì?",
+        "Giải thích Trực Chấp",
+        "Tra cứu Trực Chấp"
+      ]
+    },
+    {
+      "id": "truc-6",
+      "referenceId": "truc-6",
+      "aliases": [
+        "trực Phá"
+      ],
+      "examples": [
+        "Trực Phá là gì?",
+        "Giải thích Trực Phá",
+        "Tra cứu Trực Phá"
+      ]
+    },
+    {
+      "id": "truc-7",
+      "referenceId": "truc-7",
+      "aliases": [
+        "trực Nguy"
+      ],
+      "examples": [
+        "Trực Nguy là gì?",
+        "Giải thích Trực Nguy",
+        "Tra cứu Trực Nguy"
+      ]
+    },
+    {
+      "id": "truc-8",
+      "referenceId": "truc-8",
+      "aliases": [
+        "trực Thành"
+      ],
+      "examples": [
+        "Trực Thành là gì?",
+        "Giải thích Trực Thành",
+        "Tra cứu Trực Thành"
+      ]
+    },
+    {
+      "id": "truc-9",
+      "referenceId": "truc-9",
+      "aliases": [
+        "trực Thâu"
+      ],
+      "examples": [
+        "Trực Thâu là gì?",
+        "Giải thích Trực Thâu",
+        "Tra cứu Trực Thâu"
+      ]
+    },
+    {
+      "id": "truc-10",
+      "referenceId": "truc-10",
+      "aliases": [
+        "trực Khai"
+      ],
+      "examples": [
+        "Trực Khai là gì?",
+        "Giải thích Trực Khai",
+        "Tra cứu Trực Khai"
+      ]
+    },
+    {
+      "id": "truc-11",
+      "referenceId": "truc-11",
+      "aliases": [
+        "trực Bế"
+      ],
+      "examples": [
+        "Trực Bế là gì?",
+        "Giải thích Trực Bế",
+        "Tra cứu Trực Bế"
+      ]
+    }
+  ]
+}

@@ -91,11 +91,13 @@ test('Multiple profiles persist and daily scores stay stable; calendar events pe
   await page.getByRole('textbox', { name: 'Tên của bạn' }).fill('Minh');
   await page.getByLabel('Ngày sinh dương lịch').fill('1995-05-15');
   await page.getByLabel('Giờ sinh').fill('09:30');
+  await page.getByRole('checkbox', { name: /Tôi đồng ý lưu thông tin sinh/ }).check();
   await page.getByRole('button', { name: 'Lưu hồ sơ' }).click();
   await expect(page.getByRole('heading', { name: 'Kim Ngưu', exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Thêm hồ sơ' }).click();
   await page.getByRole('textbox', { name: 'Tên của bạn' }).fill('An');
   await page.getByLabel('Ngày sinh dương lịch').fill('2000-10-29');
+  await page.getByRole('checkbox', { name: /Tôi đồng ý lưu thông tin sinh/ }).check();
   await page.getByRole('button', { name: 'Lưu hồ sơ' }).click();
   await page.reload();
   await expect(page.getByRole('heading', { name: 'Bọ Cạp', exact: true })).toBeVisible();
@@ -172,7 +174,7 @@ test('Mobile can draw from the fan with animation enabled and Home opens the dai
   await page.screenshot({ path: '/tmp/astroai-reading-mobile.png', fullPage: true });
 });
 
-test('Corrupt or blocked browser storage does not crash the app and save failures are visible', async ({
+test('Corrupt legacy records and blocked LocalStorage do not prevent IndexedDB saves', async ({
   page,
 }) => {
   await page.addInitScript(() => {
@@ -186,8 +188,9 @@ test('Corrupt or blocked browser storage does not crash the app and save failure
   await page.goto('/profile');
   await page.getByRole('textbox', { name: 'Tên của bạn' }).fill('Hồ sơ thử');
   await page.getByLabel('Ngày sinh dương lịch').fill('1995-05-15');
+  await page.getByRole('checkbox', { name: /Tôi đồng ý lưu thông tin sinh/ }).check();
   await page.getByRole('button', { name: 'Lưu hồ sơ' }).click();
-  await expect(page.getByRole('alert')).toContainText('Không thể lưu');
+  await expect(page.getByRole('status')).toContainText('Đã cập nhật hồ sơ');
   await page.goto('/tarot');
   await expect(page.getByRole('heading', { name: 'Không gian Tarot.' })).toBeVisible();
   await page.getByRole('tab', { name: 'Nhật ký', exact: true }).click();
@@ -201,6 +204,10 @@ test('Corrupt or blocked browser storage does not crash the app and save failure
 test('JoJo setting persists, library maps Star Platinum/Jotaro, and journal keeps orientation and original meaning', async ({
   page,
 }) => {
+  test.skip(
+    process.env.VITE_ENABLE_REFERENCE_ART !== 'true',
+    'Reference images require publisher rights verification and an opt-in build.',
+  );
   const reading = {
     id: 'jojo-fixture',
     deckId: 'celestial-v1',
@@ -274,6 +281,10 @@ test('JoJo setting persists, library maps Star Platinum/Jotaro, and journal keep
 test('Mobile JoJo setting and real flips show the corresponding Stands and preserve reversed cards', async ({
   page,
 }) => {
+  test.skip(
+    process.env.VITE_ENABLE_REFERENCE_ART !== 'true',
+    'Reference images require publisher rights verification and an opt-in build.',
+  );
   await page.setViewportSize({ width: 390, height: 844 });
   await page.addInitScript(() => {
     Object.defineProperty(Crypto.prototype, 'getRandomValues', {

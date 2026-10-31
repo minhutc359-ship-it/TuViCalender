@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useSyncExternalStore } from 'react';
+import { deviceDatabase } from '../offline/db';
 
 export function readStorage<T>(
   key: string,
@@ -6,7 +7,7 @@ export function readStorage<T>(
   validate?: (value: unknown) => value is T,
 ): T {
   try {
-    const raw = localStorage.getItem(key);
+    const raw = deviceDatabase.getItem(key);
     if (!raw) return fallback;
     const value: unknown = JSON.parse(raw);
     return !validate || validate(value) ? (value as T) : fallback;
@@ -17,8 +18,7 @@ export function readStorage<T>(
 
 export function writeStorage(key: string, value: unknown): boolean {
   try {
-    localStorage.setItem(key, JSON.stringify(value));
-    return true;
+    return deviceDatabase.write(key, JSON.stringify(value));
   } catch {
     return false;
   }
@@ -29,11 +29,15 @@ export function useStoredState<T>(
   initial: T,
   validate?: (value: unknown) => value is T,
 ) {
-  const [value, setValue] = useState<T>(() => readStorage(key, initial, validate));
+  useSyncExternalStore(
+    deviceDatabase.subscribe,
+    () => deviceDatabase.state,
+    () => deviceDatabase.state,
+  );
+  const value = readStorage(key, initial, validate);
   const [storageError, setStorageError] = useState(false);
   const update = (next: T) => {
     setStorageError(!writeStorage(key, next));
-    setValue(next);
   };
   return [value, update, storageError] as const;
 }

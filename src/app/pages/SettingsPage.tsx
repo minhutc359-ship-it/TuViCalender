@@ -2,6 +2,7 @@ import { Check, Palette, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router';
 import { TAROT_CARDS } from '../../features/tarot/data/cards';
 import {
+  REFERENCE_ART_ENABLED,
   JOJO_REFERENCES,
   JOJO_MAPPING_SOURCE,
   type TarotAppearanceId,
@@ -11,6 +12,7 @@ import { TarotArtwork } from '../../features/tarot/components/TarotArtwork';
 import { ReadingMethod } from '../../features/tarot/components/ReadingMethod';
 import { OfflineSettings } from '../components/OfflineSettings';
 import { VisualSettings } from '../components/astro/VisualSettings';
+import { BackupSettings } from '../components/BackupSettings';
 
 export default function SettingsPage() {
   const { appearance, setAppearance, storageError } = useTarotAppearance();
@@ -42,41 +44,49 @@ export default function SettingsPage() {
         <Palette className="gold" size={28} />
       </div>
       <VisualSettings />
+      {!REFERENCE_ART_ENABLED && (
+        <p className="small muted">
+          Bản phát hành dùng 78 minh họa Celestial gốc. Bộ hình nhân vật tham chiếu chỉ mở trong cấu
+          hình riêng sau khi bên phát hành xác minh quyền sử dụng.
+        </p>
+      )}
       <fieldset className="appearance-fieldset">
         <legend>Minh họa thẻ bài Tarot</legend>
         <div className="appearance-options">
-          {options.map((option) => (
-            <label
-              className={`appearance-option panel ${appearance === option.id ? 'selected' : ''}`}
-              key={option.id}
-            >
-              <input
-                type="radio"
-                name="tarot-appearance"
-                value={option.id}
-                checked={appearance === option.id}
-                onChange={() => setAppearance(option.id)}
-                aria-label={option.name}
-              />
-              <div className="appearance-preview" aria-hidden="true">
-                {option.cards.map((index) => (
-                  <TarotArtwork key={index} card={TAROT_CARDS[index]} appearance={option.id} />
-                ))}
-              </div>
-              <div className="appearance-description">
-                <span className="appearance-option-heading">
-                  <strong>{option.name}</strong>
-                  {appearance === option.id && <Check size={18} />}
-                </span>
-                <p>{option.description}</p>
-                <small>
-                  {option.id === 'jojo-ref'
-                    ? 'Major: đối ứng trong truyện · Minor: liên tưởng mỹ thuật'
-                    : 'Đủ 78 lá · Artwork biểu tượng Celestial'}
-                </small>
-              </div>
-            </label>
-          ))}
+          {options
+            .filter((option) => option.id !== 'jojo-ref' || REFERENCE_ART_ENABLED)
+            .map((option) => (
+              <label
+                className={`appearance-option panel ${appearance === option.id ? 'selected' : ''}`}
+                key={option.id}
+              >
+                <input
+                  type="radio"
+                  name="tarot-appearance"
+                  value={option.id}
+                  checked={appearance === option.id}
+                  onChange={() => setAppearance(option.id)}
+                  aria-label={option.name}
+                />
+                <div className="appearance-preview" aria-hidden="true">
+                  {option.cards.map((index) => (
+                    <TarotArtwork key={index} card={TAROT_CARDS[index]} appearance={option.id} />
+                  ))}
+                </div>
+                <div className="appearance-description">
+                  <span className="appearance-option-heading">
+                    <strong>{option.name}</strong>
+                    {appearance === option.id && <Check size={18} />}
+                  </span>
+                  <p>{option.description}</p>
+                  <small>
+                    {option.id === 'jojo-ref'
+                      ? 'Major: đối ứng trong truyện · Minor: liên tưởng mỹ thuật'
+                      : 'Đủ 78 lá · Artwork biểu tượng Celestial'}
+                  </small>
+                </div>
+              </label>
+            ))}
         </div>
       </fieldset>
       <p className="success small" role="status">
@@ -134,6 +144,7 @@ export default function SettingsPage() {
       </details>
       <ReadingMethod />
       <OfflineSettings />
+      <BackupSettings />
     </div>
   );
 }

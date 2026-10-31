@@ -4,13 +4,14 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "build": "vite build && node scripts/build-offline.mjs",
+    "build": "npm run content:build && vite build && node scripts/build-offline.mjs && node scripts/verify-offline.mjs",
     "dev": "vite",
     "typecheck": "tsc --noEmit",
-    "test": "node --import tsx tests/core.test.ts && node --import tsx tests/tarot-reading.test.ts && node --import tsx tests/ai-handler.test.ts",
+    "test": "node --import tsx tests/core.test.ts && node --import tsx tests/tarot-reading.test.ts && node --import tsx tests/ai-handler.test.ts && node --import tsx tests/local-chat.test.ts && node --import tsx tests/backup.test.ts && node --import tsx tests/service-worker.test.ts && node --import tsx tests/indexeddb.test.ts && node --import tsx tests/solar-and-snapshot.test.ts",
     "test:e2e": "playwright test",
     "preview": "vite preview",
-    "test:offline": "playwright test --config playwright.offline.config.ts"
+    "test:offline": "playwright test --config playwright.offline.config.ts",
+    "content:build": "node --import tsx scripts/build-content.ts"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
@@ -77,6 +78,7 @@
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "4.7.0",
+    "fake-indexeddb": "^6.2.4",
     "tailwindcss": "4.1.12",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",

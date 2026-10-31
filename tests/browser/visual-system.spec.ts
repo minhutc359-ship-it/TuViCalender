@@ -63,6 +63,7 @@ test('Calendar day sheet supports keyboard close and event entry; profile shows 
   await page.getByLabel('Tên của bạn').fill('Minh');
   await page.getByLabel('Ngày sinh dương lịch').fill('1995-05-15');
   await page.getByLabel('Giờ sinh').fill('09:30');
+  await page.getByRole('checkbox', { name: /Tôi đồng ý lưu thông tin sinh/ }).check();
   await page.getByRole('button', { name: 'Lưu hồ sơ', exact: true }).click();
   await expect(page.locator('.profile-western .astro-zodiac-wheel')).toHaveCount(1);
   await expect(page.locator('.profile-eastern')).toContainText('Hợi');
@@ -72,7 +73,7 @@ test('Calendar day sheet supports keyboard close and event entry; profile shows 
   await page.screenshot({ path: testInfo.outputPath('fusion-profile.png'), fullPage: true });
 });
 
-test('Persona switches update welcome, prompt cards and local preference without enabling unauthenticated chat', async ({
+test('Persona switches update welcome, prompt cards and local preference while enabling local chat without authentication', async ({
   page,
 }, testInfo) => {
   await page.goto('/chat');
@@ -82,7 +83,7 @@ test('Persona switches update welcome, prompt cards and local preference without
   await expect(page.getByLabel('Tin nhắn cho trợ lý')).toHaveValue(
     'Tôi muốn hiểu thông điệp Tarot.',
   );
-  await expect(page.getByRole('button', { name: 'Gửi tin nhắn', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Gửi tin nhắn', exact: true })).toBeEnabled();
   await page.reload();
   await expect(page.getByRole('button', { name: /AI Tây phương Tarot/ })).toHaveAttribute(
     'aria-pressed',
@@ -105,9 +106,21 @@ test('All themes fit small screens and reduced motion disables every decorative 
     for (const route of ['/', '/calendar', '/tarot', '/profile', '/chat']) {
       await page.goto(route);
       await expect(page.locator('h1')).toBeVisible();
-      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
-        true,
+      const overflow = await page.evaluate(() =>
+        [...document.querySelectorAll('main *')]
+          .filter((e) => e.getBoundingClientRect().right > innerWidth + 1)
+          .slice(0, 12)
+          .map((e) => ({
+            tag: e.tagName,
+            css: e.className,
+            width: e.getBoundingClientRect().width,
+            text: e.textContent?.slice(0, 100),
+          })),
       );
+      expect(
+        await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+        `${theme} ${route}: ${JSON.stringify(overflow)}`,
+      ).toBe(true);
     }
   }
   await page.emulateMedia({ reducedMotion: 'reduce' });
