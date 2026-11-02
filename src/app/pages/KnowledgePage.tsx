@@ -10,6 +10,7 @@ import {
 } from '../../features/knowledge/catalog';
 import { useStoredState } from '../../lib/storage';
 import { KnowledgeWheel } from '../../features/knowledge/KnowledgeWheel';
+import { AnimeLoreGallery } from '../components/AnimeLoreGallery';
 export default function KnowledgePage() {
   useKnowledge();
   const [loading, setLoading] = useState(true);
@@ -104,6 +105,18 @@ export default function KnowledgePage() {
           </button>
         </section>
       )}
+      <AnimeLoreGallery />
+      <div className="oracle-invite panel">
+        <div>
+          <span className="eyebrow">NGHI THỨC OFFLINE · KHÔNG AI</span>
+          <h2>Gieo sáu hào, đọc hai quái</h2>
+          <p>
+            Dùng ngẫu nhiên Web Crypto, lưu tại thiết bị và phân biệt rõ hình tượng truyền thống
+            với lời khuyên biên tập.
+          </p>
+        </div>
+        <Link className="button primary" to="/oracle">Mở không gian gieo quẻ</Link>
+      </div>
       <KnowledgeWheel onSelect={id=>{setParams({id});setQuery('');setCategory('all');setLimit(24);}} />
       <div className="knowledge-filters panel">
         <label>
@@ -146,7 +159,7 @@ export default function KnowledgePage() {
           <article key={entry.id} className="knowledge-entry panel" id={entry.id}>
             <h2>{entry.title}</h2>
             <p>{entry.content}</p>
-            <small className="muted">Nguồn nội bộ: {entry.source}</small>
+            <small className="muted">Nguồn/phương pháp: {entry.source}</small>
             <button
               className="button subtle"
               aria-pressed={saved.includes(entry.id)}

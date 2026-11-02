@@ -1,6 +1,7 @@
 import { isProfiles } from '../lib/profiles';
 import { isReadings } from '../features/tarot/engine/reading';
 import { validMessages } from '../features/chatbot/messages';
+import { isOracleCast } from '../features/oracle/engine';
 import { deviceDatabase, deviceStorage } from './db';
 
 export interface Backup {
@@ -29,6 +30,11 @@ const keys: Record<
   'astroai.tarot-journal.v1': {
     title: 'Nhật ký Tarot',
     valid: (v) => isReadings(v) && v.length <= 200,
+    merge: 'id',
+  },
+  'astroai.oracle.v1': {
+    title: 'Nhật ký gieo quẻ',
+    valid: (v) => Array.isArray(v) && v.length <= 30 && v.every(isOracleCast),
     merge: 'id',
   },
   'astroai.calendar-events.v1': {

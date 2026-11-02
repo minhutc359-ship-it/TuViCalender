@@ -7,7 +7,7 @@
     "build": "npm run content:build && vite build && node scripts/build-offline.mjs && node scripts/verify-offline.mjs",
     "dev": "vite",
     "typecheck": "tsc --noEmit",
-    "test": "node --import tsx tests/core.test.ts && node --import tsx tests/tarot-reading.test.ts && node --import tsx tests/ai-handler.test.ts && node --import tsx tests/local-chat.test.ts && node --import tsx tests/backup.test.ts && node --import tsx tests/service-worker.test.ts && node --import tsx tests/indexeddb.test.ts && node --import tsx tests/solar-and-snapshot.test.ts",
+    "test": "node --import tsx tests/core.test.ts && node --import tsx tests/tarot-reading.test.ts && node --import tsx tests/oracle.test.ts && node --import tsx tests/ai-handler.test.ts && node --import tsx tests/local-chat.test.ts && node --import tsx tests/backup.test.ts && node --import tsx tests/service-worker.test.ts && node --import tsx tests/indexeddb.test.ts && node --import tsx tests/solar-and-snapshot.test.ts",
     "test:e2e": "playwright test",
     "preview": "vite preview",
     "test:offline": "playwright test --config playwright.offline.config.ts",

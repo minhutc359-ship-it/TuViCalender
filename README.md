@@ -40,12 +40,14 @@ Nếu máy đã có Chrome, đặt `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` thành 
 - Luận giải tại máy cho đủ 78 lá: xuôi/ngược, chủ đề, vị trí trải, liên hệ giữa lá, hành động và câu hỏi suy ngẫm. Không cần API AI.
 - Cài đặt chọn Celestial hoặc JoJo ref cho đủ 78 lá; tải trọn bộ để mở lại ứng dụng khi mất mạng.
 - Sáu minh họa editorial Celestial Feng Shui cho Home, Đông phương, Tây phương, Lịch, Hồ sơ và Chat; WebP lazy-load và được kiểm tra trong core offline pack.
+- Mười hai cảnh nhân vật anime nguyên bản: 5 Ngũ hành, 4 nguyên tố Zodiac và 3 ngữ cảnh Tarot; có gallery, caption/alt và pack ownership riêng.
+- Gieo sáu hào offline bằng Web Crypto, ghép hai quái, đánh dấu hào động, lưu 30 phiên gần nhất và đi cùng cảnh báo phương pháp.
 - Xào/xòe bài, chọn bằng chuột hoặc bàn phím, lật 3D tuần tự, phóng to artwork, hỗ trợ giảm chuyển động.
 - Thư viện tìm kiếm và lọc theo bộ; nhật ký lưu câu hỏi, hướng lá và ghi chú, xem lại/sửa/xóa. Giữ tối đa 200 phiên.
 - Hồ sơ: thêm, sửa, xóa, chuyển nhiều hồ sơ; cung Mặt Trời, Can Chi, con giáp và thuộc tính tham khảo.
 - Lịch dương/âm UTC+7, sáu bộ lọc sự kiện, lọc lục xung năm sinh âm và sự kiện cá nhân.
 - Chỉ số cảm hứng và lá Tarot hằng ngày ổn định theo ngày Việt Nam và hồ sơ.
-- AI qua Supabase Edge Function: đăng nhập bằng email, lịch sử cục bộ theo tài khoản và chuyển câu hỏi từ kết quả Tarot.
+- AI qua Supabase Edge Function: đăng nhập Google hoặc email, local-first, quota 20 lượt/ngày/tài khoản và trần tổng do nhà phát hành cấu hình.
 
 Nhật ký, hồ sơ và sự kiện **lưu trên trình duyệt hiện tại**; chưa đồng bộ giữa thiết bị. Xóa dữ liệu trình duyệt sẽ xóa dữ liệu này. Chỉ thông tin bạn gửi trong hội thoại được chuyển tới backend AI; biểu mẫu hồ sơ không tự động được gửi.
 
@@ -53,7 +55,7 @@ Nhật ký, hồ sơ và sự kiện **lưu trên trình duyệt hiện tại**;
 
 Bộ biểu tượng/vector của hệ thị giác được mô tả trong [docs/MYSTIC_FUSION.md](./docs/MYSTIC_FUSION.md). Vòng hoàng đạo chỉ đánh dấu cung Mặt Trời theo khoảng ngày; không phải biểu đồ vị trí hành tinh. Phân bố ngũ hành chỉ đếm thiên can đã có, không đánh giá vượng suy Bát tự.
 
-Ba lá đầu và mặt lưng giữ nguyên SVG trong `AstroAI_Celestial_Tarot_Concept`. Mười chín Major còn lại là artwork biểu tượng; Minor dùng hệ hình pip theo chất và cấp bậc, không phải 75 tranh nhân vật hoàn chỉnh. Không dùng hình thương mại từ các đường dẫn tham khảo trong spec. Xem [ATTRIBUTIONS.md](./ATTRIBUTIONS.md).
+Celestial gồm đủ 78 cảnh SVG nguyên bản, có script tái tạo và mặt lưng riêng. Bộ 12 cảnh nhân vật anime dùng cho nội dung học/luận giải, không thay thế nghĩa lá. Prompt, attribution và mapping pack nằm trong [tài liệu Source of Truth](./docs/ASTROAI_VISUAL_MOTION_INTERPRETATION_SOURCE_OF_TRUTH.md) và [ATTRIBUTIONS.md](./ATTRIBUTIONS.md).
 
 Asset vector được tải theo trang và ảnh thư viện dùng lazy loading; mặt lưng có thêm WebP. Công cụ tái tạo artwork cần Python + Pillow:
 
@@ -69,11 +71,11 @@ Tệp `.env` trước đây đã được loại khỏi bản cập nhật; **kh
 
 ## Phương pháp và giới hạn
 
-Âm lịch kế thừa thuật toán thiên văn Hồ Ngọc Đức; đã sửa việc xác định năm âm tại ranh giới năm. Can Chi ngày dùng Julian day number, giờ hoàng đạo dùng bảng địa chi ngày (sáu khung giờ), ngày hoàng đạo dùng bảng tháng âm–địa chi. Trực dùng quy ước tháng âm, chưa hiệu chỉnh theo tiết khí; 28 Tú và điểm ngày vẫn giản lược. Bộ lọc tuổi chỉ xét lục xung năm âm.
+Âm lịch kế thừa thuật toán thiên văn Hồ Ngọc Đức; đã sửa việc xác định năm âm tại ranh giới năm. Can Chi ngày dùng Julian day number, giờ hoàng đạo dùng bảng địa chi ngày (sáu khung giờ), ngày hoàng đạo dùng bảng tháng âm–địa chi. Trực dùng tháng tiết khí xấp xỉ; 28 Tú được đánh dấu chưa kiểm định và không tham gia điểm. Bộ lọc tuổi chỉ xét lục xung năm âm.
 
-Hồ sơ chưa phải lá số Bát tự/natal chart đầy đủ: trụ tháng dựa tháng âm, cung Mặt Trời dùng khoảng ngày, chưa tính cung Mọc hoặc Mặt Trăng. Chỉ số cảm hứng là hàm băm xác định phục vụ giải trí, không đo sức khỏe hay dự báo kết quả thực tế.
+Hồ sơ chưa phải lá số Bát tự/natal chart đầy đủ: bốn trụ UTC+7 dùng tháng tiết khí xấp xỉ khi đủ giờ, cung Mặt Trời dùng khoảng ngày, chưa tính cung Mọc hoặc Mặt Trăng. Chỉ số cảm hứng là hàm băm xác định phục vụ giải trí, không đo sức khỏe hay dự báo kết quả thực tế.
 
-Các phần tiếp theo của lộ trình như 75 tranh Celestial chi tiết, đồng bộ Supabase, lá số thiên văn đầy đủ, thông báo và Kinh Dịch chưa được triển khai. Bản này có manifest và service worker cho ngoại tuyến. Xem [FEATURES.md](./FEATURES.md).
+Các phần tiếp theo của lộ trình gồm đồng bộ cloud, lá số thiên văn đầy đủ, thông báo và bộ 64 quẻ/384 hào được biên tập–rà soát. Bản hiện tại chỉ gieo sáu hào, ghép hai quái và đưa câu hỏi tự soi chiếu; không tự nhận là bản dịch Kinh Dịch. Xem [FEATURES.md](./FEATURES.md).
 
 ## Cài đặt minh họa Tarot · JoJo ref
 
@@ -108,8 +110,8 @@ npm run preview
 
 ### AstroAI 2.0 Offline-First — 31/10/2026
 
-Bản chuẩn có bốn content pack độc lập, IndexedDB và chuyển dữ liệu cũ, backup JSON có preview/transaction, chatbot local không cần đăng nhập, thư viện 229 nhóm tra cứu và 78 cảnh Tarot Celestial gốc. AI online là opt-in; thiếu mạng/key/API lỗi vẫn có local fallback. Nhật ký lưu snapshot để giữ nguyên luận giải qua cập nhật.
+Bản chuẩn có bốn content pack độc lập, IndexedDB và chuyển dữ liệu cũ, backup JSON có preview/transaction, chatbot local không cần đăng nhập, thư viện 230 nhóm tra cứu, Oracle offline và 78 cảnh Tarot Celestial gốc. AI online là opt-in; thiếu mạng/key/API lỗi vẫn có local fallback. Nhật ký lưu snapshot để giữ nguyên luận giải qua cập nhật.
 
 Chạy `npm ci`, `npm run typecheck`, `npm test`, `npm run build`, `npm run test:e2e`, `npm run test:offline`. Build kiểm SHA-256, pack ownership và gate 50 MiB. Nội dung tính lịch/chiêm tinh là truyền thống hoặc xấp xỉ có giới hạn công khai.
 
-Chi tiết: [plan.md](plan.md), [FEATURES.md](FEATURES.md), [kiểm chứng](docs/OFFLINE_FIRST_VERIFICATION.md), [triển khai](DEPLOYMENT.md). Các bước thu hồi khóa/deploy RLS/kiểm thiết bị thật cần thực hiện ngoài source; cloud sync và natal chart đầy đủ là sau MVP.
+Chi tiết: [Source of Truth](docs/ASTROAI_VISUAL_MOTION_INTERPRETATION_SOURCE_OF_TRUTH.md), [plan.md](plan.md), [FEATURES.md](FEATURES.md), [kiểm chứng](docs/OFFLINE_FIRST_VERIFICATION.md), [triển khai](DEPLOYMENT.md). Các bước thu hồi khóa/deploy RLS/kiểm thiết bị thật cần thực hiện ngoài source; cloud sync và natal chart đầy đủ là sau MVP.

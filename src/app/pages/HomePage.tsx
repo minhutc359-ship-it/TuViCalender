@@ -313,6 +313,10 @@ export default function HomePage() {
             Xem lịch & lưu sự kiện
             <ArrowUpRight size={16} />
           </Link>
+          <Link to="/oracle" className="button subtle">
+            Gieo quẻ offline
+            <ArrowUpRight size={16} />
+          </Link>
         </section>
         <section className="content-panel panel western-portal">
           <img

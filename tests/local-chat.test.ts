@@ -56,6 +56,7 @@ const cases: Array<[string, string]> = [
   ['xem hồ sơ', 'navigate'],
   ['Bói một lá hôm nay', 'navigate'],
   ['mở thư viện', 'navigate'],
+  ['Gieo quẻ', 'navigate'],
 ];
 // Fixed independent oracle: all 22 Major plus all 56 Minor, named by the public deck convention.
 const major = [

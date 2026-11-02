@@ -15,6 +15,12 @@ export function TarotResult({
 }) {
   const result = readingResult(reading);
   const { appearance } = useTarotAppearance();
+  const reflectionArt =
+    result.topic.id === 'love'
+      ? ['/assets/anime/tarot/love-reflection.webp', 'Hai người trưởng thành đối thoại về ranh giới bên bàn Tarot']
+      : result.topic.id === 'career' || result.topic.id === 'finance'
+        ? ['/assets/anime/tarot/career-reflection.webp', 'Người đọc Tarot biến thông điệp thành kế hoạch có thể kiểm chứng']
+        : ['/assets/anime/tarot/self-reflection.webp', 'Người đọc ba lá Tarot như ba tấm gương tự soi chiếu'];
   return (
     <div className="reading-result" data-interpretation-version={result.version}>
       <div className="result-intro">
@@ -30,6 +36,23 @@ export function TarotResult({
         <h3>Một cách tiếp cận tình huống</h3>
         <p>{result.overview}</p>
       </section>
+      <figure className="reading-anime-illustration panel">
+        <img
+          src={reflectionArt[0]}
+          alt={reflectionArt[1]}
+          loading="lazy"
+          decoding="async"
+          onError={(event) => {
+            event.currentTarget.onerror = null;
+            event.currentTarget.src = '/assets/illustrations/fusion-home.webp';
+          }}
+        />
+        <figcaption>
+          <span className="eyebrow">MINH HOẠ NGỮ CẢNH · KHÔNG THAY ĐỔI KẾT QUẢ</span>
+          <strong>{result.topic.label}: từ biểu tượng đến hành động nhỏ</strong>
+          <p>Ảnh giúp định hướng cách đọc dễ tiếp cận; luận giải vẫn đến từ dữ liệu lá, vị trí, hướng và bộ quy tắc offline.</p>
+        </figcaption>
+      </figure>
       <div className="interpretations">
         {result.cards.map((item, index) => {
           const reference = appearance === 'jojo-ref' ? JOJO_BY_CARD.get(item.card.id) : undefined;

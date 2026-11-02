@@ -35,3 +35,5 @@ The JoJo reference source assets and mappings are enabled in the standard produc
 ## AstroAI editorial illustrations
 
 The six WebP scene illustrations in `public/assets/illustrations/` were generated for this project with OpenAI's built-in image generation tool, then resized and compressed locally. They contain no embedded copy, logos or requested copyrighted characters. The exact asset roles and final prompt set are recorded in [`docs/ILLUSTRATION_PROMPTS.md`](docs/ILLUSTRATION_PROMPTS.md).
+
+The twelve character-led WebP illustrations under `public/assets/anime/` were generated for AstroAI with the same built-in tool on 02/11/2026. They depict original Eastern element, Western zodiac-element and Tarot-reflection scenes; no named artist, studio, franchise character, logo or embedded copy was requested. Production derivatives are 768×768 WebP; prompts and asset-to-pack mapping are documented in the same prompt record and in the Visual/Motion/Interpretation Source of Truth.

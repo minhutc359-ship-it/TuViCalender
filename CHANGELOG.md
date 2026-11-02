@@ -15,5 +15,9 @@
 - Trực theo tháng tiết khí xấp xỉ, bảng bốn trụ UTC+7 có giới hạn công khai; dừng đưa ra 28 Tú từ công thức chưa được đối chiếu.
 - Sửa responsive 320–1280 px, swipe lịch không click nhầm ngày; preserve reduced motion/keyboard và các luồng hiện có.
 - Gate dung lượng ≤50 MiB, manifest verifier, RLS migration source, CI và báo cáo nghiệm thu.
+- Thêm 6 minh họa WebP Celestial Feng Shui; nâng luận giải lên `rws-vi-3` với lời khuyên tham khảo có cấu trúc; thêm Google OAuth cho gói AI 20 lượt/ngày.
+- Thêm 12 cảnh anime nguyên bản theo pack, gallery Đông–Tây–Tarot, hiệu ứng tab/card/reveal và ảnh chủ đề trong kết quả Tarot.
+- Thêm gieo sáu hào offline, lưu/backup 30 phiên; phân biệt rõ hai quái và lời khuyên biên tập với bản dịch 64 quẻ/384 hào.
+- Ban hành `ASTROAI_VISUAL_MOTION_INTERPRETATION_SOURCE_OF_TRUTH.md` với registry nguồn, claim taxonomy, motion, budget và release gates.
 
 Các thao tác tài khoản nhà cung cấp, deploy backend, kiểm thử thiết bị thật và phương pháp chưa được kiểm định vẫn nêu trong plan; cloud sync/natal chart đầy đủ thuộc sau MVP.

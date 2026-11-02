@@ -34,6 +34,6 @@ export const validMessages = (value: unknown): value is AIMessage[] =>
                   typeof a.label === 'string' &&
                   a.label.length <= 200 &&
                   typeof a.route === 'string' &&
-                  /^\/(knowledge|calendar|tarot|profile)(\?[^\s]*)?$/.test(a.route),
+                  /^\/(knowledge|calendar|tarot|profile|oracle)(\?[^\s]*)?$/.test(a.route),
               ))))),
   );

@@ -37,6 +37,7 @@ const fallback = (): ChatResponse => ({
     { label: 'Tra cứu kiến thức', route: '/knowledge' },
     { label: 'Xem lịch', route: '/calendar' },
     { label: 'Trải bài Tarot', route: '/tarot' },
+    { label: 'Gieo quẻ offline', route: '/oracle' },
   ],
 });
 const validDate = (d: number, m: number, y: number) => {
@@ -59,6 +60,7 @@ export function replyLocal(message: string, now = new Date()): ChatResponse {
     [/^(mo|xem) ho so$/, '/profile', 'Mở hồ sơ'],
     [/^(mo|xem|boi|rut) (tarot|bai|mot la|1 la)( hom nay)?$/, '/tarot', 'Trải bài Tarot'],
     [/^(mo|tim|xem) (thu vien|kien thuc)$/, '/knowledge', 'Tra cứu kiến thức'],
+    [/^(mo|gieo|xin|xem) (que|que dich|sau hao)$/, '/oracle', 'Gieo quẻ offline'],
   ];
   const nav = routes.find(([re]) => re.test(q));
   if (nav)
@@ -171,16 +173,20 @@ export function replyLocal(message: string, now = new Date()): ChatResponse {
       content:
         'Để tra cung Mặt Trời, hãy gửi ngày sinh dương lịch dạng dd/mm/yyyy. Moon/Rising chưa được tính trong phiên bản này, kể cả khi có đủ hồ sơ sinh.',
     };
-  // Full aliases with word boundaries prevent partial matches (e.g. Kim vs Kim Ngưu).
-  const normalizedMatches = KNOWLEDGE.filter((entry) =>
-    entry.aliases.some((alias) => ` ${q} `.includes(` ${normalizeText(alias)} `)),
-  );
   const accented = (v: string) =>
     v
       .toLocaleLowerCase('vi')
       .normalize('NFC')
       .replace(/[^\p{L}\d]+/gu, ' ')
       .trim();
+  const exactTitle =
+    KNOWLEDGE.find((entry) => accented(message).includes(accented(entry.title))) ??
+    KNOWLEDGE.find((entry) => q.includes(normalizeText(entry.title)));
+  if (exactTitle) return reference(exactTitle);
+  // Full aliases with word boundaries prevent partial matches (e.g. Kim vs Kim Ngưu).
+  const normalizedMatches = KNOWLEDGE.filter((entry) =>
+    entry.aliases.some((alias) => ` ${q} `.includes(` ${normalizeText(alias)} `)),
+  );
   const exactAccents = normalizedMatches.filter((entry) =>
     entry.aliases.some((alias) => ` ${accented(message)} `.includes(` ${accented(alias)} `)),
   );

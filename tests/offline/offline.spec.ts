@@ -54,7 +54,14 @@ test('Complete download enables cold offline reload, all 78 JoJo refs, detailed 
   await expect(page.locator('.chat-source').last()).toHaveText('Gợi ý trong phạm vi hỗ trợ');
   await page.reload();
   await expect(page.locator('.chat-source')).toHaveCount(11);
-  await page.getByRole('link', { name: 'Tra cứu thư viện Đông–Tây và Tarot', exact: true }).click();
+  await page.goto('/oracle');
+  await page.getByPlaceholder('Ví dụ: Tôi có thể chủ động điều gì trong tuần này?').fill('Điều gì cần nhìn rõ khi offline?');
+  await page.getByRole('button', { name: 'Gieo sáu hào' }).click();
+  await expect(page.locator('.oracle-line')).toHaveCount(6);
+  await page.reload();
+  await expect(page.locator('.oracle-line')).toHaveCount(6);
+  await expect(page.locator('.oracle-reading blockquote')).toContainText('Điều gì cần nhìn rõ khi offline?');
+  await page.goto('/knowledge');
   await page.getByRole('searchbox', { name: 'Tìm nội dung' }).fill('The Star');
   await expect(page.locator('.knowledge-entry')).toHaveCount(2);
   await page.goto('/tarot');
@@ -203,11 +210,15 @@ test('independent pack deletion preserves IndexedDB profiles, is reflected offli
   await page.goto('/settings');
   const core = page.locator('[data-pack=core]'),
     east = page.locator('[data-pack=eastern]');
+  const manifest = await (await page.request.get('/offline-manifest.json')).json();
+  const easternFileCount = manifest.packs.find(
+    (pack: { id: string; files: string[] }) => pack.id === 'eastern',
+  ).files.length;
   await expect(core.getByRole('status')).toContainText('Sẵn sàng offline', { timeout: 15000 });
   await east.getByRole('button', { name: 'Tải / tiếp tục', exact: true }).click();
   await expect(east.getByRole('status')).toContainText('Sẵn sàng offline');
   await east.getByRole('button', { name: 'Xóa pack Tri thức Đông phương', exact: true }).click();
-  await expect(east.getByRole('status')).toContainText('0/1');
+  await expect(east.getByRole('status')).toContainText(`0/${easternFileCount} tệp`);
   await context.setOffline(true);
   await page.goto('/knowledge');
   await page.getByRole('searchbox', { name: 'Tìm nội dung' }).fill('mệnh Mộc');

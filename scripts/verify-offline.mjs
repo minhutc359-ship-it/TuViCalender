@@ -46,6 +46,14 @@ assert.ok(
     manifest.packs.find((pack) => pack.id === 'core').files.includes(file.path),
   ),
 );
+const anime = manifest.files.filter((file) => file.path.startsWith('/assets/anime/'));
+assert.equal(anime.length, 12);
+for (const [folder, count] of [['eastern', 5], ['western', 4], ['tarot', 3]]) {
+  const files = anime.filter((file) => file.path.startsWith(`/assets/anime/${folder}/`));
+  assert.equal(files.length, count);
+  assert.ok(files.every((file) => manifest.packs.find((pack) => pack.id === folder).files.includes(file.path)));
+  for (const file of files) assert.ok(file.size > 50000 && file.size < 200000);
+}
 if (process.env.VITE_ENABLE_REFERENCE_ART === 'false')
   assert.ok(!manifest.files.some((file) => file.path.includes('/jojo-ref/')));
 else {
@@ -55,5 +63,5 @@ else {
   assert.ok(jojoFiles.every((file) => tarotPack.files.includes(file.path)));
 }
 console.log(
-  `Verified four packs: ${manifest.files.length} unique files, SHA-256/size/ownership/dependencies/icons and 50 MiB gate.`,
+  `Verified four packs: ${manifest.files.length} unique files, 12 anime scenes, SHA-256/size/ownership/dependencies/icons and 50 MiB gate.`,
 );

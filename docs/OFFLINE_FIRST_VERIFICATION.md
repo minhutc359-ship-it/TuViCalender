@@ -1,22 +1,22 @@
 # Kiểm chứng AstroAI 2.0 — 02/11/2026
 
-Base `13d0e46`. Thay đổi được chuẩn bị thành một commit để push trực tiếp `master` theo yêu cầu chủ dự án. Báo cáo mô tả source và kiểm thử, không xác nhận backend đã deploy hoặc khóa lịch sử đã thu hồi.
+Base `ff12c07`. Bản anime/Oracle được tích hợp thành một commit trên master mới nhất theo yêu cầu chủ dự án. Báo cáo mô tả source và kiểm thử, không xác nhận backend đã deploy hoặc khóa lịch sử đã thu hồi.
 
 ## Kết quả đã chạy
 
 | Kiểm tra | Kết quả |
 | --- | --- |
 | `npm run typecheck` | Pass |
-| `npm test` | **45 tests pass**: core 11, Tarot 7, AI handler 6, local chat 5, backup 4, service worker 6, IndexedDB 4, solar/snapshot 2 |
-| Local corpus | 128 câu mẫu độc lập và câu chuẩn cho cả 229 nhóm tra cứu đều đúng intent |
+| `npm test` | **48 tests pass**: core 11, Tarot 7, Oracle 3, AI handler 6, local chat 5, backup 4, service worker 6, IndexedDB 4, solar/snapshot 2 |
+| Local corpus | 129 câu mẫu độc lập và câu chuẩn cho cả 230 nhóm tra cứu đều đúng intent |
 | `npm run build` | Pass, kèm kiểm chứng 4 pack, SHA-256, sizes, ownership, icons và gate dung lượng |
-| Browser E2E | **16 pass**, gồm 2 luồng JoJo ref và luồng Google OAuth qua Supabase |
-| Production offline E2E | **4 pass** |
-| Responsive | 7 route ở 320, 375, 390, 768, 1280 px; ba theme ở 360 px; không overflow |
+| Browser E2E | **17 pass trên CI**, gồm JoJo ref, Google OAuth, anime gallery và Oracle reload |
+| Production offline E2E | **4 flows configured**, gồm cold reload Oracle/Tarot; CI là bằng chứng phát hành sau push |
+| Responsive | 8 route được kiểm ở 320, 375, 390, 768, 1280 px; ba theme ở 360 px |
 | Motion/keyboard | OS reduced-motion, không gian tĩnh, modal Escape, swipe lịch không click nhầm ngày |
 | `git diff --check` | Pass |
 
-Chromium kiểm thử cục bộ: 141.0.7390.0, chạy qua Playwright 1.64.1. Binary là công cụ kiểm thử ngoài repository, không đóng vào ứng dụng. CI dùng browser do Playwright cài trên runner.
+Workspace hiện tại đã kiểm tra thủ công Home, gallery Đông–Tây và gieo/reload sáu hào trên trình duyệt preview. Không có binary Playwright cục bộ cho bản này; CI cài browser trên runner. Lượt CI đầu qua 17 browser flows và 3/4 offline flows; test xóa pack còn cố định số file cũ đã được đổi sang số file trong manifest để hỗ trợ artwork bổ sung. Kết quả toàn bộ offline sau sửa được đối chiếu ở GitHub Actions.
 
 ## Hành vi đã xác nhận
 
@@ -32,21 +32,21 @@ Chromium kiểm thử cục bộ: 141.0.7390.0, chạy qua Playwright 1.64.1. Bi
 
 ## Dung lượng đo từ build
 
-Manifest `000bd03a45cf1099`; tổng gồm worker/manifest:
+Manifest `a503aa4ec8001e94`; tổng gồm worker/manifest:
 
 | Chỉ số | MiB |
 | --- | ---: |
-| Raw assets | 24.304 |
-| Ước tính gzip transfer | 22.702 |
-| Core raw | 1.940 |
+| Raw assets | 25.784 |
+| Ước tính gzip transfer | 24.164 |
+| Core raw | 1.961 |
 | Giới hạn raw và gzip estimate | 50 |
 
 | Pack | Files | Raw MiB |
 | --- | ---: | ---: |
-| core | 37 | 1.940 |
-| eastern | 1 | 0.033 |
-| western | 1 | 0.009 |
-| tarot | 182 | 22.232 |
+| core | 40 | 1.961 |
+| eastern | 6 | 0.633 |
+| western | 5 | 0.542 |
+| tarot | 185 | 22.552 |
 
 SVG được nén rất hiệu quả; gzip là ước tính từ file build, không phải số traffic đã đo trên hosting. Không cộng dữ liệu cá nhân, metadata của browser hoặc cache phiên bản trước. `reports/offline-size.json` là báo cáo từng file do build/CI tạo.
 
@@ -61,6 +61,8 @@ Không tiếp tục dùng công thức 28 Tú reset theo tháng âm: mục này 
 Còn cần thao tác/tài nguyên bên ngoài: thu hồi khóa lịch sử và kiểm tra usage nhà cung cấp; bật Google provider, đặt OAuth callback, deploy Edge Function/hai migration quota và kiểm chứng Supabase bằng tài khoản thật; thử iPhone/Android/PWA thật, Lighthouse/Web Vitals/FPS trên thiết bị. CI xác nhận URL OAuth được tạo đúng nhưng không thể thay thế đăng nhập Google production. Cloud sync/conflict và natal chart đầy đủ là sau MVP.
 
 ## Minh họa và rollback
+
+![Mười hai minh họa nhân vật anime nguyên bản](astroai-anime-illustrations.jpg)
 
 ![Sáu minh họa editorial Celestial Feng Shui](astroai-editorial-illustrations.jpg)
 

@@ -7,7 +7,7 @@ export interface KnowledgeEntry {
   content: string;
   source: string;
 }
-export const KNOWLEDGE_VERSION = 'vi-2026.10.31-1';
+export const KNOWLEDGE_VERSION = 'vi-2026.11.02-2';
 export const KNOWLEDGE: KnowledgeEntry[] = [];
 const groups = new Map<string, KnowledgeEntry[]>();
 const listeners = new Set<() => void>();

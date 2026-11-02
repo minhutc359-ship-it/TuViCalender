@@ -22,6 +22,7 @@ const TarotPage = lazy(() => import('./pages/TarotPage'));
 const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const SettingsPage = lazy(() => import('./pages/SettingsPage'));
 const KnowledgePage = lazy(() => import('./pages/KnowledgePage'));
+const OraclePage = lazy(() => import('./pages/OraclePage'));
 
 const links = [
   { to: '/', name: 'Tổng quan', icon: Home },
@@ -39,7 +40,8 @@ function Shell() {
   }, []);
   useEffect(() => {
     window.scrollTo({ top: 0 });
-    document.title = `${links.find((l) => l.to === pathname)?.name ?? (pathname === '/knowledge' ? 'Thư viện chiêm nghiệm' : 'Trang không tồn tại')} · AstroAI`;
+    const auxiliaryTitle = pathname === '/knowledge' ? 'Thư viện chiêm nghiệm' : pathname === '/oracle' ? 'Gieo quẻ offline' : 'Trang không tồn tại';
+    document.title = `${links.find((l) => l.to === pathname)?.name ?? auxiliaryTitle} · AstroAI`;
   }, [pathname]);
   return (
     <div className="app-shell">
@@ -96,6 +98,7 @@ function Shell() {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="/knowledge" element={<KnowledgePage />} />
+            <Route path="/oracle" element={<OraclePage />} />
             <Route
               path="*"
               element={

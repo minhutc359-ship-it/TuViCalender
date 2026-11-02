@@ -11,7 +11,7 @@ export interface KnowledgeEntry {
   content: string;
   source: string;
 }
-export const KNOWLEDGE_VERSION = 'vi-2026.10.31-1';
+export const KNOWLEDGE_VERSION = 'vi-2026.11.02-2';
 export function normalizeText(text: string) {
   return text
     .toLocaleLowerCase('vi')
@@ -34,6 +34,12 @@ const glossary: Array<[string, string, string, string]> = [
     'Bát quái',
     'bát quái|tám quẻ',
     'Bát quái gồm Càn, Đoài, Ly, Chấn, Tốn, Khảm, Cấn, Khôn. Mỗi quẻ dùng ba hào âm/dương để biểu đạt hình tượng. Ứng dụng trình bày bảng Hậu thiên để tra cứu biểu tượng; chưa lập quẻ dự đoán.',
+  ],
+  [
+    'gieo-que-offline',
+    'Gieo quẻ offline trong AstroAI',
+    'gieo quẻ|xin quẻ|quẻ dịch|sáu hào',
+    'AstroAI dùng Web Crypto tạo sáu hào theo mô hình ba đồng xu, đọc từ dưới lên rồi ghép thành hai quái. Phiên bản này chưa gán tên/số 64 quẻ King Wen và không dịch Quái từ hoặc Hào từ; phần hành động là câu hỏi tự soi chiếu do ứng dụng biên tập, không phải lời tiên tri.',
   ],
   [
     'can-chi',
@@ -116,7 +122,7 @@ const elements = elementNames.map((name, i): KnowledgeEntry => ({
   category: 'eastern',
   aliases: [`mệnh ${name}`, `hành ${name}`, `${name} hợp màu`, `màu mệnh ${name}`],
   content: `Theo biểu tượng ngũ hành, ${name} thường gắn với ${colors[i]}. ${name} sinh ${elementNames[(i + 1) % 5]} và khắc ${elementNames[(i + 2) % 5]}. Đây là quy ước trang trí truyền thống, không bảo đảm may mắn. Không suy mệnh nạp âm từ Thiên can riêng lẻ.`,
-  source: 'AstroAI · Biên soạn biểu tượng ngũ hành v1',
+  source: 'TRAD + EDIT · Ngũ hành · SoT §6.3',
 }));
 // Use the existing application tables; do not invent a separate calculation engine.
 const signDates = [
@@ -152,7 +158,10 @@ export const KNOWLEDGE: KnowledgeEntry[] = [
         : ['offline', 'privacy'].includes(id)
           ? 'guide'
           : 'eastern',
-    source: 'AstroAI · Hướng dẫn và giới hạn phương pháp v1',
+    source:
+      id === 'gieo-que-offline'
+        ? 'CALC + TRAD + EDIT · SRC-EAST-04 · SoT §6.4'
+        : 'AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9',
   })),
   ...elements,
   ...TAROT_CARDS.flatMap((card) =>
@@ -162,7 +171,7 @@ export const KNOWLEDGE: KnowledgeEntry[] = [
       category: 'tarot',
       aliases: [card.name, card.nameVi, card.id],
       content: `${card.nameVi}: ${reversed ? card.reversed : card.upright}\nTừ khóa: ${(reversed ? card.reversedKeywords : card.uprightKeywords).join(', ')}. Mang tính chiêm nghiệm, không dự báo chắc chắn.`,
-      source: 'AstroAI · Nội dung Tarot RWS tiếng Việt',
+      source: 'TRAD + EDIT · SRC-TAROT-01 · rws-vi-3',
     })),
   ),
   ...ZODIAC_SIGNS.map((sign, i): KnowledgeEntry => {
@@ -173,7 +182,7 @@ export const KNOWLEDGE: KnowledgeEntry[] = [
       category: 'western',
       aliases: [sign, ZODIAC_VN[sign]],
       content: `${ZODIAC_VN[sign]} (${sign}) thuộc nguyên tố ${westernElements[chart.element]}, tính chất ${chart.quality}, chủ quản ${chart.ruler} theo bảng chiêm tinh của ứng dụng. Đây là biểu tượng truyền thống, không xác định tính cách hay tương lai của mọi người cùng cung.`,
-      source: 'AstroAI · Bảng cung Mặt Trời',
+      source: 'TRAD · Cung Mặt Trời · SRC-WEST-01 · SoT §7',
     };
   }),
   ...BAT_QUAI.map((quai): KnowledgeEntry => ({
@@ -182,7 +191,7 @@ export const KNOWLEDGE: KnowledgeEntry[] = [
     category: 'eastern',
     aliases: [`quẻ ${quai.name}`],
     content: `${quai.name}: hình tượng ${quai.meaning}, hành ${quai.element}, hướng ${quai.direction} trong bảng Hậu thiên Bát quái. Chỉ tra cứu biểu tượng, không phải kết quả gieo quẻ.`,
-    source: 'AstroAI · Bảng Bát quái',
+    source: 'TRAD · Bát quái · SRC-EAST-04 · SoT §6.3',
   })),
   ...DIA_CHI.map((chi, i): KnowledgeEntry => ({
     id: `branch-${i}`,
@@ -190,7 +199,7 @@ export const KNOWLEDGE: KnowledgeEntry[] = [
     category: 'eastern',
     aliases: [`tuổi ${chi}`, `chi ${chi}`, `con giáp ${chi}`],
     content: `${chi} là chi thứ ${i + 1} trong chu kỳ 12 Địa chi. Chu kỳ lặp lại mỗi 12 năm; người sinh trước Tết cần đối chiếu ngày âm để xác định chi năm.`,
-    source: 'AstroAI · Địa chi',
+    source: 'TRAD · Địa chi · SRC-EAST-03',
   })),
   ...THIEN_CAN.map((can, i): KnowledgeEntry => ({
     id: `stem-${i}`,
@@ -198,7 +207,7 @@ export const KNOWLEDGE: KnowledgeEntry[] = [
     category: 'eastern',
     aliases: [`can ${can}`],
     content: `${can} là Thiên can thứ ${i + 1}, thuộc ${CAN_TO_NGU_HANH[can]} trong bảng ngũ hành của Thiên can. Điều này không đồng nghĩa với mệnh nạp âm của cả năm sinh.`,
-    source: 'AstroAI · Thiên can',
+    source: 'TRAD · Thiên can · SRC-EAST-03',
   })),
   ...TRUC.map((truc, i): KnowledgeEntry => ({
     id: `truc-${i}`,
@@ -206,7 +215,7 @@ export const KNOWLEDGE: KnowledgeEntry[] = [
     category: 'eastern',
     aliases: [`trực ${truc}`],
     content: `${truc} là một trong 12 Trực (thứ ${i + 1} trong bảng). Trực theo tháng tiết khí tại 12:00 UTC+7, tính từ kinh độ Mặt Trời xấp xỉ. Ngày sát chuyển tiết có thể cần đối chiếu thời điểm cụ thể. Xem Lịch để đọc các hoạt động gợi ý; không dùng riêng Trực để kết luận ngày Hoàng đạo.`,
-    source: 'AstroAI · Giới hạn bảng 12 Trực',
+    source: 'TRAD + LIMIT · Bảng 12 Trực · SoT §3',
   })),
 ];
 export function searchKnowledge(query: string, limit = 20) {

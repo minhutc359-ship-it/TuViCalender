@@ -10,6 +10,21 @@ test('Google login offers the free AI quota and sends OAuth through Supabase', a
   expect(new URL(page.url()).searchParams.get('provider')).toBe('google');
 });
 
+test('anime knowledge gallery changes group and the offline oracle casts and restores six lines', async ({ page }) => {
+  await page.goto('/knowledge');
+  await expect(page.locator('.anime-lore-card')).toHaveCount(5);
+  await page.getByRole('tab', { name: 'Bốn nguyên tố' }).click();
+  await expect(page.locator('.anime-lore-card')).toHaveCount(4);
+  await page.getByRole('link', { name: 'Mở không gian gieo quẻ' }).click();
+  await page.getByPlaceholder('Ví dụ: Tôi có thể chủ động điều gì trong tuần này?').fill('Tôi nên kiểm chứng điều gì?');
+  await page.getByRole('button', { name: 'Gieo sáu hào' }).click();
+  await expect(page.locator('.oracle-line')).toHaveCount(6);
+  await expect(page.locator('.oracle-reading')).toContainText('Ba bước tham khảo');
+  await page.reload();
+  await expect(page.locator('.oracle-line')).toHaveCount(6);
+  await expect(page.locator('.oracle-reading blockquote')).toContainText('Tôi nên kiểm chứng điều gì?');
+});
+
 test('chat answers without authentication, labels sources, keeps history and opens a bookmarked reference', async ({
   page,
 }) => {
@@ -87,6 +102,7 @@ test('calendar horizontal swipe changes month without clicking a stale day; all 
       '/chat',
       '/profile',
       '/knowledge',
+      '/oracle',
       '/settings',
     ]) {
       await page.goto(route);

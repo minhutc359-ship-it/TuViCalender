@@ -37,11 +37,11 @@ const version = createHash('sha256')
   .digest('hex')
   .slice(0, 16);
 const packFor = (path) =>
-  path.startsWith('/content/eastern/')
+  path.startsWith('/content/eastern/') || path.startsWith('/assets/anime/eastern/')
     ? 'eastern'
-    : path.startsWith('/content/western/')
+    : path.startsWith('/content/western/') || path.startsWith('/assets/anime/western/')
       ? 'western'
-      : path.startsWith('/content/tarot/') || path.startsWith('/assets/tarot/')
+      : path.startsWith('/content/tarot/') || path.startsWith('/assets/tarot/') || path.startsWith('/assets/anime/tarot/')
         ? 'tarot'
         : 'core';
 const shell = files.filter((file) => packFor(file.path) === 'core').map((file) => file.path);

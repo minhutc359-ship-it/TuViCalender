@@ -1,10 +1,10 @@
 {
   "id": "core",
   "locale": "vi",
-  "version": "vi-2026.10.31-1",
+  "version": "vi-2026.11.02-2",
   "schemaVersion": 1,
-  "updatedAt": "2026-10-31",
-  "source": "AstroAI · Nội dung biên soạn và bảng quy tắc nội bộ",
+  "updatedAt": "2026-11-02",
+  "source": "AstroAI Visual/Motion/Interpretation Source of Truth · 1.0.0",
   "entries": [
     {
       "id": "ngu-hanh",
@@ -16,7 +16,7 @@
       ],
       "content": "Ngũ hành gồm Mộc, Hỏa, Thổ, Kim, Thủy. Vòng tương sinh: Mộc → Hỏa → Thổ → Kim → Thủy → Mộc. Vòng tương khắc: Mộc → Thổ → Thủy → Hỏa → Kim → Mộc. Đây là mô hình biểu tượng truyền thống, không phải quy luật vật lý.",
       "category": "eastern",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "ngu-hanh",
       "examples": [
         "Ngũ hành là gì?",
@@ -35,7 +35,7 @@
       ],
       "content": "Bát quái gồm Càn, Đoài, Ly, Chấn, Tốn, Khảm, Cấn, Khôn. Mỗi quẻ dùng ba hào âm/dương để biểu đạt hình tượng. Ứng dụng trình bày bảng Hậu thiên để tra cứu biểu tượng; chưa lập quẻ dự đoán.",
       "category": "eastern",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "bat-quai",
       "examples": [
         "Bát quái là gì?",
@@ -55,7 +55,7 @@
       ],
       "content": "Mười Thiên can kết hợp mười hai Địa chi tạo chu kỳ 60 tên. Năm âm lịch có thể khác năm dương lịch trước Tết. Khi hỏi tuổi, hãy cung cấp ngày sinh đầy đủ để tránh gán sai năm.",
       "category": "eastern",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "can-chi",
       "examples": [
         "Can Chi là gì?",
@@ -75,7 +75,7 @@
       ],
       "content": "Bát tự dùng Can Chi của năm, tháng, ngày và giờ. Trụ tháng cần xét tiết khí và quy ước của trường phái. Khi đủ giờ sinh tại UTC+7, AstroAI có bảng bốn trụ xấp xỉ theo tháng tiết khí, đổi ngày lúc 00:00. Gần ranh giới tiết khí cần đối chiếu lịch thiên văn. Chưa cung cấp luận mệnh Bát tự chuyên sâu.",
       "category": "eastern",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "bat-tu",
       "examples": [
         "Bát tự và giới hạn là gì?",
@@ -94,7 +94,7 @@
       ],
       "content": "24 tiết khí chia chu kỳ chuyển động biểu kiến của Mặt Trời thành các mốc theo kinh độ hoàng đạo. Chúng không trùng cố định với đầu tháng âm. Ứng dụng xác định tiết khí xấp xỉ bằng kinh độ Mặt Trời; không công bố thời điểm chuyển tiết chính xác đến phút.",
       "category": "eastern",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "tiet-khi",
       "examples": [
         "Tiết khí là gì?",
@@ -115,7 +115,7 @@
       ],
       "content": "Lịch âm dương Việt Nam dùng múi giờ UTC+7 trong engine hiện tại. Tháng nhuận có thể trùng số tháng với tháng thường; cần giữ cờ tháng nhuận khi lưu ngày. Chưa hỗ trợ tính theo các múi giờ lịch khác.",
       "category": "eastern",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "lich-am",
       "examples": [
         "Lịch âm Việt Nam là gì?",
@@ -134,7 +134,7 @@
       ],
       "content": "Giờ hoàng đạo ở đây là sáu khung giờ theo Địa chi của ngày trong bảng quy tắc dân gian. Đây là thông tin truyền thống tham khảo; hãy ưu tiên lịch trình, sức khỏe và điều kiện thực tế. Hỏi “Hôm nay giờ nào tốt?” để xem bảng ngày hiện tại.",
       "category": "eastern",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "gio-tot",
       "examples": [
         "Giờ hoàng đạo là gì?",
@@ -156,7 +156,7 @@
       ],
       "content": "Mở Lịch để chọn tháng, loại sự kiện và xem các yếu tố. Hoàng đạo được phân loại theo tháng âm và chi ngày; Trực dùng tháng tiết khí xấp xỉ; 28 Tú chưa có mốc chu kỳ được kiểm định và không dùng vào điểm. Điểm ngày là quy tắc giải trí. Không coi điểm số là xác suất thành công hoặc cam kết ngày tốt tuyệt đối.",
       "category": "eastern",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "ngay-tot",
       "examples": [
         "Xem ngày cho kế hoạch là gì?",
@@ -181,7 +181,7 @@
       ],
       "content": "Sun là vị trí Mặt Trời; Moon là vị trí Mặt Trăng; Rising là điểm hoàng đạo đang mọc ở chân trời theo địa điểm và thời gian sinh. AstroAI chỉ tra cung Mặt Trời bằng khoảng ngày phổ biến, chưa tính Moon/Rising hay lá số thiên văn chính xác.",
       "category": "western",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "sun-moon-rising",
       "examples": [
         "Sun, Moon và Rising là gì?",
@@ -202,7 +202,7 @@
       ],
       "content": "Natal chart mô tả vị trí thiên thể và hệ nhà tại thời điểm, nơi sinh theo quy ước chiêm tinh. Không thể suy ra Moon/Rising hoặc các nhà chỉ từ cung Mặt Trời. AstroAI chưa có ephemeris để tính natal chart đầy đủ.",
       "category": "western",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "natal",
       "examples": [
         "Natal chart và 12 nhà là gì?",
@@ -223,7 +223,7 @@
       ],
       "content": "Bộ Tarot có 78 lá: 22 Major Arcana và 56 Minor Arcana, chia bốn chất Gậy, Cốc, Kiếm, Tiền. Có thể hỏi về tình cảm, công việc hoặc điều muốn nhìn lại. Thử “Tôi có thể chủ động thay đổi điều gì?”; lời giải không xác định vận mệnh hay thay thế tư vấn chuyên môn.",
       "category": "tarot",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "tarot-guide",
       "examples": [
         "Tarot để tự chiêm nghiệm là gì?",
@@ -243,7 +243,7 @@
       ],
       "content": "Lá ngược là một lựa chọn diễn giải, không tự động đồng nghĩa với điều xấu. Nó có thể gợi ý sự cản trở, quá mức hoặc một góc nhìn nội tâm. Bật/tắt lá ngược trước khi xào bài; kết quả được giữ trong nhật ký.",
       "category": "tarot",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "reversed",
       "examples": [
         "Lá ngược là gì?",
@@ -264,7 +264,7 @@
       ],
       "content": "Vào Cài đặt → Dùng ngoại tuyến, tải đủ dữ liệu và chờ báo sẵn sàng trước khi tắt mạng. Lịch, Tarot, thư viện và tra cứu local hoạt động tại máy; AI online, đăng nhập và nguồn ngoài vẫn cần Internet. Trình duyệt có thể dọn cache.",
       "category": "guide",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "offline",
       "examples": [
         "Dùng AstroAI offline là gì?",
@@ -285,7 +285,7 @@
       ],
       "content": "Hồ sơ, nhật ký và các tùy chọn lưu trong IndexedDB tại thiết bị, có chuyển dữ liệu cũ và bản dự phòng tương thích. Dùng Cài đặt → Sao lưu dữ liệu để xuất JSON. Tệp có dữ liệu cá nhân, hãy tự giữ ở nơi phù hợp. Xóa dữ liệu trình duyệt có thể làm mất dữ liệu chưa sao lưu.",
       "category": "guide",
-      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp v1",
+      "source": "AstroAI · Hướng dẫn và giới hạn phương pháp · SoT §3–9",
       "intentId": "privacy",
       "examples": [
         "Dữ liệu và sao lưu là gì?",

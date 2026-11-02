@@ -87,5 +87,5 @@ Bản Mystic Fusion thêm `persona` vào request chatbot. Deploy lại `chat-ai`
 - `npm run build` tự tạo versioned content JSON, manifest bốn pack và chạy `verify-offline.mjs`. Core tự precache; các pack còn lại tải riêng hoặc tải đầy đủ trong Settings. UI có hủy/tiếp tục, xóa pack, dọn cache cũ và lưu trữ bền vững.
 - Dữ liệu người dùng dùng IndexedDB, có migration/snapshot/mirror tương thích LocalStorage. Import dùng transaction nguyên tử. Không clear browser data khi cập nhật.
 - Không đặt immutable cho URL nội dung/artwork không có hash trong tên. `vercel.json` buộc revalidate `/content/`, `/assets/tarot/`, index và manifest; hashed JS/CSS vẫn được SW quản lý theo version và SHA-256.
-- CI chạy 45 logic tests, 16 browser flows và 4 production-offline flows; JoJo ref, Google OAuth URL, responsive và cold-offline là một phần của cấu hình chuẩn. Xem báo cáo chi tiết để biết giới hạn kiểm thử.
+- CI chạy 48 logic tests, 17 browser flows và 4 production-offline flows; JoJo ref, Google OAuth URL, anime gallery, Oracle, responsive và cold-offline là một phần của cấu hình chuẩn. Xem báo cáo chi tiết để biết giới hạn kiểm thử.
 - Theo yêu cầu chủ dự án, source được gộp thành một commit và đẩy thẳng master. Điều này không tự deploy migration Supabase hay thu hồi khóa ở tài khoản nhà cung cấp.

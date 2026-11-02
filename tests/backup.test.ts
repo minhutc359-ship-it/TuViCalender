@@ -30,12 +30,16 @@ const profile = {
 test('backup allowlist omits auth and account chat, forces AI opt-in off and round trips known data', () => {
   const s = store({
     'astroai.profiles.v1': [profile],
+    'astroai.oracle.v1': [{
+      id: 'cast-1', createdAt: '2026-11-02T00:00:00.000Z', question: 'Điều gì cần nhìn rõ?', lines: [7, 8, 7, 8, 9, 6],
+    }],
     'sb-token': { secret: 'excluded' },
     'astroai.chat.user.v1': [{ role: 'user', content: 'private' }],
     'astroai.chat-ai-enabled.v1': true,
   });
   const backup = createBackup(s);
   assert.deepEqual(backup.data['astroai.profiles.v1'], [profile]);
+  assert.equal((backup.data['astroai.oracle.v1'] as unknown[]).length, 1);
   assert.equal(backup.data['astroai.chat-ai-enabled.v1'], false);
   assert.ok(!JSON.stringify(backup).includes('excluded'));
   assert.ok(!JSON.stringify(backup).includes('private'));

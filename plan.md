@@ -74,7 +74,7 @@ React PWA → application services → calendar/tarot/knowledge/profile engines 
 
 ## 6. P2 — Knowledge và Hybrid Chat
 
-- [x] Catalog 229 mục: 156 nghĩa lá theo 2 hướng, 12 cung, 8 quẻ, 5 hành, 12 chi, 10 can, 12 Trực, 14 bài hướng dẫn/phương pháp.
+- [x] Catalog 230 mục: 156 nghĩa lá theo 2 hướng, 12 cung, 8 quẻ, 5 hành, 12 chi, 10 can, 12 Trực, 15 bài hướng dẫn/phương pháp.
 - [x] Chuẩn hóa tiếng Việt có/không dấu; ưu tiên dấu khi phân biệt Càn/Cấn; alias theo từ, không substring tùy tiện.
 - [x] Rule date/entity cho âm lịch, giờ truyền thống, năm Can Chi, cung Mặt Trời; từ chối ngày không hợp lệ và không tính Moon/Rising.
 - [x] Local-first router; AI opt-in mặc định tắt, auth có sẵn; timeout/401/429/5xx/empty trả fallback.
@@ -82,7 +82,7 @@ React PWA → application services → calendar/tarot/knowledge/profile engines 
 - [x] `/knowledge`: tìm kiếm, lọc Đông/Tây/Tarot/hướng dẫn, bookmark, hiển thị tăng dần.
 - [x] Lịch sử local có tùy chọn không lưu; tách guest/account, không xuất token hoặc account AI history.
 - [x] Golden corpus 128 câu độc lập; không gọi AI khi local có câu trả lời.
-- [x] Registry 229 nhóm tra cứu có ID/alias/ví dụ, nguồn nội bộ và entity/rule riêng; không giả lập hội thoại tự do. Kiểm thử câu chuẩn cho mọi nhóm cùng corpus độc lập 128 câu.
+- [x] Registry 230 nhóm tra cứu có ID/alias/ví dụ, nguồn/phương pháp và entity/rule riêng; không giả lập hội thoại tự do. Kiểm thử câu chuẩn cho mọi nhóm cùng corpus độc lập 128 câu.
 - [x] Chuẩn hóa có/không dấu, dấu câu/kiểu chữ, hn/ko, alias và câu dẫn; hỗ trợ nguồn/giới hạn, ngày thiếu/sai và câu ngoài phạm vi. Fuzzy/từ lóng ngoài registry không được tự đoán.
 - [x] Nội dung/index/registry là versioned JSON theo pack, đọc cache-only khi browser báo offline; không đưa toàn bộ tri thức vào entry JS.
 
@@ -112,6 +112,9 @@ React PWA → application services → calendar/tarot/knowledge/profile engines 
 
 - [x] Theme/motion preference và vector Đông–Tây hiện có được giữ.
 - [x] Sáu minh họa editorial WebP cho Home/Lịch/Hồ sơ/Chat và portal Đông–Tây, lazy-load, có prompt/attribution và thuộc core offline pack.
+- [x] 12 cảnh nhân vật anime nguyên bản cho Ngũ hành, nguyên tố Zodiac và Tarot; gallery có caption/alt, motion/reduced-motion, asset chia đúng pack.
+- [x] Source of Truth duy nhất quy định nguồn, claim taxonomy, phong cách anime, cấu trúc luận giải, motion, accessibility và gate phát hành.
+- [x] Gieo sáu hào offline bằng Web Crypto, ghép hai quái, đánh dấu hào động, lưu/backup; không giả nhận là bản dịch 64 quẻ/384 hào.
 - [x] Giữ design/motion tokens hiện có, thống nhất thao tác button/page/flip; reduced-motion và không gian tĩnh có hiệu lực trong tests.
 - [x] Font hệ thống hỗ trợ tiếng Việt, vùng chạm chính, form labels, keyboard/focus/screen-reader và phương án không chỉ mã hóa bằng màu; đã kiểm tra bằng browser, còn audit thiết bị thật.
 - [x] Motion mục tiêu trong source: tap 140 ms, page 240 ms, flip 600 ms; không animate height/filter nặng trong luồng mới. Skip và giảm motion luôn hoàn thành được tác vụ.
@@ -151,7 +154,7 @@ React PWA → application services → calendar/tarot/knowledge/profile engines 
 
 Chủ dự án đã cho phép gộp toàn bộ thay đổi MVP vào một commit và push trực tiếp master. Phạm vi bốn PR trong kế hoạch được tích hợp cùng nhau; vẫn giữ screenshot, kiểm thử, size report và rollback. Các gate cần tài khoản nhà cung cấp/thiết bị thật được ghi rõ thay vì đánh dấu đã làm.
 
-Sau MVP: ephemeris/natal chart và license dữ liệu; cloud sync/conflict; Eastern Oracle/Kinh Dịch độc lập; themes/decks/ngôn ngữ, iCalendar và nhắc lịch khi kết nối.
+Sau MVP: ephemeris/natal chart và license dữ liệu; cloud sync/conflict; mở rộng Oracle thành 64 quẻ/384 hào có bản dịch và reviewer; themes/decks/ngôn ngữ, iCalendar và nhắc lịch khi kết nối.
 
 ## 11. Nghiệm thu
 
@@ -163,7 +166,7 @@ E2E bắt buộc:
 2. Offline/airplane → đóng/mở lại, route chưa mở vẫn chạy.
 3. Xem lịch/âm lịch/ngày/đổi tháng; thử swipe khi đã triển khai.
 4. Hỏi 10 câu local + 1 ngoài phạm vi; badge/nguồn đúng.
-5. Tarot 3 lá → lật → tổng kết → lưu → reload/mở nhật ký, đúng hình/nghĩa.
+5. Tarot 3 lá → lật → tổng kết → lưu → reload/mở nhật ký, đúng hình/nghĩa; Oracle gieo đủ sáu hào và reload giữ kết quả.
 6. Hồ sơ/theme/bookmark/chat → reload, dữ liệu còn; export/import preview không ghi trước xác nhận.
 7. Reduced-motion không chặn hoàn thành tác vụ.
 8. Online lại/update pack/SW, không mất dữ liệu và không dùng cache public cho AI/auth.
@@ -188,7 +191,7 @@ Xem [báo cáo nghiệm thu](docs/OFFLINE_FIRST_VERIFICATION.md) để biết l�
 
 ## Kết quả bản gộp
 
-- 45 unit/integration tests pass; 16 browser flows pass, gồm JoJo ref và Google OAuth; 4 production-offline flows pass, gồm cold reload JoJo sau khi ngắt mạng.
+- 48 unit/integration tests pass; 17 browser flows được cấu hình, gồm JoJo ref, Google OAuth, anime gallery và Oracle; 4 production-offline flows gồm cold reload JoJo sau khi ngắt mạng.
 - Tải đủ → tắt mạng → đóng tab/mở tab mới → chat, lịch, 78 hình, luận giải, nhật ký và hồ sơ vẫn hoạt động.
 - Không còn hạng mục code nền IndexedDB/content pack/backup/chat/Tarot/visual đang được mô tả như chưa triển khai. Các mục chưa đánh dấu ở trên là kiểm chứng tài khoản, phương pháp/thiết bị thật hoặc phát triển sau MVP.
 - 28 Tú được hiển thị chưa kiểm định và loại khỏi điểm; không dùng thuật toán reset theo tháng để công bố kết quả.

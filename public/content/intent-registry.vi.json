@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "locale": "vi",
-  "version": "vi-2026.10.31-1",
+  "version": "vi-2026.11.02-2",
   "groups": [
     {
       "id": "ngu-hanh",
@@ -28,6 +28,21 @@
         "Bát quái là gì?",
         "Giải thích Bát quái",
         "Tra cứu Bát quái"
+      ]
+    },
+    {
+      "id": "gieo-que-offline",
+      "referenceId": "gieo-que-offline",
+      "aliases": [
+        "gieo quẻ",
+        "xin quẻ",
+        "quẻ dịch",
+        "sáu hào"
+      ],
+      "examples": [
+        "Gieo quẻ offline trong AstroAI là gì?",
+        "Giải thích Gieo quẻ offline trong AstroAI",
+        "Tra cứu Gieo quẻ offline trong AstroAI"
       ]
     },
     {
