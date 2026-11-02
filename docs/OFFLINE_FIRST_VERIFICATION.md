@@ -1,6 +1,6 @@
-# Kiểm chứng AstroAI 2.0 — 31/10/2026
+# Kiểm chứng AstroAI 2.0 — 02/11/2026
 
-Base `a843eb1`. Thay đổi được chuẩn bị thành một commit để push trực tiếp `master` theo yêu cầu chủ dự án. Báo cáo mô tả source và kiểm thử, không xác nhận backend đã deploy hoặc khóa lịch sử đã thu hồi.
+Base `13d0e46`. Thay đổi được chuẩn bị thành một commit để push trực tiếp `master` theo yêu cầu chủ dự án. Báo cáo mô tả source và kiểm thử, không xác nhận backend đã deploy hoặc khóa lịch sử đã thu hồi.
 
 ## Kết quả đã chạy
 
@@ -10,7 +10,7 @@ Base `a843eb1`. Thay đổi được chuẩn bị thành một commit để push
 | `npm test` | **45 tests pass**: core 11, Tarot 7, AI handler 6, local chat 5, backup 4, service worker 6, IndexedDB 4, solar/snapshot 2 |
 | Local corpus | 128 câu mẫu độc lập và câu chuẩn cho cả 229 nhóm tra cứu đều đúng intent |
 | `npm run build` | Pass, kèm kiểm chứng 4 pack, SHA-256, sizes, ownership, icons và gate dung lượng |
-| Browser E2E | **15 pass**, gồm 2 luồng JoJo ref trên desktop và mobile |
+| Browser E2E | **16 pass**, gồm 2 luồng JoJo ref và luồng Google OAuth qua Supabase |
 | Production offline E2E | **4 pass** |
 | Responsive | 7 route ở 320, 375, 390, 768, 1280 px; ba theme ở 360 px; không overflow |
 | Motion/keyboard | OS reduced-motion, không gian tĩnh, modal Escape, swipe lịch không click nhầm ngày |
@@ -32,18 +32,18 @@ Chromium kiểm thử cục bộ: 141.0.7390.0, chạy qua Playwright 1.64.1. Bi
 
 ## Dung lượng đo từ build
 
-Manifest `ca614f3f32194cac`; tổng gồm worker/manifest:
+Manifest `000bd03a45cf1099`; tổng gồm worker/manifest:
 
 | Chỉ số | MiB |
 | --- | ---: |
-| Raw assets | 23.394 |
-| Ước tính gzip transfer | 21.804 |
-| Core raw | 1.033 |
+| Raw assets | 24.304 |
+| Ước tính gzip transfer | 22.702 |
+| Core raw | 1.940 |
 | Giới hạn raw và gzip estimate | 50 |
 
 | Pack | Files | Raw MiB |
 | --- | ---: | ---: |
-| core | 29 | 1.033 |
+| core | 37 | 1.940 |
 | eastern | 1 | 0.033 |
 | western | 1 | 0.009 |
 | tarot | 182 | 22.232 |
@@ -58,9 +58,11 @@ Lịch Việt Nam dùng UTC+7. Trực theo tháng tiết khí ở 12:00 UTC+7; m
 
 Không tiếp tục dùng công thức 28 Tú reset theo tháng âm: mục này hiển thị “Chưa kiểm định” và không tham gia điểm ngày, cho đến khi có mốc chu kỳ được đối chiếu. Không cam kết mọi trường phái cho cùng kết quả.
 
-Còn cần thao tác/tài nguyên bên ngoài: thu hồi khóa lịch sử và kiểm tra usage nhà cung cấp; deploy/kiểm chứng Supabase RLS bằng tài khoản thật; thử iPhone/Android/PWA thật, Lighthouse/Web Vitals/FPS trên thiết bị. CI và Chromium desktop không thay thế các bước đó. Cloud sync/conflict và natal chart đầy đủ là sau MVP.
+Còn cần thao tác/tài nguyên bên ngoài: thu hồi khóa lịch sử và kiểm tra usage nhà cung cấp; bật Google provider, đặt OAuth callback, deploy Edge Function/hai migration quota và kiểm chứng Supabase bằng tài khoản thật; thử iPhone/Android/PWA thật, Lighthouse/Web Vitals/FPS trên thiết bị. CI xác nhận URL OAuth được tạo đúng nhưng không thể thay thế đăng nhập Google production. Cloud sync/conflict và natal chart đầy đủ là sau MVP.
 
 ## Minh họa và rollback
+
+![Sáu minh họa editorial Celestial Feng Shui](astroai-editorial-illustrations.jpg)
 
 ![Bốn pack ngoại tuyến](astroai-offline-packs.png)
 

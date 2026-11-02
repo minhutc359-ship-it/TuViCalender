@@ -84,8 +84,13 @@ export function createChatHandler({ createClient, env, fetch }: Dependencies) {
       const serviceKey = env('SUPABASE_SERVICE_ROLE_KEY');
       if (!apiKey || !serviceKey) return json({ error: 'AI not configured' }, 503);
       const admin = createClient(url, serviceKey, { auth: { persistSession: false } });
+      const configuredGlobalLimit = Number(env('AI_DAILY_GLOBAL_LIMIT') ?? '500');
+      const globalLimit = Number.isInteger(configuredGlobalLimit)
+        ? Math.min(100000, Math.max(1, configuredGlobalLimit))
+        : 500;
       const { data: withinQuota, error: quotaError } = await admin.rpc('consume_ai_quota', {
         p_user_id: user.id,
+        p_global_limit: globalLimit,
       });
       if (quotaError) return json({ error: 'Quota service unavailable' }, 503);
       if (withinQuota !== true) return json({ error: 'Rate limit exceeded' }, 429);

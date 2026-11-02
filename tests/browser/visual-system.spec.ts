@@ -103,7 +103,7 @@ test('All themes fit small screens and reduced motion disables every decorative 
   for (const theme of ['Eastern · Đông phương', 'Western · Tây phương', 'Fusion · Đông & Tây']) {
     await page.goto('/settings');
     await page.getByRole('radio', { name: theme, exact: true }).check();
-    for (const route of ['/', '/calendar', '/tarot', '/profile', '/chat']) {
+    for (const route of ['/', '/calendar', '/tarot', '/profile', '/chat', '/knowledge']) {
       await page.goto(route);
       await expect(page.locator('h1')).toBeVisible();
       const overflow = await page.evaluate(() =>
@@ -128,6 +128,12 @@ test('All themes fit small screens and reduced motion disables every decorative 
   expect(
     await page
       .locator('.astro-wheel-orbit')
+      .first()
+      .evaluate((e) => getComputedStyle(e).animationName),
+  ).toBe('none');
+  expect(
+    await page
+      .locator('.illustration-orbit')
       .first()
       .evaluate((e) => getComputedStyle(e).animationName),
   ).toBe('none');

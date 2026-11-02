@@ -46,7 +46,7 @@ React PWA → application services → calendar/tarot/knowledge/profile engines 
 ## 4. P0 — Bảo mật và độ chính xác
 
 - [x] Frontend không dùng `VITE_OPENAI_API_KEY`, `dangerouslyAllowBrowser` hoặc gọi OpenAI trực tiếp.
-- [x] Có Edge Function, secret server, auth, CORS allowlist, input/token/quota/timeout bounds.
+- [x] Có Edge Function, secret server, Google/email auth, CORS allowlist, input/token/timeout, quota 20 lượt/người/ngày và trần tổng cấu hình phía server.
 - [x] Env thật được ignore; chỉ giữ `.env.example`, `.env.server.example` chứa placeholder.
 - [ ] Chủ tài khoản xác nhận revoke/rotate mọi khóa có thể đã lộ, kiểm tra usage/billing; xóa file khỏi HEAD không thu hồi khóa và không xóa lịch sử Git.
 - [x] Có migration quota và source migration owner-only RLS cho birth_profiles/chat_histories/tarot_sessions nếu tồn tại.
@@ -97,6 +97,7 @@ React PWA → application services → calendar/tarot/knowledge/profile engines 
 - [x] Motion rút/lật, reduced motion/không gian tĩnh.
 - [x] 78 cảnh SVG Celestial gốc, có script tái tạo và attribution. JoJo ref bật mặc định theo yêu cầu chủ dự án, có 78 Stand, 22 chân dung, mặt lưng, mapping và attribution; có thể opt-out bằng biến build.
 - [x] Nhật ký lưu snapshot nội dung/version; reopen giữ nguyên giải nghĩa khi nguồn thay đổi; snapshot nhập sai bị chặn.
+- [x] Luận giải `rws-vi-3` có điểm tựa, cảnh báo cần kiểm chứng, bước hành động, mốc nhìn lại và câu hỏi tự soi chiếu; snapshot cũ vẫn tương thích.
 - [x] Swipe lịch phân biệt trục/scroll và chặn click ngày cũ; skip Tarot, reduced-motion, keyboard/modal và 320–1280 px đã qua browser tests. FPS thiết bị thật vẫn cần kiểm chứng.
 
 **DoD P3:** Rút/đọc/lưu/mở lại offline; không trùng; đủ ảnh/nghĩa hai hướng; không crop/che chữ; ngân sách đạt.
@@ -110,6 +111,7 @@ React PWA → application services → calendar/tarot/knowledge/profile engines 
 | Western | Zodiac, celestial map, Tarot | Midnight, violet, silver, rose gold |
 
 - [x] Theme/motion preference và vector Đông–Tây hiện có được giữ.
+- [x] Sáu minh họa editorial WebP cho Home/Lịch/Hồ sơ/Chat và portal Đông–Tây, lazy-load, có prompt/attribution và thuộc core offline pack.
 - [x] Giữ design/motion tokens hiện có, thống nhất thao tác button/page/flip; reduced-motion và không gian tĩnh có hiệu lực trong tests.
 - [x] Font hệ thống hỗ trợ tiếng Việt, vùng chạm chính, form labels, keyboard/focus/screen-reader và phương án không chỉ mã hóa bằng màu; đã kiểm tra bằng browser, còn audit thiết bị thật.
 - [x] Motion mục tiêu trong source: tap 140 ms, page 240 ms, flip 600 ms; không animate height/filter nặng trong luồng mới. Skip và giảm motion luôn hoàn thành được tác vụ.
@@ -186,7 +188,7 @@ Xem [báo cáo nghiệm thu](docs/OFFLINE_FIRST_VERIFICATION.md) để biết l�
 
 ## Kết quả bản gộp
 
-- 45 unit/integration tests pass; 15 browser flows pass, gồm 2 luồng JoJo ref; 4 production-offline flows pass, gồm cold reload JoJo sau khi ngắt mạng.
+- 45 unit/integration tests pass; 16 browser flows pass, gồm JoJo ref và Google OAuth; 4 production-offline flows pass, gồm cold reload JoJo sau khi ngắt mạng.
 - Tải đủ → tắt mạng → đóng tab/mở tab mới → chat, lịch, 78 hình, luận giải, nhật ký và hồ sơ vẫn hoạt động.
 - Không còn hạng mục code nền IndexedDB/content pack/backup/chat/Tarot/visual đang được mô tả như chưa triển khai. Các mục chưa đánh dấu ở trên là kiểm chứng tài khoản, phương pháp/thiết bị thật hoặc phát triển sau MVP.
 - 28 Tú được hiển thị chưa kiểm định và loại khỏi điểm; không dùng thuật toán reset theo tháng để công bố kết quả.

@@ -190,6 +190,38 @@ export function interpretReading(reading: Reading) {
   const opening = reading.question.trim()
     ? `Với câu hỏi “${reading.question.trim()}”, ứng dụng đọc theo chủ đề ${topic.label.toLocaleLowerCase('vi')}.`
     : `Trải bài được đọc theo chủ đề ${topic.label.toLocaleLowerCase('vi')}.`;
+  const supports = cards
+    .filter((item) => ['resource', 'advice', 'present'].includes(item.role) || !item.drawn.reversed)
+    .slice(0, 3)
+    .map(
+      (item) =>
+        `${item.card.nameVi} ở vị trí ${item.position.toLocaleLowerCase('vi')} gợi ý một điểm tựa: ${item.context}`,
+    );
+  if (!supports.length)
+    supports.push(
+      `${focal.card.nameVi} mời bạn bắt đầu từ việc gọi tên điều đang diễn ra trước khi tìm một kết luận.`,
+    );
+  const cautions = cards
+    .filter((item) => item.drawn.reversed || ['challenge', 'near-future', 'outcome'].includes(item.role))
+    .slice(0, 3)
+    .map((item) =>
+      `${item.card.nameVi}${item.drawn.reversed ? ' ngược' : ''}: đối chiếu thông điệp với hành vi, dữ kiện và giới hạn thực tế; ${item.positionMeaning.toLocaleLowerCase('vi')}`,
+    );
+  if (!cautions.length)
+    cautions.push(
+      'Một trải bài thuận lợi vẫn không bảo đảm kết quả. Hãy giữ chỗ cho dữ kiện mới và quyền lựa chọn của những người liên quan.',
+    );
+  const reflectionPrompts = [focal.reflection, ...cards.map((item) => item.reflection)]
+    .filter((value, index, all) => all.indexOf(value) === index)
+    .slice(0, 3);
+  const checkIn =
+    topic.id === 'finance'
+      ? 'Trước khi chi tiền, vay hoặc đầu tư, hãy kiểm tra lại con số, điều khoản và phương án xấu nhất có thể chấp nhận.'
+      : topic.id === 'love'
+        ? 'Sau một cuộc đối thoại rõ ràng, hãy nhìn vào sự nhất quán giữa lời nói, hành vi và ranh giới của cả hai bên.'
+        : topic.id === 'career'
+          ? 'Sau một tuần hoặc một cột mốc công việc, hãy xem bước nhỏ nào tạo ra phản hồi thật thay vì chỉ tạo cảm giác bận rộn.'
+          : 'Cuối ngày, hãy ghi lại điều đã thử, điều thay đổi và một dữ kiện mới trước khi đọc lại thông điệp.';
   return {
     version: INTERPRETATION_VERSION,
     topic,
@@ -199,6 +231,14 @@ export function interpretReading(reading: Reading) {
     connections,
     actions,
     limits,
+    recommendation: {
+      headline: `Lời khuyên tham khảo: ưu tiên điều bạn có thể kiểm chứng và chủ động trong chủ đề ${topic.label.toLocaleLowerCase('vi')}.`,
+      supports,
+      cautions,
+      steps: actions,
+      checkIn,
+    },
+    reflectionPrompts,
     overview: `${opening} Điểm tập trung là ${focal.card.nameVi} (${focal.drawn.reversed ? 'ngược' : 'xuôi'}) ở vị trí ${focal.position.toLocaleLowerCase('vi')}: ${focal.context} Hãy dùng những hành động bên dưới để đối chiếu với tình huống thực tế, thay vì xem đây là câu trả lời chắc chắn.`,
   };
 }

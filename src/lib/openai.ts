@@ -10,6 +10,7 @@ export interface AIMessage {
   persona?: ChatPersona;
   response?: ChatResponse;
 }
+export const FREE_AI_DAILY_LIMIT = 20;
 export function getCurrentContext() {
   const now = vietnamToday(),
     lunar = getCurrentLunarDate();
@@ -37,7 +38,7 @@ export async function chatWithAI(
   const {
     data: { session },
   } = await supabase.auth.getSession();
-  if (!session) throw new Error('Đăng nhập bằng email để trò chuyện với trợ lý AI.');
+  if (!session) throw new Error('Đăng nhập bằng Google hoặc email để trò chuyện với trợ lý AI.');
   const { data, error } = await supabase.functions.invoke('chat-ai', {
     signal,
     body: { message, chatHistory: chatHistory.slice(-10), context: getCurrentContext(), persona },

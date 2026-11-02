@@ -1,4 +1,15 @@
 import { test, expect } from '@playwright/test';
+test('Google login offers the free AI quota and sends OAuth through Supabase', async ({ page }) => {
+  await page.route('https://astroai-test.supabase.co/auth/v1/authorize**', (route) =>
+    route.fulfill({ status: 200, contentType: 'text/html', body: '<h1>Google OAuth test</h1>' }),
+  );
+  await page.goto('/chat');
+  await expect(page.getByText('20 lượt AI mỗi ngày')).toBeVisible();
+  await page.getByRole('button', { name: 'Tiếp tục bằng Google' }).click();
+  await expect(page).toHaveURL(/astroai-test\.supabase\.co\/auth\/v1\/authorize/);
+  expect(new URL(page.url()).searchParams.get('provider')).toBe('google');
+});
+
 test('chat answers without authentication, labels sources, keeps history and opens a bookmarked reference', async ({
   page,
 }) => {
@@ -56,6 +67,7 @@ test('calendar horizontal swipe changes month without clicking a stale day; all 
 }) => {
   await page.goto('/calendar');
   const grid = page.locator('.calendar-grid');
+  await grid.scrollIntoViewIfNeeded();
   const box = await grid.boundingBox();
   expect(box).toBeTruthy();
   const heading = page.locator('.calendar-panel h2');

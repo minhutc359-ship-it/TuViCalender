@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-02 — Editorial, luận giải và AI access
+
+- Thêm 6 minh họa WebP Celestial Feng Shui, atlas Đông–Tây tương tác và motion reveal/quỹ đạo/hover có reduced-motion.
+- Nâng luận giải lên `rws-vi-3`: điểm nâng đỡ, điều cần kiểm chứng, bước hành động, thời điểm xem lại và câu hỏi tự suy ngẫm.
+- Thêm Google OAuth/email cho gói AI 20 lượt/ngày; quota theo người dùng và trần tổng theo ngày bảo vệ ngân sách nhà phát hành.
+
 ## 2026-10-31 — AstroAI 2.0 Offline-First
 
 - Bốn content pack độc lập, checksum/version/dependencies, tải/hủy/tiếp tục/xóa/tải lại; cache-only lookup khi offline; SW update có xác nhận và dọn cache an toàn cho nhiều tab.

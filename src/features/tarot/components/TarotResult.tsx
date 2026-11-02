@@ -103,15 +103,43 @@ export function TarotResult({
             </article>
           ))}
         </div>
-        <div className="reading-plan">
-          <h4>
-            {result.actions.length > 1 ? 'Các bước bạn có thể chủ động' : 'Một bước nhỏ để thử'}
-          </h4>
-          <ol>
-            {result.actions.map((action) => (
-              <li key={action}>{action}</li>
-            ))}
-          </ol>
+        <div className="detailed-advice">
+          <span className="eyebrow">LỜI KHUYÊN THAM KHẢO · KHÔNG PHẢI MỆNH LỆNH</span>
+          <h4>{result.recommendation.headline}</h4>
+          <div className="advice-columns">
+            <article>
+              <strong>Điểm tựa có thể dùng</strong>
+              <ul>
+                {result.recommendation.supports.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </article>
+            <article>
+              <strong>Điều cần kiểm chứng</strong>
+              <ul>
+                {result.recommendation.cautions.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </article>
+          </div>
+          <div className="reading-plan">
+            <h4>
+              {result.recommendation.steps.length > 1
+                ? 'Các bước bạn có thể chủ động'
+                : 'Một bước nhỏ để thử'}
+            </h4>
+            <ol>
+              {result.recommendation.steps.map((action) => <li key={action}>{action}</li>)}
+            </ol>
+          </div>
+          <div className="reading-check-in">
+            <strong>Khi nào nên nhìn lại?</strong>
+            <p>{result.recommendation.checkIn}</p>
+          </div>
+          <details className="reading-reflection-set">
+            <summary>Ba câu hỏi để tự soi chiếu</summary>
+            <ol>
+              {result.reflectionPrompts.map((question) => <li key={question}>{question}</li>)}
+            </ol>
+          </details>
         </div>
         {result.limits.map((limit) => (
           <p className="reading-limit" key={limit}>

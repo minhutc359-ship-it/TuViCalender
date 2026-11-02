@@ -54,6 +54,56 @@ export default function KnowledgePage() {
           Xem toàn bộ thư viện
         </Link>
       )}
+      {!focused && (
+        <section className="knowledge-atlas" aria-label="Lối vào thư viện Đông và Tây">
+          <button
+            type="button"
+            className={`knowledge-atlas-card panel ${category === 'eastern' ? 'selected' : ''}`}
+            aria-pressed={category === 'eastern'}
+            onClick={() => {
+              setParams({});
+              setQuery('');
+              setCategory('eastern');
+              setLimit(24);
+            }}
+          >
+            <img
+              src="/assets/illustrations/eastern-knowledge.webp"
+              alt="La bàn Bát quái và vòng Ngũ hành trong sân trăng"
+              loading="lazy"
+              decoding="async"
+            />
+            <span>
+              <small>NGŨ HÀNH · CAN CHI · BÁT QUÁI</small>
+              <strong>Kho tri thức Đông phương</strong>
+              <em>Khám phá nội dung</em>
+            </span>
+          </button>
+          <button
+            type="button"
+            className={`knowledge-atlas-card panel ${category === 'western' ? 'selected' : ''}`}
+            aria-pressed={category === 'western'}
+            onClick={() => {
+              setParams({});
+              setQuery('');
+              setCategory('western');
+              setLimit(24);
+            }}
+          >
+            <img
+              src="/assets/illustrations/western-atlas.webp"
+              alt="Vòng hoàng đạo và quỹ đạo hành tinh trên bản đồ sao cổ"
+              loading="lazy"
+              decoding="async"
+            />
+            <span>
+              <small>ZODIAC · HÀNH TINH · BIỂU TƯỢNG</small>
+              <strong>Atlas chiêm tinh Tây phương</strong>
+              <em>Khám phá nội dung</em>
+            </span>
+          </button>
+        </section>
+      )}
       <KnowledgeWheel onSelect={id=>{setParams({id});setQuery('');setCategory('all');setLimit(24);}} />
       <div className="knowledge-filters panel">
         <label>

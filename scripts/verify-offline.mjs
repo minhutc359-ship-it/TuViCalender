@@ -39,6 +39,13 @@ for (const size of [192, 512]) {
 }
 const report = JSON.parse(await readFile('reports/offline-size.json', 'utf8'));
 assert.ok(report.storageBytes <= 50 * 1048576 && report.estimatedGzipTransferBytes <= 50 * 1048576);
+const illustrations = manifest.files.filter((file) => file.path.startsWith('/assets/illustrations/'));
+assert.equal(illustrations.length, 6);
+assert.ok(
+  illustrations.every((file) =>
+    manifest.packs.find((pack) => pack.id === 'core').files.includes(file.path),
+  ),
+);
 if (process.env.VITE_ENABLE_REFERENCE_ART === 'false')
   assert.ok(!manifest.files.some((file) => file.path.includes('/jojo-ref/')));
 else {

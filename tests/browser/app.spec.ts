@@ -128,7 +128,7 @@ test('Mobile pages fit 390px, image assets load, chat asks for login and reduced
   await page.setViewportSize({ width: 390, height: 844 });
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(e.message));
-  for (const path of ['/', '/tarot', '/calendar', '/profile', '/chat']) {
+  for (const path of ['/', '/tarot', '/calendar', '/profile', '/chat', '/knowledge']) {
     await page.goto(path);
     await expect(page.locator('h1')).toBeVisible();
     await expect(page.locator('.mobile-nav')).toBeVisible();
@@ -148,6 +148,13 @@ test('Mobile pages fit 390px, image assets load, chat asks for login and reduced
       await page.screenshot({ path: '/tmp/astroai-tarot-mobile.png', fullPage: true });
     if (path === '/chat')
       await expect(page.getByRole('button', { name: 'Gửi tin nhắn', exact: true })).toBeDisabled();
+    if (path === '/knowledge') {
+      const atlasImage = page.locator('.knowledge-atlas-card img').first();
+      await atlasImage.scrollIntoViewIfNeeded();
+      await expect.poll(() => atlasImage.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
+      await page.getByRole('button', { name: /Kho tri thức Đông phương/ }).click();
+      await expect(page.getByLabel('Nhóm nội dung')).toHaveValue('eastern');
+    }
   }
   expect(errors).toEqual([]);
 });

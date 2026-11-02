@@ -7,7 +7,7 @@ export const READING_TOPICS = [
 ] as const;
 export type ReadingTopic = (typeof READING_TOPICS)[number]['id'];
 export type TopicSelection = ReadingTopic | 'auto';
-export const INTERPRETATION_VERSION = 'rws-vi-2';
+export const INTERPRETATION_VERSION = 'rws-vi-3';
 export const READING_SOURCES = [
   {
     label: 'A. E. Waite · The Pictorial Key to the Tarot — Major Arcana',

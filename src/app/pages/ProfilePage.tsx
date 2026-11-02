@@ -15,6 +15,7 @@ import { vietnamDateKey } from '../../lib/date';
 import { AstroSymbol } from '../components/astro/AstroSymbol';
 import { ZodiacWheel, BaguaWheel } from '../components/astro/AstroWheels';
 import { ElementBalance } from '../components/astro/ElementBalance';
+import { EditorialIllustration } from '../components/EditorialIllustration';
 
 const blank = (): Profile => ({
   id: crypto.randomUUID(),
@@ -111,6 +112,16 @@ export default function ProfilePage() {
           Cài đặt bộ bài
         </Link>
       </div>
+      <EditorialIllustration
+        src="/assets/illustrations/profile-cosmos.webp"
+        alt="Bốn trụ biểu tượng, la bàn và vòng hoàng đạo trên bàn quan sát đêm"
+        eyebrow="HỒ SƠ CỤC BỘ · RIÊNG TƯ"
+        title="Dấu mốc sinh là điểm bắt đầu, không phải giới hạn"
+        className="profile-story"
+      >
+        Hồ sơ giúp nối các phép tính tại máy với góc nhìn Đông–Tây. Thông tin sinh chỉ
+        lưu trên thiết bị và không tự động gửi tới chatbot.
+      </EditorialIllustration>
       <div className="profile-switcher">
         {profiles.map((p) => (
           <button

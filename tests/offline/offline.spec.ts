@@ -93,8 +93,10 @@ test('Complete download enables cold offline reload, all 78 JoJo refs, detailed 
   await expect(page.locator('.card-practice')).toHaveCount(3);
   await expect(page.locator('.reading-result')).toHaveAttribute(
     'data-interpretation-version',
-    'rws-vi-2',
+    'rws-vi-3',
   );
+  await expect(page.locator('.detailed-advice')).toContainText('Lời khuyên tham khảo');
+  await expect(page.locator('.advice-columns article')).toHaveCount(2);
   await expect(page.locator('.reading-connections article')).toHaveCount(2);
   await expect(page.locator('.reading-topic-badge')).toContainText('Công việc');
   await page.screenshot({ path: testInfo.outputPath('offline-reading.png'), fullPage: true });

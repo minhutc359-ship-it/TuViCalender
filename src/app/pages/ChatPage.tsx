@@ -1,7 +1,12 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, useLocation } from 'react-router';
 import { Send, LogOut, Trash2, Sparkles } from 'lucide-react';
-import { chatWithAI, isOpenAIConfigured, type AIMessage } from '../../lib/openai';
+import {
+  chatWithAI,
+  FREE_AI_DAILY_LIMIT,
+  isOpenAIConfigured,
+  type AIMessage,
+} from '../../lib/openai';
 import { supabase } from '../../lib/supabase';
 import { readStorage, writeStorage, useStoredState } from '../../lib/storage';
 import { CHAT_PERSONAS, isChatPersona, type ChatPersona } from '../../lib/chat-personas';
@@ -11,6 +16,7 @@ import { loadKnowledge } from '../../features/knowledge/catalog';
 import { deviceStorage } from '../../offline/db';
 import { replyHybrid, SOURCE_LABELS } from '../../features/chatbot/engine';
 import type { Session } from '@supabase/supabase-js';
+import { EditorialIllustration } from '../components/EditorialIllustration';
 const welcome: AIMessage = {
   role: 'assistant',
   content:
@@ -123,6 +129,25 @@ export default function ChatPage() {
       if (mounted.current) setAuthBusy(false);
     }
   }
+  async function signInWithGoogle() {
+    if (authBusy) return;
+    setAuthBusy(true);
+    setError('');
+    setNotice('');
+    setAIEnabled(true);
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo: `${window.location.origin}/chat` },
+      });
+      if (error) throw error;
+    } catch {
+      if (mounted.current) {
+        setError('Chưa mở được đăng nhập Google. Bạn có thể thử email hoặc quay lại sau.');
+        setAuthBusy(false);
+      }
+    }
+  }
   async function send(e: FormEvent) {
     e.preventDefault();
     const content = input.trim();
@@ -202,6 +227,16 @@ export default function ChatPage() {
           <p>Khám phá những góc nhìn mới cùng trợ lý AstroAI.</p>
         </div>
       </div>
+      <EditorialIllustration
+        src="/assets/illustrations/chat-guide.webp"
+        alt="Linh đăng thiên thể kết hợp hào quang Bát quái và vòng hoàng đạo"
+        eyebrow="LOCAL TRƯỚC · AI KHI BẠN CHỌN"
+        title="Một người bạn biết nói rõ giới hạn"
+        className="chat-story"
+      >
+        Câu hỏi quen thuộc được trả lời từ thư viện offline. Khi cần hội thoại mở rộng,
+        bạn có thể đăng nhập và chủ động bật AI online.
+      </EditorialIllustration>
       <div className="persona-options" aria-label="Góc nhìn trợ lý AI">
         {(['eastern', 'western'] as const).map((id) => (
           <button
@@ -245,28 +280,53 @@ export default function ChatPage() {
       ) : !session ? (
         <section className="auth-panel panel">
           <div>
-            <h3>Một cuộc trò chuyện của riêng bạn</h3>
+            <span className="eyebrow">GÓI AI MIỄN PHÍ</span>
+            <h3>Mở rộng cuộc trò chuyện khi bạn cần</h3>
             <p>
-              Tra cứu local không cần đăng nhập. Đăng nhập qua email nếu muốn bật AI online; chỉ câu
-              hỏi và lịch sử chat gần đây được gửi khi thư viện chưa đủ nội dung.
+              Đăng nhập để nhận tối đa {FREE_AI_DAILY_LIMIT} lượt AI mỗi ngày. Tra cứu local vẫn
+              miễn phí không giới hạn và không cần tài khoản; chỉ câu hỏi cùng tối đa 10 lượt chat
+              gần đây được gửi khi thư viện chưa đủ nội dung.
             </p>
           </div>
-          <form onSubmit={signIn}>
-            <input
-              type="email"
-              required
-              autoComplete="email"
-              aria-label="Email đăng nhập"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email của bạn"
-            />
-            <button className="button primary" disabled={authBusy}>
-              {authBusy ? 'Đang gửi…' : 'Gửi liên kết'}
+          <div className="auth-actions">
+            <button
+              type="button"
+              className="button google-login"
+              disabled={authBusy}
+              onClick={signInWithGoogle}
+            >
+              <span className="google-mark" aria-hidden="true">G</span>
+              {authBusy ? 'Đang mở Google…' : 'Tiếp tục bằng Google'}
             </button>
-          </form>
+            <div className="auth-divider"><span>hoặc nhận liên kết qua email</span></div>
+            <form onSubmit={signIn}>
+              <input
+                type="email"
+                required
+                autoComplete="email"
+                aria-label="Email đăng nhập"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email của bạn"
+              />
+              <button className="button subtle" disabled={authBusy}>
+                {authBusy ? 'Đang gửi…' : 'Gửi liên kết'}
+              </button>
+            </form>
+          </div>
         </section>
-      ) : null}
+      ) : (
+        <section className="ai-access-pass panel" aria-label="Quyền truy cập AI">
+          <div className="ai-user-mark" aria-hidden="true">
+            {(session.user.user_metadata?.full_name || session.user.email || 'A').slice(0, 1).toUpperCase()}
+          </div>
+          <div>
+            <span className="eyebrow">AI ONLINE ĐÃ SẴN SÀNG</span>
+            <strong>{session.user.user_metadata?.full_name || session.user.email || 'Tài khoản AstroAI'}</strong>
+            <small>Tối đa {FREE_AI_DAILY_LIMIT} lượt miễn phí/ngày · Local không giới hạn</small>
+          </div>
+        </section>
+      )}
       {notice && (
         <p className="success small" role="status" style={{ marginBottom: 16 }}>
           {notice}
@@ -280,6 +340,7 @@ export default function ChatPage() {
             onChange={(e) => setAIEnabled(e.target.checked)}
           />{' '}
           Cho phép AI online khi local chưa có câu trả lời
+          {session ? ` · tối đa ${FREE_AI_DAILY_LIMIT} lượt/ngày` : ''}
         </label>
         <label>
           <input

@@ -11,10 +11,12 @@
 | Knowledge | Versioned JSON theo pack; search/filter/bookmark; vòng Ngũ hành/Bát quái/Zodiac tương tác | Chỉ đọc các pack đã tải khi offline; không âm thầm tải lại pack đã xóa |
 | Tarot | 78 lá, nghĩa xuôi/ngược và ngữ cảnh, 1/3/5/10 lá, Web Crypto không trùng | Nội dung biên soạn để chiêm nghiệm, không dự báo chắc chắn |
 | Artwork | 78 cảnh SVG Celestial gốc, source tái tạo và attribution | JoJo ref bật mặc định: 78 Stand, 22 chân dung và mặt lưng; có nguồn/attribution riêng |
+| Editorial art | 6 cảnh WebP 1200×800 cho Home/Lịch/Hồ sơ/Chat, portal và atlas Đông–Tây; reveal, quỹ đạo và hover nhẹ | Lazy-load; cả sáu thuộc core offline pack; hiệu ứng tắt theo Reduce Motion |
+| AI miễn phí | Google OAuth hoặc email magic link; tối đa 20 lượt/ngày/tài khoản, local không giới hạn | Chủ dự án cần bật Google provider, deploy quota/function và thanh toán API upstream |
 | Nhật ký | Lưu/sửa/xóa, orientation, snapshot nghĩa/version; reopen nhất quán | Tối đa 200 phiên; chưa sync giữa thiết bị |
 | Hồ sơ | CRUD nhiều người, timezone IANA, consent, góc nhìn ưu tiên, lưu offline | Bốn trụ xấp xỉ UTC+7 khi đủ giờ; natal chart thiên văn chưa có |
 | Lịch | Âm dương UTC+7, Can Chi, 6 giờ dân gian, Hoàng đạo theo tháng/chi ngày, filter/sự kiện, swipe tháng | Trực theo tháng tiết khí xấp xỉ; 28 Tú chưa kiểm định và không dùng cho điểm |
-| Visual/motion | Fusion/Eastern/Western, vector đồng bộ, reduced motion/không gian tĩnh, lật bài, skip, keyboard | Chưa xác nhận FPS/Web Vitals trên máy thật |
+| Visual/motion | Fusion/Eastern/Western, vector đồng bộ, editorial reveal/orbit, atlas tương tác, lật bài, skip, keyboard | Reduced motion/không gian tĩnh có hiệu lực; chưa xác nhận FPS/Web Vitals trên máy thật |
 | Security | Không client OpenAI secret; Edge auth/CORS/input/quota; migration owner-only RLS; env ignore | Chủ tài khoản cần revoke khóa cũ; deploy/kiểm thử RLS thật riêng |
 | Budget/CI | Gate raw và gzip estimate ≤50 MiB; checksum/schema/assets/icons; typecheck/unit/browser/offline | Gzip là ước tính, không phải traffic production đã đo |
 

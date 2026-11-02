@@ -39,6 +39,7 @@ Nếu máy đã có Chrome, đặt `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` thành 
 - Năm kiểu trải: lá hằng ngày, ba lá thời gian, ba lá tình yêu, năm lá sự nghiệp và Celtic Cross mười lá.
 - Luận giải tại máy cho đủ 78 lá: xuôi/ngược, chủ đề, vị trí trải, liên hệ giữa lá, hành động và câu hỏi suy ngẫm. Không cần API AI.
 - Cài đặt chọn Celestial hoặc JoJo ref cho đủ 78 lá; tải trọn bộ để mở lại ứng dụng khi mất mạng.
+- Sáu minh họa editorial Celestial Feng Shui cho Home, Đông phương, Tây phương, Lịch, Hồ sơ và Chat; WebP lazy-load và được kiểm tra trong core offline pack.
 - Xào/xòe bài, chọn bằng chuột hoặc bàn phím, lật 3D tuần tự, phóng to artwork, hỗ trợ giảm chuyển động.
 - Thư viện tìm kiếm và lọc theo bộ; nhật ký lưu câu hỏi, hướng lá và ghi chú, xem lại/sửa/xóa. Giữ tối đa 200 phiên.
 - Hồ sơ: thêm, sửa, xóa, chuyển nhiều hồ sơ; cung Mặt Trời, Can Chi, con giáp và thuộc tính tham khảo.
@@ -84,7 +85,11 @@ Asset tải về chạy cục bộ, không hotlink trong giao diện. Nguồn t�
 
 ### Mức độ của phần luận giải
 
-Nghĩa xuôi/ngược là nội dung tiếng Việt biên soạn theo hệ Rider–Waite–Smith, hiện đại hóa; không phải bản dịch nguyên văn Waite hay bộ nghĩa duy nhất. [The Pictorial Key to the Tarot](https://sacred-texts.com/tarot/pkt/pkt0303.htm) là nguồn lịch sử để đối chiếu. Bộ quy tắc `rws-vi-2` kết hợp nghĩa lá, hướng, vị trí, chủ đề, chủ đề lặp lại và các cặp lá. Dữ liệu có 624 nội dung riêng về tình cảm/công việc/tài chính và hành động cho 78 lá xuôi/ngược, kèm câu hỏi suy ngẫm theo vai trò vị trí.
+Nghĩa xuôi/ngược là nội dung tiếng Việt biên soạn theo hệ Rider–Waite–Smith, hiện đại hóa; không phải bản dịch nguyên văn Waite hay bộ nghĩa duy nhất. [The Pictorial Key to the Tarot](https://sacred-texts.com/tarot/pkt/pkt0303.htm) là nguồn lịch sử để đối chiếu. Bộ quy tắc `rws-vi-3` kết hợp nghĩa lá, hướng, vị trí, chủ đề, mô-típ và các cặp lá; đồng thời tách điểm tựa, điều cần kiểm chứng, bước hành động, thời điểm nhìn lại và câu hỏi tự soi chiếu. Dữ liệu có 624 nội dung riêng về tình cảm/công việc/tài chính và hành động cho 78 lá xuôi/ngược.
+
+## AI miễn phí qua Google
+
+Khi Supabase và Edge Function đã được cấu hình, khách có thể đăng nhập Google tại trang Chat và chủ động bật AI online. Mỗi tài khoản có tối đa 20 lượt AI/ngày theo giờ Việt Nam; thư viện local vẫn miễn phí, không cần tài khoản và không giới hạn lượt. “Miễn phí” ở đây là miễn phí cho người dùng cuối trong hạn mức; chi phí API vẫn thuộc tài khoản OpenAI của nhà phát hành.
 
 Chủ đề tự động chỉ nhận diện bằng từ khóa; bạn có thể chọn chủ đề trước khi rút. Phần tổng hợp là hướng dẫn do ứng dụng biên soạn, không hiểu ngôn ngữ như AI và không có tỷ lệ dự báo tương lai được xác lập. Các vị trí tương lai/kết quả đọc như khả năng có điều kiện. Hình JoJo chỉ đổi minh họa; tính cách, phe phái và năng lực nhân vật không thay nghĩa Tarot.
 

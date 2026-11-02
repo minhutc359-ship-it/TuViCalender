@@ -14,6 +14,17 @@ export function readingResult(reading: Reading) {
   return snapshot
     ? {
         ...snapshot,
+        recommendation: snapshot.recommendation ?? {
+          headline: 'Lời khuyên tham khảo: đối chiếu thông điệp với tình huống thực tế.',
+          supports: [snapshot.overview],
+          cautions: snapshot.limits.length
+            ? snapshot.limits
+            : ['Giữ chỗ cho dữ kiện mới; Tarot không bảo đảm kết quả.'],
+          steps: snapshot.actions,
+          checkIn: 'Ghi lại điều đã thử và xem lại sau khi có thêm dữ kiện thực tế.',
+        },
+        reflectionPrompts:
+          snapshot.reflectionPrompts ?? snapshot.cards.map((item) => item.reflection).slice(0, 3),
         cards: snapshot.cards.map((item) => ({ ...item, card: CARD_MAP.get(item.drawn.cardId)! })),
       }
     : interpretReading(reading);

@@ -30,12 +30,13 @@ Kiểm tra production tại máy bằng `npm run build`, `npm run preview`; ki�
 
 1. Tạo/link project Supabase bằng CLI của bạn.
 2. Bật đăng nhập email trong Authentication. Cấu hình Site URL và Redirect URLs bao gồm `https://your-app.example/chat` và URL local cần dùng.
-3. Chạy migration [202610290001_ai_quota.sql](./supabase/migrations/202610290001_ai_quota.sql) bằng SQL Editor hoặc `supabase db push` nếu project đã link.
+3. Chạy lần lượt [202610290001_ai_quota.sql](./supabase/migrations/202610290001_ai_quota.sql) và [202610310002_ai_global_quota.sql](./supabase/migrations/202610310002_ai_global_quota.sql) bằng SQL Editor, hoặc `supabase db push` nếu project đã link.
 4. Đặt secrets theo [.env.server.example](./.env.server.example):
 
 ```bash
 supabase secrets set OPENAI_API_KEY=YOUR_NEW_KEY
 supabase secrets set OPENAI_MODEL=gpt-4
+supabase secrets set AI_DAILY_GLOBAL_LIMIT=500
 supabase secrets set ALLOWED_ORIGINS=https://your-app.example,http://localhost:5173
 supabase functions deploy chat-ai
 ```
@@ -46,9 +47,19 @@ Không dùng khóa thật trong lịch sử shell; nên nhập secrets qua Supab
 
 Frontend dùng `supabase.functions.invoke('chat-ai')` với JWT phiên đăng nhập. Function xác minh user bằng `auth.getUser`; chỉ chấp nhận origin được liệt kê chính xác, POST/OPTIONS, body tối đa 64 KiB, tin nhắn 4.000 ký tự và tối đa 10 lượt lịch sử với role user/assistant. Giữ JWT verification mặc định; không triển khai function dưới dạng endpoint AI công khai.
 
-Hạn mức trong PostgreSQL là **20 yêu cầu/người/ngày Việt Nam**, tối thiểu **3 giây giữa hai yêu cầu**. Update quota là atomic và dùng user ID đã xác thực. RPC chỉ cấp quyền execute cho `service_role`; bảng bật RLS, không cấp quyền cho anon/authenticated. Khi quota/migration không hoạt động, function từ chối gọi AI. Lượt upstream lỗi vẫn tiêu thụ hạn mức.
+Hạn mức trong PostgreSQL là **20 yêu cầu/người/ngày Việt Nam**, tối thiểu **3 giây giữa hai yêu cầu**. Migration thứ hai thêm trần tổng `AI_DAILY_GLOBAL_LIMIT` (mặc định ví dụ 500 lượt/ngày) để bảo vệ ngân sách nhà phát hành. Update quota là atomic và dùng user ID đã xác thực. RPC chỉ cấp quyền execute cho `service_role`; hai bảng quota bật RLS, không cấp quyền cho anon/authenticated. Khi quota/migration không hoạt động, function từ chối gọi AI. Lượt upstream lỗi vẫn tiêu thụ hạn mức.
 
 Không cần bảng chat/profile cũ để chạy bản này: hồ sơ, nhật ký, sự kiện và lịch sử chat nằm trên trình duyệt. Function không ghi cuộc hội thoại vào database. Nếu thêm đồng bộ sau này, cần migration/RLS riêng theo `auth.uid()`.
+
+### Đăng nhập Google và gói AI miễn phí
+
+1. Trong Supabase Dashboard, mở **Authentication → Providers → Google**, bật provider và nhập OAuth Client ID/Secret từ Google Cloud.
+2. Trong Google Cloud, thêm Authorized redirect URI chính xác: `https://<project-ref>.supabase.co/auth/v1/callback`.
+3. Trong Supabase **URL Configuration**, đặt Site URL là domain production và thêm `https://your-app.example/chat` cùng URL local cần dùng vào Redirect URLs.
+4. Chạy migration quota và deploy `chat-ai` như hướng dẫn trên. UI cấp tối đa 20 lượt AI/ngày/tài khoản; RPC xử lý quota nguyên tử phía server.
+5. Kiểm thử cả tài khoản Google mới, đăng xuất/đăng nhập lại, callback production và lỗi provider bị tắt. Không đặt Google Client Secret hoặc OpenAI key trong biến `VITE_*`.
+
+Gói được gọi là miễn phí đối với người dùng cuối trong hạn mức. OpenAI vẫn tính chi phí cho chủ API key; theo dõi usage/budget alert và có thể giảm quota server trước khi quảng bá công khai.
 
 ## Kiểm tra sau triển khai
 
@@ -76,5 +87,5 @@ Bản Mystic Fusion thêm `persona` vào request chatbot. Deploy lại `chat-ai`
 - `npm run build` tự tạo versioned content JSON, manifest bốn pack và chạy `verify-offline.mjs`. Core tự precache; các pack còn lại tải riêng hoặc tải đầy đủ trong Settings. UI có hủy/tiếp tục, xóa pack, dọn cache cũ và lưu trữ bền vững.
 - Dữ liệu người dùng dùng IndexedDB, có migration/snapshot/mirror tương thích LocalStorage. Import dùng transaction nguyên tử. Không clear browser data khi cập nhật.
 - Không đặt immutable cho URL nội dung/artwork không có hash trong tên. `vercel.json` buộc revalidate `/content/`, `/assets/tarot/`, index và manifest; hashed JS/CSS vẫn được SW quản lý theo version và SHA-256.
-- CI chạy 45 logic tests, 15 browser flows và 4 production-offline flows; hai luồng JoJo ref là một phần của cấu hình chuẩn. Xem báo cáo chi tiết để biết giới hạn kiểm thử.
+- CI chạy 45 logic tests, 16 browser flows và 4 production-offline flows; JoJo ref, Google OAuth URL, responsive và cold-offline là một phần của cấu hình chuẩn. Xem báo cáo chi tiết để biết giới hạn kiểm thử.
 - Theo yêu cầu chủ dự án, source được gộp thành một commit và đẩy thẳng master. Điều này không tự deploy migration Supabase hay thu hồi khóa ở tài khoản nhà cung cấp.

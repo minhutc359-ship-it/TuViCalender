@@ -13,6 +13,7 @@ import { useTarotAppearance } from '../../features/tarot/context/TarotAppearance
 import { AstroSymbol } from '../components/astro/AstroSymbol';
 import { ZodiacWheel, BaguaWheel } from '../components/astro/AstroWheels';
 import { useVisualTheme } from '../components/astro/VisualTheme';
+import { EditorialIllustration } from '../components/EditorialIllustration';
 
 export default function HomePage() {
   const { appearance } = useTarotAppearance();
@@ -180,6 +181,17 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <EditorialIllustration
+        src="/assets/illustrations/fusion-home.webp"
+        alt="Thiên cầu kết hợp la bàn Bát quái và vòng hoàng đạo dưới bầu trời đêm"
+        eyebrow="CELESTIAL FENG SHUI"
+        title="Hai hệ biểu tượng, một khoảng lặng để hiểu mình"
+        className="home-fusion-story"
+      >
+        Đông phương gợi nhịp thời gian và sự cân bằng; Tây phương mở ra ngôn ngữ của
+        các hình tượng. AstroAI đặt cả hai cạnh nhau để bạn tham khảo, đối chiếu và tự
+        chọn điều phù hợp.
+      </EditorialIllustration>
       <div className="daily-almanac panel">
         <div className="almanac-date">
           <strong>{String(now.getDate()).padStart(2, '0')}</strong>
@@ -271,6 +283,13 @@ export default function HomePage() {
       </details>
       <div className="two-column home-portals">
         <section className="content-panel panel eastern-portal">
+          <img
+            className="portal-illustration"
+            src="/assets/illustrations/eastern-knowledge.webp"
+            alt="La bàn Bát quái và vòng Ngũ hành bằng ngọc trong sân trăng"
+            loading="lazy"
+            decoding="async"
+          />
           <div className="portal-mark">
             <AstroSymbol name={element} size={33} />
             <span className="eyebrow">ĐÔNG PHƯƠNG / LỊCH VIỆT NAM</span>
@@ -296,6 +315,13 @@ export default function HomePage() {
           </Link>
         </section>
         <section className="content-panel panel western-portal">
+          <img
+            className="portal-illustration"
+            src="/assets/illustrations/western-atlas.webp"
+            alt="Vòng hoàng đạo, quỹ đạo hành tinh và bản đồ sao cổ"
+            loading="lazy"
+            decoding="async"
+          />
           <div className="portal-mark">
             <AstroSymbol name="star" size={33} />
             <span className="eyebrow">TÂY PHƯƠNG / MỘT LÁ HÔM NAY</span>

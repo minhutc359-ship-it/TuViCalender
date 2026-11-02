@@ -34,6 +34,10 @@ test('Every card has eight authored context/action fields; all 780 card/orientat
         assert.equal(result.cards[0].meaning, reversed ? card.reversed : card.upright);
         assert.ok(result.cards[0].action.length > 20);
         assert.ok(result.cards[0].context.length > 20);
+        assert.ok(result.recommendation.headline.includes('Lời khuyên tham khảo'));
+        assert.ok(result.recommendation.supports.length > 0);
+        assert.ok(result.recommendation.cautions.length > 0);
+        assert.ok(result.reflectionPrompts.length > 0);
         assert.ok(!JSON.stringify(result).includes('undefined'));
       }
   }
@@ -98,6 +102,9 @@ test('Every spread position is covered and conditional outcomes, finance and rel
     );
     assert.equal(result.cards.length, spread.positions.length);
     assert.ok(result.cards.every((c) => c.positionMeaning && c.reflection));
+    assert.deepEqual(result.recommendation.steps, result.actions);
+    assert.ok(result.recommendation.checkIn.length > 30);
+    assert.ok(result.reflectionPrompts.length >= 1 && result.reflectionPrompts.length <= 3);
   }
   const finance = interpretReading(reading(['pentacles-01'], { topic: 'finance' }));
   assert.match(finance.limits.join(' '), /lợi nhuận/);

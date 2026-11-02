@@ -9,6 +9,7 @@ import { BaguaWheel } from '../components/astro/AstroWheels';
 import { useMonthSwipe } from '../../motion/gestures';
 import { traditionalSolarMonth } from '../../lib/solar-terms';
 import { Modal } from '../components/Modal';
+import { EditorialIllustration } from '../components/EditorialIllustration';
 type EventType = keyof typeof EVENT_TYPES;
 interface CalendarEvent {
   id: string;
@@ -122,6 +123,16 @@ export default function CalendarPage() {
           Về hôm nay
         </button>
       </div>
+      <EditorialIllustration
+        src="/assets/illustrations/lunar-calendar.webp"
+        alt="Lịch bàn tròn khắc tuần trăng và mười hai con giáp trước bình minh"
+        eyebrow="NHỊP TRỜI ĐẤT · LỊCH VIỆT NAM"
+        title="Một ngày nằm giữa nhiều vòng chuyển động"
+        className="calendar-story"
+      >
+        Lịch dương, lịch âm, Can Chi và các quy tắc truyền thống được trình bày cùng
+        nguồn và giới hạn để bạn tham khảo trước khi tự quyết định.
+      </EditorialIllustration>
       <section className="calendar-filters">
         <span className="eyebrow">CHỌN NGÀY THEO VIỆC BẠN DỰ ĐỊNH</span>
         <div className="filter-chips">

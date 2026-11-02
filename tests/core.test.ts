@@ -171,6 +171,13 @@ test('frontend contains no browser OpenAI client or secret variable; AI goes thr
   assert.ok(!source.includes('VITE_OPENAI_API_KEY'));
   assert.ok(!source.includes('https://api.openai.com'));
   assert.ok(readFileSync('src/lib/openai.ts', 'utf8').includes("functions.invoke('chat-ai'"));
+  const globalQuota = readFileSync(
+    'supabase/migrations/202610310002_ai_global_quota.sql',
+    'utf8',
+  );
+  assert.ok(globalQuota.includes('p_global_limit integer'));
+  assert.ok(globalQuota.includes('enable row level security'));
+  assert.ok(globalQuota.includes('grant execute') && globalQuota.includes('service_role'));
 });
 
 test('JoJo ref provides all 78 images, marks 22 canonical / 56 editorial associations, and preserves meanings', async () => {

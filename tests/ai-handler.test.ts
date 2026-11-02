@@ -23,6 +23,7 @@ function fixture(
     SUPABASE_SERVICE_ROLE_KEY: 'private-server-secret',
     OPENAI_API_KEY: 'private-openai-secret',
     OPENAI_MODEL: 'gpt-4',
+    AI_DAILY_GLOBAL_LIMIT: '500',
   };
   if (overrides.configured === false) delete env.OPENAI_API_KEY;
   const handler = createChatHandler({
@@ -38,6 +39,7 @@ function fixture(
         calls.quota++;
         assert.equal(name, 'consume_ai_quota');
         assert.equal(args.p_user_id, 'verified-user');
+        assert.equal(args.p_global_limit, 500);
         return {
           data: overrides.quota !== false,
           error: overrides.quotaError ? 'unavailable' : null,

@@ -48,6 +48,12 @@ test('saved interpretation survives content changes and imported snapshots must 
   const saved = freezeReading(reading);
   assert.equal(isReadings([saved]), true);
   const before = readingResult(saved);
+  assert.ok(before.recommendation.steps.length > 0);
+  const legacy = JSON.parse(JSON.stringify(saved));
+  delete legacy.interpretationSnapshot.recommendation;
+  delete legacy.interpretationSnapshot.reflectionPrompts;
+  assert.equal(isReadings([legacy]), true);
+  assert.ok(readingResult(legacy).recommendation.steps.length > 0);
   const card = CARD_MAP.get('major-17')!,
     old = card.reversed;
   try {

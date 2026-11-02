@@ -5,7 +5,8 @@ import type { DrawnCard } from './draw';
 import { isTopic, type TopicSelection } from '../data/reading-topics';
 import type { interpretReading } from './interpretation';
 type Interpretation = ReturnType<typeof interpretReading>;
-export type ReadingSnapshot = Omit<Interpretation, 'cards'> & {
+export type ReadingSnapshot = Omit<Interpretation, 'cards' | 'recommendation' | 'reflectionPrompts'> &
+  Partial<Pick<Interpretation, 'recommendation' | 'reflectionPrompts'>> & {
   cards: Array<Omit<Interpretation['cards'][number], 'card'>>;
 };
 export interface Reading {
@@ -62,6 +63,14 @@ function validSnapshot(s: any, cards: any): s is ReadingSnapshot {
     texts(s.patterns) &&
     texts(s.actions) &&
     texts(s.limits) &&
+    (s.reflectionPrompts === undefined || texts(s.reflectionPrompts)) &&
+    (s.recommendation === undefined ||
+      (s.recommendation &&
+        typeof s.recommendation.headline === 'string' &&
+        typeof s.recommendation.checkIn === 'string' &&
+        texts(s.recommendation.supports) &&
+        texts(s.recommendation.cautions) &&
+        texts(s.recommendation.steps))) &&
     Array.isArray(cards) &&
     Array.isArray(s.cards) &&
     s.cards.length === cards.length &&

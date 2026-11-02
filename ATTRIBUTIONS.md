@@ -31,3 +31,7 @@ All 78 front SVG illustrations are authored from the source scene definitions in
 The earlier concept archive remains a design reference. The production deck now uses the same original narrative vector system for all 78 cards. Run `python scripts/generate-tarot-scenes.py` to reproduce it.
 
 The JoJo reference source assets and mappings are enabled in the standard production build at the project owner's direction and are included in the Tarot offline pack. Set `VITE_ENABLE_REFERENCE_ART=false` to make a Celestial-only build. These are third-party reference images: source links and attribution alone do not grant redistribution rights, so the publisher remains responsible for confirming permission before public distribution.
+
+## AstroAI editorial illustrations
+
+The six WebP scene illustrations in `public/assets/illustrations/` were generated for this project with OpenAI's built-in image generation tool, then resized and compressed locally. They contain no embedded copy, logos or requested copyrighted characters. The exact asset roles and final prompt set are recorded in [`docs/ILLUSTRATION_PROMPTS.md`](docs/ILLUSTRATION_PROMPTS.md).
