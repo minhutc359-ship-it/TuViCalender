@@ -13,6 +13,7 @@ test('Tarot library, 3-card reading, artwork modal, journal save and edit surviv
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('/tarot');
   await expect(page.getByRole('heading', { name: 'Không gian Tarot.' })).toBeVisible();
+  await expect(page.getByText('JOJO REF · STARDUST CRUSADERS')).toBeVisible();
   await page.screenshot({ path: '/tmp/astroai-tarot-desktop.png', fullPage: true });
   await page.getByRole('tab', { name: 'Thư viện 78 lá' }).click();
   await expect(page.locator('.library-card')).toHaveCount(78);
@@ -32,6 +33,15 @@ test('Tarot library, 3-card reading, artwork modal, journal save and edit surviv
   for (let i = 0; i < 3; i++) await page.locator('.deck-card:not(:disabled)').last().click();
   await page.getByRole('button', { name: 'Lật bài & khám phá' }).click();
   await expect(page.locator('.interpretation')).toHaveCount(3);
+  await expect.poll(() =>
+    page.locator('.reading-anime-illustration img').evaluate((img: HTMLImageElement) => img.naturalWidth),
+  ).toBeGreaterThan(0);
+  await expect.poll(() =>
+    page
+      .locator('.interpretation .tarot-artwork > img:not(.jojo-user-portrait)')
+      .first()
+      .evaluate((img: HTMLImageElement) => img.naturalWidth),
+  ).toBeGreaterThan(0);
   await expect(page.getByRole('heading', { name: 'Những lá bài đã chọn bạn.' })).toBeVisible();
   await page
     .getByRole('textbox', { name: 'Cảm nhận của bạn' })
@@ -61,12 +71,15 @@ test('Daily card is stable across reload; career and Celtic Cross draw distinct 
   await page.getByRole('button', { name: 'Rút lá hôm nay' }).click();
   await page.getByRole('button', { name: 'Lật bài & khám phá' }).click();
   await expect(page.locator('.interpretation')).toHaveCount(1);
-  const src = await page.locator('.interpretation .card-front img').getAttribute('src');
+  const cardImages = page.locator(
+    '.interpretation .tarot-artwork > img:not(.jojo-user-portrait)',
+  );
+  const src = await cardImages.getAttribute('src');
   await page.reload();
   await page.getByRole('button', { name: /Lá bài hôm nay/ }).click();
   await page.getByRole('button', { name: 'Rút lá hôm nay' }).click();
   await page.getByRole('button', { name: 'Lật bài & khám phá' }).click();
-  await expect(page.locator('.interpretation .card-front img')).toHaveAttribute('src', src!);
+  await expect(cardImages).toHaveAttribute('src', src!);
   for (const [name, count] of [
     ['Con đường sự nghiệp', 5],
     ['Celtic Cross', 10],
@@ -78,7 +91,7 @@ test('Daily card is stable across reload; career and Celtic Cross draw distinct 
     await page.getByRole('button', { name: 'Lật bài & khám phá' }).click();
     await expect(page.locator('.interpretation')).toHaveCount(count);
     const sources = await page
-      .locator('.interpretation .card-front img')
+      .locator('.interpretation .tarot-artwork > img:not(.jojo-user-portrait)')
       .evaluateAll((images) => images.map((img) => img.getAttribute('src')));
     expect(new Set(sources).size).toBe(count);
   }
@@ -277,7 +290,9 @@ test('JoJo setting persists, library maps Star Platinum/Jotaro, and journal keep
   await page.getByRole('tab', { name: 'Nhật ký', exact: true }).click();
   await page.locator('.journal-open').click();
   await expect(page.locator('.interpretation .jojo-artwork')).toHaveCount(0);
-  await expect(page.locator('.interpretation .card-front img').first()).toHaveAttribute(
+  await expect(
+    page.locator('.interpretation .tarot-artwork > img:not(.jojo-user-portrait)').first(),
+  ).toHaveAttribute(
     'src',
     '/assets/tarot/celestial-v1/major/17.svg',
   );

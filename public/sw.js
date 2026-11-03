@@ -262,7 +262,8 @@ self.addEventListener('fetch', (event) => {
   const request = event.request,
     url = new URL(request.url);
   if (request.method !== 'GET' || url.origin !== self.location.origin) return;
-  if (request.mode === 'navigate') {
+  const file = files.get(url.pathname);
+  if (request.mode === 'navigate' && !file) {
     event.respondWith(
       caches
         .open(CACHE_NAME)
@@ -278,7 +279,6 @@ self.addEventListener('fetch', (event) => {
     );
     return;
   }
-  const file = files.get(url.pathname);
   if (!file) {
     if (!url.pathname.startsWith('/assets/')) return;
     event.respondWith(

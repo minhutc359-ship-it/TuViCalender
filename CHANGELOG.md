@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.1 — 03/11/2026
+
+- Bật JoJo ref làm bộ minh họa mặc định cho người dùng mới; lựa chọn Celestial đã lưu vẫn được giữ.
+- Mặt lá tự fallback JoJo → Celestial → ảnh anime nguyên bản khi asset không tải được.
+- Sửa service worker để URL asset/manifest mở trực tiếp trả đúng tệp thay vì SPA 404.
+
 ## 2026-11-02 — Editorial, luận giải và AI access
 
 - Thêm 6 minh họa WebP Celestial Feng Shui, atlas Đông–Tây tương tác và motion reveal/quỹ đạo/hover có reduced-motion.

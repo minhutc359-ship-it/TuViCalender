@@ -63,6 +63,7 @@ Gói được gọi là miễn phí đối với người dùng cuối trong h�
 
 ## Kiểm tra sau triển khai
 
+- Mở trực tiếp `/offline-manifest.json` và `/assets/anime/tarot/self-reflection.webp`; phải trả đúng JSON/WebP, không trả trang SPA 404.
 - Truy cập trực tiếp `/tarot`, `/calendar`, `/profile`, `/chat`, `/settings` và tải lại.
 - Tải bộ offline, tắt mạng, mở lại `/tarot`, thử ảnh Minor JoJo chưa mở, đọc luận giải và lưu/mở nhật ký.
 - Đăng nhập bằng liên kết email với origin đã cấu hình.

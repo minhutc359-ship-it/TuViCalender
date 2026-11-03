@@ -13,14 +13,17 @@ interface AppearanceContext {
   storageError: boolean;
 }
 const Context = createContext<AppearanceContext>({
-  appearance: 'celestial-v1',
+  appearance: REFERENCE_ART_ENABLED ? 'jojo-ref' : 'celestial-v1',
   setAppearance: () => {},
   storageError: false,
 });
 export function TarotAppearanceProvider({ children }: { children: ReactNode }) {
+  const defaultAppearance: TarotAppearanceId = REFERENCE_ART_ENABLED
+    ? 'jojo-ref'
+    : 'celestial-v1';
   const [appearance, setAppearance, storageError] = useStoredState<TarotAppearanceId>(
     APPEARANCE_KEY,
-    'celestial-v1',
+    defaultAppearance,
     isTarotAppearance,
   );
   return (

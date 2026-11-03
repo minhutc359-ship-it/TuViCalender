@@ -176,6 +176,10 @@ test('navigation remains on the matching shell and an old tab can load its cache
     request: { url: origin + '/tarot', method: 'GET', mode: 'navigate' },
   });
   assert.equal(await shell.text(), 'app-v2');
+  const directArtwork = await w.dispatch('fetch', {
+    request: { url: origin + '/assets/card.svg', method: 'GET', mode: 'navigate' },
+  });
+  assert.equal(await directArtwork.text(), '<svg/>');
   const chunk = await w.dispatch('fetch', { request: new Request(origin + '/assets/app-v1.js') });
   assert.equal(await chunk.text(), 'old-code');
   assert.equal(
